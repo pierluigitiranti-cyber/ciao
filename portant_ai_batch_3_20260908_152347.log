@@ -1,0 +1,5906 @@
+==========================================================================================
+PORTANT AI - FULL SEMANTIC / DISCOVERY STRESS TEST
+START: 2026-09-08T15:23:47
+BASE URL: http://127.0.0.1:8000
+BATCH: 3
+DOMANDE: 6
+MAX TEST ATTEMPTS: 4
+CHAT READ TIMEOUT: 900s (15 min)
+==========================================================================================
+
+===== LOGIN =====
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.46s) POST /auth/login
+LOGIN: SUCCESS
+{
+  "success": true,
+  "user": {
+    "uid": 20,
+    "username": "mvc@digimarksrl.com",
+    "name": "mvc"
+  },
+  "database": "DM-22RIC001-20260427"
+}
+
+==========================================================================================
+TEST 1
+QUESTION: Mostrami i prodotti più venduti.
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.01s) POST /conversations
+CONVERSATION: 73daff7f-aa1d-4571-b481-e04e09d09380
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (156.03s) POST /chat
+TOTAL CHAT TIME: 156.03s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "visualizzazione di classifiche prodotti",
+  "scope_concepts": [
+    "prodotti",
+    "più venduti"
+  ],
+  "scope_reason": "Richiesta di mostrare i prodotti con le vendite più alte.",
+  "scope_evidence": [
+    "Mostrami i prodotti più venduti.",
+    "più venduti indica un ordinamento per volume di vendita"
+  ],
+  "sub_requests": [
+    "Mostrami i prodotti più venduti."
+  ],
+  "model": "sale.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_uom_qty:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_uom_qty desc",
+  "order": null,
+  "limit": 10,
+  "offset": 0,
+  "dynamic_model_candidates": [
+    {
+      "id": 322,
+      "model": "report.all.channels.sales",
+      "name": "All sales orders grouped by sales channels",
+      "state": "base",
+      "model_name": "report.all.channels.sales",
+      "model_label": "All sales orders grouped by sales channels",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:24:05",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "sale",
+        "sales"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "sales",
+          "queries": [
+            "sale",
+            "sales",
+            "selling",
+            "sold",
+            "best selling",
+            "top selling",
+            "most sold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:24:05",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:24:04",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:24:05",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:24:04",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:24:04",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:24:04",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:24:05",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## 1. Prodotti più venduti\n\n| # | Prodotto | Quantità venduta |\n|---|----------|------------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,524999988 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,5 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434 |",
+  "chart_payload": null,
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "sale.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_uom_qty:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_uom_qty desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## 1. Prodotti più venduti\n\n| # | Prodotto | Quantità venduta |\n|---|----------|------------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,524999988 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,5 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434 |",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Mostrami i prodotti più venduti.",
+    "memory": [],
+    "conversation_id": "73daff7f-aa1d-4571-b481-e04e09d09380",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Mostrami i prodotti più venduti."
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "prodotti",
+      "più venduti"
+    ],
+    "scope_intent_family": "visualizzazione di classifiche prodotti",
+    "scope_reason": "Richiesta di mostrare i prodotti con le vendite più alte.",
+    "scope_evidence": [
+      "Mostrami i prodotti più venduti.",
+      "più venduti indica un ordinamento per volume di vendita"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "sale.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_uom_qty:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "limit": 10,
+          "orderby": "product_uom_qty desc",
+          "offset": 0,
+          "lazy": false
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 322,
+        "model": "report.all.channels.sales",
+        "name": "All sales orders grouped by sales channels",
+        "state": "base",
+        "model_name": "report.all.channels.sales",
+        "model_label": "All sales orders grouped by sales channels",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:24:05",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "sale",
+          "sales"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "sales",
+            "queries": [
+              "sale",
+              "sales",
+              "selling",
+              "sold",
+              "best selling",
+              "top selling",
+              "most sold"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:24:05",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:24:04",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:24:05",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:24:04",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:24:04",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:24:04",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:24:05",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Mostrami i prodotti più venduti.",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "sale.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_uom_qty:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "limit": 10,
+              "orderby": "product_uom_qty desc",
+              "offset": 0,
+              "lazy": false
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_uom_qty",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  22128,
+                  "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+                ],
+                "__count": 14107,
+                "product_uom_qty_sum": 2790764.0
+              },
+              {
+                "product_id": [
+                  20720,
+                  "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 9838,
+                "product_uom_qty_sum": 2759830.524999988
+              },
+              {
+                "product_id": [
+                  22164,
+                  "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 6805,
+                "product_uom_qty_sum": 1442645.0
+              },
+              {
+                "product_id": [
+                  20714,
+                  "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+                ],
+                "__count": 2094,
+                "product_uom_qty_sum": 934293.0
+              },
+              {
+                "product_id": [
+                  20879,
+                  "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+                ],
+                "__count": 5440,
+                "product_uom_qty_sum": 520095.0
+              },
+              {
+                "product_id": [
+                  20908,
+                  "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+                ],
+                "__count": 6231,
+                "product_uom_qty_sum": 492009.0
+              },
+              {
+                "product_id": [
+                  20878,
+                  "[311] LE SFOGLIATINE |4PZ.|300g."
+                ],
+                "__count": 5873,
+                "product_uom_qty_sum": 419857.67
+              },
+              {
+                "product_id": [
+                  22063,
+                  "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+                ],
+                "__count": 10732,
+                "product_uom_qty_sum": 373994.5
+              },
+              {
+                "product_id": [
+                  20845,
+                  "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+                ],
+                "__count": 5688,
+                "product_uom_qty_sum": 316072.0
+              },
+              {
+                "product_id": [
+                  20856,
+                  "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+                ],
+                "__count": 3563,
+                "product_uom_qty_sum": 299434.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 476,
+              "limit": 10,
+              "offset": 0,
+              "pages": 48,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## 1. Prodotti più venduti\n\n| # | Prodotto | Quantità venduta |\n|---|----------|------------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,524999988 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,5 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434 |",
+    "chart_payload": null
+  }
+}
+
+==========================================================================================
+TEST 2
+QUESTION: Quali prodotti hanno più vendite?
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.02s) POST /conversations
+CONVERSATION: f5f8fad2-b592-4339-925a-c082bca301d4
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (161.04s) POST /chat
+TOTAL CHAT TIME: 161.04s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "ordinamenti e classifiche",
+  "scope_concepts": [
+    "prodotti",
+    "vendite",
+    "ordinamenti e classifiche"
+  ],
+  "scope_reason": "La richiesta chiede quali prodotti hanno più vendite, un'analisi di ranking di dati aziendali.",
+  "scope_evidence": [
+    "la frase contiene i concetti 'prodotti' e 'vendite'",
+    "chiede un ordinamento/classifica dei prodotti in base alle vendite"
+  ],
+  "sub_requests": [
+    "Quali prodotti hanno più vendite?"
+  ],
+  "model": "sale.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_id",
+    "product_uom_qty:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_uom_qty:sum desc",
+  "order": null,
+  "limit": 10,
+  "offset": null,
+  "dynamic_model_candidates": [
+    {
+      "id": 322,
+      "model": "report.all.channels.sales",
+      "name": "All sales orders grouped by sales channels",
+      "state": "base",
+      "model_name": "report.all.channels.sales",
+      "model_label": "All sales orders grouped by sales channels",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "sales",
+        "sale"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "quantity",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:26:59",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:27:00",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "top products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "units sold",
+            "most sold",
+            "top products"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## Prodotti con più vendite (top 10)\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE \\|4PZ.\\|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+  "chart_payload": null,
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "sale.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_id",
+        "product_uom_qty:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_uom_qty desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## Prodotti con più vendite (top 10)\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE \\|4PZ.\\|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Quali prodotti hanno più vendite?",
+    "memory": [],
+    "conversation_id": "f5f8fad2-b592-4339-925a-c082bca301d4",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Quali prodotti hanno più vendite?"
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "prodotti",
+      "vendite",
+      "ordinamenti e classifiche"
+    ],
+    "scope_intent_family": "ordinamenti e classifiche",
+    "scope_reason": "La richiesta chiede quali prodotti hanno più vendite, un'analisi di ranking di dati aziendali.",
+    "scope_evidence": [
+      "la frase contiene i concetti 'prodotti' e 'vendite'",
+      "chiede un ordinamento/classifica dei prodotti in base alle vendite"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "sale.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_id",
+            "product_uom_qty:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "limit": 10,
+          "orderby": "product_uom_qty:sum desc"
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 322,
+        "model": "report.all.channels.sales",
+        "name": "All sales orders grouped by sales channels",
+        "state": "base",
+        "model_name": "report.all.channels.sales",
+        "model_label": "All sales orders grouped by sales channels",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "sales",
+          "sale"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "quantity",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:26:59",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:27:00",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "top products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "units sold",
+              "most sold",
+              "top products"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Quali prodotti hanno più vendite?",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "sale.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_id",
+                "product_uom_qty:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "limit": 10,
+              "orderby": "product_uom_qty desc"
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_uom_qty",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  22128,
+                  "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+                ],
+                "__count": 14107,
+                "product_uom_qty_sum": 2790764.0
+              },
+              {
+                "product_id": [
+                  20720,
+                  "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 9838,
+                "product_uom_qty_sum": 2759830.524999988
+              },
+              {
+                "product_id": [
+                  22164,
+                  "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 6805,
+                "product_uom_qty_sum": 1442645.0
+              },
+              {
+                "product_id": [
+                  20714,
+                  "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+                ],
+                "__count": 2094,
+                "product_uom_qty_sum": 934293.0
+              },
+              {
+                "product_id": [
+                  20879,
+                  "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+                ],
+                "__count": 5440,
+                "product_uom_qty_sum": 520095.0
+              },
+              {
+                "product_id": [
+                  20908,
+                  "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+                ],
+                "__count": 6231,
+                "product_uom_qty_sum": 492009.0
+              },
+              {
+                "product_id": [
+                  20878,
+                  "[311] LE SFOGLIATINE |4PZ.|300g."
+                ],
+                "__count": 5873,
+                "product_uom_qty_sum": 419857.67
+              },
+              {
+                "product_id": [
+                  22063,
+                  "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+                ],
+                "__count": 10732,
+                "product_uom_qty_sum": 373994.5
+              },
+              {
+                "product_id": [
+                  20845,
+                  "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+                ],
+                "__count": 5688,
+                "product_uom_qty_sum": 316072.0
+              },
+              {
+                "product_id": [
+                  20856,
+                  "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+                ],
+                "__count": 3563,
+                "product_uom_qty_sum": 299434.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 476,
+              "limit": 10,
+              "offset": 0,
+              "pages": 48,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## Prodotti con più vendite (top 10)\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE \\|4PZ.\\|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+    "chart_payload": null
+  }
+}
+
+==========================================================================================
+TEST 3
+QUESTION: Mostrami la quantità venduta per prodotto.
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.02s) POST /conversations
+CONVERSATION: 1b42fedc-766d-4a87-acf9-cc0ea574f84d
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (149.01s) POST /chat
+TOTAL CHAT TIME: 149.01s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "visualizzazione quantità venduta per prodotto",
+  "scope_concepts": [
+    "vendite",
+    "prodotti"
+  ],
+  "scope_reason": "Richiesta di dati sulla quantità venduta per prodotto, chiaramente pertinente al sistema Portant.",
+  "scope_evidence": [
+    "La frase contiene 'quantità venduta' (concetto vendite) e 'per prodotto' (concetto prodotti)",
+    "È una richiesta di dati di vendita per prodotto, tipica del dominio Portant"
+  ],
+  "sub_requests": [
+    "Mostrami la quantità venduta per prodotto."
+  ],
+  "model": "sale.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_id",
+    "product_uom_qty:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_uom_qty desc",
+  "order": null,
+  "limit": null,
+  "offset": null,
+  "dynamic_model_candidates": [
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:29:27",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "quantity sold",
+        "sold quantity",
+        "sales quantity"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        },
+        {
+          "concept": "sales quantity",
+          "queries": [
+            "quantity sold",
+            "sold quantity",
+            "sales quantity",
+            "amount sold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "model": "product.pricelist.item",
+      "name": "Pricelist item",
+      "state": "base",
+      "model_name": "product.pricelist.item",
+      "model_label": "Pricelist item",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "item",
+        "items"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:29:26",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products",
+            "item",
+            "items"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## 1. Quantità venduta per prodotto\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434,00 |",
+  "chart_payload": {
+    "request": "Mostrami la quantità venduta per prodotto.",
+    "chart_type": "bar",
+    "orientation": "horizontal",
+    "title": "Quantity Sold per Product",
+    "source_index": 1,
+    "source_type": "aggregation",
+    "grouping_field": "product_id",
+    "value_field": "product_uom_qty_sum",
+    "x_field": null,
+    "bubble_size_field": null,
+    "data": [
+      {
+        "label": "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf",
+        "value": 2790764.0
+      },
+      {
+        "label": "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese",
+        "value": 2759830.524999988
+      },
+      {
+        "label": "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese",
+        "value": 1442645.0
+      },
+      {
+        "label": "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\"",
+        "value": 934293.0
+      },
+      {
+        "label": "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz",
+        "value": 520095.0
+      },
+      {
+        "label": "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10",
+        "value": 492009.0
+      },
+      {
+        "label": "[311] LE SFOGLIATINE |4PZ.|300g.",
+        "value": 419857.67
+      },
+      {
+        "label": "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz",
+        "value": 373994.5
+      },
+      {
+        "label": "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz",
+        "value": 316072.0
+      },
+      {
+        "label": "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO",
+        "value": 299434.0
+      }
+    ],
+    "style": {
+      "palette": "professional",
+      "show_legend": false,
+      "show_values": true,
+      "animation_preset": "dynamic"
+    },
+    "sort": "desc"
+  },
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "sale.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_id",
+        "product_uom_qty:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_uom_qty desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## 1. Quantità venduta per prodotto\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434,00 |",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Mostrami la quantità venduta per prodotto.",
+    "memory": [],
+    "conversation_id": "1b42fedc-766d-4a87-acf9-cc0ea574f84d",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Mostrami la quantità venduta per prodotto."
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "vendite",
+      "prodotti"
+    ],
+    "scope_intent_family": "visualizzazione quantità venduta per prodotto",
+    "scope_reason": "Richiesta di dati sulla quantità venduta per prodotto, chiaramente pertinente al sistema Portant.",
+    "scope_evidence": [
+      "La frase contiene 'quantità venduta' (concetto vendite) e 'per prodotto' (concetto prodotti)",
+      "È una richiesta di dati di vendita per prodotto, tipica del dominio Portant"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "sale.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_id",
+            "product_uom_qty:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "orderby": "product_uom_qty desc"
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:29:27",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "quantity sold",
+          "sold quantity",
+          "sales quantity"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          },
+          {
+            "concept": "sales quantity",
+            "queries": [
+              "quantity sold",
+              "sold quantity",
+              "sales quantity",
+              "amount sold"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 154,
+        "model": "product.pricelist.item",
+        "name": "Pricelist item",
+        "state": "base",
+        "model_name": "product.pricelist.item",
+        "model_label": "Pricelist item",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "item",
+          "items"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:29:26",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products",
+              "item",
+              "items"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Mostrami la quantità venduta per prodotto.",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "sale.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_id",
+                "product_uom_qty:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "orderby": "product_uom_qty desc"
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_uom_qty",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  22128,
+                  "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+                ],
+                "__count": 14107,
+                "product_uom_qty_sum": 2790764.0
+              },
+              {
+                "product_id": [
+                  20720,
+                  "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 9838,
+                "product_uom_qty_sum": 2759830.524999988
+              },
+              {
+                "product_id": [
+                  22164,
+                  "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 6805,
+                "product_uom_qty_sum": 1442645.0
+              },
+              {
+                "product_id": [
+                  20714,
+                  "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+                ],
+                "__count": 2094,
+                "product_uom_qty_sum": 934293.0
+              },
+              {
+                "product_id": [
+                  20879,
+                  "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+                ],
+                "__count": 5440,
+                "product_uom_qty_sum": 520095.0
+              },
+              {
+                "product_id": [
+                  20908,
+                  "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+                ],
+                "__count": 6231,
+                "product_uom_qty_sum": 492009.0
+              },
+              {
+                "product_id": [
+                  20878,
+                  "[311] LE SFOGLIATINE |4PZ.|300g."
+                ],
+                "__count": 5873,
+                "product_uom_qty_sum": 419857.67
+              },
+              {
+                "product_id": [
+                  22063,
+                  "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+                ],
+                "__count": 10732,
+                "product_uom_qty_sum": 373994.5
+              },
+              {
+                "product_id": [
+                  20845,
+                  "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+                ],
+                "__count": 5688,
+                "product_uom_qty_sum": 316072.0
+              },
+              {
+                "product_id": [
+                  20856,
+                  "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+                ],
+                "__count": 3563,
+                "product_uom_qty_sum": 299434.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 476,
+              "limit": 10,
+              "offset": 0,
+              "pages": 48,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## 1. Quantità venduta per prodotto\n\n| # | Prodotto | Quantità venduta |\n|---|---------|---------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz | 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | 299.434,00 |",
+    "chart_payload": {
+      "request": "Mostrami la quantità venduta per prodotto.",
+      "chart_type": "bar",
+      "orientation": "horizontal",
+      "title": "Quantity Sold per Product",
+      "source_index": 1,
+      "source_type": "aggregation",
+      "grouping_field": "product_id",
+      "value_field": "product_uom_qty_sum",
+      "x_field": null,
+      "bubble_size_field": null,
+      "data": [
+        {
+          "label": "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf",
+          "value": 2790764.0
+        },
+        {
+          "label": "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese",
+          "value": 2759830.524999988
+        },
+        {
+          "label": "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese",
+          "value": 1442645.0
+        },
+        {
+          "label": "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\"",
+          "value": 934293.0
+        },
+        {
+          "label": "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz",
+          "value": 520095.0
+        },
+        {
+          "label": "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10",
+          "value": 492009.0
+        },
+        {
+          "label": "[311] LE SFOGLIATINE |4PZ.|300g.",
+          "value": 419857.67
+        },
+        {
+          "label": "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz",
+          "value": 373994.5
+        },
+        {
+          "label": "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz",
+          "value": 316072.0
+        },
+        {
+          "label": "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO",
+          "value": 299434.0
+        }
+      ],
+      "style": {
+        "palette": "professional",
+        "show_legend": false,
+        "show_values": true,
+        "animation_preset": "dynamic"
+      },
+      "sort": "desc"
+    }
+  }
+}
+
+==========================================================================================
+TEST 4
+QUESTION: Quali prodotti abbiamo acquistato di più?
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.01s) POST /conversations
+CONVERSATION: 5761dc17-f907-406c-bbf2-3a8a5e27fbba
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (88.31s) POST /chat
+TOTAL CHAT TIME: 88.31s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "Richiesta di prodotti con volume di acquisto più elevato",
+  "scope_concepts": [
+    "acquisti",
+    "prodotti"
+  ],
+  "scope_reason": "Richiesta di quali prodotti abbiano il volume di acquisto più elevato.",
+  "scope_evidence": [
+    "'acquistato' si riferisce al concetto di acquisti",
+    "'prodotti' si riferisce al concetto di prodotti",
+    "'di più' indica un ordinamento per quantità"
+  ],
+  "sub_requests": [
+    "Quali prodotti abbiamo acquistato di più?"
+  ],
+  "model": "purchase.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_id",
+    "product_uom:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_uom desc",
+  "order": null,
+  "limit": 10,
+  "offset": null,
+  "dynamic_model_candidates": [
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "quantity"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "quantity",
+          "queries": [
+            "quantity",
+            "quantities",
+            "amount",
+            "amounts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:31:51",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "model": "product.attribute",
+      "name": "Product Attribute",
+      "state": "base",
+      "model_name": "product.attribute",
+      "model_label": "Product Attribute",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:31:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## Prodotti acquistati più frequentemente\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ST25] Strutto kg.25 | 142 |\n| 2 | [C60] CARTONE 250g. Piada Senza Glutine x 5cf. | 1 |\n| 3 | [C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60) | 24 |\n| 4 | [C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.| | 1 |\n| 5 | [C700N] CARTONE CASSONE ANONIMO | 17 |\n| 6 | [C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155 | 4 |\n| 7 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 50 |\n| 8 | [B22] BOBINA|Riccione Piadina IGP 250gr. | 26 |\n| 9 | [B23] BOBINA|Riccione Piadina IGP 360gr. | 33 |\n| 10 | [B300] BOBINA| film imballo FORNARINA 2pz. x 300g. | 6 |",
+  "chart_payload": null,
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "purchase.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_id",
+        "product_uom:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_uom desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## Prodotti acquistati più frequentemente\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ST25] Strutto kg.25 | 142 |\n| 2 | [C60] CARTONE 250g. Piada Senza Glutine x 5cf. | 1 |\n| 3 | [C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60) | 24 |\n| 4 | [C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.| | 1 |\n| 5 | [C700N] CARTONE CASSONE ANONIMO | 17 |\n| 6 | [C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155 | 4 |\n| 7 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 50 |\n| 8 | [B22] BOBINA|Riccione Piadina IGP 250gr. | 26 |\n| 9 | [B23] BOBINA|Riccione Piadina IGP 360gr. | 33 |\n| 10 | [B300] BOBINA| film imballo FORNARINA 2pz. x 300g. | 6 |",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Quali prodotti abbiamo acquistato di più?",
+    "memory": [],
+    "conversation_id": "5761dc17-f907-406c-bbf2-3a8a5e27fbba",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Quali prodotti abbiamo acquistato di più?"
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "acquisti",
+      "prodotti"
+    ],
+    "scope_intent_family": "Richiesta di prodotti con volume di acquisto più elevato",
+    "scope_reason": "Richiesta di quali prodotti abbiano il volume di acquisto più elevato.",
+    "scope_evidence": [
+      "'acquistato' si riferisce al concetto di acquisti",
+      "'prodotti' si riferisce al concetto di prodotti",
+      "'di più' indica un ordinamento per quantità"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "purchase.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_id",
+            "product_uom:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "orderby": "product_uom desc",
+          "limit": 10
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "quantity"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "quantity",
+            "queries": [
+              "quantity",
+              "quantities",
+              "amount",
+              "amounts"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:31:51",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "model": "product.attribute",
+        "name": "Product Attribute",
+        "state": "base",
+        "model_name": "product.attribute",
+        "model_label": "Product Attribute",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:31:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Quali prodotti abbiamo acquistato di più?",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "purchase.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_id",
+                "product_uom:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "orderby": "product_uom desc",
+              "limit": 10
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                24276,
+                "[ST25] Strutto kg.25"
+              ],
+              "__count": 142,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22617,
+                "[C60] CARTONE 250g. Piada Senza Glutine x 5cf."
+              ],
+              "__count": 1,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22620,
+                "[C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60)"
+              ],
+              "__count": 24,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22590,
+                "[C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.|"
+              ],
+              "__count": 1,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22637,
+                "[C700N] CARTONE CASSONE ANONIMO"
+              ],
+              "__count": 17,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                24671,
+                "[C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155"
+              ],
+              "__count": 4,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22651,
+                "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+              ],
+              "__count": 50,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22316,
+                "[B22] BOBINA|Riccione Piadina IGP 250gr."
+              ],
+              "__count": 26,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22317,
+                "[B23] BOBINA|Riccione Piadina IGP 360gr."
+              ],
+              "__count": 33,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22329,
+                "[B300] BOBINA| film imballo FORNARINA 2pz. x 300g."
+              ],
+              "__count": 6,
+              "product_uom_sum": 0.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                24276,
+                "[ST25] Strutto kg.25"
+              ],
+              "__count": 142,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22617,
+                "[C60] CARTONE 250g. Piada Senza Glutine x 5cf."
+              ],
+              "__count": 1,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22620,
+                "[C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60)"
+              ],
+              "__count": 24,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22590,
+                "[C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.|"
+              ],
+              "__count": 1,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22637,
+                "[C700N] CARTONE CASSONE ANONIMO"
+              ],
+              "__count": 17,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                24671,
+                "[C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155"
+              ],
+              "__count": 4,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22651,
+                "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+              ],
+              "__count": 50,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22316,
+                "[B22] BOBINA|Riccione Piadina IGP 250gr."
+              ],
+              "__count": 26,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22317,
+                "[B23] BOBINA|Riccione Piadina IGP 360gr."
+              ],
+              "__count": 33,
+              "product_uom_sum": 0.0
+            },
+            {
+              "product_id": [
+                22329,
+                "[B300] BOBINA| film imballo FORNARINA 2pz. x 300g."
+              ],
+              "__count": 6,
+              "product_uom_sum": 0.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_uom",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  24276,
+                  "[ST25] Strutto kg.25"
+                ],
+                "__count": 142,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22617,
+                  "[C60] CARTONE 250g. Piada Senza Glutine x 5cf."
+                ],
+                "__count": 1,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22620,
+                  "[C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60)"
+                ],
+                "__count": 24,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22590,
+                  "[C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.|"
+                ],
+                "__count": 1,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22637,
+                  "[C700N] CARTONE CASSONE ANONIMO"
+                ],
+                "__count": 17,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  24671,
+                  "[C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155"
+                ],
+                "__count": 4,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22651,
+                  "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+                ],
+                "__count": 50,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22316,
+                  "[B22] BOBINA|Riccione Piadina IGP 250gr."
+                ],
+                "__count": 26,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22317,
+                  "[B23] BOBINA|Riccione Piadina IGP 360gr."
+                ],
+                "__count": 33,
+                "product_uom_sum": 0.0
+              },
+              {
+                "product_id": [
+                  22329,
+                  "[B300] BOBINA| film imballo FORNARINA 2pz. x 300g."
+                ],
+                "__count": 6,
+                "product_uom_sum": 0.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 1400,
+              "limit": 10,
+              "offset": 0,
+              "pages": 140,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## Prodotti acquistati più frequentemente\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ST25] Strutto kg.25 | 142 |\n| 2 | [C60] CARTONE 250g. Piada Senza Glutine x 5cf. | 1 |\n| 3 | [C60NT] CARTONE NEUTRO dim. 275x350x85 (675/469/400/60) | 24 |\n| 4 | [C300P] CT|FORNARINA AL ROSMARINO| 2+1 |3pz 450gr.| | 1 |\n| 5 | [C700N] CARTONE CASSONE ANONIMO | 17 |\n| 6 | [C710MN] CARTONE CASSONE MINI ANONIMO 240 X 135 X 155 | 4 |\n| 7 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 50 |\n| 8 | [B22] BOBINA|Riccione Piadina IGP 250gr. | 26 |\n| 9 | [B23] BOBINA|Riccione Piadina IGP 360gr. | 33 |\n| 10 | [B300] BOBINA| film imballo FORNARINA 2pz. x 300g. | 6 |",
+    "chart_payload": null
+  }
+}
+
+==========================================================================================
+TEST 5
+QUESTION: Mostrami la quantità acquistata per prodotto.
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.02s) POST /conversations
+CONVERSATION: bad73878-0f7c-4640-9f4d-498212f187eb
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (93.51s) POST /chat
+TOTAL CHAT TIME: 93.51s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "visualizzazione_dati_acquisti_per_prodotto",
+  "scope_concepts": [
+    "acquisti",
+    "quantità e valori",
+    "prodotti"
+  ],
+  "scope_reason": "Richiesta di visualizzare la quantità acquistata per ogni prodotto.",
+  "scope_evidence": [
+    "la richiesta chiede la quantità acquistata per prodotto",
+    "usa terminologia pertinente a Portant (acquisti, quantità, prodotti)"
+  ],
+  "sub_requests": [
+    "Mostrami la quantità acquistata per prodotto."
+  ],
+  "model": "purchase.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_id",
+    "product_qty:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_qty:sum desc",
+  "order": null,
+  "limit": null,
+  "offset": null,
+  "dynamic_model_candidates": [
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "quantity",
+        "purchased quantity",
+        "purchase quantity",
+        "ordered quantity",
+        "order quantity"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "quantity purchased",
+          "queries": [
+            "quantity",
+            "quantities",
+            "purchased quantity",
+            "purchase quantity",
+            "ordered quantity",
+            "order quantity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "model": "product.attribute",
+      "name": "Product Attribute",
+      "state": "base",
+      "model_name": "product.attribute",
+      "model_label": "Product Attribute",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:33:33",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## Quantità acquistata per prodotto\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ETICS] ETICHETTA SALVAFRESCHEZZA | 8.600.000 |\n| 2 | [FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO | 4.176.320 |\n| 3 | [ET0060] Etichette \"BARCODE\" piadina senza glutine | 983.000 |\n| 4 | [ST25] Strutto kg.25 | 661.350 |\n| 5 | [C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA X REF.C22-C33-C230-C464-C90 | 611.861 |\n| 6 | [ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\" | 595.000 |\n| 7 | [VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE | 550.000 |\n| 8 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 522.160 |\n| 9 | [VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE | 410.000 |\n| 10 | [ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI' | 402.000 |\n\n*Trovati 10 prodotti con le quantità totali acquistate.*",
+  "chart_payload": null,
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "purchase.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_id",
+        "product_qty:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_qty desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## Quantità acquistata per prodotto\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ETICS] ETICHETTA SALVAFRESCHEZZA | 8.600.000 |\n| 2 | [FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO | 4.176.320 |\n| 3 | [ET0060] Etichette \"BARCODE\" piadina senza glutine | 983.000 |\n| 4 | [ST25] Strutto kg.25 | 661.350 |\n| 5 | [C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA X REF.C22-C33-C230-C464-C90 | 611.861 |\n| 6 | [ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\" | 595.000 |\n| 7 | [VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE | 550.000 |\n| 8 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 522.160 |\n| 9 | [VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE | 410.000 |\n| 10 | [ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI' | 402.000 |\n\n*Trovati 10 prodotti con le quantità totali acquistate.*",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Mostrami la quantità acquistata per prodotto.",
+    "memory": [],
+    "conversation_id": "bad73878-0f7c-4640-9f4d-498212f187eb",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Mostrami la quantità acquistata per prodotto."
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "acquisti",
+      "quantità e valori",
+      "prodotti"
+    ],
+    "scope_intent_family": "visualizzazione_dati_acquisti_per_prodotto",
+    "scope_reason": "Richiesta di visualizzare la quantità acquistata per ogni prodotto.",
+    "scope_evidence": [
+      "la richiesta chiede la quantità acquistata per prodotto",
+      "usa terminologia pertinente a Portant (acquisti, quantità, prodotti)"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "purchase.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_id",
+            "product_qty:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "orderby": "product_qty:sum desc"
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "quantity",
+          "purchased quantity",
+          "purchase quantity",
+          "ordered quantity",
+          "order quantity"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "quantity purchased",
+            "queries": [
+              "quantity",
+              "quantities",
+              "purchased quantity",
+              "purchase quantity",
+              "ordered quantity",
+              "order quantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "model": "product.attribute",
+        "name": "Product Attribute",
+        "state": "base",
+        "model_name": "product.attribute",
+        "model_label": "Product Attribute",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:33:33",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Mostrami la quantità acquistata per prodotto.",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "purchase.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_id",
+                "product_qty:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "orderby": "product_qty desc"
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                23080,
+                "[ETICS] ETICHETTA SALVAFRESCHEZZA"
+              ],
+              "__count": 12,
+              "product_qty_sum": 8600000.0
+            },
+            {
+              "product_id": [
+                23235,
+                "[FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO"
+              ],
+              "__count": 212,
+              "product_qty_sum": 4176320.0
+            },
+            {
+              "product_id": [
+                23025,
+                "[ET0060] Etichette \"BARCODE\" piadina senza glutine"
+              ],
+              "__count": 27,
+              "product_qty_sum": 983000.0
+            },
+            {
+              "product_id": [
+                24276,
+                "[ST25] Strutto kg.25"
+              ],
+              "__count": 142,
+              "product_qty_sum": 661350.0
+            },
+            {
+              "product_id": [
+                24665,
+                "[C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA\n X REF.C22-C33-C230-C464-C90"
+              ],
+              "__count": 35,
+              "product_qty_sum": 611861.0
+            },
+            {
+              "product_id": [
+                23027,
+                "[ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\""
+              ],
+              "__count": 28,
+              "product_qty_sum": 595000.0
+            },
+            {
+              "product_id": [
+                25025,
+                "[VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE"
+              ],
+              "__count": 11,
+              "product_qty_sum": 550000.0
+            },
+            {
+              "product_id": [
+                22651,
+                "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+              ],
+              "__count": 50,
+              "product_qty_sum": 522160.0
+            },
+            {
+              "product_id": [
+                25060,
+                "[VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE"
+              ],
+              "__count": 8,
+              "product_qty_sum": 410000.0
+            },
+            {
+              "product_id": [
+                24952,
+                "[ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI'"
+              ],
+              "__count": 24,
+              "product_qty_sum": 402000.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                23080,
+                "[ETICS] ETICHETTA SALVAFRESCHEZZA"
+              ],
+              "__count": 12,
+              "product_qty_sum": 8600000.0
+            },
+            {
+              "product_id": [
+                23235,
+                "[FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO"
+              ],
+              "__count": 212,
+              "product_qty_sum": 4176320.0
+            },
+            {
+              "product_id": [
+                23025,
+                "[ET0060] Etichette \"BARCODE\" piadina senza glutine"
+              ],
+              "__count": 27,
+              "product_qty_sum": 983000.0
+            },
+            {
+              "product_id": [
+                24276,
+                "[ST25] Strutto kg.25"
+              ],
+              "__count": 142,
+              "product_qty_sum": 661350.0
+            },
+            {
+              "product_id": [
+                24665,
+                "[C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA\n X REF.C22-C33-C230-C464-C90"
+              ],
+              "__count": 35,
+              "product_qty_sum": 611861.0
+            },
+            {
+              "product_id": [
+                23027,
+                "[ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\""
+              ],
+              "__count": 28,
+              "product_qty_sum": 595000.0
+            },
+            {
+              "product_id": [
+                25025,
+                "[VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE"
+              ],
+              "__count": 11,
+              "product_qty_sum": 550000.0
+            },
+            {
+              "product_id": [
+                22651,
+                "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+              ],
+              "__count": 50,
+              "product_qty_sum": 522160.0
+            },
+            {
+              "product_id": [
+                25060,
+                "[VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE"
+              ],
+              "__count": 8,
+              "product_qty_sum": 410000.0
+            },
+            {
+              "product_id": [
+                24952,
+                "[ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI'"
+              ],
+              "__count": 24,
+              "product_qty_sum": 402000.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_qty",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  23080,
+                  "[ETICS] ETICHETTA SALVAFRESCHEZZA"
+                ],
+                "__count": 12,
+                "product_qty_sum": 8600000.0
+              },
+              {
+                "product_id": [
+                  23235,
+                  "[FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO"
+                ],
+                "__count": 212,
+                "product_qty_sum": 4176320.0
+              },
+              {
+                "product_id": [
+                  23025,
+                  "[ET0060] Etichette \"BARCODE\" piadina senza glutine"
+                ],
+                "__count": 27,
+                "product_qty_sum": 983000.0
+              },
+              {
+                "product_id": [
+                  24276,
+                  "[ST25] Strutto kg.25"
+                ],
+                "__count": 142,
+                "product_qty_sum": 661350.0
+              },
+              {
+                "product_id": [
+                  24665,
+                  "[C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA\n X REF.C22-C33-C230-C464-C90"
+                ],
+                "__count": 35,
+                "product_qty_sum": 611861.0
+              },
+              {
+                "product_id": [
+                  23027,
+                  "[ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\""
+                ],
+                "__count": 28,
+                "product_qty_sum": 595000.0
+              },
+              {
+                "product_id": [
+                  25025,
+                  "[VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE"
+                ],
+                "__count": 11,
+                "product_qty_sum": 550000.0
+              },
+              {
+                "product_id": [
+                  22651,
+                  "[C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125"
+                ],
+                "__count": 50,
+                "product_qty_sum": 522160.0
+              },
+              {
+                "product_id": [
+                  25060,
+                  "[VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE"
+                ],
+                "__count": 8,
+                "product_qty_sum": 410000.0
+              },
+              {
+                "product_id": [
+                  24952,
+                  "[ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI'"
+                ],
+                "__count": 24,
+                "product_qty_sum": 402000.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 1400,
+              "limit": 10,
+              "offset": 0,
+              "pages": 140,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## Quantità acquistata per prodotto\n\n| # | Prodotto | Quantità acquistata |\n|---|----------|-------------------|\n| 1 | [ETICS] ETICHETTA SALVAFRESCHEZZA | 8.600.000 |\n| 2 | [FSROM] FARINA \"00\" sfusa GRANO ROMAGNOLO | 4.176.320 |\n| 3 | [ET0060] Etichette \"BARCODE\" piadina senza glutine | 983.000 |\n| 4 | [ST25] Strutto kg.25 | 661.350 |\n| 5 | [C230NT] CARTONE 300 x 375 x 180 NEUTRO AVANA X REF.C22-C33-C230-C464-C90 | 611.861 |\n| 6 | [ET0067] Etichette \"BARCODE\" piada S/G \"FUORI FRIGO\" | 595.000 |\n| 7 | [VASPINSA] VASCHETTA PER PINSA 330 X 170 X 28 CON ALETTE | 550.000 |\n| 8 | [C800NT] CARTONE NEUTRO BASSO MIS. 375 X 300 X 125 | 522.160 |\n| 9 | [VASPINSA291728] VASCHETTA PER PINSA 290 X 170 X 28 CON ALETTE | 410.000 |\n| 10 | [ET060CO] Etichette \"BARCODE\" senza glutine COOP BENE SI' | 402.000 |\n\n*Trovati 10 prodotti con le quantità totali acquistate.*",
+    "chart_payload": null
+  }
+}
+
+==========================================================================================
+TEST 6
+QUESTION: Mostrami un grafico a barre dei prodotti più venduti.
+MAX ATTEMPTS: 4
+==========================================================================================
+
+----- TENTATIVO 1/4 -----
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.01s) POST /conversations
+CONVERSATION: 17a44204-e507-44a0-a2c7-d9eed9139762
+TIMEOUT CONFIG: connect=15s read=900s
+HTTP 200 (129.23s) POST /chat
+TOTAL CHAT TIME: 129.23s
+RESULT STATUS: OK
+HTTP: 200
+
+----- EXTRACTED SUMMARY -----
+{
+  "scope_allowed": true,
+  "scope": "IN_SCOPE",
+  "scope_confidence": 0.95,
+  "scope_continuation": false,
+  "scope_intent_family": "grafici_e_visualizzazioni",
+  "scope_concepts": [
+    "grafici e visualizzazioni",
+    "prodotti",
+    "ordinamenti e classifiche",
+    "vendite"
+  ],
+  "scope_reason": "Richiesta di visualizzare un grafico a barre dei prodotti più venduti, che rientra nelle funzionalità di analisi e visualizzazione dati di Portant.",
+  "scope_evidence": [
+    "la richiesta contiene 'grafico a barre', un alias di grafici e visualizzazioni",
+    "la richiesta menziona 'prodotti più venduti', che coinvolge prodotti e ordinamenti e classifiche",
+    "l'intento è di mostrare dati, tipico delle funzionalità di Portant"
+  ],
+  "sub_requests": [
+    "Mostrami un grafico a barre dei prodotti più venduti."
+  ],
+  "model": "sale.order.line",
+  "method": "read_group",
+  "domain": [],
+  "fields": [
+    "product_id",
+    "product_uom_qty:sum"
+  ],
+  "groupby": [
+    "product_id"
+  ],
+  "orderby": "product_uom_qty:sum desc",
+  "order": null,
+  "limit": 10,
+  "offset": 0,
+  "dynamic_model_candidates": [
+    {
+      "id": 322,
+      "model": "report.all.channels.sales",
+      "name": "All sales orders grouped by sales channels",
+      "state": "base",
+      "model_name": "report.all.channels.sales",
+      "model_label": "All sales orders grouped by sales channels",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "sales",
+        "sale"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "amount",
+            "revenue",
+            "top",
+            "best",
+            "best selling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "model": "stock.change.product.qty",
+      "name": "Change Product Quantity",
+      "state": "base",
+      "model_name": "stock.change.product.qty",
+      "model_label": "Change Product Quantity",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:51:00",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products",
+        "quantity"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        },
+        {
+          "concept": "sales",
+          "queries": [
+            "sales",
+            "sale",
+            "quantity",
+            "amount",
+            "revenue",
+            "top",
+            "best",
+            "best selling"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 458,
+      "model": "gamma.partner.product.code",
+      "name": "gamma.partner.product.code",
+      "state": "base",
+      "model_name": "gamma.partner.product.code",
+      "model_label": "gamma.partner.product.code",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:58",
+      "updated_at": "2026-09-08 13:34:51",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "model": "product.supplierinfo",
+      "name": "Information about a product vendor",
+      "state": "base",
+      "model_name": "product.supplierinfo",
+      "model_label": "Information about a product vendor",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "model": "mps.add_product",
+      "name": "mps.add_product",
+      "state": "base",
+      "model_name": "mps.add_product",
+      "model_label": "mps.add_product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "model": "mrp.product.direct_production",
+      "name": "mrp.product.direct_production",
+      "state": "base",
+      "model_name": "mrp.product.direct_production",
+      "model_label": "mrp.product.direct_production",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 454,
+      "model": "mrp.product.direct_production.line",
+      "name": "mrp.product.direct_production.line",
+      "state": "base",
+      "model_name": "mrp.product.direct_production.line",
+      "model_label": "mrp.product.direct_production.line",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "model": "product.product",
+      "name": "Product",
+      "state": "base",
+      "model_name": "product.product",
+      "model_label": "Product",
+      "model_description": null,
+      "source": "odoo.ir.model",
+      "discovered_at": "2026-09-02 09:50:59",
+      "updated_at": "2026-09-08 13:34:52",
+      "_score": 24.0,
+      "_semantic_queries": [
+        "product",
+        "products"
+      ],
+      "_semantic_concepts": [
+        {
+          "concept": "product",
+          "queries": [
+            "product",
+            "products"
+          ]
+        }
+      ]
+    }
+  ],
+  "final_response": "## Prodotti più venduti (per quantità)\n\n| # | Prodotto | Quantità venduta |\n|---|----------|----------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%‑375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+  "chart_payload": {
+    "request": "Mostrami un grafico a barre dei prodotti più venduti.",
+    "chart_type": "bar",
+    "orientation": "horizontal",
+    "title": "Top Selling Products by Quantity",
+    "source_index": 1,
+    "source_type": "aggregation",
+    "grouping_field": "product_id",
+    "value_field": "product_uom_qty_sum",
+    "x_field": null,
+    "bubble_size_field": null,
+    "data": [
+      {
+        "label": "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf",
+        "value": 2790764.0
+      },
+      {
+        "label": "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese",
+        "value": 2759830.524999988
+      },
+      {
+        "label": "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese",
+        "value": 1442645.0
+      },
+      {
+        "label": "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\"",
+        "value": 934293.0
+      },
+      {
+        "label": "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz",
+        "value": 520095.0
+      },
+      {
+        "label": "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10",
+        "value": 492009.0
+      },
+      {
+        "label": "[311] LE SFOGLIATINE |4PZ.|300g.",
+        "value": 419857.67
+      },
+      {
+        "label": "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz",
+        "value": 373994.5
+      },
+      {
+        "label": "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz",
+        "value": 316072.0
+      },
+      {
+        "label": "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO",
+        "value": 299434.0
+      }
+    ],
+    "style": {
+      "palette": "professional",
+      "show_legend": false,
+      "show_values": true,
+      "animation_preset": "dynamic"
+    },
+    "sort": "desc"
+  },
+  "odoo_results": [
+    {
+      "index": 1,
+      "success": true,
+      "model": "sale.order.line",
+      "method": "read_group",
+      "domain": [],
+      "fields": [
+        "product_id",
+        "product_uom_qty:sum"
+      ],
+      "groupby": [
+        "product_id"
+      ],
+      "orderby": "product_uom_qty desc",
+      "order": null,
+      "type": "aggregation",
+      "count": 10,
+      "pagination": {
+        "total_records": 10,
+        "returned_records": 10,
+        "limit": 10,
+        "offset": 0,
+        "pages": 1,
+        "has_more": false
+      },
+      "error": null
+    }
+  ]
+}
+
+----- COMPLETE HTTP RESPONSE -----
+{
+  "success": true,
+  "data": {
+    "messages": [
+      {
+        "content": "## Prodotti più venduti (per quantità)\n\n| # | Prodotto | Quantità venduta |\n|---|----------|----------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%‑375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      }
+    ],
+    "current_user_message": "Mostrami un grafico a barre dei prodotti più venduti.",
+    "memory": [],
+    "conversation_id": "17a44204-e507-44a0-a2c7-d9eed9139762",
+    "user_id": 20,
+    "database_name": "DM-22RIC001-20260427",
+    "scope_allowed": true,
+    "scope_message": "",
+    "sub_requests": [
+      "Mostrami un grafico a barre dei prodotti più venduti."
+    ],
+    "scope": "IN_SCOPE",
+    "scope_confidence": 0.95,
+    "scope_continuation": false,
+    "scope_concepts": [
+      "grafici e visualizzazioni",
+      "prodotti",
+      "ordinamenti e classifiche",
+      "vendite"
+    ],
+    "scope_intent_family": "grafici_e_visualizzazioni",
+    "scope_reason": "Richiesta di visualizzare un grafico a barre dei prodotti più venduti, che rientra nelle funzionalità di analisi e visualizzazione dati di Portant.",
+    "scope_evidence": [
+      "la richiesta contiene 'grafico a barre', un alias di grafici e visualizzazioni",
+      "la richiesta menziona 'prodotti più venduti', che coinvolge prodotti e ordinamenti e classifiche",
+      "l'intento è di mostrare dati, tipico delle funzionalità di Portant"
+    ],
+    "plan": {
+      "agent": "odoo",
+      "action": "odoo_api_tool",
+      "domain": null,
+      "parameters": {
+        "model": "sale.order.line",
+        "method": "read_group",
+        "params": {
+          "domain": [],
+          "fields": [
+            "product_id",
+            "product_uom_qty:sum"
+          ],
+          "groupby": [
+            "product_id"
+          ],
+          "limit": 10,
+          "orderby": "product_uom_qty:sum desc",
+          "offset": 0,
+          "lazy": false
+        }
+      }
+    },
+    "dynamic_model_candidates": [
+      {
+        "id": 322,
+        "model": "report.all.channels.sales",
+        "name": "All sales orders grouped by sales channels",
+        "state": "base",
+        "model_name": "report.all.channels.sales",
+        "model_label": "All sales orders grouped by sales channels",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "sales",
+          "sale"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "amount",
+              "revenue",
+              "top",
+              "best",
+              "best selling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 186,
+        "model": "stock.change.product.qty",
+        "name": "Change Product Quantity",
+        "state": "base",
+        "model_name": "stock.change.product.qty",
+        "model_label": "Change Product Quantity",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:51:00",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products",
+          "quantity"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          },
+          {
+            "concept": "sales",
+            "queries": [
+              "sales",
+              "sale",
+              "quantity",
+              "amount",
+              "revenue",
+              "top",
+              "best",
+              "best selling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 458,
+        "model": "gamma.partner.product.code",
+        "name": "gamma.partner.product.code",
+        "state": "base",
+        "model_name": "gamma.partner.product.code",
+        "model_label": "gamma.partner.product.code",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:58",
+        "updated_at": "2026-09-08 13:34:51",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "model": "product.supplierinfo",
+        "name": "Information about a product vendor",
+        "state": "base",
+        "model_name": "product.supplierinfo",
+        "model_label": "Information about a product vendor",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 371,
+        "model": "mps.add_product",
+        "name": "mps.add_product",
+        "state": "base",
+        "model_name": "mps.add_product",
+        "model_label": "mps.add_product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 380,
+        "model": "mrp.product.direct_production",
+        "name": "mrp.product.direct_production",
+        "state": "base",
+        "model_name": "mrp.product.direct_production",
+        "model_label": "mrp.product.direct_production",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 454,
+        "model": "mrp.product.direct_production.line",
+        "name": "mrp.product.direct_production.line",
+        "state": "base",
+        "model_name": "mrp.product.direct_production.line",
+        "model_label": "mrp.product.direct_production.line",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "model": "product.product",
+        "name": "Product",
+        "state": "base",
+        "model_name": "product.product",
+        "model_label": "Product",
+        "model_description": null,
+        "source": "odoo.ir.model",
+        "discovered_at": "2026-09-02 09:50:59",
+        "updated_at": "2026-09-08 13:34:52",
+        "_score": 24.0,
+        "_semantic_queries": [
+          "product",
+          "products"
+        ],
+        "_semantic_concepts": [
+          {
+            "concept": "product",
+            "queries": [
+              "product",
+              "products"
+            ]
+          }
+        ]
+      }
+    ],
+    "odoo_results": [
+      {
+        "index": 1,
+        "request": "Mostrami un grafico a barre dei prodotti più venduti.",
+        "success": true,
+        "plan": {
+          "agent": "odoo",
+          "action": "odoo_api_tool",
+          "domain": null,
+          "parameters": {
+            "model": "sale.order.line",
+            "method": "read_group",
+            "params": {
+              "domain": [],
+              "fields": [
+                "product_id",
+                "product_uom_qty:sum"
+              ],
+              "groupby": [
+                "product_id"
+              ],
+              "limit": 10,
+              "orderby": "product_uom_qty desc",
+              "offset": 0,
+              "lazy": false
+            }
+          }
+        },
+        "odoo_data": {
+          "type": "aggregation",
+          "records": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "count": 10,
+          "aggregation": [
+            {
+              "product_id": [
+                22128,
+                "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+              ],
+              "__count": 14107,
+              "product_uom_qty_sum": 2790764.0
+            },
+            {
+              "product_id": [
+                20720,
+                "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 9838,
+              "product_uom_qty_sum": 2759830.524999988
+            },
+            {
+              "product_id": [
+                22164,
+                "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+              ],
+              "__count": 6805,
+              "product_uom_qty_sum": 1442645.0
+            },
+            {
+              "product_id": [
+                20714,
+                "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+              ],
+              "__count": 2094,
+              "product_uom_qty_sum": 934293.0
+            },
+            {
+              "product_id": [
+                20879,
+                "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+              ],
+              "__count": 5440,
+              "product_uom_qty_sum": 520095.0
+            },
+            {
+              "product_id": [
+                20908,
+                "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+              ],
+              "__count": 6231,
+              "product_uom_qty_sum": 492009.0
+            },
+            {
+              "product_id": [
+                20878,
+                "[311] LE SFOGLIATINE |4PZ.|300g."
+              ],
+              "__count": 5873,
+              "product_uom_qty_sum": 419857.67
+            },
+            {
+              "product_id": [
+                22063,
+                "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+              ],
+              "__count": 10732,
+              "product_uom_qty_sum": 373994.5
+            },
+            {
+              "product_id": [
+                20845,
+                "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+              ],
+              "__count": 5688,
+              "product_uom_qty_sum": 316072.0
+            },
+            {
+              "product_id": [
+                20856,
+                "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+              ],
+              "__count": 3563,
+              "product_uom_qty_sum": 299434.0
+            }
+          ],
+          "pagination": {
+            "total_records": 10,
+            "returned_records": 10,
+            "limit": 10,
+            "offset": 0,
+            "pages": 1,
+            "has_more": false
+          },
+          "aggregation_meta": {
+            "requested": [
+              [
+                "product_uom_qty",
+                "sum"
+              ]
+            ],
+            "available": true
+          },
+          "raw_result": {
+            "jsonrpc": "2.0",
+            "id": null,
+            "result": [
+              {
+                "product_id": [
+                  22128,
+                  "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf"
+                ],
+                "__count": 14107,
+                "product_uom_qty_sum": 2790764.0
+              },
+              {
+                "product_id": [
+                  20720,
+                  "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 9838,
+                "product_uom_qty_sum": 2759830.524999988
+              },
+              {
+                "product_id": [
+                  22164,
+                  "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese"
+                ],
+                "__count": 6805,
+                "product_uom_qty_sum": 1442645.0
+              },
+              {
+                "product_id": [
+                  20714,
+                  "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\""
+                ],
+                "__count": 2094,
+                "product_uom_qty_sum": 934293.0
+              },
+              {
+                "product_id": [
+                  20879,
+                  "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz"
+                ],
+                "__count": 5440,
+                "product_uom_qty_sum": 520095.0
+              },
+              {
+                "product_id": [
+                  20908,
+                  "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10"
+                ],
+                "__count": 6231,
+                "product_uom_qty_sum": 492009.0
+              },
+              {
+                "product_id": [
+                  20878,
+                  "[311] LE SFOGLIATINE |4PZ.|300g."
+                ],
+                "__count": 5873,
+                "product_uom_qty_sum": 419857.67
+              },
+              {
+                "product_id": [
+                  22063,
+                  "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz"
+                ],
+                "__count": 10732,
+                "product_uom_qty_sum": 373994.5
+              },
+              {
+                "product_id": [
+                  20845,
+                  "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz"
+                ],
+                "__count": 5688,
+                "product_uom_qty_sum": 316072.0
+              },
+              {
+                "product_id": [
+                  20856,
+                  "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO"
+                ],
+                "__count": 3563,
+                "product_uom_qty_sum": 299434.0
+              }
+            ],
+            "_python_aggregation": true,
+            "_pagination": {
+              "total": 476,
+              "limit": 10,
+              "offset": 0,
+              "pages": 48,
+              "has_more": true
+            }
+          }
+        },
+        "error": null
+      }
+    ],
+    "final_response": "## Prodotti più venduti (per quantità)\n\n| # | Prodotto | Quantità venduta |\n|---|----------|----------------|\n| 1 | [800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4% GR.375 PZ.3 10 cf | € 2.790.764,00 |\n| 2 | [230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese | € 2.759.830,52 |\n| 3 | [90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese | € 1.442.645,00 |\n| 4 | [22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\" | € 934.293,00 |\n| 5 | [33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz | € 520.095,00 |\n| 6 | [450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10 | € 492.009,00 |\n| 7 | [311] LE SFOGLIATINE |4PZ.|300g. | € 419.857,67 |\n| 8 | [60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva 250g 2pz | € 373.994,50 |\n| 9 | [240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%‑375g 3pz | € 316.072,00 |\n| 10 | [25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO | € 299.434,00 |",
+    "chart_payload": {
+      "request": "Mostrami un grafico a barre dei prodotti più venduti.",
+      "chart_type": "bar",
+      "orientation": "horizontal",
+      "title": "Top Selling Products by Quantity",
+      "source_index": 1,
+      "source_type": "aggregation",
+      "grouping_field": "product_id",
+      "value_field": "product_uom_qty_sum",
+      "x_field": null,
+      "bubble_size_field": null,
+      "data": [
+        {
+          "label": "[800] PIAD.ROMAGNOLA IGP ALLA RIMINESE ALL'OLIO EXTRAV. 4%  GR.375 PZ.3 10 cf",
+          "value": 2790764.0
+        },
+        {
+          "label": "[230] RICCIONE PIADINA 360g Pz.3 cf 15 Piadina Romagnola IGP alla Riminese",
+          "value": 2759830.524999988
+        },
+        {
+          "label": "[90] RICCIONE PIADINA 600g Pz.5 cf 10 Piadina Romagnola IGP alla Riminese",
+          "value": 1442645.0
+        },
+        {
+          "label": "[22] RICCIONE PIADINA 250g pz 2 \"Piadina Romagnola IGP alla Riminese\"",
+          "value": 934293.0
+        },
+        {
+          "label": "[33] Riccione Piadina Romagnola IGP La Spessa 450g 3pz",
+          "value": 520095.0
+        },
+        {
+          "label": "[450] LE MERAVIGLIE DI RICCIONE PIADINA GR.240 8 PZ cf 10",
+          "value": 492009.0
+        },
+        {
+          "label": "[311] LE SFOGLIATINE |4PZ.|300g.",
+          "value": 419857.67
+        },
+        {
+          "label": "[60] Riccione Piadina Senza Glutine all'olio extravergine d'oliva  250g 2pz",
+          "value": 373994.5
+        },
+        {
+          "label": "[240] Piad. Romagnola IGP alla Riminese Integrale con olio evo 5%-375g 3pz",
+          "value": 316072.0
+        },
+        {
+          "label": "[25] RICCIONE PIADINA Piadina Romagnola IGP alla Riminese con olio EVO 9% BIO",
+          "value": 299434.0
+        }
+      ],
+      "style": {
+        "palette": "professional",
+        "show_legend": false,
+        "show_values": true,
+        "animation_preset": "dynamic"
+      },
+      "sort": "desc"
+    }
+  }
+}
+
+==========================================================================================
+===== BATCH SUMMARY =====
+==========================================================================================
+1. OK | Mostrami i prodotti più venduti. | final_attempt=1
+2. OK | Quali prodotti hanno più vendite? | final_attempt=1
+3. OK | Mostrami la quantità venduta per prodotto. | final_attempt=1
+4. OK | Quali prodotti abbiamo acquistato di più? | final_attempt=1
+5. OK | Mostrami la quantità acquistata per prodotto. | final_attempt=1
+6. OK | Mostrami un grafico a barre dei prodotti più venduti. | final_attempt=1
+
+===== COUNTERS =====
+OK: 6
+RECOVERED AFTER RETRY: 0
+OUT_OF_SCOPE: 0
+AMBIGUOUS: 0
+FAILED: 0
+
+==========================================================================================
+LOG FILE: C:\Users\p.tiranti\Documents\Progetto chatbot - LangChain\odoo-ai-assistant\backend\logs\portant_ai_batch_3_20260908_152347.log
+==========================================================================================
+TIMEOUT CONFIG: connect=15s read=60s
+HTTP 200 (0.24s) POST /auth/logout
