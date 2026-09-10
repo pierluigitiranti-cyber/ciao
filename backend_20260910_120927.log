@@ -1,0 +1,3838 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-10T12:09:27
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.230:80/web/session/authenticate
+DATABASE: DM-22RIC001-20260427
+LOGIN: mvc@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 20
+USERNAME: mvc@digimarksrl.com
+NAME: mvc
+DATABASE: DM-22RIC001-20260427
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 20
+DATABASE: DM-22RIC001-20260427
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 20
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre del numero di prodotti
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre del numero di prodotti
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre del numero di prodotti
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: grafici e visualizzazioni
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti']
+REASON: L'utente chiede un grafico a barre che mostra il numero di prodotti, una richiesta tipica di visualizzazione di dati di inventario in Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre del numero di prodotti
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: grafici e visualizzazioni
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti']
+REQUEST COUNT: 1
+REASON: L'utente chiede un grafico a barre che mostra il numero di prodotti, una richiesta tipica di visualizzazione di dati di inventario in Portant.
+EVIDENCE: ['Mostrami un grafico a barre del numero di prodotti', 'grafico a barre e numero di prodotti']
+REQUEST 1: Mostrami un grafico a barre del numero di prodotti
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre del numero di prodotti
+MODELS LOADED: 441
+MATCHED MODELS: 42
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre del numero di prodotti
+QUERIES: ['product', 'products', 'product count', 'count of products', 'total products', 'product quantity']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: product count
+MODELS LOADED: 441
+MATCHED MODELS: 121
+
+===== MODEL SEARCH INDEX =====
+QUERY: count of products
+MODELS LOADED: 441
+MATCHED MODELS: 118
+
+===== MODEL SEARCH INDEX =====
+QUERY: total products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: product quantity
+MODELS LOADED: 441
+MATCHED MODELS: 47
+
+===== SEMANTIC MODEL CONTEXT =====
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products', 'product count', 'total products', 'product quantity']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product', 'product count']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre del numero di prodotti
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre del numero di prodotti
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre del numero di prodotti
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: True
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: product.product
+METHOD: search_count
+DATE FIELD: None
+EXPLICIT LIMIT: None
+PARTNERS: []
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': []}
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.product', 'method': 'search_count', 'params': {'domain': []}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre del numero di prodotti
+MODEL: product.product
+METHOD: search_count
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.product', 'method': 'search_count', 'params': {'domain': []}}}
+
+===== POST PARTNER RESOLUTION =====
+MODEL: product.product
+METHOD: search_count
+DOMAIN: []
+
+===== MODEL DISCOVERY =====
+MODEL: product.product
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.product
+FIELDS: 173
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - categ_id | Internal Category | relation: product.category
+ - category_uom_id | Category | relation: product.uom.categ
+ - company_id | Company | relation: res.company
+ - cost_currency_id | Cost Currency | relation: res.currency
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - gamma_tax_id | Gamma Tax | relation: account.tax
+ - label_id | Label layout | relation: dm_qzindustrial_printer.labels
+ - location_id | Location | relation: stock.location
+ - mps_default_bom | Default Bom | relation: mrp.bom
+ - mps_in_use_bom | In Use Bom | relation: mrp.bom
+ - pricelist_id | Pricelist | relation: product.pricelist
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_variant_id | Product | relation: product.product
+ - property_account_creditor_price_difference | Price Difference Account | relation: account.account
+ - property_account_expense_id | Expense Account | relation: account.account
+ - property_account_income_id | Income Account | relation: account.account
+ - property_stock_account_input | Stock Input Account | relation: account.account
+ - property_stock_account_output | Stock Output Account | relation: account.account
+ - property_stock_inventory | Inventory Location | relation: stock.location
+ - property_stock_production | Production Location | relation: stock.location
+ - responsible_id | Responsible | relation: res.users
+ - uom_id | Unit of Measure | relation: product.uom
+ - uom_po_id | Purchase Unit of Measure | relation: product.uom
+ - warehouse_id | Warehouse | relation: stock.warehouse
+ - warehouse_uom_id | Warehouse Uom | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: product
+USER REQUEST: 
+SOURCE TOKENS: ['product']
+SOURCE NON-GENERIC TOKENS: ['product']
+FIELD CANDIDATES:
+ - product_variant_id | Product | many2one | relation: product.product | score: 495.0
+ - product_tmpl_id | Product Template | many2one | relation: product.template | score: 415.0
+ - packaging_ids | Product Packages | one2many | relation: product.packaging | score: 355.0
+ - categ_id | Internal Category | many2one | relation: product.category | score: 335.0
+ - product_variant_ids | Products | one2many | relation: product.product | score: 315.0
+ - attribute_line_ids | Product Attributes | one2many | relation: product.attribute.line | score: 295.0
+ - category_uom_id | Category | many2one | relation: product.uom.categ | score: 275.0
+ - pricelist_id | Pricelist | many2one | relation: product.pricelist | score: 275.0
+ - uom_id | Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - uom_po_id | Purchase Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - warehouse_uom_id | Warehouse Uom | many2one | relation: product.uom | score: 275.0
+ - attribute_value_ids | Attributes | many2many | relation: product.attribute.value | score: 210.0
+ - item_ids | Pricelist Items | one2many | relation: product.pricelist.item | score: 210.0
+ - pricelist_item_ids | Pricelist Item | many2many | relation: product.pricelist.item | score: 210.0
+ - seller_ids | Vendors | one2many | relation: product.supplierinfo | score: 210.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_variant_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 495.0
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REASON: semantic concepts fully covered
+SEMANTIC RESOLUTIONS: {'product': 'product_variant_id'}
+
+===== DYNAMIC FIELD RESOLUTION =====
+AUTO FIELDS: ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: None
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'product.product', 'method': 'search_count', 'params': {'domain': [], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: product.product
+METHOD: search_count
+FIELDS: ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.230:80/api/product.product/search_count
+BODY: {'domain': [], 'groupby': [], 'fields': ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.230:80/api/product.product/search_count
+METHOD: POST
+BODY: {'domain': [], 'groupby': [], 'fields': ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: count
+COUNT: 2454
+TOTAL RECORDS: 2454
+RETURNED RECORDS: 0
+LIMIT: 0
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami un grafico a barre del numero di prodotti
+ASSISTANT MESSAGE: Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+CONVERSATION TITLE UPDATED: Mostrami un grafico a barre del numero di prodotti
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami un grafico a barre del numero di prodotti
+ - assistant : Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre del numero di prodotti
+SUB_REQUESTS: ['Mostrami un grafico a barre del numero di prodotti']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.product
+METHOD: search_count
+DOMAIN: []
+FIELDS: ['display_name', 'description', 'name', 'activity_type_id', 'company_id', 'activity_user_id', 'categ_id', 'category_uom_id']
+ORDER: None
+LIMIT: None
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: product.product
+METHOD: search_count
+DOMAIN: []
+RESULT TYPE: count
+TOTAL: 2454
+RETURNED: 0
+LIMIT: 0
+PAGES: 1
+HAS MORE: False
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 115
+PREVIEW: Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+
+===== CHART ANALYZER =====
+COUNT RESULT DETECTED
+COUNT: 2454
+CHART DATA: [{'label': 'Totale prodotti', 'value': 2454}]
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: vertical
+TITLE: Totale prodotti
+SOURCE INDEX: 1
+GROUPING: None
+VALUE: None
+CHART DATA: [{'label': 'Totale prodotti', 'value': 2454}]
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Totale prodotti
+SOURCE: 1
+SOURCE TYPE: analysis
+GROUPING: None
+VALUE: None
+POINTS: 1
+DATA: [{'label': 'Totale prodotti', 'value': 2454.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre dei prodotti divisi per categoria
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami un grafico a barre del numero di prodotti'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per categoria
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per categoria
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'categorie prodotto']
+REASON: Richiesta di un grafico a barre dei prodotti divisi per categoria, chiaramente in ambito Portant e continuazione della precedente richiesta di visualizzazione.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'categorie prodotto']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per categoria
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'categorie prodotto']
+REQUEST COUNT: 1
+REASON: Richiesta di un grafico a barre dei prodotti divisi per categoria, chiaramente in ambito Portant e continuazione della precedente richiesta di visualizzazione.
+EVIDENCE: ["utilizza il termine 'grafico a barre' che appartiene al concetto 'grafici e visualizzazioni'", "fa riferimento a 'prodotti' e 'categorie prodotto', concetti in‑scope", 'continua la conversazione precedente che chiedeva un grafico sui prodotti']
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per categoria
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per categoria
+MODELS LOADED: 441
+MATCHED MODELS: 5
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per categoria
+QUERIES: ['product', 'products', 'category', 'categories', 'product category', 'product categories']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: category
+MODELS LOADED: 441
+MATCHED MODELS: 5
+
+===== MODEL SEARCH INDEX =====
+QUERY: categories
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: product category
+MODELS LOADED: 441
+MATCHED MODELS: 43
+
+===== MODEL SEARCH INDEX =====
+QUERY: product categories
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== SEMANTIC MODEL CONTEXT =====
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products', 'product category', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products', 'product categories']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per categoria
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per categoria
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per categoria
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.product
+METHOD: read_group
+DATE FIELD: None
+EXPLICIT LIMIT: None
+PARTNERS: []
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['categ_id', '__count'], 'groupby': ['categ_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.product', 'method': 'read_group', 'params': {'domain': [], 'fields': ['categ_id', '__count'], 'groupby': ['categ_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per categoria
+MODEL: product.product
+METHOD: read_group
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'category', 'queries': ['category', 'categories']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.product', 'method': 'read_group', 'params': {'domain': [], 'fields': ['categ_id', '__count'], 'groupby': ['categ_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== POST PARTNER RESOLUTION =====
+MODEL: product.product
+METHOD: read_group
+DOMAIN: []
+
+===== MODEL DISCOVERY =====
+MODEL: product.product
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.product
+FIELDS: 173
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - categ_id | Internal Category | relation: product.category
+ - category_uom_id | Category | relation: product.uom.categ
+ - company_id | Company | relation: res.company
+ - cost_currency_id | Cost Currency | relation: res.currency
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - gamma_tax_id | Gamma Tax | relation: account.tax
+ - label_id | Label layout | relation: dm_qzindustrial_printer.labels
+ - location_id | Location | relation: stock.location
+ - mps_default_bom | Default Bom | relation: mrp.bom
+ - mps_in_use_bom | In Use Bom | relation: mrp.bom
+ - pricelist_id | Pricelist | relation: product.pricelist
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_variant_id | Product | relation: product.product
+ - property_account_creditor_price_difference | Price Difference Account | relation: account.account
+ - property_account_expense_id | Expense Account | relation: account.account
+ - property_account_income_id | Income Account | relation: account.account
+ - property_stock_account_input | Stock Input Account | relation: account.account
+ - property_stock_account_output | Stock Output Account | relation: account.account
+ - property_stock_inventory | Inventory Location | relation: stock.location
+ - property_stock_production | Production Location | relation: stock.location
+ - responsible_id | Responsible | relation: res.users
+ - uom_id | Unit of Measure | relation: product.uom
+ - uom_po_id | Purchase Unit of Measure | relation: product.uom
+ - warehouse_id | Warehouse | relation: stock.warehouse
+ - warehouse_uom_id | Warehouse Uom | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: product
+USER REQUEST: 
+SOURCE TOKENS: ['product']
+SOURCE NON-GENERIC TOKENS: ['product']
+FIELD CANDIDATES:
+ - product_variant_id | Product | many2one | relation: product.product | score: 495.0
+ - product_tmpl_id | Product Template | many2one | relation: product.template | score: 415.0
+ - packaging_ids | Product Packages | one2many | relation: product.packaging | score: 355.0
+ - categ_id | Internal Category | many2one | relation: product.category | score: 335.0
+ - product_variant_ids | Products | one2many | relation: product.product | score: 315.0
+ - attribute_line_ids | Product Attributes | one2many | relation: product.attribute.line | score: 295.0
+ - category_uom_id | Category | many2one | relation: product.uom.categ | score: 275.0
+ - pricelist_id | Pricelist | many2one | relation: product.pricelist | score: 275.0
+ - uom_id | Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - uom_po_id | Purchase Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - warehouse_uom_id | Warehouse Uom | many2one | relation: product.uom | score: 275.0
+ - attribute_value_ids | Attributes | many2many | relation: product.attribute.value | score: 210.0
+ - item_ids | Pricelist Items | one2many | relation: product.pricelist.item | score: 210.0
+ - pricelist_item_ids | Pricelist Item | many2many | relation: product.pricelist.item | score: 210.0
+ - seller_ids | Vendors | one2many | relation: product.supplierinfo | score: 210.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_variant_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 495.0
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: products
+USER REQUEST: 
+SOURCE TOKENS: ['products']
+SOURCE NON-GENERIC TOKENS: ['products']
+FIELD CANDIDATES:
+ - product_variant_ids | Products | one2many | relation: product.product | score: 160.0
+ - incoming_qty | Incoming | float | relation: None | score: 60.0
+ - outgoing_qty | Outgoing | float | relation: None | score: 60.0
+ - property_cost_method | Costing Method | selection | relation: None | score: 60.0
+ - qty_available | Quantity On Hand | float | relation: None | score: 60.0
+ - sale_delay | Customer Lead Time | float | relation: None | score: 60.0
+ - type | Product Type | selection | relation: None | score: 60.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_variant_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: product.product
+SELECTED LABEL: Products
+SCORE: 160.0
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: category
+USER REQUEST: 
+SOURCE TOKENS: ['category']
+SOURCE NON-GENERIC TOKENS: ['category']
+FIELD CANDIDATES:
+ - categ_id | Internal Category | many2one | relation: product.category | score: 420.0
+ - category_uom_id | Category | many2one | relation: product.uom.categ | score: 305.0
+ - property_account_expense_id | Expense Account | many2one | relation: account.account | score: 85.0
+ - property_account_income_id | Income Account | many2one | relation: account.account | score: 85.0
+ - property_stock_account_input | Stock Input Account | many2one | relation: account.account | score: 85.0
+ - property_stock_account_output | Stock Output Account | many2one | relation: account.account | score: 85.0
+ - uom_po_id | Purchase Unit of Measure | many2one | relation: product.uom | score: 85.0
+ - route_from_categ_ids | Category Routes | many2many | relation: stock.location.route | score: 80.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: category
+SELECTED FIELD: categ_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.category
+SELECTED LABEL: Internal Category
+SCORE: 420.0
+
+===== GROUPBY SEMANTIC CHECK PASSED =====
+GROUPBY: categ_id
+RESOLVED FIELD: categ_id
+CONCEPT: category
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: product
+USER REQUEST: 
+SOURCE TOKENS: ['product']
+SOURCE NON-GENERIC TOKENS: ['product']
+FIELD CANDIDATES:
+ - product_variant_id | Product | many2one | relation: product.product | score: 495.0
+ - product_tmpl_id | Product Template | many2one | relation: product.template | score: 415.0
+ - packaging_ids | Product Packages | one2many | relation: product.packaging | score: 355.0
+ - categ_id | Internal Category | many2one | relation: product.category | score: 335.0
+ - product_variant_ids | Products | one2many | relation: product.product | score: 315.0
+ - attribute_line_ids | Product Attributes | one2many | relation: product.attribute.line | score: 295.0
+ - category_uom_id | Category | many2one | relation: product.uom.categ | score: 275.0
+ - pricelist_id | Pricelist | many2one | relation: product.pricelist | score: 275.0
+ - uom_id | Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - uom_po_id | Purchase Unit of Measure | many2one | relation: product.uom | score: 275.0
+ - warehouse_uom_id | Warehouse Uom | many2one | relation: product.uom | score: 275.0
+ - attribute_value_ids | Attributes | many2many | relation: product.attribute.value | score: 210.0
+ - item_ids | Pricelist Items | one2many | relation: product.pricelist.item | score: 210.0
+ - pricelist_item_ids | Pricelist Item | many2many | relation: product.pricelist.item | score: 210.0
+ - seller_ids | Vendors | one2many | relation: product.supplierinfo | score: 210.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_variant_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 495.0
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: category
+USER REQUEST: 
+SOURCE TOKENS: ['category']
+SOURCE NON-GENERIC TOKENS: ['category']
+FIELD CANDIDATES:
+ - categ_id | Internal Category | many2one | relation: product.category | score: 420.0
+ - category_uom_id | Category | many2one | relation: product.uom.categ | score: 305.0
+ - property_account_expense_id | Expense Account | many2one | relation: account.account | score: 85.0
+ - property_account_income_id | Income Account | many2one | relation: account.account | score: 85.0
+ - property_stock_account_input | Stock Input Account | many2one | relation: account.account | score: 85.0
+ - property_stock_account_output | Stock Output Account | many2one | relation: account.account | score: 85.0
+ - uom_po_id | Purchase Unit of Measure | many2one | relation: product.uom | score: 85.0
+ - route_from_categ_ids | Category Routes | many2many | relation: stock.location.route | score: 80.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: category
+SELECTED FIELD: categ_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.category
+SELECTED LABEL: Internal Category
+SCORE: 420.0
+
+===== DYNAMIC MODEL REQUIRED-FIELD COMPATIBILITY =====
+REQUIRED FIELDS: ['categ_id']
+FIELD COMPATIBLE: categ_id -> categ_id | exact technical match
+  LABEL: Internal Category
+  TYPE: many2one
+  RELATION: product.category
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED FIELDS: ['categ_id']
+RESOLVED REQUIRED FIELDS: {'categ_id': 'categ_id'}
+
+===== FINAL GROUPBY =====
+GROUPBY: ['categ_id']
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['categ_id', '__count']
+GROUPBY: ['categ_id']
+ORDERBY: __count desc
+ORDER: None
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'product.product', 'method': 'read_group', 'params': {'domain': [], 'fields': ['categ_id', '__count'], 'groupby': ['categ_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: product.product
+METHOD: read_group
+FIELDS: ['categ_id', '__count']
+GROUPBY: ['categ_id']
+ORDERBY: __count desc
+DOMAIN: []
+
+===== PYTHON READ_GROUP AGGREGATION =====
+MODEL: product.product
+GROUPBY: ['categ_id']
+DOMAIN: []
+
+===== PYTHON AGGREGATION PAGE =====
+OFFSET: 0
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.230:80/api/product.product/search_read
+METHOD: POST
+BODY: {'domain': [], 'fields': ['id', 'categ_id'], 'limit': 10000, 'offset': 0}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+PAGE RECORDS: 2454
+
+===== PYTHON AGGREGATION DATASET =====
+TOTAL RECORDS: 2454
+
+===== PYTHON AGGREGATION SUCCESS =====
+TOTAL GROUPS: 2
+RETURNED GROUPS: 2
+ORDERBY: __count desc
+
+===== Portant NORMALIZED RESULT =====
+TYPE: aggregation
+COUNT: 2
+TOTAL RECORDS: 2
+RETURNED RECORDS: 2
+LIMIT: 10
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 2
+RECORDS SENT TO RESPONSE LLM: 2
+
+===== AGGREGATION PAYLOAD TO RESPONSE LLM =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per categoria
+MODEL: product.product
+METHOD: read_group
+ORDERBY: __count desc
+AGGREGATION RECORDS:
+ 1. {'categ_id': [1, 'All'], '__count': 2453}
+ 2. {'categ_id': [42, 'COSTO MEDIO PONDERATO'], '__count': 1}
+
+===== RESPONSE RESULT =====
+## 1. Prodotti per categoria (conteggio)
+
+| # | Categoria | Conteggio |
+|---|----------|-------|
+| 1 | All | 2.453 |
+| 2 | COSTO MEDIO PONDERATO | 1 |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+CHART PAYLOAD: {'request': 'Mostrami un grafico a barre dei prodotti divisi per categoria', 'grouping_field': 'categ_id', 'value_field': '__count', 'data': [{'label': 'All', 'value': 2453}, {'label': 'COSTO MEDIO PONDERATO', 'value': 1}]}
+USER MESSAGE: Mostrami un grafico a barre dei prodotti divisi per categoria
+ASSISTANT MESSAGE: ## 1. Prodotti per categoria (conteggio)
+
+| # | Categoria | Conteggio |
+|---|----------|-------|
+| 1 | All | 2.453 |
+| 2 | COSTO MEDIO PONDERATO | 1 |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami un grafico a barre del numero di prodotti
+ - assistant : Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+ - user : Mostrami un grafico a barre dei prodotti divisi per categoria
+ - assistant : ## 1. Prodotti per categoria (conteggio)
+
+| # | Categoria | Conteggio |
+|---|----------|-------|
+| 1 | All | 2.453 |
+| 2 | COSTO MEDIO PONDERATO | 1 |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per categoria
+SUB_REQUESTS: ['Mostrami un grafico a barre dei prodotti divisi per categoria']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.product
+METHOD: read_group
+DOMAIN: []
+FIELDS: ['categ_id', '__count']
+ORDER: None
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: product.product
+METHOD: read_group
+DOMAIN: []
+RESULT TYPE: aggregation
+TOTAL: 2
+RETURNED: 2
+LIMIT: 10
+PAGES: 1
+HAS MORE: False
+FIRST RECORD: {'categ_id': [1, 'All'], '__count': 2453}
+SECOND RECORD: {'categ_id': [42, 'COSTO MEDIO PONDERATO'], '__count': 1}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 150
+PREVIEW: ## 1. Prodotti per categoria (conteggio)  | # | Categoria | Conteggio | |---|----------|-------| | 1 | All | 2.453 | | 2 | COSTO MEDIO PONDERATO | 1 |
+
+===== CHART ANALYZER =====
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: vertical
+TITLE: Prodotti per categoria
+SOURCE INDEX: 0
+GROUPING: categ_id
+VALUE: __count
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Prodotti per categoria
+SOURCE: 1
+SOURCE TYPE: aggregation
+GROUPING: categ_id
+VALUE: __count
+POINTS: 2
+DATA: [{'label': 'All', 'value': 2453.0}, {'label': 'COSTO MEDIO PONDERATO', 'value': 1.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+MESSAGES LOADED: 4
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami un grafico a barre del numero di prodotti'}
+LAST MESSAGE: {'role': 'assistant', 'content': '## 1. Prodotti per categoria (conteggio)\n\n| # | Categoria | Conteggio |\n|---|----------|-------|\n| 1 | All | 2.453 |\n| 2 | COSTO MEDIO PONDERATO | 1 |'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['prodotti', 'fornitori', 'grafici e visualizzazioni']
+REASON: Richiesta di un grafico a barre che mostra i prodotti raggruppati per fornitore, in linea con le funzionalità di visualizzazione dei dati di Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['prodotti', 'fornitori', 'grafici e visualizzazioni']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['prodotti', 'fornitori', 'grafici e visualizzazioni']
+REQUEST COUNT: 1
+REASON: Richiesta di un grafico a barre che mostra i prodotti raggruppati per fornitore, in linea con le funzionalità di visualizzazione dei dati di Portant.
+EVIDENCE: ['Mostrami un grafico a barre dei prodotti divisi per fornitore', 'parole chiave: grafico a barre, prodotti, fornitori']
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore
+MODELS LOADED: 441
+MATCHED MODELS: 4
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+QUERIES: ['product', 'products', 'supplier', 'suppliers', 'vendor', 'vendors', 'product supplier']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: supplier
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: suppliers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendor
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendors
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: product supplier
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== SEMANTIC MODEL CONTEXT =====
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'supplier', 'vendor', 'vendors', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+DATE FIELD: None
+EXPLICIT LIMIT: None
+PARTNERS: []
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+MODEL: product.supplierinfo
+METHOD: read_group
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== POST PARTNER RESOLUTION =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+
+===== MODEL DISCOVERY =====
+MODEL: product.supplierinfo
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== DYNAMIC RELATION FIELDS =====
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - name | Vendor | relation: res.partner
+ - product_id | Product Variant | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom | Vendor Unit of Measure | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== CURRENT MODEL REJECTED =====
+MODEL: product.supplierinfo
+REASON: required query fields/concepts are not compatible
+
+============================================
+===== DYNAMIC MODEL FALLBACK =====
+CURRENT MODEL: product.supplierinfo
+REQUIRED FIELDS: ['partner_id']
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[['model', '!=', 'product.supplierinfo']]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== DYNAMIC MODEL CANDIDATE VERIFICATION =====
+TOTAL MODEL CANDIDATES: 50
+VERIFYING BOUNDED TOP CANDIDATES AGAINST ir.model.fields
+
+===== DYNAMIC MODEL CANDIDATES =====
+ - gamma.partner.product.code | gamma.partner.product.code | score: 160.0
+ - mps.add_product | mps.add_product | score: 160.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 160.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 160.0
+ - product.attribute | Product Attribute | score: 160.0
+ - product.product | Product | score: 160.0
+ - stock.change.product.qty | Change Product Quantity | score: 160.0
+ - account.reconcile.model | Preset to create journal entries during a invoices and payments matching | score: 16.0
+ - mail.channel.partner | Listeners of a Channel | score: 16.0
+ - stock.picking.to.batch | Add pickings to a batch picking | score: 16.0
+ - report.paperformat | Allows customization of a report. | score: 8.0
+ - mrp.product.produce | Record Production | score: 6.0
+ - product.attribute.price | product.attribute.price | score: 6.0
+ - product.attribute.value | product.attribute.value | score: 6.0
+ - product.category | Product Category | score: 6.0
+ - product.packaging | Packaging | score: 6.0
+ - product.price.history | product.price.history | score: 6.0
+ - product.price_list | Price List | score: 6.0
+ - product.pricelist | Pricelist | score: 6.0
+ - product.pricelist.item | Pricelist item | score: 6.0
+ - product.putaway | Put Away Strategy | score: 6.0
+ - product.removal | Removal Strategy | score: 6.0
+ - product.template | Product Template | score: 6.0
+ - product.uom | Product Unit of Measure | score: 6.0
+ - product.uom.categ | Product UoM Categories | score: 6.0
+ - stock.warehouse.product.movement.download | stock.warehouse.product.movement.download | score: 6.0
+ - transfer_product_from_udc_wiz | transfer_product_from_udc_wiz | score: 6.0
+ - transfer_product_history | transfer_product_history | score: 6.0
+ - mrp.product.produce.line | Record Production Line | score: 4.0
+ - product.attribute.line | product.attribute.line | score: 4.0
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model.fields/search_read
+MODELLO: ir.model.fields
+METHOD: search_read
+ARGS: [[['model', 'in', ['gamma.partner.product.code', 'mps.add_product', 'mrp.product.direct_production', 'mrp.product.direct_production.line', 'product.attribute', 'product.product', 'stock.change.product.qty', 'account.reconcile.model', 'mail.channel.partner', 'stock.picking.to.batch', 'report.paperformat', 'mrp.product.produce', 'product.attribute.price', 'product.attribute.value', 'product.category', 'product.packaging', 'product.price.history', 'product.price_list', 'product.pricelist', 'product.pricelist.item', 'product.putaway', 'product.removal', 'product.template', 'product.uom', 'product.uom.categ', 'stock.warehouse.product.movement.download', 'transfer_product_from_udc_wiz', 'transfer_product_history', 'mrp.product.produce.line', 'product.attribute.line', '_unknown', 'account.abstract.payment', 'account.account', 'account.account.tag', 'account.account.template', 'account.account.type', 'account.aged.trial.balance', 'account.analytic.account', 'account.analytic.tag', 'account.bank.statement', 'account.bank.statement.cashbox', 'account.bank.statement.closebalance', 'account.bank.statement.import', 'account.bank.statement.import.journal.creation', 'account.cash.rounding', 'account.chart.template', 'account.financial.year.op', 'account.fiscal.position', 'account.fiscal.position.account', 'account.fiscal.position.account.template']]]]
+KWARGS: {'fields': ['id', 'name', 'field_description', 'help', 'ttype', 'relation', 'required', 'readonly', 'store', 'index', 'model'], 'limit': 0, 'order': 'model asc, name asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+----- CHECKING MODEL -----
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: product
+USER REQUEST: 
+SOURCE TOKENS: ['product']
+SOURCE NON-GENERIC TOKENS: ['product']
+FIELD CANDIDATES:
+ - product_id | Product | many2one | relation: product.product | score: 505.0
+ - partner_product_code | Partner Product Code | char | relation: False | score: 150.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+FIELD COUNT: 79
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+FIELD COUNT: 17
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute
+MODEL SCORE: 160.0
+FIELD COUNT: 12
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.product
+MODEL SCORE: 160.0
+FIELD COUNT: 173
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.product
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.reconcile.model
+MODEL SCORE: 16.0
+FIELD COUNT: 25
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.reconcile.model
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mail.channel.partner
+MODEL SCORE: 16.0
+FIELD COUNT: 14
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mail.channel.partner
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.picking.to.batch
+MODEL SCORE: 16.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.picking.to.batch
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: report.paperformat
+MODEL SCORE: 8.0
+FIELD COUNT: 21
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: report.paperformat
+MODEL SCORE: 8.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.category
+MODEL SCORE: 6.0
+FIELD COUNT: 26
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.category
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.packaging
+MODEL SCORE: 6.0
+FIELD COUNT: 21
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.packaging
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price.history
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price.history
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price_list
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price_list
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist.item
+MODEL SCORE: 6.0
+FIELD COUNT: 36
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist.item
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.putaway
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.putaway
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.removal
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.removal
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.template
+MODEL SCORE: 6.0
+FIELD COUNT: 154
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.template
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+FIELD COUNT: 29
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+FIELD COUNT: 14
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: _unknown
+MODEL SCORE: 0.0
+FIELD COUNT: 3
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: _unknown
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.template
+MODEL SCORE: 0.0
+FIELD COUNT: 18
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.type
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.type
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+FIELD COUNT: 14
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+FIELD COUNT: 29
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+FIELD COUNT: 40
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+FIELD COUNT: 7
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+FIELD COUNT: 42
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+FIELD COUNT: 12
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+FIELD COUNT: 31
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position.account
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position.account.template
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position.account.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+===== DYNAMIC MODEL FALLBACK FAILED =====
+NO COMPATIBLE MODEL FOUND
+
+===== Portant QUERY ERROR =====
+QUERY: 1
+TYPE: ValueError
+MESSAGE: Nessun modello Odoo compatibile è stato trovato dinamicamente per soddisfare la richiesta.
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 0
+FAILED: 1
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 0
+FAILED: 1
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore
+ASSISTANT MESSAGE: La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 6
+ - user : Mostrami un grafico a barre del numero di prodotti
+ - assistant : Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+ - user : Mostrami un grafico a barre dei prodotti divisi per categoria
+ - assistant : ## 1. Prodotti per categoria (conteggio)
+
+| # | Categoria | Conteggio |
+|---|----------|-------|
+| 1 | All | 2.453 |
+| 2 | COSTO MEDIO PONDERATO | 1 |
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore
+ - assistant : La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+SUB_REQUESTS: ['Mostrami un grafico a barre dei prodotti divisi per fornitore']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+FIELDS: ['partner_id', '__count']
+ORDER: None
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: False
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+RESULT TYPE: None
+TOTAL: None
+RETURNED: None
+LIMIT: None
+PAGES: None
+HAS MORE: None
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 141
+PREVIEW: La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+MESSAGES LOADED: 6
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami un grafico a barre del numero di prodotti'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: grafico_a_barre_prodotti_per_fornitore
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REASON: Richiesta di grafico a barre dei prodotti divisi per fornitore, pertinente alle funzionalità di visualizzazione dati di Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: grafico_a_barre_prodotti_per_fornitore
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REASON: Richiesta di grafico a barre dei prodotti divisi per fornitore, pertinente alle funzionalità di visualizzazione dati di Portant.
+EVIDENCE: ['richiesta di grafico a barre', 'riferimento a prodotti e fornitori', 'continuazione del pattern di visualizzazione precedente']
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore
+MODELS LOADED: 441
+MATCHED MODELS: 4
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+QUERIES: ['product', 'products', 'item', 'items', 'supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: item
+MODELS LOADED: 441
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: items
+MODELS LOADED: 441
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: supplier
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: suppliers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendor
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendors
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: provider
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: providers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== SEMANTIC MODEL CONTEXT =====
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'supplier', 'vendor', 'vendors']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: product.pricelist.item
+SEMANTIC QUERIES: ['item', 'items']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.pricelist.item | Pricelist item | score: 24.0
+ - product.product | Product | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.pricelist.item | Pricelist item | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.pricelist.item | Pricelist item | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+DATE FIELD: None
+EXPLICIT LIMIT: None
+PARTNERS: []
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+MODEL: product.supplierinfo
+METHOD: read_group
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'orderby': '__count desc', 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== POST PARTNER RESOLUTION =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+
+===== MODEL DISCOVERY =====
+MODEL: product.supplierinfo
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== DYNAMIC RELATION FIELDS =====
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - name | Vendor | relation: res.partner
+ - product_id | Product Variant | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom | Vendor Unit of Measure | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== CURRENT MODEL REJECTED =====
+MODEL: product.supplierinfo
+REASON: required query fields/concepts are not compatible
+
+============================================
+===== DYNAMIC MODEL FALLBACK =====
+CURRENT MODEL: product.supplierinfo
+REQUIRED FIELDS: ['partner_id']
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products', 'item', 'items']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors', 'provider', 'providers']}]
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[['model', '!=', 'product.supplierinfo']]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== DYNAMIC MODEL CANDIDATE VERIFICATION =====
+TOTAL MODEL CANDIDATES: 50
+VERIFYING BOUNDED TOP CANDIDATES AGAINST ir.model.fields
+
+===== DYNAMIC MODEL CANDIDATES =====
+ - gamma.partner.product.code | gamma.partner.product.code | score: 160.0
+ - mps.add_product | mps.add_product | score: 160.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 160.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 160.0
+ - product.pricelist.item | Pricelist item | score: 160.0
+ - product.product | Product | score: 160.0
+ - stock.change.product.qty | Change Product Quantity | score: 160.0
+ - account.reconcile.model | Preset to create journal entries during a invoices and payments matching | score: 16.0
+ - mail.channel.partner | Listeners of a Channel | score: 16.0
+ - stock.picking.to.batch | Add pickings to a batch picking | score: 16.0
+ - report.paperformat | Allows customization of a report. | score: 8.0
+ - mrp.product.produce | Record Production | score: 6.0
+ - product.attribute | Product Attribute | score: 6.0
+ - product.attribute.price | product.attribute.price | score: 6.0
+ - product.attribute.value | product.attribute.value | score: 6.0
+ - product.category | Product Category | score: 6.0
+ - product.packaging | Packaging | score: 6.0
+ - product.price.history | product.price.history | score: 6.0
+ - product.price_list | Price List | score: 6.0
+ - product.pricelist | Pricelist | score: 6.0
+ - product.putaway | Put Away Strategy | score: 6.0
+ - product.removal | Removal Strategy | score: 6.0
+ - product.template | Product Template | score: 6.0
+ - product.uom | Product Unit of Measure | score: 6.0
+ - product.uom.categ | Product UoM Categories | score: 6.0
+ - stock.warehouse.product.movement.download | stock.warehouse.product.movement.download | score: 6.0
+ - transfer_product_from_udc_wiz | transfer_product_from_udc_wiz | score: 6.0
+ - transfer_product_history | transfer_product_history | score: 6.0
+ - mrp.product.produce.line | Record Production Line | score: 4.0
+ - product.attribute.line | product.attribute.line | score: 4.0
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model.fields/search_read
+MODELLO: ir.model.fields
+METHOD: search_read
+ARGS: [[['model', 'in', ['gamma.partner.product.code', 'mps.add_product', 'mrp.product.direct_production', 'mrp.product.direct_production.line', 'product.pricelist.item', 'product.product', 'stock.change.product.qty', 'account.reconcile.model', 'mail.channel.partner', 'stock.picking.to.batch', 'report.paperformat', 'mrp.product.produce', 'product.attribute', 'product.attribute.price', 'product.attribute.value', 'product.category', 'product.packaging', 'product.price.history', 'product.price_list', 'product.pricelist', 'product.putaway', 'product.removal', 'product.template', 'product.uom', 'product.uom.categ', 'stock.warehouse.product.movement.download', 'transfer_product_from_udc_wiz', 'transfer_product_history', 'mrp.product.produce.line', 'product.attribute.line', '_unknown', 'account.abstract.payment', 'account.account', 'account.account.tag', 'account.account.template', 'account.account.type', 'account.aged.trial.balance', 'account.analytic.account', 'account.analytic.tag', 'account.bank.statement', 'account.bank.statement.cashbox', 'account.bank.statement.closebalance', 'account.bank.statement.import', 'account.bank.statement.import.journal.creation', 'account.cash.rounding', 'account.chart.template', 'account.financial.year.op', 'account.fiscal.position', 'account.fiscal.position.account', 'account.fiscal.position.account.template']]]]
+KWARGS: {'fields': ['id', 'name', 'field_description', 'help', 'ttype', 'relation', 'required', 'readonly', 'store', 'index', 'model'], 'limit': 0, 'order': 'model asc, name asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+----- CHECKING MODEL -----
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: product
+USER REQUEST: 
+SOURCE TOKENS: ['product']
+SOURCE NON-GENERIC TOKENS: ['product']
+FIELD CANDIDATES:
+ - product_id | Product | many2one | relation: product.product | score: 505.0
+ - partner_product_code | Partner Product Code | char | relation: False | score: 150.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: item
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: items
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: provider
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: providers
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+FIELD COUNT: 79
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+FIELD COUNT: 17
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist.item
+MODEL SCORE: 160.0
+FIELD COUNT: 36
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist.item
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.product
+MODEL SCORE: 160.0
+FIELD COUNT: 173
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.product
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.reconcile.model
+MODEL SCORE: 16.0
+FIELD COUNT: 25
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.reconcile.model
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mail.channel.partner
+MODEL SCORE: 16.0
+FIELD COUNT: 14
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: item
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: items
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: provider
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: providers
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mail.channel.partner
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.picking.to.batch
+MODEL SCORE: 16.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.picking.to.batch
+MODEL SCORE: 16.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: report.paperformat
+MODEL SCORE: 8.0
+FIELD COUNT: 21
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: report.paperformat
+MODEL SCORE: 8.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute
+MODEL SCORE: 6.0
+FIELD COUNT: 12
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.category
+MODEL SCORE: 6.0
+FIELD COUNT: 26
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.category
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.packaging
+MODEL SCORE: 6.0
+FIELD COUNT: 21
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.packaging
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price.history
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price.history
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price_list
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price_list
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.putaway
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.putaway
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.removal
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.removal
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.template
+MODEL SCORE: 6.0
+FIELD COUNT: 154
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.template
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+FIELD COUNT: 29
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+FIELD COUNT: 14
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: _unknown
+MODEL SCORE: 0.0
+FIELD COUNT: 3
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: _unknown
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: item
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: items
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: provider
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: providers
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.template
+MODEL SCORE: 0.0
+FIELD COUNT: 18
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.type
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.type
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+FIELD COUNT: 14
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+FIELD COUNT: 29
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: item
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: items
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendor
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: provider
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: providers
+REASON: no semantically supported candidates
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: field exists but does not represent any requested semantic concept
+REQUESTED CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+FIELD COUNT: 40
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+FIELD COUNT: 8
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+FIELD COUNT: 7
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+FIELD COUNT: 9
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+FIELD COUNT: 42
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+FIELD COUNT: 12
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+FIELD COUNT: 31
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+FIELD COUNT: 13
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position.account
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position.account.template
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== GROUPBY SEMANTIC CHECK FAILED =====
+GROUPBY: partner_id
+REASON: technical groupby field does not exist
+
+===== DYNAMIC MODEL COMPATIBILITY FAILED =====
+REASON: groupby is technically valid but semantically incompatible
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position.account.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+===== DYNAMIC MODEL FALLBACK FAILED =====
+NO COMPATIBLE MODEL FOUND
+
+===== Portant QUERY ERROR =====
+QUERY: 1
+TYPE: ValueError
+MESSAGE: Nessun modello Odoo compatibile è stato trovato dinamicamente per soddisfare la richiesta.
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 0
+FAILED: 1
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 0
+FAILED: 1
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+Non sono riuscito a recuperare i dati sui prodotti divisi per fornitore perché non è stato trovato alcun modello Odoo compatibile per soddisfare la richiesta.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: c9ac8803-e5a7-405a-9d80-7f5df714901a
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore
+ASSISTANT MESSAGE: Non sono riuscito a recuperare i dati sui prodotti divisi per fornitore perché non è stato trovato alcun modello Odoo compatibile per soddisfare la richiesta.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 8
+ - user : Mostrami un grafico a barre del numero di prodotti
+ - assistant : Ci sono **2.454** prodotti nel database. Un grafico a barre che visualizza questo conteggio verrà generato a breve.
+ - user : Mostrami un grafico a barre dei prodotti divisi per categoria
+ - assistant : ## 1. Prodotti per categoria (conteggio)
+
+| # | Categoria | Conteggio |
+|---|----------|-------|
+| 1 | All | 2.453 |
+| 2 | COSTO MEDIO PONDERATO | 1 |
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore
+ - assistant : La richiesta non è stata completata perché non è stato trovato alcun modello Odoo compatibile per recuperare i prodotti divisi per fornitore.
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore
+ - assistant : Non sono riuscito a recuperare i dati sui prodotti divisi per fornitore perché non è stato trovato alcun modello Odoo compatibile per soddisfare la richiesta.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore
+SUB_REQUESTS: ['Mostrami un grafico a barre dei prodotti divisi per fornitore']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+FIELDS: ['partner_id', '__count']
+ORDER: None
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: False
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+RESULT TYPE: None
+TOTAL: None
+RETURNED: None
+LIMIT: None
+PAGES: None
+HAS MORE: None
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 158
+PREVIEW: Non sono riuscito a recuperare i dati sui prodotti divisi per fornitore perché non è stato trovato alcun modello Odoo compatibile per soddisfare la richiesta.
