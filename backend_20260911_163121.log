@@ -1,0 +1,4047 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-11T16:31:21
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.230:80/web/session/authenticate
+DATABASE: DM-22RIC001-20260427
+LOGIN: mvc@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 20
+USERNAME: mvc@digimarksrl.com
+NAME: mvc
+DATABASE: DM-22RIC001-20260427
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 20
+DATABASE: DM-22RIC001-20260427
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 20
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: grafico a barre prodotti per fornitore
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REASON: Richiesta di un grafico a barre che mostra i prodotti suddivisi per fornitore, un'operazione di visualizzazione dati tipica di Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: grafico a barre prodotti per fornitore
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REASON: Richiesta di un grafico a barre che mostra i prodotti suddivisi per fornitore, un'operazione di visualizzazione dati tipica di Portant.
+EVIDENCE: ["la richiesta include 'grafico a barre' (visualizzazione)", "menziona 'prodotti' e 'fornitore' (entità di business)", 'nessuna parte analitica o fuori dominio presente']
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODELS LOADED: 441
+MATCHED MODELS: 4
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+QUERIES: ['product', 'products', 'supplier', 'suppliers', 'vendor', 'vendors', 'product supplier']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: supplier
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: suppliers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendor
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendors
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: product supplier
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'supplier', 'vendor', 'vendors', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'limit': 10, 'offset': 0, 'lazy': False}
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 1,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "product.supplierinfo",
+    "method": "read_group",
+    "params": {
+      "domain": [],
+      "fields": [
+        "partner_id",
+        "__count"
+      ],
+      "groupby": [
+        "partner_id"
+      ],
+      "limit": 10,
+      "offset": 0,
+      "lazy": false
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "product.supplierinfo",
+    "invalid_fields": [
+      "partner_id"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "company_id",
+      "compute_price",
+      "create_date",
+      "create_uid",
+      "currency_id",
+      "date_end",
+      "date_start",
+      "delay",
+      "discount_1",
+      "discount_2",
+      "discount_3",
+      "discount_4",
+      "discount_5",
+      "discount_6",
+      "display_name",
+      "id",
+      "min_qty",
+      "multiple_factors",
+      "name",
+      "percent_price",
+      "price",
+      "product_code",
+      "product_id",
+      "product_name",
+      "product_tmpl_id",
+      "product_uom",
+      "product_variant_count",
+      "sequence",
+      "write_date",
+      "write_uid"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['name', '__count'], 'groupby': ['name'], 'limit': 10, 'offset': 0, 'lazy': False}
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 2
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['name', '__count'], 'groupby': ['name'], 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODEL: product.supplierinfo
+METHOD: read_group
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['name', '__count'], 'groupby': ['name'], 'limit': 10, 'offset': 0, 'lazy': False}}}
+
+===== MODEL DISCOVERY =====
+MODEL: product.supplierinfo
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== DYNAMIC RELATION FIELDS =====
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - name | Vendor | relation: res.partner
+ - product_id | Product Variant | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom | Vendor Unit of Measure | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 450.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 85.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 450.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: vendor
+SELECTED FIELD: name
+SELECTED TYPE: many2one
+SELECTED RELATION: res.partner
+SELECTED LABEL: Vendor
+SCORE: 250.0
+
+===== GROUPBY SEMANTIC CHECK PASSED =====
+GROUPBY: name
+RESOLVED FIELD: name
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 450.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 85.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: vendor
+SELECTED FIELD: name
+SELECTED TYPE: many2one
+SELECTED RELATION: res.partner
+SELECTED LABEL: Vendor
+SCORE: 250.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+FIELD COMPATIBLE: name -> name | semantic resolution already available
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUIRED FIELD HINTS: ['name']
+RESOLVED FIELDS: {'name': 'name', 'product': 'product_id', 'supplier': 'name'}
+
+===== FINAL GROUPBY =====
+GROUPBY: ['name']
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', '__count']
+GROUPBY: ['name']
+ORDERBY: None
+ORDER: None
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['name', '__count'], 'groupby': ['name'], 'limit': 10, 'offset': 0, 'lazy': False}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: product.supplierinfo
+METHOD: read_group
+FIELDS: ['name', '__count']
+GROUPBY: ['name']
+ORDERBY: None
+DOMAIN: []
+
+===== Portant NATIVE CALL_KW =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/product.supplierinfo/read_group
+MODEL: product.supplierinfo
+METHOD: read_group
+ARGS: [[], ['name', '__count'], ['name']]
+KWARGS: {'offset': 0, 'limit': 10, 'orderby': None, 'lazy': False}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/product.supplierinfo/read_group
+MODELLO: product.supplierinfo
+METHOD: read_group
+ARGS: [[], ['name', '__count'], ['name']]
+KWARGS: {'offset': 0, 'limit': 10, 'orderby': None, 'lazy': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: aggregation
+COUNT: 10
+TOTAL RECORDS: 10
+RETURNED RECORDS: 10
+LIMIT: 10
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 10
+RECORDS SENT TO RESPONSE LLM: 10
+
+===== AGGREGATION PAYLOAD TO RESPONSE LLM =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODEL: product.supplierinfo
+METHOD: read_group
+ORDERBY: 
+AGGREGATION RECORDS:
+ 1. {'__count': 1, 'name': [74755, '[10] ***AUTOPRONTI SPA'], '__domain': [['name', '=', 74755]]}
+ 2. {'__count': 2, 'name': [75735, '[1000] PRISMA INDUSTRIALE SRL'], '__domain': [['name', '=', 75735]]}
+ 3. {'__count': 1, 'name': [75736, '[1001] ENIO OTTAVIANI SRL'], '__domain': [['name', '=', 75736]]}
+ 4. {'__count': 35, 'name': [74846, '[101] VIGORITO MARIO MASSIMO'], '__domain': [['name', '=', 74846]]}
+ 5. {'__count': 4, 'name': [75749, '[1014] PANATTREZZI SAS'], '__domain': [['name', '=', 75749]]}
+ 6. {'__count': 1, 'name': [75802, '[1068] F.LLI ANELLI SNC'], '__domain': [['name', '=', 75802]]}
+ 7. {'__count': 4, 'name': [75804, '[1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L.'], '__domain': [['name', '=', 75804]]}
+ 8. {'__count': 1, 'name': [75822, '[1088] ISOSPA  SRL'], '__domain': [['name', '=', 75822]]}
+ 9. {'__count': 5, 'name': [75830, '[1096] TRANSBELT SRL'], '__domain': [['name', '=', 75830]]}
+ 10. {'__count': 1, 'name': [74756, '[11] COFFEE PARTNER S.R.L.'], '__domain': [['name', '=', 74756]]}
+
+===== RESPONSE RESULT =====
+Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:
+
+| # | Fornitore | Quantità |
+|---|----------|----------|
+| 1 | [101] VIGORITO MARIO MASSIMO | 35 |
+| 2 | [1096] TRANSBELT SRL | 5 |
+| 3 | [1014] PANATTREZZI SAS | 4 |
+| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |
+| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |
+| 6 | [10] ***AUTOPRONTI SPA | 1 |
+| 7 | [1001] ENIO OTTAVIANI SRL | 1 |
+| 8 | [1068] F.LLI ANELLI SNC | 1 |
+| 9 | [1088] ISOSPA  SRL | 1 |
+| 10 | [11] COFFEE PARTNER S.R.L. | 1 |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+CHART PAYLOAD: {'request': 'Mostrami un grafico a barre dei prodotti divisi per fornitore.', 'grouping_field': 'name', 'value_field': '__count', 'data': [{'label': '[10] ***AUTOPRONTI SPA', 'value': 1}, {'label': '[1000] PRISMA INDUSTRIALE SRL', 'value': 2}, {'label': '[1001] ENIO OTTAVIANI SRL', 'value': 1}, {'label': '[101] VIGORITO MARIO MASSIMO', 'value': 35}, {'label': '[1014] PANATTREZZI SAS', 'value': 4}, {'label': '[1068] F.LLI ANELLI SNC', 'value': 1}, {'label': '[1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L.', 'value': 4}, {'label': '[1088] ISOSPA  SRL', 'value': 1}, {'label': '[1096] TRANSBELT SRL', 'value': 5}, {'label': '[11] COFFEE PARTNER S.R.L.', 'value': 1}]}
+USER MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ASSISTANT MESSAGE: Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:
+
+| # | Fornitore | Quantità |
+|---|----------|----------|
+| 1 | [101] VIGORITO MARIO MASSIMO | 35 |
+| 2 | [1096] TRANSBELT SRL | 5 |
+| 3 | [1014] PANATTREZZI SAS | 4 |
+| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |
+| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |
+| 6 | [10] ***AUTOPRONTI SPA | 1 |
+| 7 | [1001] ENIO OTTAVIANI SRL | 1 |
+| 8 | [1068] F.LLI ANELLI SNC | 1 |
+| 9 | [1088] ISOSPA  SRL | 1 |
+| 10 | [11] COFFEE PARTNER S.R.L. | 1 |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+CONVERSATION TITLE UPDATED: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - assistant : Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:
+
+| # | Fornitore | Quantità |
+|---|----------|----------|
+| 1 | [101] VIGORITO MARIO MASSIMO | 35 |
+| 2 | [1096] TRANSBELT SRL | 5 |
+| 3 | [1014] PANATTREZZI SAS | 4 |
+| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |
+| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |
+| 6 | [10] ***AUTOPRONTI SPA | 1 |
+| 7 | [1001] ENIO OTTAVIANI SRL | 1 |
+| 8 | [1068] F.LLI ANELLI SNC | 1 |
+| 9 | [1088] ISOSPA  SRL | 1 |
+| 10 | [11] COFFEE PARTNER S.R.L. | 1 |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+SUB_REQUESTS: ['Mostrami un grafico a barre dei prodotti divisi per fornitore.']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+FIELDS: ['name', '__count']
+ORDER: None
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+RESULT TYPE: aggregation
+TOTAL: 10
+RETURNED: 10
+LIMIT: 10
+PAGES: 1
+HAS MORE: False
+FIRST RECORD: {'__count': 1, 'name': [74755, '[10] ***AUTOPRONTI SPA'], '__domain': [['name', '=', 74755]]}
+SECOND RECORD: {'__count': 2, 'name': [75735, '[1000] PRISMA INDUSTRIALE SRL'], '__domain': [['name', '=', 75735]]}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 550
+PREVIEW: Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:  | # | Fornitore | Quantità | |---|----------|----------| | 1 | [101] VIGORITO MARIO MASSIMO | 35 | | 2 | [1096] TRANSBELT SRL | 5 | | 3 | [1014] PANATTREZZI SAS | 4 | | 4 | [1070] CENTRO DELLA CERAMIC...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: horizontal
+TITLE: Prodotti per fornitore
+SOURCE INDEX: 0
+GROUPING: name
+VALUE: __count
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Prodotti per fornitore
+SOURCE: 1
+SOURCE TYPE: aggregation
+GROUPING: name
+VALUE: __count
+POINTS: 10
+DATA: [{'label': '[101] VIGORITO MARIO MASSIMO', 'value': 35.0}, {'label': '[1096] TRANSBELT SRL', 'value': 5.0}, {'label': '[1014] PANATTREZZI SAS', 'value': 4.0}, {'label': '[1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L.', 'value': 4.0}, {'label': '[1000] PRISMA INDUSTRIALE SRL', 'value': 2.0}, {'label': '[10] ***AUTOPRONTI SPA', 'value': 1.0}, {'label': '[1001] ENIO OTTAVIANI SRL', 'value': 1.0}, {'label': '[1068] F.LLI ANELLI SNC', 'value': 1.0}, {'label': '[1088] ISOSPA  SRL', 'value': 1.0}, {'label': '[11] COFFEE PARTNER S.R.L.', 'value': 1.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami un grafico a barre dei prodotti divisi per fornitore.'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:\n\n| # | Fornitore | Quantità |\n|---|----------|----------|\n| 1 | [101] VIGORITO MARIO MASSIMO | 35 |\n| 2 | [1096] TRANSBELT SRL | 5 |\n| 3 | [1014] PANATTREZZI SAS | 4 |\n| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |\n| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |\n| 6 | [10] ***AUTOPRONTI SPA | 1 |\n| 7 | [1001] ENIO OTTAVIANI SRL | 1 |\n| 8 | [1068] F.LLI ANELLI SNC | 1 |\n| 9 | [1088] ISOSPA  SRL | 1 |\n| 10 | [11] COFFEE PARTNER S.R.L. | 1 |'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REASON: L'utente chiede un grafico a barre che visualizza i prodotti raggruppati per fornitore, proseguendo la richiesta precedente di dati sui prodotti per fornitore.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['grafici e visualizzazioni', 'prodotti', 'fornitori']
+REQUEST COUNT: 1
+REASON: L'utente chiede un grafico a barre che visualizza i prodotti raggruppati per fornitore, proseguendo la richiesta precedente di dati sui prodotti per fornitore.
+EVIDENCE: ["la richiesta include 'grafico a barre' (visualizzazione)", "si riferisce a 'prodotti' e 'fornitore' (entrambe entità Portant)", 'segue direttamente la risposta tabellare precedente sui prodotti per fornitore']
+REQUEST 1: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODELS LOADED: 441
+MATCHED MODELS: 4
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+QUERIES: ['product', 'products', 'supplier', 'suppliers', 'vendor', 'vendors', 'product supplier']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: supplier
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: suppliers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendor
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: vendors
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: product supplier
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'supplier', 'vendor', 'vendors', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product', 'product supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.product
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['seller_ids.partner_id', '__count'], 'groupby': ['seller_ids.partner_id'], 'limit': 0, 'orderby': 'seller_ids.partner_id', 'offset': 0, 'lazy': False}
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 1,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "product.product",
+    "method": "read_group",
+    "params": {
+      "domain": [],
+      "fields": [
+        "seller_ids.partner_id",
+        "__count"
+      ],
+      "groupby": [
+        "seller_ids.partner_id"
+      ],
+      "limit": 0,
+      "orderby": "seller_ids.partner_id",
+      "offset": 0,
+      "lazy": false
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "product.product",
+    "invalid_fields": [
+      "seller_ids.partner_id"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "active",
+      "activity_date_deadline",
+      "activity_ids",
+      "activity_state",
+      "activity_summary",
+      "activity_type_id",
+      "activity_user_id",
+      "alert_time",
+      "attribute_line_ids",
+      "attribute_value_ids",
+      "barcode",
+      "bi_costi_energia",
+      "bi_costi_personale",
+      "bom_count",
+      "bom_ids",
+      "categ_id",
+      "category_uom_id",
+      "code",
+      "color",
+      "company_id",
+      "cost_currency_id",
+      "cost_method",
+      "create_date",
+      "create_uid",
+      "currency_id",
+      "default_code",
+      "description",
+      "description_picking",
+      "description_pickingin",
+      "description_pickingout",
+      "description_purchase",
+      "description_sale",
+      "display_name",
+      "expense_policy",
+      "fridge_product",
+      "gamma_box_gtin",
+      "gamma_est_desc_art",
+      "gamma_famiglia",
+      "gamma_famiglia_descr",
+      "gamma_gruppo",
+      "gamma_gruppo_descr",
+      "gamma_gruppo_fiscale",
+      "gamma_id",
+      "gamma_peso_lordo",
+      "gamma_peso_netto",
+      "gamma_sotto_gruppo",
+      "gamma_sotto_gruppo_descr",
+      "gamma_sottofamiglia",
+      "gamma_sottofamiglia_descr",
+      "gamma_tax_id",
+      "group",
+      "hs_code",
+      "id",
+      "id_artcla_1",
+      "id_artcla_2",
+      "id_artcla_3",
+      "id_artcla_4",
+      "id_artcla_5",
+      "image",
+      "image_medium",
+      "image_small",
+      "image_variant",
+      "incoming_qty",
+      "invoice_policy",
+      "is_product_variant",
+      "item_ids",
+      "label_id",
+      "landed_cost_ok",
+      "life_time",
+      "list_price",
+      "location_id",
+      "lst_price",
+      "max_restock",
+      "message_channel_ids",
+      "message_follower_ids",
+      "message_ids",
+      "message_is_follower",
+      "message_last_post",
+      "message_needaction"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'limit': 0, 'offset': 0, 'orderby': 'partner_id', 'lazy': False}
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 2,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "product.supplierinfo",
+    "method": "read_group",
+    "params": {
+      "domain": [],
+      "fields": [
+        "partner_id",
+        "__count"
+      ],
+      "groupby": [
+        "partner_id"
+      ],
+      "limit": 0,
+      "offset": 0,
+      "orderby": "partner_id",
+      "lazy": false
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "product.supplierinfo",
+    "invalid_fields": [
+      "partner_id"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "company_id",
+      "compute_price",
+      "create_date",
+      "create_uid",
+      "currency_id",
+      "date_end",
+      "date_start",
+      "delay",
+      "discount_1",
+      "discount_2",
+      "discount_3",
+      "discount_4",
+      "discount_5",
+      "discount_6",
+      "display_name",
+      "id",
+      "min_qty",
+      "multiple_factors",
+      "name",
+      "percent_price",
+      "price",
+      "product_code",
+      "product_id",
+      "product_name",
+      "product_tmpl_id",
+      "product_uom",
+      "product_variant_count",
+      "sequence",
+      "write_date",
+      "write_uid"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 3 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['partner_id', '__count'], 'groupby': ['partner_id'], 'limit': 0, 'offset': 0, 'orderby': 'partner_id', 'lazy': False}
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 3,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "product.supplierinfo",
+    "method": "read_group",
+    "params": {
+      "domain": [],
+      "fields": [
+        "partner_id",
+        "__count"
+      ],
+      "groupby": [
+        "partner_id"
+      ],
+      "limit": 0,
+      "offset": 0,
+      "orderby": "partner_id",
+      "lazy": false
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "product.supplierinfo",
+    "invalid_fields": [
+      "partner_id"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "company_id",
+      "compute_price",
+      "create_date",
+      "create_uid",
+      "currency_id",
+      "date_end",
+      "date_start",
+      "delay",
+      "discount_1",
+      "discount_2",
+      "discount_3",
+      "discount_4",
+      "discount_5",
+      "discount_6",
+      "display_name",
+      "id",
+      "min_qty",
+      "multiple_factors",
+      "name",
+      "percent_price",
+      "price",
+      "product_code",
+      "product_id",
+      "product_name",
+      "product_tmpl_id",
+      "product_uom",
+      "product_variant_count",
+      "sequence",
+      "write_date",
+      "write_uid"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 4 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+AGGREGATION: {'is_aggregation': True, 'grouping_field': None, 'has_explicit_grouping': True, 'has_ranking': False, 'aggregation_hits': 1, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: True
+EXPLICIT MODEL: None
+MODEL: product.supplierinfo
+METHOD: read_group
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'fields': ['product_id', '__count'], 'groupby': ['product_id'], 'limit': 0, 'offset': 0, 'orderby': 'product_id', 'lazy': False}
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 4
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['product_id', '__count'], 'groupby': ['product_id'], 'limit': 0, 'offset': 0, 'orderby': 'product_id', 'lazy': False}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODEL: product.supplierinfo
+METHOD: read_group
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['product_id', '__count'], 'groupby': ['product_id'], 'limit': 0, 'offset': 0, 'orderby': 'product_id asc', 'lazy': False}}}
+
+===== MODEL DISCOVERY =====
+MODEL: product.supplierinfo
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== DYNAMIC RELATION FIELDS =====
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - name | Vendor | relation: res.partner
+ - product_id | Product Variant | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom | Vendor Unit of Measure | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: product.supplierinfo
+FIELDS: 31
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 450.0
+
+===== GROUPBY SEMANTIC CHECK PASSED =====
+GROUPBY: product_id
+RESOLVED FIELD: product_id
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 450.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 85.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: vendor
+SELECTED FIELD: name
+SELECTED TYPE: many2one
+SELECTED RELATION: res.partner
+SELECTED LABEL: Vendor
+SCORE: 250.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: vendors
+BEST CANDIDATE: price
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+FIELD COMPATIBLE: product_id -> product_id | semantic resolution already available
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['supplier', 'suppliers', 'vendor', 'vendors']}]
+REQUIRED FIELD HINTS: ['product_id']
+RESOLVED FIELDS: {'product_id': 'product_id', 'product': 'product_id', 'supplier': 'name'}
+
+===== FINAL GROUPBY =====
+GROUPBY: ['product_id']
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['product_id', '__count']
+GROUPBY: ['product_id']
+ORDERBY: product_id asc
+ORDER: None
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'product.supplierinfo', 'method': 'read_group', 'params': {'domain': [], 'fields': ['product_id', '__count'], 'groupby': ['product_id'], 'limit': 0, 'offset': 0, 'orderby': 'product_id asc', 'lazy': False}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: product.supplierinfo
+METHOD: read_group
+FIELDS: ['product_id', '__count']
+GROUPBY: ['product_id']
+ORDERBY: product_id asc
+DOMAIN: []
+
+===== Portant NATIVE CALL_KW =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/product.supplierinfo/read_group
+MODEL: product.supplierinfo
+METHOD: read_group
+ARGS: [[], ['product_id', '__count'], ['product_id']]
+KWARGS: {'offset': 0, 'limit': 0, 'orderby': 'product_id asc', 'lazy': False}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/product.supplierinfo/read_group
+MODELLO: product.supplierinfo
+METHOD: read_group
+ARGS: [[], ['product_id', '__count'], ['product_id']]
+KWARGS: {'offset': 0, 'limit': 0, 'orderby': 'product_id asc', 'lazy': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: aggregation
+COUNT: 3
+TOTAL RECORDS: 3
+RETURNED RECORDS: 3
+LIMIT: 3
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 3
+RECORDS SENT TO RESPONSE LLM: 3
+
+===== AGGREGATION PAYLOAD TO RESPONSE LLM =====
+REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+MODEL: product.supplierinfo
+METHOD: read_group
+ORDERBY: product_id asc
+AGGREGATION RECORDS:
+ 1. {'__count': 1, 'product_id': [23235, '[FSROM] FARINA "00" sfusa GRANO ROMAGNOLO'], '__domain': [['product_id', '=', 23235]]}
+ 2. {'__count': 1, 'product_id': [23545, '[MOZZARELLA] MOZZARELLA'], '__domain': [['product_id', '=', 23545]]}
+ 3. {'__count': 2887, 'product_id': False, '__domain': [['product_id', '=', False]]}
+
+===== RESPONSE RESULT =====
+I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.
+
+Di seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:
+
+| # | Prodotto | Quantità |
+|---|----------|----------|
+| 1 | [FSROM] FARINA "00" sfusa GRANO ROMAGNOLO | 1 |
+| 2 | [MOZZARELLA] MOZZARELLA | 1 |
+| 3 | — (nessun prodotto) | 2 887 |
+
+Questi numeri rappresentano il conteggio totale dei record per ogni prodotto, ma non includono alcun campo relativo al fornitore. Se hai bisogno di un'analisi suddivisa per fornitore, potrebbe essere necessario un set di dati diverso.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+CHART PAYLOAD: {'request': 'Mostrami un grafico a barre dei prodotti divisi per fornitore.', 'grouping_field': 'product_id', 'value_field': '__count', 'data': [{'label': '[FSROM] FARINA "00" sfusa GRANO ROMAGNOLO', 'value': 1}, {'label': '[MOZZARELLA] MOZZARELLA', 'value': 1}, {'label': 'False', 'value': 2887}]}
+USER MESSAGE: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ASSISTANT MESSAGE: I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.
+
+Di seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:
+
+| # | Prodotto | Quantità |
+|---|----------|----------|
+| 1 | [FSROM] FARINA "00" sfusa GRANO ROMAGNOLO | 1 |
+| 2 | [MOZZARELLA] MOZZARELLA | 1 |
+| 3 | — (nessun prodotto) | 2 887 |
+
+Questi numeri rappresentano il conteggio totale dei record per ogni prodotto, ma non includono alcun campo relativo al fornitore. Se hai bisogno di un'analisi suddivisa per fornitore, potrebbe essere necessario un set di dati diverso.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - assistant : Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:
+
+| # | Fornitore | Quantità |
+|---|----------|----------|
+| 1 | [101] VIGORITO MARIO MASSIMO | 35 |
+| 2 | [1096] TRANSBELT SRL | 5 |
+| 3 | [1014] PANATTREZZI SAS | 4 |
+| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |
+| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |
+| 6 | [10] ***AUTOPRONTI SPA | 1 |
+| 7 | [1001] ENIO OTTAVIANI SRL | 1 |
+| 8 | [1068] F.LLI ANELLI SNC | 1 |
+| 9 | [1088] ISOSPA  SRL | 1 |
+| 10 | [11] COFFEE PARTNER S.R.L. | 1 |
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - assistant : I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.
+
+Di seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:
+
+| # | Prodotto | Quantità |
+|---|----------|----------|
+| 1 | [FSROM] FARINA "00" sfusa GRANO ROMAGNOLO | 1 |
+| 2 | [MOZZARELLA] MOZZARELLA | 1 |
+| 3 | — (nessun prodotto) | 2 887 |
+
+Questi numeri rappresentano il conteggio totale dei record per ogni prodotto, ma non includono alcun campo relativo al fornitore. Se hai bisogno di un'analisi suddivisa per fornitore, potrebbe essere necessario un set di dati diverso.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami un grafico a barre dei prodotti divisi per fornitore.
+SUB_REQUESTS: ['Mostrami un grafico a barre dei prodotti divisi per fornitore.']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+FIELDS: ['product_id', '__count']
+ORDER: None
+LIMIT: 0
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: product.supplierinfo
+METHOD: read_group
+DOMAIN: []
+RESULT TYPE: aggregation
+TOTAL: 3
+RETURNED: 3
+LIMIT: 3
+PAGES: 1
+HAS MORE: False
+FIRST RECORD: {'__count': 1, 'product_id': [23235, '[FSROM] FARINA "00" sfusa GRANO ROMAGNOLO'], '__domain': [['product_id', '=', 23235]]}
+SECOND RECORD: {'__count': 1, 'product_id': [23545, '[MOZZARELLA] MOZZARELLA'], '__domain': [['product_id', '=', 23545]]}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 652
+PREVIEW: I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.  Di seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:  | # | Prodotto | Quantità | |---|----------|----------| | 1 | [FS...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
+
+===== CHAT REQUEST =====
+MESSAGE: mostrami gli ultimi 10 prodotti di dimar
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+MESSAGES LOADED: 4
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami un grafico a barre dei prodotti divisi per fornitore.'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.\n\nDi seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:\n\n| # | Prodotto | Quantità |\n|---|----------|----------|\n| 1 | [FSROM] FARINA "00" sfusa GRANO ROMAGNOLO | 1 |\n| 2 | [MOZZARELLA] MOZZARELLA | 1 |\n| 3 | — (nessun prodotto) | 2\u202f887 |\n\nQuesti numeri rappresentano il conteggio totale dei record per ogni prodotto, ma non includono alcun campo relativo al fornitore. Se hai bisogno di un\'analisi suddivisa per fornitore, potrebbe essere necessario un set di dati diverso.'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: mostrami gli ultimi 10 prodotti di dimar
+
+===== REQUEST SPLITTER =====
+INPUT: mostrami gli ultimi 10 prodotti di dimar
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.9
+CONTINUATION: False
+INTENT FAMILY: richiesta_prodotti
+CONCEPTS: ['prodotti', 'identificativi e codici aziendali', 'filtri e selezioni']
+REASON: Richiesta di visualizzare gli ultimi 10 prodotti corrispondenti a 'dimar', un identificatore di prodotto, che è pertinente al sistema Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['prodotti', 'identificativi e codici aziendali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REQUEST 1: mostrami gli ultimi 10 prodotti di dimar
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.9
+CONTINUATION: False
+INTENT FAMILY: richiesta_prodotti
+CONCEPTS: ['prodotti', 'identificativi e codici aziendali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REASON: Richiesta di visualizzare gli ultimi 10 prodotti corrispondenti a 'dimar', un identificatore di prodotto, che è pertinente al sistema Portant.
+EVIDENCE: ['La richiesta riguarda il recupero di dati sui prodotti, un concetto in‑scope.', "L'uso di 'dimar' come identificatore di prodotto rientra nei codici aziendali in‑scope.", "La richiesta di 'ultimi 10' rappresenta un filtro, un altro concetto in‑scope."]
+REQUEST 1: mostrami gli ultimi 10 prodotti di dimar
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: mostrami gli ultimi 10 prodotti di dimar
+MODELS LOADED: 441
+MATCHED MODELS: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: mostrami gli ultimi 10 prodotti di dimar
+QUERIES: ['product', 'products', 'dimar', 'supplier', 'suppliers']
+CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: product
+MODELS LOADED: 441
+MATCHED MODELS: 40
+
+===== MODEL SEARCH INDEX =====
+QUERY: products
+MODELS LOADED: 441
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: dimar
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: supplier
+MODELS LOADED: 441
+MATCHED MODELS: 1
+
+===== MODEL SEARCH INDEX =====
+QUERY: suppliers
+MODELS LOADED: 441
+MATCHED MODELS: 0
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: stock.change.product.qty
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: gamma.partner.product.code
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: product.supplierinfo
+SEMANTIC QUERIES: ['product', 'products', 'supplier']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: mps.add_product
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: mrp.product.direct_production.line
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: product.product
+SEMANTIC QUERIES: ['product', 'products']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+MODEL: product.attribute
+SEMANTIC QUERIES: ['product']
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}]
+REQUEST CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: mostrami gli ultimi 10 prodotti di dimar
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+ - mps.add_product | mps.add_product | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+ - product.product | Product | score: 24.0
+ - product.attribute | Product Attribute | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: mostrami gli ultimi 10 prodotti di dimar
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - stock.change.product.qty | Change Product Quantity | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mps.add_product | mps.add_product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.product | Product | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.attribute | Product Attribute | score: 24.0
+   semantic concepts: [{'concept': 'product', 'queries': ['product', 'products']}]
+   request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - stock.change.product.qty | Change Product Quantity | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - gamma.partner.product.code | gamma.partner.product.code | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.supplierinfo | Information about a product vendor | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mps.add_product | mps.add_product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.product | Product | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+ - product.attribute | Product Attribute | score: 24.0 | concepts: [{'concept': 'product', 'queries': ['product', 'products']}] | request concepts: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mostrami gli ultimi 10 prodotti di dimar
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: product.product
+METHOD: search_read
+EXPLICIT LIMIT: 10
+FINAL DOMAIN: [['seller_ids', 'any', ['name', 'ilike', 'dimar']]]
+FINAL PARAMS: {'domain': [['seller_ids', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc'}
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'product.product', 'method': 'search_read', 'params': {'domain': [['seller_ids', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc'}}}
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: mostrami gli ultimi 10 prodotti di dimar
+MODEL: product.product
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [['seller_ids', 'any', ['name', 'ilike', 'dimar']]], 'parameters': {'model': 'product.product', 'method': 'search_read', 'params': {'domain': [['seller_ids', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: product.product
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: product.product
+FIELDS: 173
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - categ_id | Internal Category | relation: product.category
+ - category_uom_id | Category | relation: product.uom.categ
+ - company_id | Company | relation: res.company
+ - cost_currency_id | Cost Currency | relation: res.currency
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - gamma_tax_id | Gamma Tax | relation: account.tax
+ - label_id | Label layout | relation: dm_qzindustrial_printer.labels
+ - location_id | Location | relation: stock.location
+ - mps_default_bom | Default Bom | relation: mrp.bom
+ - mps_in_use_bom | In Use Bom | relation: mrp.bom
+ - pricelist_id | Pricelist | relation: product.pricelist
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_variant_id | Product | relation: product.product
+ - property_account_creditor_price_difference | Price Difference Account | relation: account.account
+ - property_account_expense_id | Expense Account | relation: account.account
+ - property_account_income_id | Income Account | relation: account.account
+ - property_stock_account_input | Stock Input Account | relation: account.account
+ - property_stock_account_output | Stock Output Account | relation: account.account
+ - property_stock_inventory | Inventory Location | relation: stock.location
+ - property_stock_production | Production Location | relation: stock.location
+ - responsible_id | Responsible | relation: res.users
+ - uom_id | Unit of Measure | relation: product.uom
+ - uom_po_id | Purchase Unit of Measure | relation: product.uom
+ - warehouse_id | Warehouse | relation: stock.warehouse
+ - warehouse_uom_id | Warehouse Uom | relation: product.uom
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_variant_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 495.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_variant_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: product.product
+SELECTED LABEL: Products
+SCORE: 160.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: supplier_taxes_id
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== CURRENT MODEL REJECTED =====
+MODEL: product.product
+REASON: required query fields/concepts are not compatible
+
+============================================
+===== DYNAMIC MODEL FALLBACK =====
+CURRENT MODEL: product.product
+REQUIRED FIELD HINTS: []
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[['model', '!=', 'product.product']]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== DYNAMIC MODEL CANDIDATE VERIFICATION =====
+TOTAL MODEL CANDIDATES: 50
+VERIFYING BOUNDED TOP CANDIDATES AGAINST ir.model.fields
+
+===== DYNAMIC MODEL CANDIDATES =====
+ - gamma.partner.product.code | gamma.partner.product.code | score: 160.0
+ - mps.add_product | mps.add_product | score: 160.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 160.0
+ - mrp.product.direct_production.line | mrp.product.direct_production.line | score: 160.0
+ - product.attribute | Product Attribute | score: 160.0
+ - product.supplierinfo | Information about a product vendor | score: 160.0
+ - stock.change.product.qty | Change Product Quantity | score: 160.0
+ - stock.lot.trace.arrow | Freccia di tracciabilità | score: 10.0
+ - stock.lot.trace.graph | Grafo di tracciabilità lotto | score: 10.0
+ - stock.lot.trace.move | Movimento di tracciabilità (documento collegato al nodo) | score: 10.0
+ - stock.lot.trace.node | Nodo di tracciabilità | score: 10.0
+ - stock.picking.plan | Piano di spedizione | score: 10.0
+ - stock.lot.recall.line | Riga di richiamo (cliente / consegna interessata) | score: 8.0
+ - mrp.product.produce | Record Production | score: 6.0
+ - product.attribute.price | product.attribute.price | score: 6.0
+ - product.attribute.value | product.attribute.value | score: 6.0
+ - product.category | Product Category | score: 6.0
+ - product.packaging | Packaging | score: 6.0
+ - product.price.history | product.price.history | score: 6.0
+ - product.price_list | Price List | score: 6.0
+ - product.pricelist | Pricelist | score: 6.0
+ - product.pricelist.item | Pricelist item | score: 6.0
+ - product.putaway | Put Away Strategy | score: 6.0
+ - product.removal | Removal Strategy | score: 6.0
+ - product.template | Product Template | score: 6.0
+ - product.uom | Product Unit of Measure | score: 6.0
+ - product.uom.categ | Product UoM Categories | score: 6.0
+ - stock.warehouse.product.movement.download | stock.warehouse.product.movement.download | score: 6.0
+ - transfer_product_from_udc_wiz | transfer_product_from_udc_wiz | score: 6.0
+ - transfer_product_history | transfer_product_history | score: 6.0
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model.fields/search_read
+MODELLO: ir.model.fields
+METHOD: search_read
+ARGS: [[['model', 'in', ['gamma.partner.product.code', 'mps.add_product', 'mrp.product.direct_production', 'mrp.product.direct_production.line', 'product.attribute', 'product.supplierinfo', 'stock.change.product.qty', 'stock.lot.trace.arrow', 'stock.lot.trace.graph', 'stock.lot.trace.move', 'stock.lot.trace.node', 'stock.picking.plan', 'stock.lot.recall.line', 'mrp.product.produce', 'product.attribute.price', 'product.attribute.value', 'product.category', 'product.packaging', 'product.price.history', 'product.price_list', 'product.pricelist', 'product.pricelist.item', 'product.putaway', 'product.removal', 'product.template', 'product.uom', 'product.uom.categ', 'stock.warehouse.product.movement.download', 'transfer_product_from_udc_wiz', 'transfer_product_history', 'mrp.product.produce.line', 'product.attribute.line', '_unknown', 'account.abstract.payment', 'account.account', 'account.account.tag', 'account.account.template', 'account.account.type', 'account.aged.trial.balance', 'account.analytic.account', 'account.analytic.tag', 'account.bank.statement', 'account.bank.statement.cashbox', 'account.bank.statement.closebalance', 'account.bank.statement.import', 'account.bank.statement.import.journal.creation', 'account.cash.rounding', 'account.chart.template', 'account.financial.year.op', 'account.fiscal.position']]]]
+KWARGS: {'fields': ['id', 'name', 'field_description', 'help', 'ttype', 'relation', 'required', 'readonly', 'store', 'index', 'model'], 'limit': 0, 'order': 'model asc, name asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+----- CHECKING MODEL -----
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: gamma.partner.product.code
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+FIELD COUNT: 8
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mps.add_product
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+FIELD COUNT: 79
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+BEST CANDIDATE: qty_produced
+BEST SCORE: 70.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+BEST CANDIDATE: is_kit_with_expiration
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: is_kit_with_expiration
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+BEST CANDIDATE: is_kit_with_expiration
+BEST SCORE: 55.0
+REASON: score below semantic threshold
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+FIELD COUNT: 17
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.direct_production.line
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute
+MODEL SCORE: 160.0
+FIELD COUNT: 12
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: attribute_line_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: product.attribute.line
+SELECTED LABEL: Lines
+SCORE: 220.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.supplierinfo
+MODEL SCORE: 160.0
+FIELD COUNT: 31
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 460.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product Variant
+SCORE: 95.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.supplierinfo
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+FIELD COUNT: 13
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.change.product.qty
+MODEL SCORE: 160.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.lot.trace.arrow
+MODEL SCORE: 10.0
+FIELD COUNT: 13
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.lot.trace.arrow
+MODEL SCORE: 10.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.lot.trace.graph
+MODEL SCORE: 10.0
+FIELD COUNT: 12
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.lot.trace.graph
+MODEL SCORE: 10.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.lot.trace.move
+MODEL SCORE: 10.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.lot.trace.move
+MODEL SCORE: 10.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.lot.trace.node
+MODEL SCORE: 10.0
+FIELD COUNT: 23
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: res_product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Prodotto
+SCORE: 340.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.lot.trace.node
+MODEL SCORE: 10.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.picking.plan
+MODEL SCORE: 10.0
+FIELD COUNT: 27
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.picking.plan
+MODEL SCORE: 10.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.lot.recall.line
+MODEL SCORE: 8.0
+FIELD COUNT: 18
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Prodotto spedito
+SCORE: 340.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.lot.recall.line
+MODEL SCORE: 8.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_tmpl_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.template
+SELECTED LABEL: Product Template
+SCORE: 425.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.price
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: attribute_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.attribute
+SELECTED LABEL: Attribute
+SCORE: 285.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.value
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.category
+MODEL SCORE: 6.0
+FIELD COUNT: 26
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: removal_strategy_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.removal
+SELECTED LABEL: Force Removal Strategy
+SCORE: 345.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_count
+SELECTED TYPE: integer
+SELECTED RELATION: False
+SELECTED LABEL: # Products
+SCORE: 225.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.category
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.packaging
+MODEL SCORE: 6.0
+FIELD COUNT: 21
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+BEST CANDIDATE: qty
+BEST SCORE: 70.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.packaging
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price.history
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price.history
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.price_list
+MODEL SCORE: 6.0
+FIELD COUNT: 13
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: price_list
+SELECTED TYPE: many2one
+SELECTED RELATION: product.pricelist
+SELECTED LABEL: PriceList
+SCORE: 285.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.price_list
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: item_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: product.pricelist.item
+SELECTED LABEL: Pricelist Items
+SCORE: 220.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.pricelist.item
+MODEL SCORE: 6.0
+FIELD COUNT: 36
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 565.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: categ_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.category
+SELECTED LABEL: Product Category
+SCORE: 95.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+BEST CANDIDATE: price_round
+BEST SCORE: 65.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: price_round
+BEST SCORE: 65.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+BEST CANDIDATE: price_round
+BEST SCORE: 65.0
+REASON: score below semantic threshold
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.pricelist.item
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.putaway
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: fixed_location_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: stock.fixed.putaway.strat
+SELECTED LABEL: Fixed Locations Per Product Category
+SCORE: 125.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+BEST CANDIDATE: fixed_location_ids
+BEST SCORE: 65.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.putaway
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.removal
+MODEL SCORE: 6.0
+FIELD COUNT: 9
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.removal
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.template
+MODEL SCORE: 6.0
+FIELD COUNT: 154
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_variant_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 495.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: product_variant_ids
+SELECTED TYPE: one2many
+SELECTED RELATION: product.product
+SELECTED LABEL: Products
+SCORE: 170.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+BEST CANDIDATE: supplier_taxes_id
+BEST SCORE: 65.0
+REASON: score below semantic threshold
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.template
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom
+MODEL SCORE: 6.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: category_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.uom.categ
+SELECTED LABEL: Category
+SCORE: 285.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+FIELD COUNT: 8
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.uom.categ
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+FIELD COUNT: 10
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: stock.warehouse.product.movement.download
+MODEL SCORE: 6.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: dest_udc_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.quant.package
+SELECTED LABEL: Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: dest_udc_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.quant.package
+SELECTED LABEL: Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: dimar
+SELECTED FIELD: dest_udc_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.quant.package
+SELECTED LABEL: Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: supplier
+SELECTED FIELD: dest_udc_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.quant.package
+SELECTED LABEL: Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: suppliers
+SELECTED FIELD: dest_udc_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.quant.package
+SELECTED LABEL: Collo di destinazione
+SCORE: 115.0
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'product': 'dest_udc_id', 'dimar': 'dest_udc_id', 'supplier': 'dest_udc_id'}
+
+===== DYNAMIC MODEL ACCEPTED CANDIDATE =====
+MODEL: transfer_product_from_udc_wiz
+MODEL SCORE: 6.0
+SEMANTIC QUALITY SCORE: 60.0
+EXACT FIELD BONUS: 0.0
+FINAL SCORE: 66.0
+RESOLVED FIELDS: {'product': 'dest_udc_id', 'dimar': 'dest_udc_id', 'supplier': 'dest_udc_id'}
+
+----- CHECKING MODEL -----
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+FIELD COUNT: 29
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Prodotto mosso
+SCORE: 340.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: package_products
+SELECTED TYPE: many2many
+SELECTED RELATION: product.product
+SELECTED LABEL: Package Products
+SCORE: 150.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: dimar
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: supplier
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: suppliers
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+
+===== DYNAMIC MODEL ACCEPTED CANDIDATE =====
+MODEL: transfer_product_history
+MODEL SCORE: 6.0
+SEMANTIC QUALITY SCORE: 185.0
+EXACT FIELD BONUS: 0.0
+FINAL SCORE: 191.0
+RESOLVED FIELDS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+
+----- CHECKING MODEL -----
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+FIELD COUNT: 14
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Product
+SCORE: 505.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: mrp.product.produce.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+FIELD COUNT: 10
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_tmpl_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.template
+SELECTED LABEL: Product Template
+SCORE: 425.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: product.attribute.line
+MODEL SCORE: 4.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: _unknown
+MODEL SCORE: 0.0
+FIELD COUNT: 3
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: _unknown
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+FIELD COUNT: 15
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.abstract.payment
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.template
+MODEL SCORE: 0.0
+FIELD COUNT: 18
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.account.type
+MODEL SCORE: 0.0
+FIELD COUNT: 11
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.account.type
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+FIELD COUNT: 14
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.aged.trial.balance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+FIELD COUNT: 29
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.account
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+FIELD COUNT: 10
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.analytic.tag
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+FIELD COUNT: 40
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+FIELD COUNT: 8
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.cashbox
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+FIELD COUNT: 7
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.closebalance
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+FIELD COUNT: 9
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+FIELD COUNT: 42
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.bank.statement.import.journal.creation
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+FIELD COUNT: 12
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.cash.rounding
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+FIELD COUNT: 31
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: property_account_expense_id
+SELECTED TYPE: many2one
+SELECTED RELATION: account.account.template
+SELECTED LABEL: Expense Account on Product Template
+SCORE: 120.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: ['product']
+MISSING CONCEPTS: ['supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.chart.template
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+FIELD COUNT: 13
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.financial.year.op
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+----- CHECKING MODEL -----
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+FIELD COUNT: 22
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: product
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: products
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dimar
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: supplier
+REASON: no semantically supported candidates
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: suppliers
+REASON: no semantically supported candidates
+
+===== SEMANTIC CONCEPT COMPATIBILITY FAILED =====
+REQUIRED CONCEPTS: ['product', 'supplier']
+COVERED CONCEPTS: []
+MISSING CONCEPTS: ['product', 'supplier']
+
+===== DYNAMIC MODEL REJECTED =====
+MODEL: account.fiscal.position
+MODEL SCORE: 0.0
+REASON: required fields/concepts not fully compatible
+
+===== DYNAMIC MODEL FALLBACK SELECTED =====
+CURRENT MODEL: product.product
+SELECTED MODEL: transfer_product_history
+MODEL SCORE: 191.0
+RESOLVED FIELDS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.230:80/web/dataset/call_kw/ir.model.fields/search_read
+MODELLO: ir.model.fields
+METHOD: search_read
+ARGS: [[['model', '=', 'transfer_product_history']]]
+KWARGS: {'fields': ['id', 'name', 'field_description', 'help', 'ttype', 'relation', 'required', 'readonly', 'store', 'index'], 'limit': 0, 'order': 'name asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== DYNAMIC FALLBACK FULL METADATA VALIDATION =====
+MODEL: transfer_product_history
+FIELDS: 29
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: product
+SELECTED FIELD: product_id
+SELECTED TYPE: many2one
+SELECTED RELATION: product.product
+SELECTED LABEL: Prodotto mosso
+SCORE: 340.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: products
+SELECTED FIELD: package_products
+SELECTED TYPE: many2many
+SELECTED RELATION: product.product
+SELECTED LABEL: Package Products
+SCORE: 150.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: dimar
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: supplier
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: suppliers
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'product', 'queries': ['product', 'products']}, {'concept': 'supplier', 'queries': ['dimar', 'supplier', 'suppliers']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+
+===== DYNAMIC FALLBACK FINAL ACCEPT =====
+MODEL: transfer_product_history
+FINAL RESOLVED FIELDS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+
+===== MODEL FALLBACK APPLIED =====
+ORIGINAL MODEL: product.product
+FALLBACK MODEL: transfer_product_history
+
+===== RESOLVED FIELD MAPPINGS APPLIED =====
+MAPPINGS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+FIELDS: []
+GROUPBY: []
+ORDERBY: None
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: transfer_product_history
+FIELDS: 29
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: transfer_product_history
+FIELDS: 29
+
+===== DYNAMIC FIELD RESOLUTION =====
+AUTO FIELDS: ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: seller_ids
+SELECTED FIELD: dest_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Ubicazione Collo di destinazione
+SCORE: 115.0
+
+===== DYNAMIC DOMAIN FIELD RESOLUTION =====
+ORIGINAL: ['seller_ids', 'any', ['name', 'ilike', 'dimar']]
+RESOLVED: ['dest_location_id', 'any', ['name', 'ilike', 'dimar']]
+
+===== RESOLVED FIELD MAPPINGS APPLIED =====
+MAPPINGS: {'product': 'package_products', 'dimar': 'dest_location_id', 'supplier': 'dest_location_id'}
+FIELDS: ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id']
+GROUPBY: []
+ORDERBY: None
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: id desc
+DOMAIN: [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]]
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'transfer_product_history', 'method': 'search_read', 'params': {'domain': [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc', 'fields': ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: transfer_product_history
+METHOD: search_read
+FIELDS: ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]]
+
+===== Portant REQUEST =====
+URL: http://10.100.12.230:80/api/transfer_product_history/search_read
+BODY: {'domain': [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc', 'fields': ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.230:80/api/transfer_product_history/search_read
+METHOD: POST
+BODY: {'domain': [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]], 'limit': 10, 'order': 'id desc', 'fields': ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant QUERY ERROR =====
+QUERY: 1
+TYPE: PortantServerError
+MESSAGE: unhashable type: 'list'
+
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 0
+FAILED: 1
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 0
+FAILED: 1
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+Non sono riuscito a recuperare gli ultimi 10 prodotti di Dimar a causa di un problema tecnico. Ti prego di riprovare o di specificare un filtro diverso.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 20
+DATABASE: DM-22RIC001-20260427
+CONVERSATION ID: 957d06ed-d2a3-436f-b4ec-2bfaad9708ce
+CHART PAYLOAD: None
+USER MESSAGE: mostrami gli ultimi 10 prodotti di dimar
+ASSISTANT MESSAGE: Non sono riuscito a recuperare gli ultimi 10 prodotti di Dimar a causa di un problema tecnico. Ti prego di riprovare o di specificare un filtro diverso.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 6
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - assistant : Ecco i dati dei prodotti raggruppati per fornitore, pronti per la creazione di un grafico a barre:
+
+| # | Fornitore | Quantità |
+|---|----------|----------|
+| 1 | [101] VIGORITO MARIO MASSIMO | 35 |
+| 2 | [1096] TRANSBELT SRL | 5 |
+| 3 | [1014] PANATTREZZI SAS | 4 |
+| 4 | [1070] CENTRO DELLA CERAMICA E ARREDO CASA S.R.L. | 4 |
+| 5 | [1000] PRISMA INDUSTRIALE SRL | 2 |
+| 6 | [10] ***AUTOPRONTI SPA | 1 |
+| 7 | [1001] ENIO OTTAVIANI SRL | 1 |
+| 8 | [1068] F.LLI ANELLI SNC | 1 |
+| 9 | [1088] ISOSPA  SRL | 1 |
+| 10 | [11] COFFEE PARTNER S.R.L. | 1 |
+ - user : Mostrami un grafico a barre dei prodotti divisi per fornitore.
+ - assistant : I risultati disponibili non includono informazioni sui fornitori, quindi non è possibile creare un grafico a barre dei prodotti divisi per fornitore.
+
+Di seguito sono riportati i dati aggregati per prodotto che sono stati restituiti:
+
+| # | Prodotto | Quantità |
+|---|----------|----------|
+| 1 | [FSROM] FARINA "00" sfusa GRANO ROMAGNOLO | 1 |
+| 2 | [MOZZARELLA] MOZZARELLA | 1 |
+| 3 | — (nessun prodotto) | 2 887 |
+
+Questi numeri rappresentano il conteggio totale dei record per ogni prodotto, ma non includono alcun campo relativo al fornitore. Se hai bisogno di un'analisi suddivisa per fornitore, potrebbe essere necessario un set di dati diverso.
+ - user : mostrami gli ultimi 10 prodotti di dimar
+ - assistant : Non sono riuscito a recuperare gli ultimi 10 prodotti di Dimar a causa di un problema tecnico. Ti prego di riprovare o di specificare un filtro diverso.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: mostrami gli ultimi 10 prodotti di dimar
+SUB_REQUESTS: ['mostrami gli ultimi 10 prodotti di dimar']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: product.product
+METHOD: search_read
+DOMAIN: [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]]
+FIELDS: ['commessa_id', 'dest_location_id', 'dest_udc_id', 'origin_location_id', 'origin_quant_id', 'origin_udc_id', 'picking_id', 'product_id']
+ORDER: id desc
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: False
+MODEL: product.product
+METHOD: search_read
+DOMAIN: [['dest_location_id', 'any', ['name', 'ilike', 'dimar']]]
+RESULT TYPE: None
+TOTAL: None
+RETURNED: None
+LIMIT: None
+PAGES: None
+HAS MORE: None
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 152
+PREVIEW: Non sono riuscito a recuperare gli ultimi 10 prodotti di Dimar a causa di un problema tecnico. Ti prego di riprovare o di specificare un filtro diverso.
