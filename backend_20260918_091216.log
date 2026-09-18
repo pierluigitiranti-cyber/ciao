@@ -1,0 +1,1622 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-18T09:12:16
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.145:91/web/session/authenticate
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+LOGIN: info@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 1
+USERNAME: info@digimarksrl.com
+NAME: Administrator
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 1
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 1
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+CONVERSATION ID: 89fb8de5-f963-4d94-846b-0631596224a3
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: richiesta dati ordini di produzione
+CONCEPTS: ['produzione', 'periodi temporali', 'filtri e selezioni']
+REASON: La richiesta chiede di visualizzare tutti gli ordini di produzione filtrati per data di pianificazione nel mese di luglio, che rientra chiaramente nel dominio di Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['produzione', 'periodi temporali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: richiesta dati ordini di produzione
+CONCEPTS: ['produzione', 'periodi temporali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REASON: La richiesta chiede di visualizzare tutti gli ordini di produzione filtrati per data di pianificazione nel mese di luglio, che rientra chiaramente nel dominio di Portant.
+EVIDENCE: ["ordini di produzione → concetto 'produzione'", "mese di luglio → concetto 'periodi temporali'", "con data di pianificazione del mese di luglio → indica un filtro, concetto 'filtri e selezioni'"]
+REQUEST 1: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-18T09:17:42+02:00
+CURRENT DATE: 2026-09-18
+CURRENT TIME: 09:17:42
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.145:91/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+MODELS LOADED: 518
+MATCHED MODELS: 71
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+QUERIES: ['production order', 'production orders', 'schedule date', 'planned date', 'date', 'july', 'july month']
+CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: production order
+MODELS LOADED: 518
+MATCHED MODELS: 67
+
+===== MODEL SEARCH INDEX =====
+QUERY: production orders
+MODELS LOADED: 518
+MATCHED MODELS: 62
+
+===== MODEL SEARCH INDEX =====
+QUERY: schedule date
+MODELS LOADED: 518
+MATCHED MODELS: 14
+
+===== MODEL SEARCH INDEX =====
+QUERY: planned date
+MODELS LOADED: 518
+MATCHED MODELS: 14
+
+===== MODEL SEARCH INDEX =====
+QUERY: date
+MODELS LOADED: 518
+MATCHED MODELS: 10
+
+===== MODEL SEARCH INDEX =====
+QUERY: july
+MODELS LOADED: 518
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: july month
+MODELS LOADED: 518
+MATCHED MODELS: 0
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: date.range
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: date.range.generator
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: date.range.type
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: ir.qweb.field.date
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: ir.sequence.date_range
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: base.update.translations
+SEMANTIC QUERIES: ['schedule date', 'planned date', 'date']
+SEMANTIC CONCEPTS: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+MODEL: confirm.dangerous.query
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 25.0
+ - date.range | Date Range | score: 24.0
+ - date.range.generator | Date Range Generator | score: 24.0
+ - date.range.type | Date Range Type | score: 24.0
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0
+ - base.update.translations | base.update.translations | score: 17.5
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 17.5
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 25.0
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range | Date Range | score: 24.0
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.generator | Date Range Generator | score: 24.0
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.type | Date Range Type | score: 24.0
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - base.update.translations | base.update.translations | score: 17.5
+   semantic concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 17.5
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 25.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range | Date Range | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.generator | Date Range Generator | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.type | Date Range Type | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - base.update.translations | base.update.translations | score: 17.5 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 17.5 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['date_planned', '>=', '2026-07-01 00:00:00'], ['date_planned', '<', '2026-08-01 00:00:00']]
+FINAL PARAMS: {'domain': [['date_planned', '>=', '2026-07-01 00:00:00'], ['date_planned', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'date_planned asc'}
+
+===== PLANNER TECHNICAL FIELD VALIDATION FAILED =====
+MODEL: mrp.production
+INVALID FIELDS: ['date_planned']
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 1,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "mrp.production",
+    "method": "search_read",
+    "params": {
+      "domain": [
+        [
+          "date_planned",
+          ">=",
+          "2026-07-01 00:00:00"
+        ],
+        [
+          "date_planned",
+          "<",
+          "2026-08-01 00:00:00"
+        ]
+      ],
+      "fields": [],
+      "limit": 5000,
+      "order": "date_planned asc"
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "mrp.production",
+    "invalid_fields": [
+      "date_planned"
+    ],
+    "validated_fields": [
+      "date_planned"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "activity_date_deadline",
+      "activity_ids",
+      "activity_state",
+      "activity_summary",
+      "activity_type_id",
+      "activity_user_id",
+      "availability",
+      "bom_id",
+      "bom_version_id",
+      "bom_versioning_ids",
+      "check_to_done",
+      "child_production_ids",
+      "company_id",
+      "consumed_less_than_planned",
+      "create_date",
+      "create_uid",
+      "created_inspections",
+      "created_observations",
+      "date_date_planned_start",
+      "date_finished",
+      "date_planned_deadline",
+      "date_planned_finished",
+      "date_planned_start",
+      "date_start",
+      "delivery_date",
+      "display_name",
+      "enable_transfer_product",
+      "final_lot_id",
+      "finished_move_line_ids",
+      "has_moves",
+      "id",
+      "instruction_ids",
+      "is_locked",
+      "is_milestone",
+      "location_dest_id",
+      "location_src_id",
+      "material_move_ids",
+      "material_used",
+      "message_channel_ids",
+      "message_follower_ids",
+      "message_ids",
+      "message_is_follower",
+      "message_last_post",
+      "message_needaction",
+      "message_needaction_counter",
+      "message_partner_ids",
+      "message_unread",
+      "message_unread_counter",
+      "move_dest_ids",
+      "move_finished_ids",
+      "move_raw_ids",
+      "name",
+      "note",
+      "observation_ids",
+      "on_gantt",
+      "order_line_id",
+      "origin",
+      "origin_move_ids",
+      "package_count",
+      "package_ids",
+      "parent_production_id",
+      "partner_ids",
+      "picking_type_id",
+      "pieces_for_qc",
+      "post_visible",
+      "pre_time_workcenter",
+      "predecessor_count",
+      "predecessor_ids",
+      "predecessor_parent",
+      "priority",
+      "procurement_group_id",
+      "produced_qty",
+      "produced_weight",
+      "producing_weight",
+      "product_id",
+      "product_qty",
+      "product_tmpl_id",
+      "product_tracking",
+      "product_uom_id"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 25.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range | Date Range | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.generator | Date Range Generator | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - date.range.type | Date Range Type | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - base.update.translations | base.update.translations | score: 17.5 | concepts: [{'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 17.5 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+FINAL PARAMS: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'id asc'}
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 2
+
+===== GRAPH ROUTE PLANNER =====
+RETRY CONTEXT PRESENT
+NEW SINGLE PLAN HAS PRIORITY
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 2
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+MODEL: mrp.production
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'id asc'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.production
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.production
+FIELDS: 119
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - bom_id | Bill of Material | relation: mrp.bom
+ - bom_version_id | Bom Version | relation: mrp.bom.versioning
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - final_lot_id | Lotto/Numero Seriale | relation: stock.production.lot
+ - location_dest_id | Finished Products Location | relation: stock.location
+ - location_src_id | Raw Materials Location | relation: stock.location
+ - material_used | Material Used | relation: stock.move
+ - order_line_id | Order Line | relation: sale.order.line
+ - parent_production_id | Production that has generated the demand | relation: mrp.production
+ - picking_type_id | Operation Type | relation: stock.picking.type
+ - procurement_group_id | Procurement Group | relation: procurement.group
+ - product_id | Product | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom_id | Product Unit of Measure | relation: product.uom
+ - production_location_id | Production Location | relation: stock.location
+ - routing_id | Routing | relation: mrp.routing
+ - routing_tmpl_id | Template | relation: mrp.routing.template
+ - sale_order_id | Order Reference | relation: sale.order
+ - user_id | Responsible | relation: res.users
+ - workcenter_id | Workcenter | relation: mrp.workcenter
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production order
+SELECTED FIELD: origin
+SELECTED TYPE: char
+SELECTED RELATION: None
+SELECTED LABEL: Source
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 290.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production orders
+SELECTED FIELD: production_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Production Location
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 340.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: schedule date
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: planned date
+SELECTED FIELD: date_date_planned_start
+SELECTED TYPE: date
+SELECTED RELATION: None
+SELECTED LABEL: start date
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 438.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: date
+SELECTED FIELD: date_date_planned_start
+SELECTED TYPE: date
+SELECTED RELATION: None
+SELECTED LABEL: start date
+DIRECT SOURCE TOKENS: 1
+SOURCE COVERAGE: 1.0
+SCORE: 443.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: july
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: july month
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS CONTEXT =====
+CONCEPT: july
+REASON: no sufficient metadata-backed field evidence; treated as entity/context concept
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders']}, {'concept': 'schedule date', 'queries': ['schedule date', 'planned date', 'date']}, {'concept': 'july', 'queries': ['july', 'july month']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'production order': 'production_location_id', 'schedule date': 'date_date_planned_start'}
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: activity_state
+SCORE: 103.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: date_planned_start
+SCORE: 84.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: origin
+SCORE: 84.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: siint_date_order
+SCORE: 84.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: date_planned_deadline
+SCORE: 70.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: delivery_date
+SCORE: 70.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: order_line_id
+SCORE: 68.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: sale_order_id
+SCORE: 68.0
+
+===== DYNAMIC HUMAN FIELD RESOLUTION =====
+AUTO HUMAN FIELDS: ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id']
+USER MESSAGE: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+GROUPBY: []
+ORDERBY: None
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: id asc
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id'], 'limit': 5000, 'order': 'id asc', 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.production
+METHOD: search_read
+FIELDS: ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+
+===== Portant REQUEST =====
+URL: http://10.100.12.145:91/api/mrp.production/search_read
+BODY: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id'], 'limit': 5000, 'order': 'id asc', 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.145:91/api/mrp.production/search_read
+METHOD: POST
+BODY: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id'], 'limit': 5000, 'order': 'id asc', 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 177
+TOTAL RECORDS: 177
+RETURNED RECORDS: 177
+LIMIT: 5000
+OFFSET: 0
+PAGES: 0
+HAS MORE: False
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+MODEL: mrp.production
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 2
+
+===== GRAPH ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 177
+RECORDS SENT TO RESPONSE LLM: 50
+
+===== RESPONSE RESULT =====
+## Ordini di produzione con data di pianificazione nel mese di luglio
+
+Ho trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026.
+Di seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).
+
+| Data di pianificazione | Data ordine | Data consegna |
+|-----------------|------------|---------------|
+| 9 luglio 2026 alle 16:51 | 14 aprile 2026 | 25 giugno 2026 |
+| 20 luglio 2026 alle 21:28 | 15 maggio 2026 | 4 settembre 2026 |
+| 16 luglio 2026 alle 15:19 | 11 giugno 2026 | 29 agosto 2026 |
+| 21 luglio 2026 alle 09:12 | 19 giugno 2026 | 4 settembre 2026 |
+| 17 luglio 2026 alle 08:35 | 19 giugno 2026 | 4 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | *(nessuna consegna)* |
+| 6 luglio 2026 alle 14:07 | 3 luglio 2026 | 8 luglio 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 25 luglio 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 3 ottobre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 alle 11:36 | 8 luglio 2026 | 10 agosto 2026 |
+| 9 luglio 2026 | 9 luglio 2026 | 25 settembre 2026 |
+| 14 luglio 2026 alle 11:08 | 10 luglio 2026 | 16 novembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 4 ottobre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 4 settembre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 | 16 luglio 2026 | 2 ottobre 2026 |
+| 21 luglio 2026 alle 09:02 | 17 luglio 2026 | 17 luglio 2026 |
+| 4 luglio 2026 alle 06:20 | 9 giugno 2026 | 24 luglio 2026 |
+| 10 luglio 2026 alle 11:31 | 20 giugno 2026 | 5 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | 11 settembre 2026 |
+| 4 luglio 2026 | 4 luglio 2026 | 20 luglio 2026 |
+| 8 luglio 2026 alle 13:00 | 5 luglio 2026 | 13 maggio 2024 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 25 settembre 2026 |
+| 16 luglio 2026 alle 16:04 | 14 luglio 2026 | 5 ottobre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 18 luglio 2026 | 18 luglio 2026 | 5 ottobre 2026 |
+| 14 luglio 2026 alle 09:22 | 10 luglio 2026 | 16 novembre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 alle 06:59 | 16 giugno 2026 | 8 settembre 2026 |
+| 2 luglio 2026 alle 08:10 | 24 giugno 2026 | 5 settembre 2026 |
+| 17 luglio 2026 alle 08:44 | 2 luglio 2026 | 18 settembre 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | *(nessuna consegna)* |
+| 7 luglio 2026 | 7 luglio 2026 | 15 ottobre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 15:27 | 13 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 12:54 | 26 giugno 2026 | 11 settembre 2026 |
+| 15 luglio 2026 alle 16:39 | 12 maggio 2026 | 10 luglio 2026 |
+| 3 luglio 2026 alle 07:38 | 30 maggio 2026 | 25 luglio 2026 |
+| 7 luglio 2026 alle 11:14 | 23 dicembre 2025 | 5 giugno 2026 |
+| 2 luglio 2026 alle 11:55 | 27 aprile 2026 | 22 giugno 2026 |
+| 14 luglio 2026 alle 09:05 | 14 giugno 2026 | 20 giugno 2026 |
+| 10 luglio 2026 alle 12:59 | 9 marzo 2026 | 8 maggio 2026 |
+
+*Le restanti 127 voci sono disponibili su richiesta.*
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+CONVERSATION ID: 89fb8de5-f963-4d94-846b-0631596224a3
+RECORD LINKS: [{'id': 3516, 'model': 'mrp.production', 'label': '3516', 'url': 'http://10.100.12.145:91/web#id=3516&model=mrp.production&view_type=form'}, {'id': 3523, 'model': 'mrp.production', 'label': '3523', 'url': 'http://10.100.12.145:91/web#id=3523&model=mrp.production&view_type=form'}, {'id': 3537, 'model': 'mrp.production', 'label': '3537', 'url': 'http://10.100.12.145:91/web#id=3537&model=mrp.production&view_type=form'}, {'id': 3545, 'model': 'mrp.production', 'label': '3545', 'url': 'http://10.100.12.145:91/web#id=3545&model=mrp.production&view_type=form'}, {'id': 3546, 'model': 'mrp.production', 'label': '3546', 'url': 'http://10.100.12.145:91/web#id=3546&model=mrp.production&view_type=form'}, {'id': 3553, 'model': 'mrp.production', 'label': '3553', 'url': 'http://10.100.12.145:91/web#id=3553&model=mrp.production&view_type=form'}, {'id': 3554, 'model': 'mrp.production', 'label': '3554', 'url': 'http://10.100.12.145:91/web#id=3554&model=mrp.production&view_type=form'}, {'id': 3555, 'model': 'mrp.production', 'label': '3555', 'url': 'http://10.100.12.145:91/web#id=3555&model=mrp.production&view_type=form'}, {'id': 3556, 'model': 'mrp.production', 'label': '3556', 'url': 'http://10.100.12.145:91/web#id=3556&model=mrp.production&view_type=form'}, {'id': 3557, 'model': 'mrp.production', 'label': '3557', 'url': 'http://10.100.12.145:91/web#id=3557&model=mrp.production&view_type=form'}, {'id': 3558, 'model': 'mrp.production', 'label': '3558', 'url': 'http://10.100.12.145:91/web#id=3558&model=mrp.production&view_type=form'}, {'id': 3559, 'model': 'mrp.production', 'label': '3559', 'url': 'http://10.100.12.145:91/web#id=3559&model=mrp.production&view_type=form'}, {'id': 3560, 'model': 'mrp.production', 'label': '3560', 'url': 'http://10.100.12.145:91/web#id=3560&model=mrp.production&view_type=form'}, {'id': 3561, 'model': 'mrp.production', 'label': '3561', 'url': 'http://10.100.12.145:91/web#id=3561&model=mrp.production&view_type=form'}, {'id': 3562, 'model': 'mrp.production', 'label': '3562', 'url': 'http://10.100.12.145:91/web#id=3562&model=mrp.production&view_type=form'}, {'id': 3563, 'model': 'mrp.production', 'label': '3563', 'url': 'http://10.100.12.145:91/web#id=3563&model=mrp.production&view_type=form'}, {'id': 3564, 'model': 'mrp.production', 'label': '3564', 'url': 'http://10.100.12.145:91/web#id=3564&model=mrp.production&view_type=form'}, {'id': 3565, 'model': 'mrp.production', 'label': '3565', 'url': 'http://10.100.12.145:91/web#id=3565&model=mrp.production&view_type=form'}, {'id': 3566, 'model': 'mrp.production', 'label': '3566', 'url': 'http://10.100.12.145:91/web#id=3566&model=mrp.production&view_type=form'}, {'id': 3567, 'model': 'mrp.production', 'label': '3567', 'url': 'http://10.100.12.145:91/web#id=3567&model=mrp.production&view_type=form'}, {'id': 3568, 'model': 'mrp.production', 'label': '3568', 'url': 'http://10.100.12.145:91/web#id=3568&model=mrp.production&view_type=form'}, {'id': 3609, 'model': 'mrp.production', 'label': '3609', 'url': 'http://10.100.12.145:91/web#id=3609&model=mrp.production&view_type=form'}, {'id': 3613, 'model': 'mrp.production', 'label': '3613', 'url': 'http://10.100.12.145:91/web#id=3613&model=mrp.production&view_type=form'}, {'id': 3616, 'model': 'mrp.production', 'label': '3616', 'url': 'http://10.100.12.145:91/web#id=3616&model=mrp.production&view_type=form'}, {'id': 3617, 'model': 'mrp.production', 'label': '3617', 'url': 'http://10.100.12.145:91/web#id=3617&model=mrp.production&view_type=form'}, {'id': 3618, 'model': 'mrp.production', 'label': '3618', 'url': 'http://10.100.12.145:91/web#id=3618&model=mrp.production&view_type=form'}, {'id': 3619, 'model': 'mrp.production', 'label': '3619', 'url': 'http://10.100.12.145:91/web#id=3619&model=mrp.production&view_type=form'}, {'id': 3620, 'model': 'mrp.production', 'label': '3620', 'url': 'http://10.100.12.145:91/web#id=3620&model=mrp.production&view_type=form'}, {'id': 3621, 'model': 'mrp.production', 'label': '3621', 'url': 'http://10.100.12.145:91/web#id=3621&model=mrp.production&view_type=form'}, {'id': 3622, 'model': 'mrp.production', 'label': '3622', 'url': 'http://10.100.12.145:91/web#id=3622&model=mrp.production&view_type=form'}, {'id': 3623, 'model': 'mrp.production', 'label': '3623', 'url': 'http://10.100.12.145:91/web#id=3623&model=mrp.production&view_type=form'}, {'id': 3624, 'model': 'mrp.production', 'label': '3624', 'url': 'http://10.100.12.145:91/web#id=3624&model=mrp.production&view_type=form'}, {'id': 3838, 'model': 'mrp.production', 'label': '3838', 'url': 'http://10.100.12.145:91/web#id=3838&model=mrp.production&view_type=form'}, {'id': 3839, 'model': 'mrp.production', 'label': '3839', 'url': 'http://10.100.12.145:91/web#id=3839&model=mrp.production&view_type=form'}, {'id': 3884, 'model': 'mrp.production', 'label': '3884', 'url': 'http://10.100.12.145:91/web#id=3884&model=mrp.production&view_type=form'}, {'id': 3890, 'model': 'mrp.production', 'label': '3890', 'url': 'http://10.100.12.145:91/web#id=3890&model=mrp.production&view_type=form'}, {'id': 3895, 'model': 'mrp.production', 'label': '3895', 'url': 'http://10.100.12.145:91/web#id=3895&model=mrp.production&view_type=form'}, {'id': 3896, 'model': 'mrp.production', 'label': '3896', 'url': 'http://10.100.12.145:91/web#id=3896&model=mrp.production&view_type=form'}, {'id': 3897, 'model': 'mrp.production', 'label': '3897', 'url': 'http://10.100.12.145:91/web#id=3897&model=mrp.production&view_type=form'}, {'id': 3898, 'model': 'mrp.production', 'label': '3898', 'url': 'http://10.100.12.145:91/web#id=3898&model=mrp.production&view_type=form'}, {'id': 3899, 'model': 'mrp.production', 'label': '3899', 'url': 'http://10.100.12.145:91/web#id=3899&model=mrp.production&view_type=form'}, {'id': 3900, 'model': 'mrp.production', 'label': '3900', 'url': 'http://10.100.12.145:91/web#id=3900&model=mrp.production&view_type=form'}, {'id': 4305, 'model': 'mrp.production', 'label': '4305', 'url': 'http://10.100.12.145:91/web#id=4305&model=mrp.production&view_type=form'}, {'id': 4492, 'model': 'mrp.production', 'label': '4492', 'url': 'http://10.100.12.145:91/web#id=4492&model=mrp.production&view_type=form'}, {'id': 4986, 'model': 'mrp.production', 'label': '4986', 'url': 'http://10.100.12.145:91/web#id=4986&model=mrp.production&view_type=form'}, {'id': 5458, 'model': 'mrp.production', 'label': '5458', 'url': 'http://10.100.12.145:91/web#id=5458&model=mrp.production&view_type=form'}, {'id': 6026, 'model': 'mrp.production', 'label': '6026', 'url': 'http://10.100.12.145:91/web#id=6026&model=mrp.production&view_type=form'}, {'id': 6073, 'model': 'mrp.production', 'label': '6073', 'url': 'http://10.100.12.145:91/web#id=6073&model=mrp.production&view_type=form'}, {'id': 6082, 'model': 'mrp.production', 'label': '6082', 'url': 'http://10.100.12.145:91/web#id=6082&model=mrp.production&view_type=form'}, {'id': 6100, 'model': 'mrp.production', 'label': '6100', 'url': 'http://10.100.12.145:91/web#id=6100&model=mrp.production&view_type=form'}, {'id': 6113, 'model': 'mrp.production', 'label': '6113', 'url': 'http://10.100.12.145:91/web#id=6113&model=mrp.production&view_type=form'}, {'id': 6332, 'model': 'mrp.production', 'label': '6332', 'url': 'http://10.100.12.145:91/web#id=6332&model=mrp.production&view_type=form'}, {'id': 6333, 'model': 'mrp.production', 'label': '6333', 'url': 'http://10.100.12.145:91/web#id=6333&model=mrp.production&view_type=form'}, {'id': 6334, 'model': 'mrp.production', 'label': '6334', 'url': 'http://10.100.12.145:91/web#id=6334&model=mrp.production&view_type=form'}, {'id': 6558, 'model': 'mrp.production', 'label': '6558', 'url': 'http://10.100.12.145:91/web#id=6558&model=mrp.production&view_type=form'}, {'id': 6566, 'model': 'mrp.production', 'label': '6566', 'url': 'http://10.100.12.145:91/web#id=6566&model=mrp.production&view_type=form'}, {'id': 6567, 'model': 'mrp.production', 'label': '6567', 'url': 'http://10.100.12.145:91/web#id=6567&model=mrp.production&view_type=form'}, {'id': 6791, 'model': 'mrp.production', 'label': '6791', 'url': 'http://10.100.12.145:91/web#id=6791&model=mrp.production&view_type=form'}, {'id': 6850, 'model': 'mrp.production', 'label': '6850', 'url': 'http://10.100.12.145:91/web#id=6850&model=mrp.production&view_type=form'}, {'id': 6865, 'model': 'mrp.production', 'label': '6865', 'url': 'http://10.100.12.145:91/web#id=6865&model=mrp.production&view_type=form'}, {'id': 6866, 'model': 'mrp.production', 'label': '6866', 'url': 'http://10.100.12.145:91/web#id=6866&model=mrp.production&view_type=form'}, {'id': 7232, 'model': 'mrp.production', 'label': '7232', 'url': 'http://10.100.12.145:91/web#id=7232&model=mrp.production&view_type=form'}, {'id': 7901, 'model': 'mrp.production', 'label': '7901', 'url': 'http://10.100.12.145:91/web#id=7901&model=mrp.production&view_type=form'}, {'id': 7915, 'model': 'mrp.production', 'label': '7915', 'url': 'http://10.100.12.145:91/web#id=7915&model=mrp.production&view_type=form'}, {'id': 8029, 'model': 'mrp.production', 'label': '8029', 'url': 'http://10.100.12.145:91/web#id=8029&model=mrp.production&view_type=form'}, {'id': 8062, 'model': 'mrp.production', 'label': '8062', 'url': 'http://10.100.12.145:91/web#id=8062&model=mrp.production&view_type=form'}, {'id': 8496, 'model': 'mrp.production', 'label': '8496', 'url': 'http://10.100.12.145:91/web#id=8496&model=mrp.production&view_type=form'}, {'id': 8661, 'model': 'mrp.production', 'label': '8661', 'url': 'http://10.100.12.145:91/web#id=8661&model=mrp.production&view_type=form'}, {'id': 8842, 'model': 'mrp.production', 'label': '8842', 'url': 'http://10.100.12.145:91/web#id=8842&model=mrp.production&view_type=form'}, {'id': 8870, 'model': 'mrp.production', 'label': '8870', 'url': 'http://10.100.12.145:91/web#id=8870&model=mrp.production&view_type=form'}, {'id': 8913, 'model': 'mrp.production', 'label': '8913', 'url': 'http://10.100.12.145:91/web#id=8913&model=mrp.production&view_type=form'}, {'id': 9033, 'model': 'mrp.production', 'label': '9033', 'url': 'http://10.100.12.145:91/web#id=9033&model=mrp.production&view_type=form'}, {'id': 9232, 'model': 'mrp.production', 'label': '9232', 'url': 'http://10.100.12.145:91/web#id=9232&model=mrp.production&view_type=form'}, {'id': 9340, 'model': 'mrp.production', 'label': '9340', 'url': 'http://10.100.12.145:91/web#id=9340&model=mrp.production&view_type=form'}, {'id': 9649, 'model': 'mrp.production', 'label': '9649', 'url': 'http://10.100.12.145:91/web#id=9649&model=mrp.production&view_type=form'}, {'id': 9650, 'model': 'mrp.production', 'label': '9650', 'url': 'http://10.100.12.145:91/web#id=9650&model=mrp.production&view_type=form'}, {'id': 9678, 'model': 'mrp.production', 'label': '9678', 'url': 'http://10.100.12.145:91/web#id=9678&model=mrp.production&view_type=form'}, {'id': 9738, 'model': 'mrp.production', 'label': '9738', 'url': 'http://10.100.12.145:91/web#id=9738&model=mrp.production&view_type=form'}, {'id': 9819, 'model': 'mrp.production', 'label': '9819', 'url': 'http://10.100.12.145:91/web#id=9819&model=mrp.production&view_type=form'}, {'id': 10143, 'model': 'mrp.production', 'label': '10143', 'url': 'http://10.100.12.145:91/web#id=10143&model=mrp.production&view_type=form'}, {'id': 10144, 'model': 'mrp.production', 'label': '10144', 'url': 'http://10.100.12.145:91/web#id=10144&model=mrp.production&view_type=form'}, {'id': 10342, 'model': 'mrp.production', 'label': '10342', 'url': 'http://10.100.12.145:91/web#id=10342&model=mrp.production&view_type=form'}, {'id': 10343, 'model': 'mrp.production', 'label': '10343', 'url': 'http://10.100.12.145:91/web#id=10343&model=mrp.production&view_type=form'}, {'id': 10365, 'model': 'mrp.production', 'label': '10365', 'url': 'http://10.100.12.145:91/web#id=10365&model=mrp.production&view_type=form'}, {'id': 10628, 'model': 'mrp.production', 'label': '10628', 'url': 'http://10.100.12.145:91/web#id=10628&model=mrp.production&view_type=form'}, {'id': 10743, 'model': 'mrp.production', 'label': '10743', 'url': 'http://10.100.12.145:91/web#id=10743&model=mrp.production&view_type=form'}, {'id': 10821, 'model': 'mrp.production', 'label': '10821', 'url': 'http://10.100.12.145:91/web#id=10821&model=mrp.production&view_type=form'}, {'id': 11039, 'model': 'mrp.production', 'label': '11039', 'url': 'http://10.100.12.145:91/web#id=11039&model=mrp.production&view_type=form'}, {'id': 11064, 'model': 'mrp.production', 'label': '11064', 'url': 'http://10.100.12.145:91/web#id=11064&model=mrp.production&view_type=form'}, {'id': 11776, 'model': 'mrp.production', 'label': '11776', 'url': 'http://10.100.12.145:91/web#id=11776&model=mrp.production&view_type=form'}, {'id': 11780, 'model': 'mrp.production', 'label': '11780', 'url': 'http://10.100.12.145:91/web#id=11780&model=mrp.production&view_type=form'}, {'id': 11781, 'model': 'mrp.production', 'label': '11781', 'url': 'http://10.100.12.145:91/web#id=11781&model=mrp.production&view_type=form'}, {'id': 11782, 'model': 'mrp.production', 'label': '11782', 'url': 'http://10.100.12.145:91/web#id=11782&model=mrp.production&view_type=form'}, {'id': 11783, 'model': 'mrp.production', 'label': '11783', 'url': 'http://10.100.12.145:91/web#id=11783&model=mrp.production&view_type=form'}, {'id': 12048, 'model': 'mrp.production', 'label': '12048', 'url': 'http://10.100.12.145:91/web#id=12048&model=mrp.production&view_type=form'}, {'id': 12257, 'model': 'mrp.production', 'label': '12257', 'url': 'http://10.100.12.145:91/web#id=12257&model=mrp.production&view_type=form'}, {'id': 13077, 'model': 'mrp.production', 'label': '13077', 'url': 'http://10.100.12.145:91/web#id=13077&model=mrp.production&view_type=form'}, {'id': 13080, 'model': 'mrp.production', 'label': '13080', 'url': 'http://10.100.12.145:91/web#id=13080&model=mrp.production&view_type=form'}, {'id': 13081, 'model': 'mrp.production', 'label': '13081', 'url': 'http://10.100.12.145:91/web#id=13081&model=mrp.production&view_type=form'}, {'id': 13083, 'model': 'mrp.production', 'label': '13083', 'url': 'http://10.100.12.145:91/web#id=13083&model=mrp.production&view_type=form'}, {'id': 13084, 'model': 'mrp.production', 'label': '13084', 'url': 'http://10.100.12.145:91/web#id=13084&model=mrp.production&view_type=form'}, {'id': 13085, 'model': 'mrp.production', 'label': '13085', 'url': 'http://10.100.12.145:91/web#id=13085&model=mrp.production&view_type=form'}, {'id': 13086, 'model': 'mrp.production', 'label': '13086', 'url': 'http://10.100.12.145:91/web#id=13086&model=mrp.production&view_type=form'}, {'id': 13705, 'model': 'mrp.production', 'label': '13705', 'url': 'http://10.100.12.145:91/web#id=13705&model=mrp.production&view_type=form'}, {'id': 13802, 'model': 'mrp.production', 'label': '13802', 'url': 'http://10.100.12.145:91/web#id=13802&model=mrp.production&view_type=form'}, {'id': 13910, 'model': 'mrp.production', 'label': '13910', 'url': 'http://10.100.12.145:91/web#id=13910&model=mrp.production&view_type=form'}, {'id': 14040, 'model': 'mrp.production', 'label': '14040', 'url': 'http://10.100.12.145:91/web#id=14040&model=mrp.production&view_type=form'}, {'id': 14047, 'model': 'mrp.production', 'label': '14047', 'url': 'http://10.100.12.145:91/web#id=14047&model=mrp.production&view_type=form'}, {'id': 14320, 'model': 'mrp.production', 'label': '14320', 'url': 'http://10.100.12.145:91/web#id=14320&model=mrp.production&view_type=form'}, {'id': 14324, 'model': 'mrp.production', 'label': '14324', 'url': 'http://10.100.12.145:91/web#id=14324&model=mrp.production&view_type=form'}, {'id': 14325, 'model': 'mrp.production', 'label': '14325', 'url': 'http://10.100.12.145:91/web#id=14325&model=mrp.production&view_type=form'}, {'id': 14326, 'model': 'mrp.production', 'label': '14326', 'url': 'http://10.100.12.145:91/web#id=14326&model=mrp.production&view_type=form'}, {'id': 14327, 'model': 'mrp.production', 'label': '14327', 'url': 'http://10.100.12.145:91/web#id=14327&model=mrp.production&view_type=form'}, {'id': 14328, 'model': 'mrp.production', 'label': '14328', 'url': 'http://10.100.12.145:91/web#id=14328&model=mrp.production&view_type=form'}, {'id': 14508, 'model': 'mrp.production', 'label': '14508', 'url': 'http://10.100.12.145:91/web#id=14508&model=mrp.production&view_type=form'}, {'id': 14814, 'model': 'mrp.production', 'label': '14814', 'url': 'http://10.100.12.145:91/web#id=14814&model=mrp.production&view_type=form'}, {'id': 14959, 'model': 'mrp.production', 'label': '14959', 'url': 'http://10.100.12.145:91/web#id=14959&model=mrp.production&view_type=form'}, {'id': 15027, 'model': 'mrp.production', 'label': '15027', 'url': 'http://10.100.12.145:91/web#id=15027&model=mrp.production&view_type=form'}, {'id': 15047, 'model': 'mrp.production', 'label': '15047', 'url': 'http://10.100.12.145:91/web#id=15047&model=mrp.production&view_type=form'}, {'id': 15048, 'model': 'mrp.production', 'label': '15048', 'url': 'http://10.100.12.145:91/web#id=15048&model=mrp.production&view_type=form'}, {'id': 15516, 'model': 'mrp.production', 'label': '15516', 'url': 'http://10.100.12.145:91/web#id=15516&model=mrp.production&view_type=form'}, {'id': 15517, 'model': 'mrp.production', 'label': '15517', 'url': 'http://10.100.12.145:91/web#id=15517&model=mrp.production&view_type=form'}, {'id': 15518, 'model': 'mrp.production', 'label': '15518', 'url': 'http://10.100.12.145:91/web#id=15518&model=mrp.production&view_type=form'}, {'id': 15519, 'model': 'mrp.production', 'label': '15519', 'url': 'http://10.100.12.145:91/web#id=15519&model=mrp.production&view_type=form'}, {'id': 15520, 'model': 'mrp.production', 'label': '15520', 'url': 'http://10.100.12.145:91/web#id=15520&model=mrp.production&view_type=form'}, {'id': 15654, 'model': 'mrp.production', 'label': '15654', 'url': 'http://10.100.12.145:91/web#id=15654&model=mrp.production&view_type=form'}, {'id': 15679, 'model': 'mrp.production', 'label': '15679', 'url': 'http://10.100.12.145:91/web#id=15679&model=mrp.production&view_type=form'}, {'id': 15847, 'model': 'mrp.production', 'label': '15847', 'url': 'http://10.100.12.145:91/web#id=15847&model=mrp.production&view_type=form'}, {'id': 16323, 'model': 'mrp.production', 'label': '16323', 'url': 'http://10.100.12.145:91/web#id=16323&model=mrp.production&view_type=form'}, {'id': 16525, 'model': 'mrp.production', 'label': '16525', 'url': 'http://10.100.12.145:91/web#id=16525&model=mrp.production&view_type=form'}, {'id': 16771, 'model': 'mrp.production', 'label': '16771', 'url': 'http://10.100.12.145:91/web#id=16771&model=mrp.production&view_type=form'}, {'id': 16772, 'model': 'mrp.production', 'label': '16772', 'url': 'http://10.100.12.145:91/web#id=16772&model=mrp.production&view_type=form'}, {'id': 16773, 'model': 'mrp.production', 'label': '16773', 'url': 'http://10.100.12.145:91/web#id=16773&model=mrp.production&view_type=form'}, {'id': 16774, 'model': 'mrp.production', 'label': '16774', 'url': 'http://10.100.12.145:91/web#id=16774&model=mrp.production&view_type=form'}, {'id': 16875, 'model': 'mrp.production', 'label': '16875', 'url': 'http://10.100.12.145:91/web#id=16875&model=mrp.production&view_type=form'}, {'id': 17161, 'model': 'mrp.production', 'label': '17161', 'url': 'http://10.100.12.145:91/web#id=17161&model=mrp.production&view_type=form'}, {'id': 17165, 'model': 'mrp.production', 'label': '17165', 'url': 'http://10.100.12.145:91/web#id=17165&model=mrp.production&view_type=form'}, {'id': 17186, 'model': 'mrp.production', 'label': '17186', 'url': 'http://10.100.12.145:91/web#id=17186&model=mrp.production&view_type=form'}, {'id': 17615, 'model': 'mrp.production', 'label': '17615', 'url': 'http://10.100.12.145:91/web#id=17615&model=mrp.production&view_type=form'}, {'id': 17763, 'model': 'mrp.production', 'label': '17763', 'url': 'http://10.100.12.145:91/web#id=17763&model=mrp.production&view_type=form'}, {'id': 18022, 'model': 'mrp.production', 'label': '18022', 'url': 'http://10.100.12.145:91/web#id=18022&model=mrp.production&view_type=form'}, {'id': 18023, 'model': 'mrp.production', 'label': '18023', 'url': 'http://10.100.12.145:91/web#id=18023&model=mrp.production&view_type=form'}, {'id': 18024, 'model': 'mrp.production', 'label': '18024', 'url': 'http://10.100.12.145:91/web#id=18024&model=mrp.production&view_type=form'}, {'id': 18025, 'model': 'mrp.production', 'label': '18025', 'url': 'http://10.100.12.145:91/web#id=18025&model=mrp.production&view_type=form'}, {'id': 18026, 'model': 'mrp.production', 'label': '18026', 'url': 'http://10.100.12.145:91/web#id=18026&model=mrp.production&view_type=form'}, {'id': 18027, 'model': 'mrp.production', 'label': '18027', 'url': 'http://10.100.12.145:91/web#id=18027&model=mrp.production&view_type=form'}, {'id': 18337, 'model': 'mrp.production', 'label': '18337', 'url': 'http://10.100.12.145:91/web#id=18337&model=mrp.production&view_type=form'}, {'id': 18393, 'model': 'mrp.production', 'label': '18393', 'url': 'http://10.100.12.145:91/web#id=18393&model=mrp.production&view_type=form'}, {'id': 18410, 'model': 'mrp.production', 'label': '18410', 'url': 'http://10.100.12.145:91/web#id=18410&model=mrp.production&view_type=form'}, {'id': 18528, 'model': 'mrp.production', 'label': '18528', 'url': 'http://10.100.12.145:91/web#id=18528&model=mrp.production&view_type=form'}, {'id': 18570, 'model': 'mrp.production', 'label': '18570', 'url': 'http://10.100.12.145:91/web#id=18570&model=mrp.production&view_type=form'}, {'id': 18791, 'model': 'mrp.production', 'label': '18791', 'url': 'http://10.100.12.145:91/web#id=18791&model=mrp.production&view_type=form'}, {'id': 19010, 'model': 'mrp.production', 'label': '19010', 'url': 'http://10.100.12.145:91/web#id=19010&model=mrp.production&view_type=form'}, {'id': 19295, 'model': 'mrp.production', 'label': '19295', 'url': 'http://10.100.12.145:91/web#id=19295&model=mrp.production&view_type=form'}, {'id': 19298, 'model': 'mrp.production', 'label': '19298', 'url': 'http://10.100.12.145:91/web#id=19298&model=mrp.production&view_type=form'}, {'id': 19299, 'model': 'mrp.production', 'label': '19299', 'url': 'http://10.100.12.145:91/web#id=19299&model=mrp.production&view_type=form'}, {'id': 19300, 'model': 'mrp.production', 'label': '19300', 'url': 'http://10.100.12.145:91/web#id=19300&model=mrp.production&view_type=form'}, {'id': 19301, 'model': 'mrp.production', 'label': '19301', 'url': 'http://10.100.12.145:91/web#id=19301&model=mrp.production&view_type=form'}, {'id': 19302, 'model': 'mrp.production', 'label': '19302', 'url': 'http://10.100.12.145:91/web#id=19302&model=mrp.production&view_type=form'}, {'id': 19303, 'model': 'mrp.production', 'label': '19303', 'url': 'http://10.100.12.145:91/web#id=19303&model=mrp.production&view_type=form'}, {'id': 19920, 'model': 'mrp.production', 'label': '19920', 'url': 'http://10.100.12.145:91/web#id=19920&model=mrp.production&view_type=form'}, {'id': 19958, 'model': 'mrp.production', 'label': '19958', 'url': 'http://10.100.12.145:91/web#id=19958&model=mrp.production&view_type=form'}, {'id': 20050, 'model': 'mrp.production', 'label': '20050', 'url': 'http://10.100.12.145:91/web#id=20050&model=mrp.production&view_type=form'}, {'id': 20315, 'model': 'mrp.production', 'label': '20315', 'url': 'http://10.100.12.145:91/web#id=20315&model=mrp.production&view_type=form'}, {'id': 20316, 'model': 'mrp.production', 'label': '20316', 'url': 'http://10.100.12.145:91/web#id=20316&model=mrp.production&view_type=form'}, {'id': 20553, 'model': 'mrp.production', 'label': '20553', 'url': 'http://10.100.12.145:91/web#id=20553&model=mrp.production&view_type=form'}, {'id': 20554, 'model': 'mrp.production', 'label': '20554', 'url': 'http://10.100.12.145:91/web#id=20554&model=mrp.production&view_type=form'}, {'id': 20555, 'model': 'mrp.production', 'label': '20555', 'url': 'http://10.100.12.145:91/web#id=20555&model=mrp.production&view_type=form'}, {'id': 20556, 'model': 'mrp.production', 'label': '20556', 'url': 'http://10.100.12.145:91/web#id=20556&model=mrp.production&view_type=form'}, {'id': 20638, 'model': 'mrp.production', 'label': '20638', 'url': 'http://10.100.12.145:91/web#id=20638&model=mrp.production&view_type=form'}, {'id': 20867, 'model': 'mrp.production', 'label': '20867', 'url': 'http://10.100.12.145:91/web#id=20867&model=mrp.production&view_type=form'}, {'id': 21107, 'model': 'mrp.production', 'label': '21107', 'url': 'http://10.100.12.145:91/web#id=21107&model=mrp.production&view_type=form'}, {'id': 21394, 'model': 'mrp.production', 'label': '21394', 'url': 'http://10.100.12.145:91/web#id=21394&model=mrp.production&view_type=form'}, {'id': 21533, 'model': 'mrp.production', 'label': '21533', 'url': 'http://10.100.12.145:91/web#id=21533&model=mrp.production&view_type=form'}, {'id': 21760, 'model': 'mrp.production', 'label': '21760', 'url': 'http://10.100.12.145:91/web#id=21760&model=mrp.production&view_type=form'}, {'id': 21764, 'model': 'mrp.production', 'label': '21764', 'url': 'http://10.100.12.145:91/web#id=21764&model=mrp.production&view_type=form'}, {'id': 21765, 'model': 'mrp.production', 'label': '21765', 'url': 'http://10.100.12.145:91/web#id=21765&model=mrp.production&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+ASSISTANT MESSAGE: ## Ordini di produzione con data di pianificazione nel mese di luglio
+
+Ho trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026.
+Di seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).
+
+| Data di pianificazione | Data ordine | Data consegna |
+|-----------------|------------|---------------|
+| 9 luglio 2026 alle 16:51 | 14 aprile 2026 | 25 giugno 2026 |
+| 20 luglio 2026 alle 21:28 | 15 maggio 2026 | 4 settembre 2026 |
+| 16 luglio 2026 alle 15:19 | 11 giugno 2026 | 29 agosto 2026 |
+| 21 luglio 2026 alle 09:12 | 19 giugno 2026 | 4 settembre 2026 |
+| 17 luglio 2026 alle 08:35 | 19 giugno 2026 | 4 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | *(nessuna consegna)* |
+| 6 luglio 2026 alle 14:07 | 3 luglio 2026 | 8 luglio 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 25 luglio 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 3 ottobre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 alle 11:36 | 8 luglio 2026 | 10 agosto 2026 |
+| 9 luglio 2026 | 9 luglio 2026 | 25 settembre 2026 |
+| 14 luglio 2026 alle 11:08 | 10 luglio 2026 | 16 novembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 4 ottobre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 4 settembre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 | 16 luglio 2026 | 2 ottobre 2026 |
+| 21 luglio 2026 alle 09:02 | 17 luglio 2026 | 17 luglio 2026 |
+| 4 luglio 2026 alle 06:20 | 9 giugno 2026 | 24 luglio 2026 |
+| 10 luglio 2026 alle 11:31 | 20 giugno 2026 | 5 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | 11 settembre 2026 |
+| 4 luglio 2026 | 4 luglio 2026 | 20 luglio 2026 |
+| 8 luglio 2026 alle 13:00 | 5 luglio 2026 | 13 maggio 2024 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 25 settembre 2026 |
+| 16 luglio 2026 alle 16:04 | 14 luglio 2026 | 5 ottobre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 18 luglio 2026 | 18 luglio 2026 | 5 ottobre 2026 |
+| 14 luglio 2026 alle 09:22 | 10 luglio 2026 | 16 novembre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 alle 06:59 | 16 giugno 2026 | 8 settembre 2026 |
+| 2 luglio 2026 alle 08:10 | 24 giugno 2026 | 5 settembre 2026 |
+| 17 luglio 2026 alle 08:44 | 2 luglio 2026 | 18 settembre 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | *(nessuna consegna)* |
+| 7 luglio 2026 | 7 luglio 2026 | 15 ottobre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 15:27 | 13 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 12:54 | 26 giugno 2026 | 11 settembre 2026 |
+| 15 luglio 2026 alle 16:39 | 12 maggio 2026 | 10 luglio 2026 |
+| 3 luglio 2026 alle 07:38 | 30 maggio 2026 | 25 luglio 2026 |
+| 7 luglio 2026 alle 11:14 | 23 dicembre 2025 | 5 giugno 2026 |
+| 2 luglio 2026 alle 11:55 | 27 aprile 2026 | 22 giugno 2026 |
+| 14 luglio 2026 alle 09:05 | 14 giugno 2026 | 20 giugno 2026 |
+| 10 luglio 2026 alle 12:59 | 9 marzo 2026 | 8 maggio 2026 |
+
+*Le restanti 127 voci sono disponibili su richiesta.*
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+CONVERSATION TITLE UPDATED: Mostrami tutti gli ordini di produzione con data di pianificazione del mese d...
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+ - assistant : ## Ordini di produzione con data di pianificazione nel mese di luglio
+
+Ho trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026.
+Di seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).
+
+| Data di pianificazione | Data ordine | Data consegna |
+|-----------------|------------|---------------|
+| 9 luglio 2026 alle 16:51 | 14 aprile 2026 | 25 giugno 2026 |
+| 20 luglio 2026 alle 21:28 | 15 maggio 2026 | 4 settembre 2026 |
+| 16 luglio 2026 alle 15:19 | 11 giugno 2026 | 29 agosto 2026 |
+| 21 luglio 2026 alle 09:12 | 19 giugno 2026 | 4 settembre 2026 |
+| 17 luglio 2026 alle 08:35 | 19 giugno 2026 | 4 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | *(nessuna consegna)* |
+| 6 luglio 2026 alle 14:07 | 3 luglio 2026 | 8 luglio 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 25 luglio 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 3 ottobre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 alle 11:36 | 8 luglio 2026 | 10 agosto 2026 |
+| 9 luglio 2026 | 9 luglio 2026 | 25 settembre 2026 |
+| 14 luglio 2026 alle 11:08 | 10 luglio 2026 | 16 novembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 4 ottobre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 4 settembre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 | 16 luglio 2026 | 2 ottobre 2026 |
+| 21 luglio 2026 alle 09:02 | 17 luglio 2026 | 17 luglio 2026 |
+| 4 luglio 2026 alle 06:20 | 9 giugno 2026 | 24 luglio 2026 |
+| 10 luglio 2026 alle 11:31 | 20 giugno 2026 | 5 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | 11 settembre 2026 |
+| 4 luglio 2026 | 4 luglio 2026 | 20 luglio 2026 |
+| 8 luglio 2026 alle 13:00 | 5 luglio 2026 | 13 maggio 2024 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 25 settembre 2026 |
+| 16 luglio 2026 alle 16:04 | 14 luglio 2026 | 5 ottobre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 18 luglio 2026 | 18 luglio 2026 | 5 ottobre 2026 |
+| 14 luglio 2026 alle 09:22 | 10 luglio 2026 | 16 novembre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 alle 06:59 | 16 giugno 2026 | 8 settembre 2026 |
+| 2 luglio 2026 alle 08:10 | 24 giugno 2026 | 5 settembre 2026 |
+| 17 luglio 2026 alle 08:44 | 2 luglio 2026 | 18 settembre 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | *(nessuna consegna)* |
+| 7 luglio 2026 | 7 luglio 2026 | 15 ottobre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 15:27 | 13 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 12:54 | 26 giugno 2026 | 11 settembre 2026 |
+| 15 luglio 2026 alle 16:39 | 12 maggio 2026 | 10 luglio 2026 |
+| 3 luglio 2026 alle 07:38 | 30 maggio 2026 | 25 luglio 2026 |
+| 7 luglio 2026 alle 11:14 | 23 dicembre 2025 | 5 giugno 2026 |
+| 2 luglio 2026 alle 11:55 | 27 aprile 2026 | 22 giugno 2026 |
+| 14 luglio 2026 alle 09:05 | 14 giugno 2026 | 20 giugno 2026 |
+| 10 luglio 2026 alle 12:59 | 9 marzo 2026 | 8 maggio 2026 |
+
+*Le restanti 127 voci sono disponibili su richiesta.*
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+SUB_REQUESTS: ['Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+FIELDS: ['activity_state', 'date_planned_start', 'origin', 'siint_date_order', 'date_planned_deadline', 'delivery_date', 'order_line_id', 'sale_order_id']
+ORDER: id asc
+LIMIT: 5000
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+RESULT TYPE: records
+TOTAL: 177
+RETURNED: 177
+LIMIT: 5000
+PAGES: 0
+HAS MORE: False
+FIRST RECORD: {'id': 3516, 'date_planned_start': '2026-07-09 16:51:42', 'origin': False, 'siint_date_order': '2026-04-14', 'date_planned_deadline': False, 'delivery_date': '2026-06-25', 'order_line_id': False, 'activity_state': False, 'sale_order_id': False}
+SECOND RECORD: {'id': 3523, 'date_planned_start': '2026-07-20 21:28:44', 'origin': False, 'siint_date_order': '2026-05-15', 'date_planned_deadline': False, 'delivery_date': '2026-09-04', 'order_line_id': False, 'activity_state': False, 'sale_order_id': False}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 3343
+PREVIEW: ## Ordini di produzione con data di pianificazione nel mese di luglio  Ho trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026. Di seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).  | Data di pian...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami tutti gli ordini di produzione del mese di luglio
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+CONVERSATION ID: 89fb8de5-f963-4d94-846b-0631596224a3
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio'}
+LAST MESSAGE: {'role': 'assistant', 'content': '## Ordini di produzione con data di pianificazione nel mese di luglio\n\nHo trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026.\nDi seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).\n\n| Data di pianificazione | Data ordine | Data consegna |\n|-----------------|------------|---------------|\n| 9 luglio 2026 alle 16:51 | 14 aprile 2026 | 25 giugno 2026 |\n| 20 luglio 2026 alle 21:28 | 15 maggio 2026 | 4 settembre 2026 |\n| 16 luglio 2026 alle 15:19 | 11 giugno 2026 | 29 agosto 2026 |\n| 21 luglio 2026 alle 09:12 | 19 giugno 2026 | 4 settembre 2026 |\n| 17 luglio 2026 alle 08:35 | 19 giugno 2026 | 4 settembre 2026 |\n| 2 luglio 2026 | 2 luglio 2026 | *(nessuna consegna)* |\n| 6 luglio 2026 alle 14:07 | 3 luglio 2026 | 8 luglio 2026 |\n| 3 luglio 2026 | 3 luglio 2026 | 25 luglio 2026 |\n| 6 luglio 2026 | 6 luglio 2026 | 3 ottobre 2026 |\n| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |\n| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |\n| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |\n| 10 luglio 2026 alle 11:36 | 8 luglio 2026 | 10 agosto 2026 |\n| 9 luglio 2026 | 9 luglio 2026 | 25 settembre 2026 |\n| 14 luglio 2026 alle 11:08 | 10 luglio 2026 | 16 novembre 2026 |\n| 10 luglio 2026 | 10 luglio 2026 | 4 ottobre 2026 |\n| 14 luglio 2026 | 14 luglio 2026 | 4 settembre 2026 |\n| 14 luglio 2026 | 14 luglio 2026 | 2 ottobre 2026 |\n| 16 luglio 2026 | 16 luglio 2026 | 2 ottobre 2026 |\n| 21 luglio 2026 alle 09:02 | 17 luglio 2026 | 17 luglio 2026 |\n| 4 luglio 2026 alle 06:20 | 9 giugno 2026 | 24 luglio 2026 |\n| 10 luglio 2026 alle 11:31 | 20 giugno 2026 | 5 settembre 2026 |\n| 2 luglio 2026 | 2 luglio 2026 | 11 settembre 2026 |\n| 4 luglio 2026 | 4 luglio 2026 | 20 luglio 2026 |\n| 8 luglio 2026 alle 13:00 | 5 luglio 2026 | 13 maggio 2024 |\n| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |\n| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |\n| 10 luglio 2026 | 10 luglio 2026 | 25 settembre 2026 |\n| 16 luglio 2026 alle 16:04 | 14 luglio 2026 | 5 ottobre 2026 |\n| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |\n| 18 luglio 2026 | 18 luglio 2026 | 5 ottobre 2026 |\n| 14 luglio 2026 alle 09:22 | 10 luglio 2026 | 16 novembre 2026 |\n| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |\n| 16 luglio 2026 alle 06:59 | 16 giugno 2026 | 8 settembre 2026 |\n| 2 luglio 2026 alle 08:10 | 24 giugno 2026 | 5 settembre 2026 |\n| 17 luglio 2026 alle 08:44 | 2 luglio 2026 | 18 settembre 2026 |\n| 3 luglio 2026 | 3 luglio 2026 | 18 settembre 2026 |\n| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |\n| 6 luglio 2026 | 6 luglio 2026 | *(nessuna consegna)* |\n| 7 luglio 2026 | 7 luglio 2026 | 15 ottobre 2026 |\n| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |\n| 20 luglio 2026 alle 15:27 | 13 luglio 2026 | 25 settembre 2026 |\n| 20 luglio 2026 alle 12:54 | 26 giugno 2026 | 11 settembre 2026 |\n| 15 luglio 2026 alle 16:39 | 12 maggio 2026 | 10 luglio 2026 |\n| 3 luglio 2026 alle 07:38 | 30 maggio 2026 | 25 luglio 2026 |\n| 7 luglio 2026 alle 11:14 | 23 dicembre 2025 | 5 giugno 2026 |\n| 2 luglio 2026 alle 11:55 | 27 aprile 2026 | 22 giugno 2026 |\n| 14 luglio 2026 alle 09:05 | 14 giugno 2026 | 20 giugno 2026 |\n| 10 luglio 2026 alle 12:59 | 9 marzo 2026 | 8 maggio 2026 |\n\n*Le restanti 127 voci sono disponibili su richiesta.*'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami tutti gli ordini di produzione del mese di luglio
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami tutti gli ordini di produzione del mese di luglio
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['produzione', 'ordini di produzione', 'periodi temporali', 'filtri e selezioni']
+REASON: Richiesta di visualizzare tutti gli ordini di produzione per il mese di luglio, continuazione della richiesta precedente filtrata per data di pianificazione.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['produzione', 'ordini di produzione', 'periodi temporali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami tutti gli ordini di produzione del mese di luglio
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: visualizzazione
+CONCEPTS: ['produzione', 'ordini di produzione', 'periodi temporali', 'filtri e selezioni']
+REQUEST COUNT: 1
+REASON: Richiesta di visualizzare tutti gli ordini di produzione per il mese di luglio, continuazione della richiesta precedente filtrata per data di pianificazione.
+EVIDENCE: ["La richiesta contiene 'ordini di produzione' e 'mese di luglio', concetti presenti nella base di conoscenza Portant.", "È una continuazione della precedente richiesta di ordini di produzione a luglio, quindi rientra nell'ambito di Portant."]
+REQUEST 1: Mostrami tutti gli ordini di produzione del mese di luglio
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-18T09:20:10+02:00
+CURRENT DATE: 2026-09-18
+CURRENT TIME: 09:20:10
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.145:91/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami tutti gli ordini di produzione del mese di luglio
+MODELS LOADED: 518
+MATCHED MODELS: 35
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami tutti gli ordini di produzione del mese di luglio
+QUERIES: ['production order', 'production orders', 'manufacturing order', 'manufacturing orders', 'July', 'month', 'order date']
+CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: production order
+MODELS LOADED: 518
+MATCHED MODELS: 67
+
+===== MODEL SEARCH INDEX =====
+QUERY: production orders
+MODELS LOADED: 518
+MATCHED MODELS: 62
+
+===== MODEL SEARCH INDEX =====
+QUERY: manufacturing order
+MODELS LOADED: 518
+MATCHED MODELS: 25
+
+===== MODEL SEARCH INDEX =====
+QUERY: manufacturing orders
+MODELS LOADED: 518
+MATCHED MODELS: 18
+
+===== MODEL SEARCH INDEX =====
+QUERY: July
+MODELS LOADED: 518
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: month
+MODELS LOADED: 518
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: order date
+MODELS LOADED: 518
+MATCHED MODELS: 31
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: mrp.split.wizard
+SEMANTIC QUERIES: ['manufacturing order', 'manufacturing orders']
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: confirm.dangerous.query
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: mrp.inventory.procure
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: qc.observation.measure.wizard
+SEMANTIC QUERIES: []
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: cvd.mrp.workorder.register.production.wizard
+SEMANTIC QUERIES: ['production order', 'production orders']
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: mrp.workorder.less.production
+SEMANTIC QUERIES: ['production order']
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+MODEL: report.all.channels.sales
+SEMANTIC QUERIES: ['production orders', 'manufacturing orders']
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}]
+REQUEST CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami tutti gli ordini di produzione del mese di luglio
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 20.0
+ - mrp.split.wizard | Split Manufacturing Order Wizard | score: 18.0
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 10.0
+ - mrp.inventory.procure | Effettuare acquisti dalle proiezioni di inventario MRP | score: 10.0
+ - qc.observation.measure.wizard | Inserimento misura di controllo | score: 10.0
+ - cvd.mrp.workorder.register.production.wizard | cvd.mrp.workorder.register.production.wizard | score: 8.5
+ - mrp.workorder.less.production | Termina produzione | score: 6.5
+ - report.all.channels.sales | All sales orders grouped by sales channels | score: 5.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami tutti gli ordini di produzione del mese di luglio
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 20.0
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.split.wizard | Split Manufacturing Order Wizard | score: 18.0
+   semantic concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 10.0
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.inventory.procure | Effettuare acquisti dalle proiezioni di inventario MRP | score: 10.0
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - qc.observation.measure.wizard | Inserimento misura di controllo | score: 10.0
+   semantic concepts: []
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - cvd.mrp.workorder.register.production.wizard | cvd.mrp.workorder.register.production.wizard | score: 8.5
+   semantic concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.workorder.less.production | Termina produzione | score: 6.5
+   semantic concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - report.all.channels.sales | All sales orders grouped by sales channels | score: 5.0
+   semantic concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}]
+   request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 20.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.split.wizard | Split Manufacturing Order Wizard | score: 18.0 | concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - confirm.dangerous.query | Conferma query di modifica dati | score: 10.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.inventory.procure | Effettuare acquisti dalle proiezioni di inventario MRP | score: 10.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - qc.observation.measure.wizard | Inserimento misura di controllo | score: 10.0 | concepts: [] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - cvd.mrp.workorder.register.production.wizard | cvd.mrp.workorder.register.production.wizard | score: 8.5 | concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - mrp.workorder.less.production | Termina produzione | score: 6.5 | concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+ - report.all.channels.sales | All sales orders grouped by sales channels | score: 5.0 | concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}] | request concepts: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami tutti gli ordini di produzione del mese di luglio
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+FINAL PARAMS: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'date_planned_start asc'}
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'date_planned_start asc'}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami tutti gli ordini di produzione del mese di luglio
+MODEL: mrp.production
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': [], 'limit': 5000, 'order': 'date_planned_start asc'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.production
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.production
+FIELDS: 119
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - bom_id | Bill of Material | relation: mrp.bom
+ - bom_version_id | Bom Version | relation: mrp.bom.versioning
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - final_lot_id | Lotto/Numero Seriale | relation: stock.production.lot
+ - location_dest_id | Finished Products Location | relation: stock.location
+ - location_src_id | Raw Materials Location | relation: stock.location
+ - material_used | Material Used | relation: stock.move
+ - order_line_id | Order Line | relation: sale.order.line
+ - parent_production_id | Production that has generated the demand | relation: mrp.production
+ - picking_type_id | Operation Type | relation: stock.picking.type
+ - procurement_group_id | Procurement Group | relation: procurement.group
+ - product_id | Product | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom_id | Product Unit of Measure | relation: product.uom
+ - production_location_id | Production Location | relation: stock.location
+ - routing_id | Routing | relation: mrp.routing
+ - routing_tmpl_id | Template | relation: mrp.routing.template
+ - sale_order_id | Order Reference | relation: sale.order
+ - user_id | Responsible | relation: res.users
+ - workcenter_id | Workcenter | relation: mrp.workcenter
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production order
+SELECTED FIELD: origin
+SELECTED TYPE: char
+SELECTED RELATION: None
+SELECTED LABEL: Source
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 290.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production orders
+SELECTED FIELD: production_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Production Location
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 340.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: manufacturing order
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: manufacturing orders
+SELECTED FIELD: production_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Production Location
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 310.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: July
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: month
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: order date
+SELECTED FIELD: siint_date_order
+SELECTED TYPE: date
+SELECTED RELATION: None
+SELECTED LABEL: Siint Date Order
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 410.0
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'production order', 'queries': ['production order', 'production orders', 'manufacturing order', 'manufacturing orders']}, {'concept': 'month', 'queries': ['July', 'month', 'order date']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'production order': 'production_location_id', 'July': 'siint_date_order', 'month': 'siint_date_order'}
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: activity_state
+SCORE: 89.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: origin
+SCORE: 84.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: siint_date_order
+SCORE: 84.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: production_location_id
+SCORE: 78.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: date_planned_deadline
+SCORE: 70.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: date_planned_start
+SCORE: 70.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: delivery_date
+SCORE: 70.0
+
+===== DYNAMIC HUMAN FIELD CANDIDATE =====
+FIELD: order_line_id
+SCORE: 68.0
+
+===== DYNAMIC HUMAN FIELD RESOLUTION =====
+AUTO HUMAN FIELDS: ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id']
+USER MESSAGE: Mostrami tutti gli ordini di produzione del mese di luglio
+GROUPBY: []
+ORDERBY: None
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: date_planned_start asc
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id'], 'limit': 5000, 'order': 'date_planned_start asc', 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.production
+METHOD: search_read
+FIELDS: ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+
+===== Portant REQUEST =====
+URL: http://10.100.12.145:91/api/mrp.production/search_read
+BODY: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id'], 'limit': 5000, 'order': 'date_planned_start asc', 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.145:91/api/mrp.production/search_read
+METHOD: POST
+BODY: {'domain': [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']], 'fields': ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id'], 'limit': 5000, 'order': 'date_planned_start asc', 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 177
+TOTAL RECORDS: 177
+RETURNED RECORDS: 177
+LIMIT: 5000
+OFFSET: 0
+PAGES: 0
+HAS MORE: False
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Mostrami tutti gli ordini di produzione del mese di luglio
+MODEL: mrp.production
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== GRAPH ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 177
+RECORDS SENT TO RESPONSE LLM: 50
+
+===== RESPONSE RESULT =====
+## Ordini di produzione per luglio 2026
+
+Ho trovato **177 ordini di produzione** pianificati nel mese di luglio 2026.
+Di seguito sono mostrati i primi 50 record (un campione).
+
+| # | Data pianificazione | Data consegna | Data ordine | Ubicazione |
+|---|-------------------|---------------|-------------|-----------|
+| 1 | 1 luglio 2026 | 1 luglio 2026 | 1 luglio 2026 | Ubicazione virtuale/Produzione |
+| 2 | 1 luglio 2026 | 17 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 3 | 1 luglio 2026 | 24 agosto 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 4 | 1 luglio 2026 | 24 agosto 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 5 | 1 luglio 2026 | 11 giugno 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 6 | 1 luglio 2026 | N/A | 20 giugno 2026 | Ubicazione virtuale/Produzione |
+| 7 | 1 luglio 2026 | 4 settembre 2026 | 16 giugno 2026 | Ubicazione virtuale/Produzione |
+| 8 | 1 luglio 2026 | 11 settembre 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 9 | 1 luglio 2026 | 3 settembre 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 10 | 1 luglio 2026 | 31 luglio 2026 | 3 giugno 2026 | Ubicazione virtuale/Produzione |
+| 11 | 2 luglio 2026 | N/A | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 12 | 2 luglio 2026 | 5 ottobre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 13 | 2 luglio 2026 | 11 settembre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 14 | 2 luglio 2026 | 6 luglio 2026 | 24 aprile 2026 | Ubicazione virtuale/Produzione |
+| 15 | 2 luglio 2026 | 28 febbraio 2027 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 16 | 2 luglio 2026 | 5 settembre 2026 | 24 giugno 2026 | Ubicazione virtuale/Produzione |
+| 17 | 2 luglio 2026 | N/A | 30 aprile 2026 | Ubicazione virtuale/Produzione |
+| 18 | 2 luglio 2026 | 22 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 19 | 2 luglio 2026 | 28 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 20 | 2 luglio 2026 | 15 settembre 2026 | 15 giugno 2026 | Ubicazione virtuale/Produzione |
+| 21 | 2 luglio 2026 | 20 giugno 2026 | 4 giugno 2026 | Ubicazione virtuale/Produzione |
+| 22 | 3 luglio 2026 | 11 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 23 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 24 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 25 | 3 luglio 2026 | 25 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 26 | 3 luglio 2026 | 25 luglio 2026 | 30 maggio 2026 | Ubicazione virtuale/Produzione |
+| 27 | 3 luglio 2026 | N/A | 29 aprile 2026 | Ubicazione virtuale/Produzione |
+| 28 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 29 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 30 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 31 | 4 luglio 2026 | 24 luglio 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 32 | 6 luglio 2026 | N/A | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 33 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 34 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 35 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 36 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 37 | 6 luglio 2026 | 3 ottobre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 38 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 39 | 6 luglio 2026 | 15 giugno 2026 | 26 marzo 2026 | Ubicazione virtuale/Produzione |
+| 40 | 6 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 41 | 6 luglio 2026 | 8 ottobre 2026 | 29 maggio 2026 | Ubicazione virtuale/Produzione |
+| 42 | 6 luglio 2026 | 15 giugno 2026 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 43 | 6 luglio 2026 | 8 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 44 | 6 luglio 2026 | 24 luglio 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 45 | 6 luglio 2026 | 17 luglio 2026 | 18 maggio 2026 | Ubicazione virtuale/Produzione |
+| 46 | 6 luglio 2026 | 15 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 47 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 48 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 49 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 50 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+
+**Nota:** Vengono mostrati solo i primi 50 ordini su un totale di **177** ordini di produzione pianificati nel mese di luglio 2026. Se hai bisogno di visualizzare record aggiuntivi o di filtrare per un sottoinsieme specifico (ad esempio, per stato o ubicazione), fammelo sapere.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-26CPT001_TEST_IMPORT_20260724
+CONVERSATION ID: 89fb8de5-f963-4d94-846b-0631596224a3
+RECORD LINKS: [{'id': 16771, 'model': 'mrp.production', 'label': '16771', 'url': 'http://10.100.12.145:91/web#id=16771&model=mrp.production&view_type=form'}, {'id': 7915, 'model': 'mrp.production', 'label': '7915', 'url': 'http://10.100.12.145:91/web#id=7915&model=mrp.production&view_type=form'}, {'id': 10821, 'model': 'mrp.production', 'label': '10821', 'url': 'http://10.100.12.145:91/web#id=10821&model=mrp.production&view_type=form'}, {'id': 13077, 'model': 'mrp.production', 'label': '13077', 'url': 'http://10.100.12.145:91/web#id=13077&model=mrp.production&view_type=form'}, {'id': 6333, 'model': 'mrp.production', 'label': '6333', 'url': 'http://10.100.12.145:91/web#id=6333&model=mrp.production&view_type=form'}, {'id': 14814, 'model': 'mrp.production', 'label': '14814', 'url': 'http://10.100.12.145:91/web#id=14814&model=mrp.production&view_type=form'}, {'id': 15047, 'model': 'mrp.production', 'label': '15047', 'url': 'http://10.100.12.145:91/web#id=15047&model=mrp.production&view_type=form'}, {'id': 21394, 'model': 'mrp.production', 'label': '21394', 'url': 'http://10.100.12.145:91/web#id=21394&model=mrp.production&view_type=form'}, {'id': 6567, 'model': 'mrp.production', 'label': '6567', 'url': 'http://10.100.12.145:91/web#id=6567&model=mrp.production&view_type=form'}, {'id': 20050, 'model': 'mrp.production', 'label': '20050', 'url': 'http://10.100.12.145:91/web#id=20050&model=mrp.production&view_type=form'}, {'id': 3553, 'model': 'mrp.production', 'label': '3553', 'url': 'http://10.100.12.145:91/web#id=3553&model=mrp.production&view_type=form'}, {'id': 20553, 'model': 'mrp.production', 'label': '20553', 'url': 'http://10.100.12.145:91/web#id=20553&model=mrp.production&view_type=form'}, {'id': 3616, 'model': 'mrp.production', 'label': '3616', 'url': 'http://10.100.12.145:91/web#id=3616&model=mrp.production&view_type=form'}, {'id': 20316, 'model': 'mrp.production', 'label': '20316', 'url': 'http://10.100.12.145:91/web#id=20316&model=mrp.production&view_type=form'}, {'id': 10628, 'model': 'mrp.production', 'label': '10628', 'url': 'http://10.100.12.145:91/web#id=10628&model=mrp.production&view_type=form'}, {'id': 3890, 'model': 'mrp.production', 'label': '3890', 'url': 'http://10.100.12.145:91/web#id=3890&model=mrp.production&view_type=form'}, {'id': 10143, 'model': 'mrp.production', 'label': '10143', 'url': 'http://10.100.12.145:91/web#id=10143&model=mrp.production&view_type=form'}, {'id': 6073, 'model': 'mrp.production', 'label': '6073', 'url': 'http://10.100.12.145:91/web#id=6073&model=mrp.production&view_type=form'}, {'id': 7232, 'model': 'mrp.production', 'label': '7232', 'url': 'http://10.100.12.145:91/web#id=7232&model=mrp.production&view_type=form'}, {'id': 11039, 'model': 'mrp.production', 'label': '11039', 'url': 'http://10.100.12.145:91/web#id=11039&model=mrp.production&view_type=form'}, {'id': 9649, 'model': 'mrp.production', 'label': '9649', 'url': 'http://10.100.12.145:91/web#id=9649&model=mrp.production&view_type=form'}, {'id': 15516, 'model': 'mrp.production', 'label': '15516', 'url': 'http://10.100.12.145:91/web#id=15516&model=mrp.production&view_type=form'}, {'id': 3896, 'model': 'mrp.production', 'label': '3896', 'url': 'http://10.100.12.145:91/web#id=3896&model=mrp.production&view_type=form'}, {'id': 18022, 'model': 'mrp.production', 'label': '18022', 'url': 'http://10.100.12.145:91/web#id=18022&model=mrp.production&view_type=form'}, {'id': 3555, 'model': 'mrp.production', 'label': '3555', 'url': 'http://10.100.12.145:91/web#id=3555&model=mrp.production&view_type=form'}, {'id': 5458, 'model': 'mrp.production', 'label': '5458', 'url': 'http://10.100.12.145:91/web#id=5458&model=mrp.production&view_type=form'}, {'id': 14047, 'model': 'mrp.production', 'label': '14047', 'url': 'http://10.100.12.145:91/web#id=14047&model=mrp.production&view_type=form'}, {'id': 21764, 'model': 'mrp.production', 'label': '21764', 'url': 'http://10.100.12.145:91/web#id=21764&model=mrp.production&view_type=form'}, {'id': 3617, 'model': 'mrp.production', 'label': '3617', 'url': 'http://10.100.12.145:91/web#id=3617&model=mrp.production&view_type=form'}, {'id': 14324, 'model': 'mrp.production', 'label': '14324', 'url': 'http://10.100.12.145:91/web#id=14324&model=mrp.production&view_type=form'}, {'id': 3609, 'model': 'mrp.production', 'label': '3609', 'url': 'http://10.100.12.145:91/web#id=3609&model=mrp.production&view_type=form'}, {'id': 3898, 'model': 'mrp.production', 'label': '3898', 'url': 'http://10.100.12.145:91/web#id=3898&model=mrp.production&view_type=form'}, {'id': 13083, 'model': 'mrp.production', 'label': '13083', 'url': 'http://10.100.12.145:91/web#id=13083&model=mrp.production&view_type=form'}, {'id': 19299, 'model': 'mrp.production', 'label': '19299', 'url': 'http://10.100.12.145:91/web#id=19299&model=mrp.production&view_type=form'}, {'id': 3897, 'model': 'mrp.production', 'label': '3897', 'url': 'http://10.100.12.145:91/web#id=3897&model=mrp.production&view_type=form'}, {'id': 3619, 'model': 'mrp.production', 'label': '3619', 'url': 'http://10.100.12.145:91/web#id=3619&model=mrp.production&view_type=form'}, {'id': 3556, 'model': 'mrp.production', 'label': '3556', 'url': 'http://10.100.12.145:91/web#id=3556&model=mrp.production&view_type=form'}, {'id': 19298, 'model': 'mrp.production', 'label': '19298', 'url': 'http://10.100.12.145:91/web#id=19298&model=mrp.production&view_type=form'}, {'id': 6113, 'model': 'mrp.production', 'label': '6113', 'url': 'http://10.100.12.145:91/web#id=6113&model=mrp.production&view_type=form'}, {'id': 15679, 'model': 'mrp.production', 'label': '15679', 'url': 'http://10.100.12.145:91/web#id=15679&model=mrp.production&view_type=form'}, {'id': 14320, 'model': 'mrp.production', 'label': '14320', 'url': 'http://10.100.12.145:91/web#id=14320&model=mrp.production&view_type=form'}, {'id': 8029, 'model': 'mrp.production', 'label': '8029', 'url': 'http://10.100.12.145:91/web#id=8029&model=mrp.production&view_type=form'}, {'id': 3554, 'model': 'mrp.production', 'label': '3554', 'url': 'http://10.100.12.145:91/web#id=3554&model=mrp.production&view_type=form'}, {'id': 17161, 'model': 'mrp.production', 'label': '17161', 'url': 'http://10.100.12.145:91/web#id=17161&model=mrp.production&view_type=form'}, {'id': 16875, 'model': 'mrp.production', 'label': '16875', 'url': 'http://10.100.12.145:91/web#id=16875&model=mrp.production&view_type=form'}, {'id': 12048, 'model': 'mrp.production', 'label': '12048', 'url': 'http://10.100.12.145:91/web#id=12048&model=mrp.production&view_type=form'}, {'id': 3557, 'model': 'mrp.production', 'label': '3557', 'url': 'http://10.100.12.145:91/web#id=3557&model=mrp.production&view_type=form'}, {'id': 3558, 'model': 'mrp.production', 'label': '3558', 'url': 'http://10.100.12.145:91/web#id=3558&model=mrp.production&view_type=form'}, {'id': 16772, 'model': 'mrp.production', 'label': '16772', 'url': 'http://10.100.12.145:91/web#id=16772&model=mrp.production&view_type=form'}, {'id': 3899, 'model': 'mrp.production', 'label': '3899', 'url': 'http://10.100.12.145:91/web#id=3899&model=mrp.production&view_type=form'}, {'id': 15517, 'model': 'mrp.production', 'label': '15517', 'url': 'http://10.100.12.145:91/web#id=15517&model=mrp.production&view_type=form'}, {'id': 18337, 'model': 'mrp.production', 'label': '18337', 'url': 'http://10.100.12.145:91/web#id=18337&model=mrp.production&view_type=form'}, {'id': 6026, 'model': 'mrp.production', 'label': '6026', 'url': 'http://10.100.12.145:91/web#id=6026&model=mrp.production&view_type=form'}, {'id': 8913, 'model': 'mrp.production', 'label': '8913', 'url': 'http://10.100.12.145:91/web#id=8913&model=mrp.production&view_type=form'}, {'id': 21533, 'model': 'mrp.production', 'label': '21533', 'url': 'http://10.100.12.145:91/web#id=21533&model=mrp.production&view_type=form'}, {'id': 19301, 'model': 'mrp.production', 'label': '19301', 'url': 'http://10.100.12.145:91/web#id=19301&model=mrp.production&view_type=form'}, {'id': 18023, 'model': 'mrp.production', 'label': '18023', 'url': 'http://10.100.12.145:91/web#id=18023&model=mrp.production&view_type=form'}, {'id': 13084, 'model': 'mrp.production', 'label': '13084', 'url': 'http://10.100.12.145:91/web#id=13084&model=mrp.production&view_type=form'}, {'id': 3620, 'model': 'mrp.production', 'label': '3620', 'url': 'http://10.100.12.145:91/web#id=3620&model=mrp.production&view_type=form'}, {'id': 3559, 'model': 'mrp.production', 'label': '3559', 'url': 'http://10.100.12.145:91/web#id=3559&model=mrp.production&view_type=form'}, {'id': 14325, 'model': 'mrp.production', 'label': '14325', 'url': 'http://10.100.12.145:91/web#id=14325&model=mrp.production&view_type=form'}, {'id': 3900, 'model': 'mrp.production', 'label': '3900', 'url': 'http://10.100.12.145:91/web#id=3900&model=mrp.production&view_type=form'}, {'id': 8062, 'model': 'mrp.production', 'label': '8062', 'url': 'http://10.100.12.145:91/web#id=8062&model=mrp.production&view_type=form'}, {'id': 17763, 'model': 'mrp.production', 'label': '17763', 'url': 'http://10.100.12.145:91/web#id=17763&model=mrp.production&view_type=form'}, {'id': 10743, 'model': 'mrp.production', 'label': '10743', 'url': 'http://10.100.12.145:91/web#id=10743&model=mrp.production&view_type=form'}, {'id': 15027, 'model': 'mrp.production', 'label': '15027', 'url': 'http://10.100.12.145:91/web#id=15027&model=mrp.production&view_type=form'}, {'id': 9678, 'model': 'mrp.production', 'label': '9678', 'url': 'http://10.100.12.145:91/web#id=9678&model=mrp.production&view_type=form'}, {'id': 8870, 'model': 'mrp.production', 'label': '8870', 'url': 'http://10.100.12.145:91/web#id=8870&model=mrp.production&view_type=form'}, {'id': 3618, 'model': 'mrp.production', 'label': '3618', 'url': 'http://10.100.12.145:91/web#id=3618&model=mrp.production&view_type=form'}, {'id': 6791, 'model': 'mrp.production', 'label': '6791', 'url': 'http://10.100.12.145:91/web#id=6791&model=mrp.production&view_type=form'}, {'id': 13080, 'model': 'mrp.production', 'label': '13080', 'url': 'http://10.100.12.145:91/web#id=13080&model=mrp.production&view_type=form'}, {'id': 18393, 'model': 'mrp.production', 'label': '18393', 'url': 'http://10.100.12.145:91/web#id=18393&model=mrp.production&view_type=form'}, {'id': 9232, 'model': 'mrp.production', 'label': '9232', 'url': 'http://10.100.12.145:91/web#id=9232&model=mrp.production&view_type=form'}, {'id': 13910, 'model': 'mrp.production', 'label': '13910', 'url': 'http://10.100.12.145:91/web#id=13910&model=mrp.production&view_type=form'}, {'id': 9738, 'model': 'mrp.production', 'label': '9738', 'url': 'http://10.100.12.145:91/web#id=9738&model=mrp.production&view_type=form'}, {'id': 21765, 'model': 'mrp.production', 'label': '21765', 'url': 'http://10.100.12.145:91/web#id=21765&model=mrp.production&view_type=form'}, {'id': 15518, 'model': 'mrp.production', 'label': '15518', 'url': 'http://10.100.12.145:91/web#id=15518&model=mrp.production&view_type=form'}, {'id': 16773, 'model': 'mrp.production', 'label': '16773', 'url': 'http://10.100.12.145:91/web#id=16773&model=mrp.production&view_type=form'}, {'id': 11780, 'model': 'mrp.production', 'label': '11780', 'url': 'http://10.100.12.145:91/web#id=11780&model=mrp.production&view_type=form'}, {'id': 3561, 'model': 'mrp.production', 'label': '3561', 'url': 'http://10.100.12.145:91/web#id=3561&model=mrp.production&view_type=form'}, {'id': 20554, 'model': 'mrp.production', 'label': '20554', 'url': 'http://10.100.12.145:91/web#id=20554&model=mrp.production&view_type=form'}, {'id': 11776, 'model': 'mrp.production', 'label': '11776', 'url': 'http://10.100.12.145:91/web#id=11776&model=mrp.production&view_type=form'}, {'id': 14508, 'model': 'mrp.production', 'label': '14508', 'url': 'http://10.100.12.145:91/web#id=14508&model=mrp.production&view_type=form'}, {'id': 6866, 'model': 'mrp.production', 'label': '6866', 'url': 'http://10.100.12.145:91/web#id=6866&model=mrp.production&view_type=form'}, {'id': 3516, 'model': 'mrp.production', 'label': '3516', 'url': 'http://10.100.12.145:91/web#id=3516&model=mrp.production&view_type=form'}, {'id': 3621, 'model': 'mrp.production', 'label': '3621', 'url': 'http://10.100.12.145:91/web#id=3621&model=mrp.production&view_type=form'}, {'id': 18024, 'model': 'mrp.production', 'label': '18024', 'url': 'http://10.100.12.145:91/web#id=18024&model=mrp.production&view_type=form'}, {'id': 3563, 'model': 'mrp.production', 'label': '3563', 'url': 'http://10.100.12.145:91/web#id=3563&model=mrp.production&view_type=form'}, {'id': 3613, 'model': 'mrp.production', 'label': '3613', 'url': 'http://10.100.12.145:91/web#id=3613&model=mrp.production&view_type=form'}, {'id': 3560, 'model': 'mrp.production', 'label': '3560', 'url': 'http://10.100.12.145:91/web#id=3560&model=mrp.production&view_type=form'}, {'id': 8842, 'model': 'mrp.production', 'label': '8842', 'url': 'http://10.100.12.145:91/web#id=8842&model=mrp.production&view_type=form'}, {'id': 6100, 'model': 'mrp.production', 'label': '6100', 'url': 'http://10.100.12.145:91/web#id=6100&model=mrp.production&view_type=form'}, {'id': 14959, 'model': 'mrp.production', 'label': '14959', 'url': 'http://10.100.12.145:91/web#id=14959&model=mrp.production&view_type=form'}, {'id': 20638, 'model': 'mrp.production', 'label': '20638', 'url': 'http://10.100.12.145:91/web#id=20638&model=mrp.production&view_type=form'}, {'id': 9819, 'model': 'mrp.production', 'label': '9819', 'url': 'http://10.100.12.145:91/web#id=9819&model=mrp.production&view_type=form'}, {'id': 18410, 'model': 'mrp.production', 'label': '18410', 'url': 'http://10.100.12.145:91/web#id=18410&model=mrp.production&view_type=form'}, {'id': 6850, 'model': 'mrp.production', 'label': '6850', 'url': 'http://10.100.12.145:91/web#id=6850&model=mrp.production&view_type=form'}, {'id': 13086, 'model': 'mrp.production', 'label': '13086', 'url': 'http://10.100.12.145:91/web#id=13086&model=mrp.production&view_type=form'}, {'id': 18025, 'model': 'mrp.production', 'label': '18025', 'url': 'http://10.100.12.145:91/web#id=18025&model=mrp.production&view_type=form'}, {'id': 18026, 'model': 'mrp.production', 'label': '18026', 'url': 'http://10.100.12.145:91/web#id=18026&model=mrp.production&view_type=form'}, {'id': 13085, 'model': 'mrp.production', 'label': '13085', 'url': 'http://10.100.12.145:91/web#id=13085&model=mrp.production&view_type=form'}, {'id': 19302, 'model': 'mrp.production', 'label': '19302', 'url': 'http://10.100.12.145:91/web#id=19302&model=mrp.production&view_type=form'}, {'id': 9340, 'model': 'mrp.production', 'label': '9340', 'url': 'http://10.100.12.145:91/web#id=9340&model=mrp.production&view_type=form'}, {'id': 18528, 'model': 'mrp.production', 'label': '18528', 'url': 'http://10.100.12.145:91/web#id=18528&model=mrp.production&view_type=form'}, {'id': 20867, 'model': 'mrp.production', 'label': '20867', 'url': 'http://10.100.12.145:91/web#id=20867&model=mrp.production&view_type=form'}, {'id': 19300, 'model': 'mrp.production', 'label': '19300', 'url': 'http://10.100.12.145:91/web#id=19300&model=mrp.production&view_type=form'}, {'id': 15847, 'model': 'mrp.production', 'label': '15847', 'url': 'http://10.100.12.145:91/web#id=15847&model=mrp.production&view_type=form'}, {'id': 13705, 'model': 'mrp.production', 'label': '13705', 'url': 'http://10.100.12.145:91/web#id=13705&model=mrp.production&view_type=form'}, {'id': 11782, 'model': 'mrp.production', 'label': '11782', 'url': 'http://10.100.12.145:91/web#id=11782&model=mrp.production&view_type=form'}, {'id': 3564, 'model': 'mrp.production', 'label': '3564', 'url': 'http://10.100.12.145:91/web#id=3564&model=mrp.production&view_type=form'}, {'id': 3565, 'model': 'mrp.production', 'label': '3565', 'url': 'http://10.100.12.145:91/web#id=3565&model=mrp.production&view_type=form'}, {'id': 14327, 'model': 'mrp.production', 'label': '14327', 'url': 'http://10.100.12.145:91/web#id=14327&model=mrp.production&view_type=form'}, {'id': 11781, 'model': 'mrp.production', 'label': '11781', 'url': 'http://10.100.12.145:91/web#id=11781&model=mrp.production&view_type=form'}, {'id': 19295, 'model': 'mrp.production', 'label': '19295', 'url': 'http://10.100.12.145:91/web#id=19295&model=mrp.production&view_type=form'}, {'id': 16525, 'model': 'mrp.production', 'label': '16525', 'url': 'http://10.100.12.145:91/web#id=16525&model=mrp.production&view_type=form'}, {'id': 6082, 'model': 'mrp.production', 'label': '6082', 'url': 'http://10.100.12.145:91/web#id=6082&model=mrp.production&view_type=form'}, {'id': 3838, 'model': 'mrp.production', 'label': '3838', 'url': 'http://10.100.12.145:91/web#id=3838&model=mrp.production&view_type=form'}, {'id': 8661, 'model': 'mrp.production', 'label': '8661', 'url': 'http://10.100.12.145:91/web#id=8661&model=mrp.production&view_type=form'}, {'id': 6334, 'model': 'mrp.production', 'label': '6334', 'url': 'http://10.100.12.145:91/web#id=6334&model=mrp.production&view_type=form'}, {'id': 3562, 'model': 'mrp.production', 'label': '3562', 'url': 'http://10.100.12.145:91/web#id=3562&model=mrp.production&view_type=form'}, {'id': 7901, 'model': 'mrp.production', 'label': '7901', 'url': 'http://10.100.12.145:91/web#id=7901&model=mrp.production&view_type=form'}, {'id': 3839, 'model': 'mrp.production', 'label': '3839', 'url': 'http://10.100.12.145:91/web#id=3839&model=mrp.production&view_type=form'}, {'id': 14328, 'model': 'mrp.production', 'label': '14328', 'url': 'http://10.100.12.145:91/web#id=14328&model=mrp.production&view_type=form'}, {'id': 19303, 'model': 'mrp.production', 'label': '19303', 'url': 'http://10.100.12.145:91/web#id=19303&model=mrp.production&view_type=form'}, {'id': 3623, 'model': 'mrp.production', 'label': '3623', 'url': 'http://10.100.12.145:91/web#id=3623&model=mrp.production&view_type=form'}, {'id': 6558, 'model': 'mrp.production', 'label': '6558', 'url': 'http://10.100.12.145:91/web#id=6558&model=mrp.production&view_type=form'}, {'id': 13802, 'model': 'mrp.production', 'label': '13802', 'url': 'http://10.100.12.145:91/web#id=13802&model=mrp.production&view_type=form'}, {'id': 21107, 'model': 'mrp.production', 'label': '21107', 'url': 'http://10.100.12.145:91/web#id=21107&model=mrp.production&view_type=form'}, {'id': 12257, 'model': 'mrp.production', 'label': '12257', 'url': 'http://10.100.12.145:91/web#id=12257&model=mrp.production&view_type=form'}, {'id': 14326, 'model': 'mrp.production', 'label': '14326', 'url': 'http://10.100.12.145:91/web#id=14326&model=mrp.production&view_type=form'}, {'id': 4986, 'model': 'mrp.production', 'label': '4986', 'url': 'http://10.100.12.145:91/web#id=4986&model=mrp.production&view_type=form'}, {'id': 10343, 'model': 'mrp.production', 'label': '10343', 'url': 'http://10.100.12.145:91/web#id=10343&model=mrp.production&view_type=form'}, {'id': 11064, 'model': 'mrp.production', 'label': '11064', 'url': 'http://10.100.12.145:91/web#id=11064&model=mrp.production&view_type=form'}, {'id': 3566, 'model': 'mrp.production', 'label': '3566', 'url': 'http://10.100.12.145:91/web#id=3566&model=mrp.production&view_type=form'}, {'id': 9650, 'model': 'mrp.production', 'label': '9650', 'url': 'http://10.100.12.145:91/web#id=9650&model=mrp.production&view_type=form'}, {'id': 3884, 'model': 'mrp.production', 'label': '3884', 'url': 'http://10.100.12.145:91/web#id=3884&model=mrp.production&view_type=form'}, {'id': 6332, 'model': 'mrp.production', 'label': '6332', 'url': 'http://10.100.12.145:91/web#id=6332&model=mrp.production&view_type=form'}, {'id': 3537, 'model': 'mrp.production', 'label': '3537', 'url': 'http://10.100.12.145:91/web#id=3537&model=mrp.production&view_type=form'}, {'id': 3622, 'model': 'mrp.production', 'label': '3622', 'url': 'http://10.100.12.145:91/web#id=3622&model=mrp.production&view_type=form'}, {'id': 19920, 'model': 'mrp.production', 'label': '19920', 'url': 'http://10.100.12.145:91/web#id=19920&model=mrp.production&view_type=form'}, {'id': 17615, 'model': 'mrp.production', 'label': '17615', 'url': 'http://10.100.12.145:91/web#id=17615&model=mrp.production&view_type=form'}, {'id': 10365, 'model': 'mrp.production', 'label': '10365', 'url': 'http://10.100.12.145:91/web#id=10365&model=mrp.production&view_type=form'}, {'id': 15519, 'model': 'mrp.production', 'label': '15519', 'url': 'http://10.100.12.145:91/web#id=15519&model=mrp.production&view_type=form'}, {'id': 16774, 'model': 'mrp.production', 'label': '16774', 'url': 'http://10.100.12.145:91/web#id=16774&model=mrp.production&view_type=form'}, {'id': 11783, 'model': 'mrp.production', 'label': '11783', 'url': 'http://10.100.12.145:91/web#id=11783&model=mrp.production&view_type=form'}, {'id': 15520, 'model': 'mrp.production', 'label': '15520', 'url': 'http://10.100.12.145:91/web#id=15520&model=mrp.production&view_type=form'}, {'id': 3567, 'model': 'mrp.production', 'label': '3567', 'url': 'http://10.100.12.145:91/web#id=3567&model=mrp.production&view_type=form'}, {'id': 10144, 'model': 'mrp.production', 'label': '10144', 'url': 'http://10.100.12.145:91/web#id=10144&model=mrp.production&view_type=form'}, {'id': 6566, 'model': 'mrp.production', 'label': '6566', 'url': 'http://10.100.12.145:91/web#id=6566&model=mrp.production&view_type=form'}, {'id': 3546, 'model': 'mrp.production', 'label': '3546', 'url': 'http://10.100.12.145:91/web#id=3546&model=mrp.production&view_type=form'}, {'id': 3895, 'model': 'mrp.production', 'label': '3895', 'url': 'http://10.100.12.145:91/web#id=3895&model=mrp.production&view_type=form'}, {'id': 16323, 'model': 'mrp.production', 'label': '16323', 'url': 'http://10.100.12.145:91/web#id=16323&model=mrp.production&view_type=form'}, {'id': 18570, 'model': 'mrp.production', 'label': '18570', 'url': 'http://10.100.12.145:91/web#id=18570&model=mrp.production&view_type=form'}, {'id': 20315, 'model': 'mrp.production', 'label': '20315', 'url': 'http://10.100.12.145:91/web#id=20315&model=mrp.production&view_type=form'}, {'id': 17165, 'model': 'mrp.production', 'label': '17165', 'url': 'http://10.100.12.145:91/web#id=17165&model=mrp.production&view_type=form'}, {'id': 8496, 'model': 'mrp.production', 'label': '8496', 'url': 'http://10.100.12.145:91/web#id=8496&model=mrp.production&view_type=form'}, {'id': 3624, 'model': 'mrp.production', 'label': '3624', 'url': 'http://10.100.12.145:91/web#id=3624&model=mrp.production&view_type=form'}, {'id': 21760, 'model': 'mrp.production', 'label': '21760', 'url': 'http://10.100.12.145:91/web#id=21760&model=mrp.production&view_type=form'}, {'id': 17186, 'model': 'mrp.production', 'label': '17186', 'url': 'http://10.100.12.145:91/web#id=17186&model=mrp.production&view_type=form'}, {'id': 10342, 'model': 'mrp.production', 'label': '10342', 'url': 'http://10.100.12.145:91/web#id=10342&model=mrp.production&view_type=form'}, {'id': 20556, 'model': 'mrp.production', 'label': '20556', 'url': 'http://10.100.12.145:91/web#id=20556&model=mrp.production&view_type=form'}, {'id': 19010, 'model': 'mrp.production', 'label': '19010', 'url': 'http://10.100.12.145:91/web#id=19010&model=mrp.production&view_type=form'}, {'id': 15654, 'model': 'mrp.production', 'label': '15654', 'url': 'http://10.100.12.145:91/web#id=15654&model=mrp.production&view_type=form'}, {'id': 13081, 'model': 'mrp.production', 'label': '13081', 'url': 'http://10.100.12.145:91/web#id=13081&model=mrp.production&view_type=form'}, {'id': 6865, 'model': 'mrp.production', 'label': '6865', 'url': 'http://10.100.12.145:91/web#id=6865&model=mrp.production&view_type=form'}, {'id': 4492, 'model': 'mrp.production', 'label': '4492', 'url': 'http://10.100.12.145:91/web#id=4492&model=mrp.production&view_type=form'}, {'id': 18791, 'model': 'mrp.production', 'label': '18791', 'url': 'http://10.100.12.145:91/web#id=18791&model=mrp.production&view_type=form'}, {'id': 9033, 'model': 'mrp.production', 'label': '9033', 'url': 'http://10.100.12.145:91/web#id=9033&model=mrp.production&view_type=form'}, {'id': 20555, 'model': 'mrp.production', 'label': '20555', 'url': 'http://10.100.12.145:91/web#id=20555&model=mrp.production&view_type=form'}, {'id': 4305, 'model': 'mrp.production', 'label': '4305', 'url': 'http://10.100.12.145:91/web#id=4305&model=mrp.production&view_type=form'}, {'id': 18027, 'model': 'mrp.production', 'label': '18027', 'url': 'http://10.100.12.145:91/web#id=18027&model=mrp.production&view_type=form'}, {'id': 19958, 'model': 'mrp.production', 'label': '19958', 'url': 'http://10.100.12.145:91/web#id=19958&model=mrp.production&view_type=form'}, {'id': 3523, 'model': 'mrp.production', 'label': '3523', 'url': 'http://10.100.12.145:91/web#id=3523&model=mrp.production&view_type=form'}, {'id': 14040, 'model': 'mrp.production', 'label': '14040', 'url': 'http://10.100.12.145:91/web#id=14040&model=mrp.production&view_type=form'}, {'id': 15048, 'model': 'mrp.production', 'label': '15048', 'url': 'http://10.100.12.145:91/web#id=15048&model=mrp.production&view_type=form'}, {'id': 3568, 'model': 'mrp.production', 'label': '3568', 'url': 'http://10.100.12.145:91/web#id=3568&model=mrp.production&view_type=form'}, {'id': 3545, 'model': 'mrp.production', 'label': '3545', 'url': 'http://10.100.12.145:91/web#id=3545&model=mrp.production&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami tutti gli ordini di produzione del mese di luglio
+ASSISTANT MESSAGE: ## Ordini di produzione per luglio 2026
+
+Ho trovato **177 ordini di produzione** pianificati nel mese di luglio 2026.
+Di seguito sono mostrati i primi 50 record (un campione).
+
+| # | Data pianificazione | Data consegna | Data ordine | Ubicazione |
+|---|-------------------|---------------|-------------|-----------|
+| 1 | 1 luglio 2026 | 1 luglio 2026 | 1 luglio 2026 | Ubicazione virtuale/Produzione |
+| 2 | 1 luglio 2026 | 17 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 3 | 1 luglio 2026 | 24 agosto 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 4 | 1 luglio 2026 | 24 agosto 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 5 | 1 luglio 2026 | 11 giugno 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 6 | 1 luglio 2026 | N/A | 20 giugno 2026 | Ubicazione virtuale/Produzione |
+| 7 | 1 luglio 2026 | 4 settembre 2026 | 16 giugno 2026 | Ubicazione virtuale/Produzione |
+| 8 | 1 luglio 2026 | 11 settembre 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 9 | 1 luglio 2026 | 3 settembre 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 10 | 1 luglio 2026 | 31 luglio 2026 | 3 giugno 2026 | Ubicazione virtuale/Produzione |
+| 11 | 2 luglio 2026 | N/A | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 12 | 2 luglio 2026 | 5 ottobre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 13 | 2 luglio 2026 | 11 settembre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 14 | 2 luglio 2026 | 6 luglio 2026 | 24 aprile 2026 | Ubicazione virtuale/Produzione |
+| 15 | 2 luglio 2026 | 28 febbraio 2027 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 16 | 2 luglio 2026 | 5 settembre 2026 | 24 giugno 2026 | Ubicazione virtuale/Produzione |
+| 17 | 2 luglio 2026 | N/A | 30 aprile 2026 | Ubicazione virtuale/Produzione |
+| 18 | 2 luglio 2026 | 22 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 19 | 2 luglio 2026 | 28 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 20 | 2 luglio 2026 | 15 settembre 2026 | 15 giugno 2026 | Ubicazione virtuale/Produzione |
+| 21 | 2 luglio 2026 | 20 giugno 2026 | 4 giugno 2026 | Ubicazione virtuale/Produzione |
+| 22 | 3 luglio 2026 | 11 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 23 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 24 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 25 | 3 luglio 2026 | 25 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 26 | 3 luglio 2026 | 25 luglio 2026 | 30 maggio 2026 | Ubicazione virtuale/Produzione |
+| 27 | 3 luglio 2026 | N/A | 29 aprile 2026 | Ubicazione virtuale/Produzione |
+| 28 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 29 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 30 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 31 | 4 luglio 2026 | 24 luglio 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 32 | 6 luglio 2026 | N/A | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 33 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 34 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 35 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 36 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 37 | 6 luglio 2026 | 3 ottobre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 38 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 39 | 6 luglio 2026 | 15 giugno 2026 | 26 marzo 2026 | Ubicazione virtuale/Produzione |
+| 40 | 6 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 41 | 6 luglio 2026 | 8 ottobre 2026 | 29 maggio 2026 | Ubicazione virtuale/Produzione |
+| 42 | 6 luglio 2026 | 15 giugno 2026 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 43 | 6 luglio 2026 | 8 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 44 | 6 luglio 2026 | 24 luglio 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 45 | 6 luglio 2026 | 17 luglio 2026 | 18 maggio 2026 | Ubicazione virtuale/Produzione |
+| 46 | 6 luglio 2026 | 15 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 47 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 48 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 49 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 50 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+
+**Nota:** Vengono mostrati solo i primi 50 ordini su un totale di **177** ordini di produzione pianificati nel mese di luglio 2026. Se hai bisogno di visualizzare record aggiuntivi o di filtrare per un sottoinsieme specifico (ad esempio, per stato o ubicazione), fammelo sapere.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami tutti gli ordini di produzione con data di pianificazione del mese di luglio
+ - assistant : ## Ordini di produzione con data di pianificazione nel mese di luglio
+
+Ho trovato **177** ordini di produzione la cui data di pianificazione (`date_planned_start`) cade nel mese di luglio 2026.
+Di seguito sono mostrati i primi **50** record (i restanti sono disponibili su richiesta).
+
+| Data di pianificazione | Data ordine | Data consegna |
+|-----------------|------------|---------------|
+| 9 luglio 2026 alle 16:51 | 14 aprile 2026 | 25 giugno 2026 |
+| 20 luglio 2026 alle 21:28 | 15 maggio 2026 | 4 settembre 2026 |
+| 16 luglio 2026 alle 15:19 | 11 giugno 2026 | 29 agosto 2026 |
+| 21 luglio 2026 alle 09:12 | 19 giugno 2026 | 4 settembre 2026 |
+| 17 luglio 2026 alle 08:35 | 19 giugno 2026 | 4 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | *(nessuna consegna)* |
+| 6 luglio 2026 alle 14:07 | 3 luglio 2026 | 8 luglio 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 25 luglio 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 3 ottobre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 7 luglio 2026 | 7 luglio 2026 | 25 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 alle 11:36 | 8 luglio 2026 | 10 agosto 2026 |
+| 9 luglio 2026 | 9 luglio 2026 | 25 settembre 2026 |
+| 14 luglio 2026 alle 11:08 | 10 luglio 2026 | 16 novembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 4 ottobre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 4 settembre 2026 |
+| 14 luglio 2026 | 14 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 | 16 luglio 2026 | 2 ottobre 2026 |
+| 21 luglio 2026 alle 09:02 | 17 luglio 2026 | 17 luglio 2026 |
+| 4 luglio 2026 alle 06:20 | 9 giugno 2026 | 24 luglio 2026 |
+| 10 luglio 2026 alle 11:31 | 20 giugno 2026 | 5 settembre 2026 |
+| 2 luglio 2026 | 2 luglio 2026 | 11 settembre 2026 |
+| 4 luglio 2026 | 4 luglio 2026 | 20 luglio 2026 |
+| 8 luglio 2026 alle 13:00 | 5 luglio 2026 | 13 maggio 2024 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 10 luglio 2026 | 10 luglio 2026 | 25 settembre 2026 |
+| 16 luglio 2026 alle 16:04 | 14 luglio 2026 | 5 ottobre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 18 luglio 2026 | 18 luglio 2026 | 5 ottobre 2026 |
+| 14 luglio 2026 alle 09:22 | 10 luglio 2026 | 16 novembre 2026 |
+| 15 luglio 2026 | 15 luglio 2026 | 2 ottobre 2026 |
+| 16 luglio 2026 alle 06:59 | 16 giugno 2026 | 8 settembre 2026 |
+| 2 luglio 2026 alle 08:10 | 24 giugno 2026 | 5 settembre 2026 |
+| 17 luglio 2026 alle 08:44 | 2 luglio 2026 | 18 settembre 2026 |
+| 3 luglio 2026 | 3 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | 18 settembre 2026 |
+| 6 luglio 2026 | 6 luglio 2026 | *(nessuna consegna)* |
+| 7 luglio 2026 | 7 luglio 2026 | 15 ottobre 2026 |
+| 8 luglio 2026 | 8 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 15:27 | 13 luglio 2026 | 25 settembre 2026 |
+| 20 luglio 2026 alle 12:54 | 26 giugno 2026 | 11 settembre 2026 |
+| 15 luglio 2026 alle 16:39 | 12 maggio 2026 | 10 luglio 2026 |
+| 3 luglio 2026 alle 07:38 | 30 maggio 2026 | 25 luglio 2026 |
+| 7 luglio 2026 alle 11:14 | 23 dicembre 2025 | 5 giugno 2026 |
+| 2 luglio 2026 alle 11:55 | 27 aprile 2026 | 22 giugno 2026 |
+| 14 luglio 2026 alle 09:05 | 14 giugno 2026 | 20 giugno 2026 |
+| 10 luglio 2026 alle 12:59 | 9 marzo 2026 | 8 maggio 2026 |
+
+*Le restanti 127 voci sono disponibili su richiesta.*
+ - user : Mostrami tutti gli ordini di produzione del mese di luglio
+ - assistant : ## Ordini di produzione per luglio 2026
+
+Ho trovato **177 ordini di produzione** pianificati nel mese di luglio 2026.
+Di seguito sono mostrati i primi 50 record (un campione).
+
+| # | Data pianificazione | Data consegna | Data ordine | Ubicazione |
+|---|-------------------|---------------|-------------|-----------|
+| 1 | 1 luglio 2026 | 1 luglio 2026 | 1 luglio 2026 | Ubicazione virtuale/Produzione |
+| 2 | 1 luglio 2026 | 17 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 3 | 1 luglio 2026 | 24 agosto 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 4 | 1 luglio 2026 | 24 agosto 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 5 | 1 luglio 2026 | 11 giugno 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 6 | 1 luglio 2026 | N/A | 20 giugno 2026 | Ubicazione virtuale/Produzione |
+| 7 | 1 luglio 2026 | 4 settembre 2026 | 16 giugno 2026 | Ubicazione virtuale/Produzione |
+| 8 | 1 luglio 2026 | 11 settembre 2026 | 29 giugno 2026 | Ubicazione virtuale/Produzione |
+| 9 | 1 luglio 2026 | 3 settembre 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 10 | 1 luglio 2026 | 31 luglio 2026 | 3 giugno 2026 | Ubicazione virtuale/Produzione |
+| 11 | 2 luglio 2026 | N/A | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 12 | 2 luglio 2026 | 5 ottobre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 13 | 2 luglio 2026 | 11 settembre 2026 | 2 luglio 2026 | Ubicazione virtuale/Produzione |
+| 14 | 2 luglio 2026 | 6 luglio 2026 | 24 aprile 2026 | Ubicazione virtuale/Produzione |
+| 15 | 2 luglio 2026 | 28 febbraio 2027 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 16 | 2 luglio 2026 | 5 settembre 2026 | 24 giugno 2026 | Ubicazione virtuale/Produzione |
+| 17 | 2 luglio 2026 | N/A | 30 aprile 2026 | Ubicazione virtuale/Produzione |
+| 18 | 2 luglio 2026 | 22 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 19 | 2 luglio 2026 | 28 luglio 2026 | 11 giugno 2026 | Ubicazione virtuale/Produzione |
+| 20 | 2 luglio 2026 | 15 settembre 2026 | 15 giugno 2026 | Ubicazione virtuale/Produzione |
+| 21 | 2 luglio 2026 | 20 giugno 2026 | 4 giugno 2026 | Ubicazione virtuale/Produzione |
+| 22 | 3 luglio 2026 | 11 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 23 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 24 | 3 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 25 | 3 luglio 2026 | 25 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 26 | 3 luglio 2026 | 25 luglio 2026 | 30 maggio 2026 | Ubicazione virtuale/Produzione |
+| 27 | 3 luglio 2026 | N/A | 29 aprile 2026 | Ubicazione virtuale/Produzione |
+| 28 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 29 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 30 | 4 luglio 2026 | 20 luglio 2026 | 4 luglio 2026 | Ubicazione virtuale/Produzione |
+| 31 | 4 luglio 2026 | 24 luglio 2026 | 9 giugno 2026 | Ubicazione virtuale/Produzione |
+| 32 | 6 luglio 2026 | N/A | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 33 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 34 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 35 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 36 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 37 | 6 luglio 2026 | 3 ottobre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 38 | 6 luglio 2026 | 18 settembre 2026 | 6 luglio 2026 | Ubicazione virtuale/Produzione |
+| 39 | 6 luglio 2026 | 15 giugno 2026 | 26 marzo 2026 | Ubicazione virtuale/Produzione |
+| 40 | 6 luglio 2026 | 18 settembre 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 41 | 6 luglio 2026 | 8 ottobre 2026 | 29 maggio 2026 | Ubicazione virtuale/Produzione |
+| 42 | 6 luglio 2026 | 15 giugno 2026 | 14 giugno 2026 | Ubicazione virtuale/Produzione |
+| 43 | 6 luglio 2026 | 8 luglio 2026 | 3 luglio 2026 | Ubicazione virtuale/Produzione |
+| 44 | 6 luglio 2026 | 24 luglio 2026 | 26 maggio 2026 | Ubicazione virtuale/Produzione |
+| 45 | 6 luglio 2026 | 17 luglio 2026 | 18 maggio 2026 | Ubicazione virtuale/Produzione |
+| 46 | 6 luglio 2026 | 15 giugno 2026 | 27 aprile 2026 | Ubicazione virtuale/Produzione |
+| 47 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 48 | 7 luglio 2026 | 25 settembre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 49 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+| 50 | 7 luglio 2026 | 15 ottobre 2026 | 7 luglio 2026 | Ubicazione virtuale/Produzione |
+
+**Nota:** Vengono mostrati solo i primi 50 ordini su un totale di **177** ordini di produzione pianificati nel mese di luglio 2026. Se hai bisogno di visualizzare record aggiuntivi o di filtrare per un sottoinsieme specifico (ad esempio, per stato o ubicazione), fammelo sapere.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami tutti gli ordini di produzione del mese di luglio
+SUB_REQUESTS: ['Mostrami tutti gli ordini di produzione del mese di luglio']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+FIELDS: ['activity_state', 'origin', 'siint_date_order', 'production_location_id', 'date_planned_deadline', 'date_planned_start', 'delivery_date', 'order_line_id']
+ORDER: date_planned_start asc
+LIMIT: 5000
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: [['date_planned_start', '>=', '2026-07-01 00:00:00'], ['date_planned_start', '<', '2026-08-01 00:00:00']]
+RESULT TYPE: records
+TOTAL: 177
+RETURNED: 177
+LIMIT: 5000
+PAGES: 0
+HAS MORE: False
+FIRST RECORD: {'id': 16771, 'origin': False, 'siint_date_order': '2026-07-01', 'date_planned_deadline': False, 'date_planned_start': '2026-07-01 00:00:00', 'delivery_date': '2026-07-01', 'order_line_id': False, 'activity_state': False, 'production_location_id': [7, 'Ubicazione virtuale/Produzione']}
+SECOND RECORD: {'id': 7915, 'origin': False, 'siint_date_order': '2026-06-11', 'date_planned_deadline': False, 'date_planned_start': '2026-07-01 06:29:54', 'delivery_date': '2026-07-17', 'order_line_id': False, 'activity_state': False, 'production_location_id': [7, 'Ubicazione virtuale/Produzione']}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 5051
+PREVIEW: ## Ordini di produzione per luglio 2026  Ho trovato **177 ordini di produzione** pianificati nel mese di luglio 2026. Di seguito sono mostrati i primi 50 record (un campione).  | # | Data pianificazione | Data consegna | Data ordine | Ubicazione | |---|-------------------|---------------|-----------...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
