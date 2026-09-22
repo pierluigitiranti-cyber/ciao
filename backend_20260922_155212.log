@@ -1,0 +1,1858 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-22T15:52:12
+============================================================
+
+===== LOGOUT =====
+STATUS: SUCCESS
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.131:6969/web/session/authenticate
+DATABASE: DM-PLF001-TIPREGO
+LOGIN: info@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 1
+USERNAME: info@digimarksrl.com
+NAME: Administrator
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 1
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 1
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami gli ultimi ordini di produzione
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami gli ultimi ordini di produzione
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami gli ultimi ordini di produzione
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: recupero dati
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REASON: La richiesta contiene 'ordini di produzione' (concetto Portant) e 'ultimi' (riferimento temporale). Nessun elemento estraneo rilevato.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami gli ultimi ordini di produzione
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: recupero dati
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REQUEST COUNT: 1
+REASON: La richiesta contiene 'ordini di produzione' (concetto Portant) e 'ultimi' (riferimento temporale). Nessun elemento estraneo rilevato.
+EVIDENCE: ["Corrispondenza esatta con 'ordini di produzione' in in_scope_concepts", "Riferimento temporale 'ultimi' mappato a 'periodi temporali'"]
+REQUEST 1: Mostrami gli ultimi ordini di produzione
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T15:53:23+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 15:53:23
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami gli ultimi ordini di produzione
+MODELS LOADED: 475
+MATCHED MODELS: 11
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami gli ultimi ordini di produzione
+QUERIES: ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs', 'latest', 'recent', 'newest', 'date', 'order date', 'production']
+CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: manufacturing order
+MODELS LOADED: 475
+MATCHED MODELS: 17
+
+===== MODEL SEARCH INDEX =====
+QUERY: manufacturing orders
+MODELS LOADED: 475
+MATCHED MODELS: 7
+
+===== MODEL SEARCH INDEX =====
+QUERY: production order
+MODELS LOADED: 475
+MATCHED MODELS: 53
+
+===== MODEL SEARCH INDEX =====
+QUERY: production orders
+MODELS LOADED: 475
+MATCHED MODELS: 44
+
+===== MODEL SEARCH INDEX =====
+QUERY: MO
+MODELS LOADED: 475
+MATCHED MODELS: 60
+
+===== MODEL SEARCH INDEX =====
+QUERY: MOs
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: latest
+MODELS LOADED: 475
+MATCHED MODELS: 13
+
+===== MODEL SEARCH INDEX =====
+QUERY: recent
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: newest
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: date
+MODELS LOADED: 475
+MATCHED MODELS: 7
+
+===== MODEL SEARCH INDEX =====
+QUERY: order date
+MODELS LOADED: 475
+MATCHED MODELS: 20
+
+===== MODEL SEARCH INDEX =====
+QUERY: production
+MODELS LOADED: 475
+MATCHED MODELS: 41
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: dm.production.note
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: ir.qweb.field.date
+SEMANTIC QUERIES: ['date', 'order date']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: ir.sequence.date_range
+SEMANTIC QUERIES: ['date', 'order date']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: mrp.product.direct_production
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: mrp.production.cluster.config
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: mrp.production.cluster.parameter
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: mrp.production.predecessor
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+MODEL: mrp.production.sync.error
+SEMANTIC QUERIES: ['production order', 'production orders', 'production']
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUEST CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami gli ultimi ordini di produzione
+ - dm.production.note | dm.production.note | score: 24.0
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+ - mrp.production.cluster.config | mrp.production.cluster.config | score: 24.0
+ - mrp.production.cluster.parameter | mrp.production.cluster.parameter | score: 24.0
+ - mrp.production.predecessor | mrp.production.predecessor | score: 24.0
+ - mrp.production.sync.error | mrp.production.sync.error | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami gli ultimi ordini di produzione
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - dm.production.note | dm.production.note | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.cluster.config | mrp.production.cluster.config | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.cluster.parameter | mrp.production.cluster.parameter | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.predecessor | mrp.production.predecessor | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.sync.error | mrp.production.sync.error | score: 24.0
+   semantic concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+   request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - dm.production.note | dm.production.note | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - ir.qweb.field.date | ir.qweb.field.date | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - ir.sequence.date_range | ir.sequence.date_range | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.product.direct_production | mrp.product.direct_production | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.cluster.config | mrp.production.cluster.config | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.cluster.parameter | mrp.production.cluster.parameter | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.predecessor | mrp.production.predecessor | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+ - mrp.production.sync.error | mrp.production.sync.error | score: 24.0 | concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}] | request concepts: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami gli ultimi ordini di produzione
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'limit': 10, 'order': 'create_date DESC'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== GRAPH ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 10, 'order': 'create_date DESC'}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami gli ultimi ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 10, 'order': 'create_date DESC'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.production
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.production
+FIELDS: 119
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - bom_id | Bill of Material | relation: mrp.bom
+ - bom_version_id | Bom Version | relation: mrp.bom.versioning
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - final_lot_id | Lotto/Numero Seriale | relation: stock.production.lot
+ - location_dest_id | Finished Products Location | relation: stock.location
+ - location_src_id | Raw Materials Location | relation: stock.location
+ - material_used | Material Used | relation: stock.move
+ - order_line_id | Order Line | relation: sale.order.line
+ - parent_production_id | Production that has generated the demand | relation: mrp.production
+ - picking_type_id | Operation Type | relation: stock.picking.type
+ - procurement_group_id | Procurement Group | relation: procurement.group
+ - product_id | Product | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom_id | Product Unit of Measure | relation: product.uom
+ - production_location_id | Production Location | relation: stock.location
+ - routing_id | Routing | relation: mrp.routing
+ - routing_tmpl_id | Template | relation: mrp.routing.template
+ - sale_order_id | Order Reference | relation: sale.order
+ - user_id | Responsible | relation: res.users
+ - workcenter_id | Workcenter | relation: mrp.workcenter
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: manufacturing order
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: manufacturing orders
+SELECTED FIELD: production_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Production Location
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 310.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production order
+SELECTED FIELD: origin
+SELECTED TYPE: char
+SELECTED RELATION: None
+SELECTED LABEL: Source
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 290.0
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: production orders
+SELECTED FIELD: production_location_id
+SELECTED TYPE: many2one
+SELECTED RELATION: stock.location
+SELECTED LABEL: Production Location
+DIRECT SOURCE TOKENS: 2
+SOURCE COVERAGE: 1.0
+SCORE: 340.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: MO
+BEST CANDIDATE: split_mo_count
+BEST SCORE: 185.0
+SECOND SCORE: 175.0
+MARGIN: 10.0
+REASON: ambiguous metadata-backed semantic resolution
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: MOs
+REASON: no field contains sufficient direct metadata evidence
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'manufacturing order', 'queries': ['manufacturing order', 'manufacturing orders', 'production order', 'production orders', 'MO', 'MOs']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'manufacturing order': 'production_location_id'}
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 706
+TREE VIEW STRING: Manufacturing Orders
+TREE VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+ORDER: create_date DESC
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 10, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.production
+METHOD: search_read
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+BODY: {'domain': [], 'limit': 10, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+METHOD: POST
+BODY: {'domain': [], 'limit': 10, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 367
+TOTAL RECORDS: 367
+RETURNED RECORDS: 10
+LIMIT: 10
+OFFSET: 0
+PAGES: 37
+HAS MORE: True
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Mostrami gli ultimi ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== GRAPH ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 10
+RECORDS SENT TO RESPONSE LLM: 10
+
+===== RESPONSE RESULT =====
+Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 10 in ordine di creazione:
+
+| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |
+|---|---|---|---|---|---|
+| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602604 | [S131005224] PF 581 CP S 'ULF' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602601 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |
+| MO/2602603 | [S157005225] PF 581 CP S 'ULF' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602599 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602600 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602594 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |
+| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+RECORD LINKS: [{'id': 2914, 'model': 'mrp.production', 'label': 'MO/2602602', 'url': 'http://10.100.12.131:6969/web#id=2914&model=mrp.production&view_type=form'}, {'id': 2916, 'model': 'mrp.production', 'label': 'MO/2602604', 'url': 'http://10.100.12.131:6969/web#id=2916&model=mrp.production&view_type=form'}, {'id': 2913, 'model': 'mrp.production', 'label': 'MO/2602601', 'url': 'http://10.100.12.131:6969/web#id=2913&model=mrp.production&view_type=form'}, {'id': 2907, 'model': 'mrp.production', 'label': 'MO/2602595', 'url': 'http://10.100.12.131:6969/web#id=2907&model=mrp.production&view_type=form'}, {'id': 2915, 'model': 'mrp.production', 'label': 'MO/2602603', 'url': 'http://10.100.12.131:6969/web#id=2915&model=mrp.production&view_type=form'}, {'id': 2908, 'model': 'mrp.production', 'label': 'MO/2602596', 'url': 'http://10.100.12.131:6969/web#id=2908&model=mrp.production&view_type=form'}, {'id': 2911, 'model': 'mrp.production', 'label': 'MO/2602599', 'url': 'http://10.100.12.131:6969/web#id=2911&model=mrp.production&view_type=form'}, {'id': 2912, 'model': 'mrp.production', 'label': 'MO/2602600', 'url': 'http://10.100.12.131:6969/web#id=2912&model=mrp.production&view_type=form'}, {'id': 2906, 'model': 'mrp.production', 'label': 'MO/2602594', 'url': 'http://10.100.12.131:6969/web#id=2906&model=mrp.production&view_type=form'}, {'id': 2909, 'model': 'mrp.production', 'label': 'MO/2602597', 'url': 'http://10.100.12.131:6969/web#id=2909&model=mrp.production&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami gli ultimi ordini di produzione
+ASSISTANT MESSAGE: Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 10 in ordine di creazione:
+
+| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |
+|---|---|---|---|---|---|
+| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602604 | [S131005224] PF 581 CP S 'ULF' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602601 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |
+| MO/2602603 | [S157005225] PF 581 CP S 'ULF' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602599 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602600 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602594 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |
+| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+CONVERSATION TITLE UPDATED: Mostrami gli ultimi ordini di produzione
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami gli ultimi ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 10 in ordine di creazione:
+
+| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |
+|---|---|---|---|---|---|
+| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602604 | [S131005224] PF 581 CP S 'ULF' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602601 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |
+| MO/2602603 | [S157005225] PF 581 CP S 'ULF' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602599 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602600 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602594 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |
+| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami gli ultimi ordini di produzione
+SUB_REQUESTS: ['Mostrami gli ultimi ordini di produzione']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+ORDER: create_date DESC
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+RESULT TYPE: records
+TOTAL: 367
+RETURNED: 10
+LIMIT: 10
+PAGES: 37
+HAS MORE: True
+FIRST RECORD: {'id': 2914, 'name': 'MO/2602602', 'date_planned_start': '2026-03-28 16:27:42', 'date_planned_finished': '2026-03-28 16:47:00', 'product_id': [216492, '[TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023'], 'product_qty': 1570.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'planned'}
+SECOND RECORD: {'id': 2916, 'name': 'MO/2602604', 'date_planned_start': '2026-03-28 12:14:23', 'date_planned_finished': '2026-03-28 16:27:42', 'product_id': [216353, "[S131005224] PF 581 CP S 'ULF'"], 'product_qty': 23580.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'planned'}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 1273
+PREVIEW: Ho trovato 367 ordini di produzione. Ecco gli ultimi 10 in ordine di creazione:  | Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato | |---|---|---|---|---|---| | MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato ...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
+
+===== CHAT REQUEST =====
+MESSAGE: cosa ti ho chiesto prima?
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ho trovato 367 ordini di produzione.\nEcco gli ultimi 10 in ordine di creazione:\n\n| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |\n|---|---|---|---|---|---|\n| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602604 | [S131005224] PF 581 CP S \'ULF\' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602601 | [S165005412] PF 564 CP/80 \'LARSON INTERNATIONAL III\' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |\n| MO/2602603 | [S157005225] PF 581 CP S \'ULF\' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |\n| MO/2602599 | [S106005581] PF 564 CP \'VOESTALPINE IV\' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |\n| MO/2602600 | [S131005294] PF 564 CP \'LASER\' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602594 | [S135005464] PF 564 CP \'LASER\' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |\n| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: cosa ti ho chiesto prima?
+
+===== REQUEST SPLITTER =====
+INPUT: cosa ti ho chiesto prima?
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 1.0
+CONTINUATION: True
+INTENT FAMILY: richiesta di promemoria
+CONCEPTS: ['richieste contestuali', 'riferimento anaforico']
+REASON: La richiesta corrente chiede di ricordare la richiesta precedente, che era chiaramente pertinente a Portant (ordini di produzione). Si tratta di una continuazione diretta della conversazione.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['richieste contestuali', 'riferimento anaforico']
+REQUEST COUNT: 1
+REQUEST 1: cosa ti ho chiesto prima?
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 1.0
+CONTINUATION: True
+INTENT FAMILY: richiesta di promemoria
+CONCEPTS: ['richieste contestuali', 'riferimento anaforico']
+REQUEST COUNT: 1
+REASON: La richiesta corrente chiede di ricordare la richiesta precedente, che era chiaramente pertinente a Portant (ordini di produzione). Si tratta di una continuazione diretta della conversazione.
+EVIDENCE: ["La frase 'cosa ti ho chiesto prima?' si riferisce esplicitamente alla richiesta precedente", "Il contesto mostra che l'ultima richiesta era 'Mostrami gli ultimi ordini di produzione', che è IN_SCOPE"]
+REQUEST 1: cosa ti ho chiesto prima?
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T15:54:44+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 15:54:44
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: cosa ti ho chiesto prima?
+MODELS LOADED: 475
+MATCHED MODELS: 1
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: cosa ti ho chiesto prima?
+QUERIES: ['previous request', 'past query', 'prior question', 'user history', 'interaction log', 'what was asked', 'earlier request', 'query archive', 'request history', "user's previous question", 'past interaction', 'query log']
+CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: previous request
+MODELS LOADED: 475
+MATCHED MODELS: 3
+
+===== MODEL SEARCH INDEX =====
+QUERY: past query
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: prior question
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: user history
+MODELS LOADED: 475
+MATCHED MODELS: 11
+
+===== MODEL SEARCH INDEX =====
+QUERY: interaction log
+MODELS LOADED: 475
+MATCHED MODELS: 20
+
+===== MODEL SEARCH INDEX =====
+QUERY: what was asked
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: earlier request
+MODELS LOADED: 475
+MATCHED MODELS: 3
+
+===== MODEL SEARCH INDEX =====
+QUERY: query archive
+MODELS LOADED: 475
+MATCHED MODELS: 4
+
+===== MODEL SEARCH INDEX =====
+QUERY: request history
+MODELS LOADED: 475
+MATCHED MODELS: 8
+
+===== MODEL SEARCH INDEX =====
+QUERY: user's previous question
+MODELS LOADED: 475
+MATCHED MODELS: 8
+
+===== MODEL SEARCH INDEX =====
+QUERY: past interaction
+MODELS LOADED: 475
+MATCHED MODELS: 8
+
+===== MODEL SEARCH INDEX =====
+QUERY: query log
+MODELS LOADED: 475
+MATCHED MODELS: 14
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: auditlog.http.request
+SEMANTIC QUERIES: ['previous request', 'interaction log', 'earlier request', 'request history', 'query log']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: auditlog.http.session
+SEMANTIC QUERIES: ['user history', 'interaction log', "user's previous question", 'query log']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: auditlog.log
+SEMANTIC QUERIES: ['interaction log', 'query log']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: auditlog.log.line
+SEMANTIC QUERIES: ['interaction log', 'query log']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: change.password.user
+SEMANTIC QUERIES: ['user history', "user's previous question"]
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: dm_log_parameters
+SEMANTIC QUERIES: ['interaction log', 'query log']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: portal.wizard.user
+SEMANTIC QUERIES: ['user history', "user's previous question"]
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+MODEL: product.price.history
+SEMANTIC QUERIES: ['user history', 'request history']
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUEST CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: cosa ti ho chiesto prima?
+ - auditlog.http.request | Auditlog - HTTP request log | score: 5.0
+ - auditlog.http.session | Auditlog - HTTP User session log | score: 5.0
+ - auditlog.log | Auditlog - Log | score: 5.0
+ - auditlog.log.line | Auditlog - Log details (fields updated) | score: 5.0
+ - change.password.user | Change Password Wizard User | score: 5.0
+ - dm_log_parameters | DM Log Parameters | score: 5.0
+ - portal.wizard.user | Portal User Config | score: 5.0
+ - product.price.history | product.price.history | score: 5.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: cosa ti ho chiesto prima?
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - auditlog.http.request | Auditlog - HTTP request log | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - auditlog.http.session | Auditlog - HTTP User session log | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - auditlog.log | Auditlog - Log | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - auditlog.log.line | Auditlog - Log details (fields updated) | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - change.password.user | Change Password Wizard User | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - dm_log_parameters | DM Log Parameters | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - portal.wizard.user | Portal User Config | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+ - product.price.history | product.price.history | score: 5.0
+   semantic concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+   request concepts: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== PLANNER ERROR =====
+ATTEMPT: 1 / 4
+TYPE: ValueError
+MESSAGE: Il Planner non ha restituito un oggetto valido.
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== PLANNER ERROR =====
+ATTEMPT: 2 / 4
+TYPE: UnprocessableEntityError
+MESSAGE: Error code: 422 - {'error_type': 'NO_VALID_RESPONSE_GENERATED', 'id': 'b1e9ea4d-fb70-4dae-84ac-26458878cb64', 'message': 'No valid response generated. Try updating messages'}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 3 / 4
+
+===== PLANNER ERROR =====
+ATTEMPT: 3 / 4
+TYPE: OutputParserException
+MESSAGE: Invalid json output: Mi dispiace, ma questa è la prima domanda che mi hai posto. Non ci sono richieste precedenti da parte tua. Come posso aiutarti oggi?
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 4 / 4
+
+===== PLANNER ERROR =====
+ATTEMPT: 4 / 4
+TYPE: OutputParserException
+MESSAGE: Invalid json output: Mi dispiace, ma non ho registro delle tue richieste precedenti. Come posso aiutarti oggi?
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+
+===== PLANNER EXCEPTIONS EXHAUSTED =====
+MAX ATTEMPTS: 4
+EXPERIENCE MEMORY FALLBACK REQUIRED
+
+===== PLANNER EXHAUSTED =====
+EXPERIENCE MEMORY FALLBACK REQUIRED
+
+===== GRAPH ROUTE PLANNER =====
+PLANNER EXHAUSTED: True
+ROUTE: experience_memory
+
+===== EXPERIENCE MEMORY FALLBACK =====
+REQUEST: cosa ti ho chiesto prima?
+SEMANTIC CONCEPTS: []
+EXPERIENCES FOUND: 10
+
+===== EXPERIENCE CANDIDATE =====
+INDEX: 1
+EXPERIENCE ID: exp_818a328debb14adfa3e5909001c163e8
+STATUS: success
+MODEL: mail.message
+METHOD: search_read
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mail.message/fields_view_get
+MODELLO: mail.message
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mail.message
+VIEW ID: 271
+VIEW STRING: Messages
+DEFAULT ORDER: 
+VIEW FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+VISIBLE FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mail.message/fields_view_get
+MODELLO: mail.message
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mail.message
+VIEW ID: 271
+VIEW STRING: Messages
+DEFAULT ORDER: 
+VIEW FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+VISIBLE FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+
+===== EXPERIENCE CANDIDATE ACCEPTED =====
+EXPERIENCE ID: exp_818a328debb14adfa3e5909001c163e8
+MODEL: mail.message
+METHOD: search_read
+REASON: historical solution compatible with current Odoo metadata
+
+===== GRAPH ROUTE EXPERIENCE MEMORY =====
+VALID HISTORICAL PLAN FOUND
+ROUTE: odoo
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 4
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: cosa ti ho chiesto prima?
+MODEL: mail.message
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+
+===== Portant PLAN =====
+{'agent': None, 'action': None, 'domain': [], 'parameters': {'model': 'mail.message', 'method': 'search_read', 'params': {'fields': ['date', 'subject', 'author_id', 'model', 'res_id'], 'groupby': [], 'domain': [], 'orderby': None, 'order': 'id desc'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mail.message
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mail.message/fields_view_get
+MODELLO: mail.message
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mail.message
+VIEW ID: 271
+VIEW STRING: Messages
+DEFAULT ORDER: 
+VIEW FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+VISIBLE FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mail.message
+FIELDS: 34
+
+===== DYNAMIC RELATION FIELDS =====
+ - author_id | Author | relation: res.partner
+ - create_uid | Created by | relation: res.users
+ - mail_activity_type_id | Mail Activity Type | relation: mail.activity.type
+ - mail_server_id | Outgoing mail server | relation: ir.mail_server
+ - parent_id | Parent Message | relation: mail.message
+ - subtype_id | Subtype | relation: mail.message.subtype
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: request history
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: query log
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: interaction history
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: user query archive
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS CONTEXT =====
+CONCEPT: user request history
+REASON: no sufficient metadata-backed field evidence; treated as entity/context concept
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: previous request
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: past request
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: prior query
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: earlier request
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS CONTEXT =====
+CONCEPT: previous request
+REASON: no sufficient metadata-backed field evidence; treated as entity/context concept
+FIELD COMPATIBLE: date -> date | exact technical match
+FIELD COMPATIBLE: subject -> subject | exact technical match
+FIELD COMPATIBLE: author_id -> author_id | exact technical match
+FIELD COMPATIBLE: model -> model | exact technical match
+FIELD COMPATIBLE: res_id -> res_id | exact technical match
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'user request history', 'queries': ['request history', 'query log', 'interaction history', 'user query archive']}, {'concept': 'previous request', 'queries': ['previous request', 'past request', 'prior query', 'earlier request']}]
+REQUIRED FIELD HINTS: ['date', 'subject', 'author_id', 'model', 'res_id']
+RESOLVED FIELDS: {'date': 'date', 'subject': 'subject', 'author_id': 'author_id', 'model': 'model', 'res_id': 'res_id'}
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 271
+TREE VIEW STRING: Messages
+TREE VIEW FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: id desc
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mail.message', 'method': 'search_read', 'params': {'fields': ['date', 'subject', 'author_id', 'model', 'res_id'], 'groupby': [], 'domain': [], 'orderby': None, 'order': 'id desc'}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mail.message
+METHOD: search_read
+FIELDS: ['date', 'subject', 'author_id', 'model', 'res_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mail.message/search_read
+BODY: {'fields': ['date', 'subject', 'author_id', 'model', 'res_id'], 'groupby': [], 'domain': [], 'orderby': None, 'order': 'id desc'}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mail.message/search_read
+METHOD: POST
+BODY: {'fields': ['date', 'subject', 'author_id', 'model', 'res_id'], 'groupby': [], 'domain': [], 'orderby': None, 'order': 'id desc'}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 557167
+TOTAL RECORDS: 557167
+RETURNED RECORDS: 557167
+LIMIT: 0
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: cosa ti ho chiesto prima?
+MODEL: mail.message
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 4
+
+===== GRAPH ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 557167
+RECORDS SENT TO RESPONSE LLM: 50
+
+===== RESPONSE RESULT =====
+La tua ultima richiesta ha coinvolto l'accesso a vari modelli e record all'interno del sistema. Ecco i dettagli delle interazioni più recenti:
+
+1. **8 settembre 2026**:
+   - Accesso al modello `product.product` (ID: 241385) e `product.template` (ID: 27161) da parte dell'amministratore.
+
+2. **2 settembre 2026**:
+   - Ispezione di qualità (`qc.inspection`) per il record ID 11589 da parte di Tablet Produzione.
+
+3. **28 agosto 2026**:
+   - Operazione di produzione (`mrp.production`) per il record ID 2917 da parte di Tablet Produzione.
+
+4. **26 agosto 2026**:
+   - Query su `querydeluxe` (ID: 21) da parte dell'amministratore.
+
+Queste interazioni riflettono le tue attività più recenti nel sistema. Fammi sapere se desideri ulteriori dettagli su una richiesta specifica!
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+RECORD LINKS: 
+
+
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-22T15:59:05
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.131:6969/web/session/authenticate
+DATABASE: DM-PLF001-TIPREGO
+LOGIN: info@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 1
+USERNAME: info@digimarksrl.com
+NAME: Administrator
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 1
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 1
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: mi controlli qual'è il jumbo attivo sulla linea m2?
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ho trovato 367 ordini di produzione.\nEcco gli ultimi 10 in ordine di creazione:\n\n| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |\n|---|---|---|---|---|---|\n| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602604 | [S131005224] PF 581 CP S \'ULF\' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602601 | [S165005412] PF 564 CP/80 \'LARSON INTERNATIONAL III\' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |\n| MO/2602603 | [S157005225] PF 581 CP S \'ULF\' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |\n| MO/2602599 | [S106005581] PF 564 CP \'VOESTALPINE IV\' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |\n| MO/2602600 | [S131005294] PF 564 CP \'LASER\' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |\n| MO/2602594 | [S135005464] PF 564 CP \'LASER\' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |\n| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |'}
+
+===== REQUEST SPLITTER NODE =====
+INPUT: mi controlli qual'è il jumbo attivo sulla linea m2?
+
+===== REQUEST SPLITTER =====
+INPUT: mi controlli qual'è il jumbo attivo sulla linea m2?
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.75
+CONTINUATION: True
+INTENT FAMILY: verifica stato produzione
+CONCEPTS: ['produzione', 'stati e fasi']
+REASON: La richiesta riguarda lo stato di un elemento ('jumbo attivo') legato alla linea di produzione M2, continuando il contesto precedente sugli ordini di produzione.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['produzione', 'stati e fasi']
+REQUEST COUNT: 1
+REQUEST 1: mi controlli qual'è il jumbo attivo sulla linea m2?
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.75
+CONTINUATION: True
+INTENT FAMILY: verifica stato produzione
+CONCEPTS: ['produzione', 'stati e fasi']
+REQUEST COUNT: 1
+REASON: La richiesta riguarda lo stato di un elemento ('jumbo attivo') legato alla linea di produzione M2, continuando il contesto precedente sugli ordini di produzione.
+EVIDENCE: ["Riferimento alla 'linea M2' in un contesto produttivo", "Termine 'attivo' collegato a stati/fasi (es. 'In pausa', 'Pianificato' negli ordini precedenti)", 'Continuità con la conversazione su ordini di produzione']
+REQUEST 1: mi controlli qual'è il jumbo attivo sulla linea m2?
+
+===== GRAPH ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T16:00:00+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 16:00:00
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: mi controlli qual'è il jumbo attivo sulla linea m2?
+MODELS LOADED: 475
+MATCHED MODELS: 45
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: mi controlli qual'è il jumbo attivo sulla linea m2?
+QUERIES: ['jumbo', 'jumbos', 'active jumbo', 'line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: jumbo
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: jumbos
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: active jumbo
+MODELS LOADED: 475
+MATCHED MODELS: 11
+
+===== MODEL SEARCH INDEX =====
+QUERY: line
+MODELS LOADED: 475
+MATCHED MODELS: 39
+
+===== MODEL SEARCH INDEX =====
+QUERY: lines
+MODELS LOADED: 475
+MATCHED MODELS: 35
+
+===== MODEL SEARCH INDEX =====
+QUERY: m2 line
+MODELS LOADED: 475
+MATCHED MODELS: 39
+
+===== MODEL SEARCH INDEX =====
+QUERY: line m2
+MODELS LOADED: 475
+MATCHED MODELS: 39
+
+===== MODEL SEARCH INDEX =====
+QUERY: linea
+MODELS LOADED: 475
+MATCHED MODELS: 36
+
+===== MODEL SEARCH INDEX =====
+QUERY: linee
+MODELS LOADED: 475
+MATCHED MODELS: 39
+
+===== MODEL SEARCH INDEX =====
+QUERY: linea m2
+MODELS LOADED: 475
+MATCHED MODELS: 36
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: qc.trigger.line
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: account.move.line.reconcile
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: account.move.line.reconcile.writeoff
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: base.automation.line.test
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: account.analytic.line
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: account.bank.statement.line
+SEMANTIC QUERIES: ['line', 'lines', 'm2 line', 'line m2', 'linee']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: account.cashbox.line
+SEMANTIC QUERIES: ['line', 'm2 line', 'line m2', 'linee']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+MODEL: dm_accessory_line
+SEMANTIC QUERIES: ['line', 'm2 line', 'line m2']
+SEMANTIC CONCEPTS: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUEST CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: mi controlli qual'è il jumbo attivo sulla linea m2?
+ - qc.trigger.line | Abstract line for defining triggers | score: 24.0
+ - account.move.line.reconcile | Account move line reconcile | score: 24.0
+ - account.move.line.reconcile.writeoff | Account move line reconcile (writeoff) | score: 24.0
+ - base.automation.line.test | Action Rule Line Test | score: 24.0
+ - account.analytic.line | Analytic Line | score: 24.0
+ - account.bank.statement.line | Bank Statement Line | score: 24.0
+ - account.cashbox.line | CashBox Line | score: 24.0
+ - dm_accessory_line | dm_accessory_line | score: 24.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: mi controlli qual'è il jumbo attivo sulla linea m2?
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - qc.trigger.line | Abstract line for defining triggers | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile | Account move line reconcile | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile.writeoff | Account move line reconcile (writeoff) | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - base.automation.line.test | Action Rule Line Test | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.analytic.line | Analytic Line | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.bank.statement.line | Bank Statement Line | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.cashbox.line | CashBox Line | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - dm_accessory_line | dm_accessory_line | score: 24.0
+   semantic concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+   request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - qc.trigger.line | Abstract line for defining triggers | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile | Account move line reconcile | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile.writeoff | Account move line reconcile (writeoff) | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - base.automation.line.test | Action Rule Line Test | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.analytic.line | Analytic Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.bank.statement.line | Bank Statement Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.cashbox.line | CashBox Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - dm_accessory_line | dm_accessory_line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mi controlli qual'è il jumbo attivo sulla linea m2?
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: qc.trigger.line
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['line', '=', 'm2'], ['active', '=', True]]
+FINAL PARAMS: {'domain': [['line', '=', 'm2'], ['active', '=', True]], 'limit': 1}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model.fields/search_read
+MODELLO: ir.model.fields
+METHOD: search_read
+ARGS: [[['model', '=', 'qc.trigger.line']]]
+KWARGS: {'fields': ['id', 'name', 'field_description', 'help', 'ttype', 'relation', 'required', 'readonly', 'store', 'index'], 'limit': 0, 'order': 'name asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/qc.trigger.line/fields_view_get
+MODELLO: qc.trigger.line
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: qc.trigger.line
+VIEW ID: None
+VIEW STRING: Abstract line for defining triggers
+DEFAULT ORDER: 
+VIEW FIELDS: ['id']
+VISIBLE FIELDS: ['id']
+
+===== PLANNER TECHNICAL FIELD VALIDATION FAILED =====
+MODEL: qc.trigger.line
+INVALID FIELDS: ['active', 'line']
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 1,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "qc.trigger.line",
+    "method": "search_read",
+    "params": {
+      "domain": [
+        [
+          "line",
+          "=",
+          "m2"
+        ],
+        [
+          "active",
+          "=",
+          true
+        ]
+      ],
+      "limit": 1
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "qc.trigger.line",
+    "invalid_fields": [
+      "active",
+      "line"
+    ],
+    "validated_fields": [
+      "active",
+      "line"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "display_name",
+      "id",
+      "partners",
+      "production_threshold_quantity",
+      "qty_counter",
+      "test",
+      "trigger",
+      "trigger_activation_clause",
+      "user"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - qc.trigger.line | Abstract line for defining triggers | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile | Account move line reconcile | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.move.line.reconcile.writeoff | Account move line reconcile (writeoff) | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - base.automation.line.test | Action Rule Line Test | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.analytic.line | Analytic Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.bank.statement.line | Bank Statement Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - account.cashbox.line | CashBox Line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+ - dm_accessory_line | dm_accessory_line | score: 24.0 | concepts: [{'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}] | request concepts: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mi controlli qual'è il jumbo attivo sulla linea m2?
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: res.partner
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['name', 'ilike', 'jumbo'], ['active', '=', True]]
+FINAL PARAMS: {'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'limit': 1}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/res.partner/fields_view_get
+MODELLO: res.partner
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: res.partner
+VIEW ID: 108
+VIEW STRING: Contacts
+DEFAULT ORDER: 
+VIEW FIELDS: ['display_name', 'function', 'phone', 'email', 'user_id', 'is_company', 'country_id', 'parent_id', 'active']
+VISIBLE FIELDS: ['display_name', 'phone', 'email']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 2
+
+===== GRAPH ROUTE PLANNER =====
+RETRY CONTEXT PRESENT
+NEW SINGLE PLAN HAS PRIORITY
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 2
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: mi controlli qual'è il jumbo attivo sulla linea m2?
+MODEL: res.partner
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'parameters': {'model': 'res.partner', 'method': 'search_read', 'params': {'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'limit': 1}}}
+
+===== MODEL DISCOVERY =====
+MODEL: res.partner
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/res.partner/fields_view_get
+MODELLO: res.partner
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: res.partner
+VIEW ID: 108
+VIEW STRING: Contacts
+DEFAULT ORDER: 
+VIEW FIELDS: ['display_name', 'function', 'phone', 'email', 'user_id', 'is_company', 'country_id', 'parent_id', 'active']
+VISIBLE FIELDS: ['display_name', 'phone', 'email']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: res.partner
+FIELDS: 157
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - carriage_condition_id | Carriage Condition | relation: stock.picking.carriage_condition
+ - cod_cli_fatt | Cod Cli Fatt | relation: res.partner
+ - commercial_partner_country_id | Commercial Entity's Country | relation: res.country
+ - commercial_partner_id | Commercial Entity | relation: res.partner
+ - company_id | Company | relation: res.company
+ - country_id | Country | relation: res.country
+ - create_uid | Created by | relation: res.users
+ - currency_id | Currency | relation: res.currency
+ - goods_description_id | Description of Goods | relation: stock.picking.goods_description
+ - industry_id | Industry | relation: res.partner.industry
+ - parent_id | Related Company | relation: res.partner
+ - property_account_payable_id | Account Payable | relation: account.account
+ - property_account_position_id | Fiscal Position | relation: account.fiscal.position
+ - property_account_receivable_id | Account Receivable | relation: account.account
+ - property_delivery_carrier_id | Delivery Method | relation: delivery.carrier
+ - property_payment_term_id | Customer Payment Terms | relation: account.payment.term
+ - property_product_pricelist | Sale Pricelist | relation: product.pricelist
+ - property_purchase_currency_id | Supplier Currency | relation: res.currency
+ - property_stock_customer | Customer Location | relation: stock.location
+ - property_stock_supplier | Vendor Location | relation: stock.location
+ - property_supplier_payment_term_id | Vendor Payment Terms | relation: account.payment.term
+ - secondary_delivery_carrier | Secondary Delivery Carrier | relation: delivery.carrier
+ - self | Self | relation: res.partner
+ - state_id | State | relation: res.country.state
+ - team_id | Sales Channel | relation: crm.team
+ - title | Title | relation: res.partner.title
+ - transportation_method_id | Method of Transportation | relation: stock.picking.transportation_method
+ - transportation_reason_id | Reason for Transportation | relation: stock.picking.transportation_reason
+ - user_id | Salesperson | relation: res.users
+ - write_uid | Last Updated by | relation: res.users
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: jumbo
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: jumbos
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: active jumbo
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS CONTEXT =====
+CONCEPT: jumbo
+REASON: no sufficient metadata-backed field evidence; treated as entity/context concept
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: line
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: lines
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: m2 line
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: line m2
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: linea
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: linee
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: linea m2
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS CONTEXT =====
+CONCEPT: line
+REASON: no sufficient metadata-backed field evidence; treated as entity/context concept
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'jumbo', 'queries': ['jumbo', 'jumbos', 'active jumbo']}, {'concept': 'line', 'queries': ['line', 'lines', 'm2 line', 'line m2', 'linea', 'linee', 'linea m2']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {}
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 108
+TREE VIEW STRING: Contacts
+TREE VIEW FIELDS: ['display_name', 'phone', 'email']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['display_name', 'phone', 'email']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['display_name', 'phone', 'email']
+GROUPBY: []
+ORDERBY: None
+ORDER: None
+DOMAIN: [['name', 'ilike', 'jumbo'], ['active', '=', True]]
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'res.partner', 'method': 'search_read', 'params': {'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'limit': 1, 'fields': ['display_name', 'phone', 'email'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: res.partner
+METHOD: search_read
+FIELDS: ['display_name', 'phone', 'email']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: [['name', 'ilike', 'jumbo'], ['active', '=', True]]
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/res.partner/search_read
+BODY: {'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'limit': 1, 'fields': ['display_name', 'phone', 'email'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/res.partner/search_read
+METHOD: POST
+BODY: {'domain': [['name', 'ilike', 'jumbo'], ['active', '=', True]], 'limit': 1, 'fields': ['display_name', 'phone', 'email'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 0
+TOTAL RECORDS: 0
+RETURNED RECORDS: 0
+LIMIT: 1
+OFFSET: 0
+PAGES: 0
+HAS MORE: False
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: mi controlli qual'è il jumbo attivo sulla linea m2?
+MODEL: res.partner
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 2
+
+===== GRAPH ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+Al momento, non ci sono jumbo attivi sulla linea M2 corrispondenti ai criteri di ricerca.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 3c733f6c-5726-49e8-8032-062686d5a10e
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: mi controlli qual'è il jumbo attivo sulla linea m2?
+ASSISTANT MESSAGE: Al momento, non ci sono jumbo attivi sulla linea M2 corrispondenti ai criteri di ricerca.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami gli ultimi ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 10 in ordine di creazione:
+
+| Ordine | Prodotto | Quantità (MQ) | Data inizio | Data fine | Stato |
+|---|---|---|---|---|---|
+| MO/2602602 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602604 | [S131005224] PF 581 CP S 'ULF' | 23.580 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602601 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602595 | [S106002499] PF 584 CP S "ULF" | 25.440 | 26 marzo 2026 | 26 marzo 2026 | In pausa |
+| MO/2602603 | [S157005225] PF 581 CP S 'ULF' | 28.260 | 28 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602596 | [S131003884] PF 584 CP S "ULF" | 55.020 | 26 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602599 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400 | 27 marzo 2026 | 27 marzo 2026 | In pausa |
+| MO/2602600 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240 | 27 marzo 2026 | 28 marzo 2026 | Pianificato |
+| MO/2602594 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400 | 27 marzo 2026 | 27 marzo 2026 | Pianificato |
+| MO/2602597 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600 | 28 marzo 2026 | 29 marzo 2026 | In pausa |
+ - user : mi controlli qual'è il jumbo attivo sulla linea m2?
+ - assistant : Al momento, non ci sono jumbo attivi sulla linea M2 corrispondenti ai criteri di ricerca.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: mi controlli qual'è il jumbo attivo sulla linea m2?
+SUB_REQUESTS: ["mi controlli qual'è il jumbo attivo sulla linea m2?"]
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: res.partner
+METHOD: search_read
+DOMAIN: [['name', 'ilike', 'jumbo'], ['active', '=', True]]
+FIELDS: ['display_name', 'phone', 'email']
+ORDER: None
+LIMIT: 1
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: res.partner
+METHOD: search_read
+DOMAIN: [['name', 'ilike', 'jumbo'], ['active', '=', True]]
+RESULT TYPE: records
+TOTAL: 0
+RETURNED: 0
+LIMIT: 1
+PAGES: 0
+HAS MORE: False
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 89
+PREVIEW: Al momento, non ci sono jumbo attivi sulla linea M2 corrispondenti ai criteri di ricerca.
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
