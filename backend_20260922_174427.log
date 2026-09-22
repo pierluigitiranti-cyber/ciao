@@ -1,0 +1,2359 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-22T17:44:27
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.131:6969/web/session/authenticate
+DATABASE: DM-PLF001-TIPREGO
+LOGIN: info@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 1
+USERNAME: info@digimarksrl.com
+NAME: Administrator
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 1
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 1
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami gli ultimi 25 ordini di produzione
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 0
+CONVERSATION CONTEXT: EMPTY
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami gli ultimi 25 ordini di produzione
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami gli ultimi 25 ordini di produzione
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: recupero dati
+CONCEPTS: ['ordini di produzione', 'quantità e valori']
+REASON: La richiesta riguarda direttamente il recupero di ordini di produzione, concetto chiave nel dominio Portant, con specificazione quantitativa esplicita.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['ordini di produzione', 'quantità e valori']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami gli ultimi 25 ordini di produzione
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: False
+INTENT FAMILY: recupero dati
+INTERACTION MODE: OPERATIONAL
+CONCEPTS: ['ordini di produzione', 'quantità e valori']
+REQUEST COUNT: 1
+REASON: La richiesta riguarda direttamente il recupero di ordini di produzione, concetto chiave nel dominio Portant, con specificazione quantitativa esplicita.
+EVIDENCE: ["Corrispondenza esatta di 'ordini di produzione' con l'alias in 'produzione'", "Riferimento a 'ultimi 25' collegato a 'quantità e valori'"]
+REQUEST 1: Mostrami gli ultimi 25 ordini di produzione
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER CONVERSATION CONTEXT FROM STATE =====
+NESSUN CONTESTO RILEVANTE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T17:44:58+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 17:44:58
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== PLANNER CONVERSATION CONTEXT =====
+NESSUN CONTESTO RILEVANTE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami gli ultimi 25 ordini di produzione
+MODELS LOADED: 475
+MATCHED MODELS: 11
+
+===== DIRECT MODEL DISCOVERY SEED =====
+QUERY: Mostrami gli ultimi 25 ordini di produzione
+DIRECT CANDIDATES: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami gli ultimi 25 ordini di produzione
+SUPPLIED CONCEPTS: []
+EXPANDED QUERIES: []
+COMBINED CONCEPTS: []
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: []
+COMBINED SEMANTIC CONCEPTS: []
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.oee.history
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: res.portant.kill.switch
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: res.bc.down
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.config.setting.wizard
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.employee.journal
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.setup.employee.journal
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.less.production
+SEMANTIC QUERIES: ['Mostrami gli ultimi 25 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami gli ultimi 25 ordini di produzione
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0
+ - mrp.workorder.less.production | Termina produzione | score: 5.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami gli ultimi 25 ordini di produzione
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5
+   semantic concepts: []
+   request concepts: []
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workorder.less.production | Termina produzione | score: 5.0
+   semantic concepts: []
+   request concepts: []
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0 | concepts: [] | request concepts: []
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5 | concepts: [] | request concepts: []
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0 | concepts: [] | request concepts: []
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workorder.less.production | Termina produzione | score: 5.0 | concepts: [] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami gli ultimi 25 ordini di produzione
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: 25
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'limit': 25, 'order': 'create_date DESC'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== WORKFLOW ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 25, 'order': 'create_date DESC'}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami gli ultimi 25 ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: []
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 25, 'order': 'create_date DESC'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.production
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.production
+FIELDS: 119
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - bom_id | Bill of Material | relation: mrp.bom
+ - bom_version_id | Bom Version | relation: mrp.bom.versioning
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - final_lot_id | Lotto/Numero Seriale | relation: stock.production.lot
+ - location_dest_id | Finished Products Location | relation: stock.location
+ - location_src_id | Raw Materials Location | relation: stock.location
+ - material_used | Material Used | relation: stock.move
+ - order_line_id | Order Line | relation: sale.order.line
+ - parent_production_id | Production that has generated the demand | relation: mrp.production
+ - picking_type_id | Operation Type | relation: stock.picking.type
+ - procurement_group_id | Procurement Group | relation: procurement.group
+ - product_id | Product | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom_id | Product Unit of Measure | relation: product.uom
+ - production_location_id | Production Location | relation: stock.location
+ - routing_id | Routing | relation: mrp.routing
+ - routing_tmpl_id | Template | relation: mrp.routing.template
+ - sale_order_id | Order Reference | relation: sale.order
+ - user_id | Responsible | relation: res.users
+ - workcenter_id | Workcenter | relation: mrp.workcenter
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REASON: no semantic requirements or technical hints to verify
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 706
+TREE VIEW STRING: Manufacturing Orders
+TREE VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+ORDER: create_date DESC
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 25, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.production
+METHOD: search_read
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+BODY: {'domain': [], 'limit': 25, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+METHOD: POST
+BODY: {'domain': [], 'limit': 25, 'order': 'create_date desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 367
+TOTAL RECORDS: 367
+RETURNED RECORDS: 25
+LIMIT: 25
+OFFSET: 0
+PAGES: 15
+HAS MORE: True
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Mostrami gli ultimi 25 ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== WORKFLOW ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+NESSUN CONTESTO RILEVANTE
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 25
+RECORDS SENT TO RESPONSE LLM: 25
+
+===== RESPONSE RESULT =====
+Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+RECORD LINKS: [{'id': 2911, 'model': 'mrp.production', 'label': 'MO/2602599', 'url': 'http://10.100.12.131:6969/web#id=2911&model=mrp.production&view_type=form'}, {'id': 2910, 'model': 'mrp.production', 'label': 'MO/2602598', 'url': 'http://10.100.12.131:6969/web#id=2910&model=mrp.production&view_type=form'}, {'id': 2915, 'model': 'mrp.production', 'label': 'MO/2602603', 'url': 'http://10.100.12.131:6969/web#id=2915&model=mrp.production&view_type=form'}, {'id': 2914, 'model': 'mrp.production', 'label': 'MO/2602602', 'url': 'http://10.100.12.131:6969/web#id=2914&model=mrp.production&view_type=form'}, {'id': 2916, 'model': 'mrp.production', 'label': 'MO/2602604', 'url': 'http://10.100.12.131:6969/web#id=2916&model=mrp.production&view_type=form'}, {'id': 2907, 'model': 'mrp.production', 'label': 'MO/2602595', 'url': 'http://10.100.12.131:6969/web#id=2907&model=mrp.production&view_type=form'}, {'id': 2917, 'model': 'mrp.production', 'label': 'MO/2602605', 'url': 'http://10.100.12.131:6969/web#id=2917&model=mrp.production&view_type=form'}, {'id': 2906, 'model': 'mrp.production', 'label': 'MO/2602594', 'url': 'http://10.100.12.131:6969/web#id=2906&model=mrp.production&view_type=form'}, {'id': 2912, 'model': 'mrp.production', 'label': 'MO/2602600', 'url': 'http://10.100.12.131:6969/web#id=2912&model=mrp.production&view_type=form'}, {'id': 2909, 'model': 'mrp.production', 'label': 'MO/2602597', 'url': 'http://10.100.12.131:6969/web#id=2909&model=mrp.production&view_type=form'}, {'id': 2908, 'model': 'mrp.production', 'label': 'MO/2602596', 'url': 'http://10.100.12.131:6969/web#id=2908&model=mrp.production&view_type=form'}, {'id': 2913, 'model': 'mrp.production', 'label': 'MO/2602601', 'url': 'http://10.100.12.131:6969/web#id=2913&model=mrp.production&view_type=form'}, {'id': 2893, 'model': 'mrp.production', 'label': 'MO/2602581', 'url': 'http://10.100.12.131:6969/web#id=2893&model=mrp.production&view_type=form'}, {'id': 2897, 'model': 'mrp.production', 'label': 'MO/2602585', 'url': 'http://10.100.12.131:6969/web#id=2897&model=mrp.production&view_type=form'}, {'id': 2894, 'model': 'mrp.production', 'label': 'MO/2602582', 'url': 'http://10.100.12.131:6969/web#id=2894&model=mrp.production&view_type=form'}, {'id': 2895, 'model': 'mrp.production', 'label': 'MO/2602583', 'url': 'http://10.100.12.131:6969/web#id=2895&model=mrp.production&view_type=form'}, {'id': 2892, 'model': 'mrp.production', 'label': 'MO/2602580', 'url': 'http://10.100.12.131:6969/web#id=2892&model=mrp.production&view_type=form'}, {'id': 2901, 'model': 'mrp.production', 'label': 'MO/2602589', 'url': 'http://10.100.12.131:6969/web#id=2901&model=mrp.production&view_type=form'}, {'id': 2899, 'model': 'mrp.production', 'label': 'MO/2602587', 'url': 'http://10.100.12.131:6969/web#id=2899&model=mrp.production&view_type=form'}, {'id': 2904, 'model': 'mrp.production', 'label': 'MO/2602592', 'url': 'http://10.100.12.131:6969/web#id=2904&model=mrp.production&view_type=form'}, {'id': 2888, 'model': 'mrp.production', 'label': 'MO/2602576', 'url': 'http://10.100.12.131:6969/web#id=2888&model=mrp.production&view_type=form'}, {'id': 2889, 'model': 'mrp.production', 'label': 'MO/2602577', 'url': 'http://10.100.12.131:6969/web#id=2889&model=mrp.production&view_type=form'}, {'id': 2886, 'model': 'mrp.production', 'label': 'MO/2602574', 'url': 'http://10.100.12.131:6969/web#id=2886&model=mrp.production&view_type=form'}, {'id': 2871, 'model': 'mrp.production', 'label': 'MO/2602559', 'url': 'http://10.100.12.131:6969/web#id=2871&model=mrp.production&view_type=form'}, {'id': 2870, 'model': 'mrp.production', 'label': 'MO/2602558', 'url': 'http://10.100.12.131:6969/web#id=2870&model=mrp.production&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami gli ultimi 25 ordini di produzione
+ASSISTANT MESSAGE: Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+CONVERSATION TITLE UPDATED: Mostrami gli ultimi 25 ordini di produzione
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami gli ultimi 25 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami gli ultimi 25 ordini di produzione
+SUB_REQUESTS: ['Mostrami gli ultimi 25 ordini di produzione']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+ORDER: create_date DESC
+LIMIT: 25
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+RESULT TYPE: records
+TOTAL: 367
+RETURNED: 25
+LIMIT: 25
+PAGES: 15
+HAS MORE: True
+FIRST RECORD: {'id': 2911, 'name': 'MO/2602599', 'date_planned_start': '2026-03-27 02:24:38', 'date_planned_finished': '2026-03-27 16:34:17', 'product_id': [216489, "[S106005581] PF 564 CP 'VOESTALPINE IV' COMBI"], 'product_qty': 42400.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'paused'}
+SECOND RECORD: {'id': 2910, 'name': 'MO/2602598', 'date_planned_start': '2026-03-29 03:32:51', 'date_planned_finished': '2026-03-29 16:18:05', 'product_id': [216491, '[S165005577] PF 584 CP/80 S "ULF BLACK"'], 'product_qty': 59400.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'paused'}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 3093
+PREVIEW: Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:  | **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** | |---|---|---|---|---|---|---| | 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV'...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: horizontal
+TITLE: Ultimi 25 ordini di produzione per stato
+SOURCE INDEX: 0
+GROUPING: state
+VALUE: None
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Ultimi 25 ordini di produzione per stato
+SOURCE: 1
+SOURCE TYPE: records
+GROUPING: state
+VALUE: None
+POINTS: 2
+DATA: [{'label': 'paused', 'value': 19.0}, {'label': 'planned', 'value': 6.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: mostrami gli ultimi 15 ordini di lavoro
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 25 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:\n\n| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |\n|---|---|---|---|---|---|---|\n| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP \'VOESTALPINE IV\' COMBI | 42.400,00 MQ | In pausa |\n| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |\n| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S \'ULF\' | 28.260,00 MQ | Pianificato |\n| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |\n| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S \'ULF\' | 23.580,00 MQ | Pianificato |\n| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |\n| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK \'VERO CUOIO\' | 19.200,00 MQ | In pausa |\n| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP \'LASER\' COMBI | 32.400,00 MQ | Pianificato |\n| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP \'LASER\' COMBI | 5.240,00 MQ | Pianificato |\n| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |\n| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |\n| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 \'LARSON INTERNATIONAL III\' | 35.640,00 MQ | Pianificato |\n| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |\n| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |\n| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |\n| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |\n| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |\n| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |\n| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |\n| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |\n| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |\n| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |\n| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |\n| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |\n| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |'}
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 2
+
+===== CONVERSATION CONTEXT =====
+L'utente ha precedentemente richiesto gli ultimi 25 ordini di produzione, ricevendo un elenco di 367 ordini totali. La richiesta corrente è per gli ultimi 15 ordini di lavoro, che corrispondono a una subset degli ordini già recuperati.
+
+===== REQUEST SPLITTER NODE =====
+INPUT: mostrami gli ultimi 15 ordini di lavoro
+
+===== REQUEST SPLITTER =====
+INPUT: mostrami gli ultimi 15 ordini di lavoro
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: recupero ordini
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REASON: La richiesta continua una precedente interrogazione su ordini di produzione e utilizza un termine sinonimo ('ordini di lavoro') che rientra nel dominio Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REQUEST COUNT: 1
+REQUEST 1: mostrami gli ultimi 15 ordini di lavoro
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: recupero ordini
+INTERACTION MODE: OPERATIONAL
+CONCEPTS: ['ordini di produzione', 'periodi temporali']
+REQUEST COUNT: 1
+REASON: La richiesta continua una precedente interrogazione su ordini di produzione e utilizza un termine sinonimo ('ordini di lavoro') che rientra nel dominio Portant.
+EVIDENCE: ["Riferimento contestuale a 'ordini di produzione' nella conversazione precedente", "Corrispondenza semantica tra 'ordini di lavoro' e 'ordini di produzione' nel dominio manifatturiero", "Presenza di 'ultimi' come alias di 'periodi temporali' nella knowledge base"]
+REQUEST 1: mostrami gli ultimi 15 ordini di lavoro
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER CONVERSATION CONTEXT FROM STATE =====
+L'utente ha precedentemente richiesto gli ultimi 25 ordini di produzione, ricevendo un elenco di 367 ordini totali. La richiesta corrente è per gli ultimi 15 ordini di lavoro, che corrispondono a una subset degli ordini già recuperati.
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T17:46:17+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 17:46:17
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== PLANNER CONVERSATION CONTEXT =====
+L'utente ha precedentemente richiesto gli ultimi 25 ordini di produzione, ricevendo un elenco di 367 ordini totali. La richiesta corrente è per gli ultimi 15 ordini di lavoro, che corrispondono a una subset degli ordini già recuperati.
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: mostrami gli ultimi 15 ordini di lavoro
+MODELS LOADED: 475
+MATCHED MODELS: 10
+
+===== DIRECT MODEL DISCOVERY SEED =====
+QUERY: mostrami gli ultimi 15 ordini di lavoro
+DIRECT CANDIDATES: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: mostrami gli ultimi 15 ordini di lavoro
+SUPPLIED CONCEPTS: []
+EXPANDED QUERIES: ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']
+COMBINED CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: work order
+MODELS LOADED: 475
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: work orders
+MODELS LOADED: 475
+MATCHED MODELS: 29
+
+===== MODEL SEARCH INDEX =====
+QUERY: ordine di lavoro
+MODELS LOADED: 475
+MATCHED MODELS: 8
+
+===== MODEL SEARCH INDEX =====
+QUERY: ordini di lavoro
+MODELS LOADED: 475
+MATCHED MODELS: 8
+
+===== MODEL SEARCH INDEX =====
+QUERY: job order
+MODELS LOADED: 475
+MATCHED MODELS: 14
+
+===== MODEL SEARCH INDEX =====
+QUERY: job orders
+MODELS LOADED: 475
+MATCHED MODELS: 4
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: []
+COMBINED SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+MODEL: mrp.oee.history
+SEMANTIC QUERIES: ['mostrami gli ultimi 15 ordini di lavoro', 'ordine di lavoro', 'ordini di lavoro']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder
+SEMANTIC QUERIES: ['work order', 'work orders', 'job order', 'job orders']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: ['mostrami gli ultimi 15 ordini di lavoro', 'ordine di lavoro', 'ordini di lavoro']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.employee.journal
+SEMANTIC QUERIES: ['mostrami gli ultimi 15 ordini di lavoro', 'ordine di lavoro', 'ordini di lavoro']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.coil
+SEMANTIC QUERIES: ['work order', 'job order']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.component.line
+SEMANTIC QUERIES: ['work order', 'job order']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.manteinance.loss.reason
+SEMANTIC QUERIES: ['work order', 'job order']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.predecessor
+SEMANTIC QUERIES: ['work order']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: mostrami gli ultimi 15 ordini di lavoro
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 23.0
+ - mrp.workorder | Work Order | score: 18.0
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 10.0
+ - mrp.workorder.coil | mrp.workorder.coil | score: 7.0
+ - mrp.workorder.component.line | mrp.workorder.component.line | score: 7.0
+ - mrp.workorder.manteinance.loss.reason | mrp.workorder.manteinance.loss.reason | score: 7.0
+ - mrp.workorder.predecessor | mrp.workorder.predecessor | score: 7.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: mostrami gli ultimi 15 ordini di lavoro
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 23.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workorder | Work Order | score: 18.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 10.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workorder.coil | mrp.workorder.coil | score: 7.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workorder.component.line | mrp.workorder.component.line | score: 7.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workorder.manteinance.loss.reason | mrp.workorder.manteinance.loss.reason | score: 7.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+ - mrp.workorder.predecessor | mrp.workorder.predecessor | score: 7.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+   request concepts: []
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 23.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder | Work Order | score: 18.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 10.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.coil | mrp.workorder.coil | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.component.line | mrp.workorder.component.line | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.manteinance.loss.reason | mrp.workorder.manteinance.loss.reason | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.predecessor | mrp.workorder.predecessor | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mostrami gli ultimi 15 ordini di lavoro
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.workorder
+METHOD: search_read
+EXPLICIT LIMIT: 15
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'limit': 15, 'order': 'date_planned DESC'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.workorder/fields_view_get
+MODELLO: mrp.workorder
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.workorder
+VIEW ID: 678
+VIEW STRING: Work Orders
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+
+===== PLANNER TECHNICAL FIELD VALIDATION FAILED =====
+MODEL: mrp.workorder
+INVALID FIELDS: ['date_planned']
+
+===== PLANNER PROPOSAL REJECTED =====
+{
+  "attempt": 1,
+  "status": "REJECTED",
+  "reason": "invalid_technical_fields",
+  "proposal": {
+    "model": "mrp.workorder",
+    "method": "search_read",
+    "params": {
+      "domain": [],
+      "limit": 15,
+      "order": "date_planned DESC"
+    }
+  },
+  "details": {
+    "reason": "invalid_technical_fields",
+    "model": "mrp.workorder",
+    "invalid_fields": [
+      "date_planned"
+    ],
+    "validated_fields": [
+      "date_planned"
+    ],
+    "available_fields_sample": [
+      "__last_update",
+      "active_move_line_ids",
+      "capacity",
+      "color",
+      "create_date",
+      "create_uid",
+      "date_finished",
+      "date_last_record_save",
+      "date_planned_deadline",
+      "date_planned_finished",
+      "date_planned_start",
+      "date_start",
+      "department_id",
+      "display_name",
+      "duration",
+      "duration_expected",
+      "duration_gantt",
+      "duration_percent",
+      "duration_unit",
+      "enable_manual_qty",
+      "enable_set_up_state",
+      "final_lot_id",
+      "id",
+      "instruction_ids",
+      "invisible_in_set_up",
+      "is_milestone",
+      "is_produced",
+      "is_user_working",
+      "message_channel_ids",
+      "message_follower_ids",
+      "message_ids",
+      "message_is_follower",
+      "message_last_post",
+      "message_needaction",
+      "message_needaction_counter",
+      "message_partner_ids",
+      "message_unread",
+      "message_unread_counter",
+      "mid_logs",
+      "move_line_ids",
+      "move_raw_ids",
+      "name",
+      "next_work_order_id",
+      "non_related_parameters_ids",
+      "not_worked_scrap_count",
+      "nota_end_up",
+      "old_time_pre_production",
+      "on_gantt",
+      "operation_id",
+      "parameter_recipe",
+      "partner_id",
+      "predecessor_count",
+      "predecessor_ids",
+      "predecessor_parent",
+      "product_id",
+      "product_image_medium",
+      "product_tracking",
+      "product_uom_id",
+      "production_availability",
+      "production_date",
+      "production_id",
+      "production_messages",
+      "production_state",
+      "qty_expected",
+      "qty_produced",
+      "qty_produced_ok",
+      "qty_producing",
+      "qty_production",
+      "qty_remaining",
+      "recipe",
+      "scrap_count",
+      "scrap_count_pieces",
+      "scrap_ids",
+      "scrap_new_count_pieces",
+      "sequence",
+      "show_setup_flow",
+      "sorting_level",
+      "sorting_level_seq",
+      "sorting_seq",
+      "state"
+    ]
+  }
+}
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 2 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 23.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder | Work Order | score: 18.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 10.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.coil | mrp.workorder.coil | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.component.line | mrp.workorder.component.line | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.manteinance.loss.reason | mrp.workorder.manteinance.loss.reason | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+ - mrp.workorder.predecessor | mrp.workorder.predecessor | score: 7.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mostrami gli ultimi 15 ordini di lavoro
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.workorder
+METHOD: search_read
+EXPLICIT LIMIT: 15
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'limit': 15, 'order': 'date_planned_start DESC'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.workorder/fields_view_get
+MODELLO: mrp.workorder
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.workorder
+VIEW ID: 678
+VIEW STRING: Work Orders
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 2
+
+===== WORKFLOW ROUTE PLANNER =====
+RETRY CONTEXT PRESENT
+NEW SINGLE PLAN HAS PRIORITY
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 2
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: mostrami gli ultimi 15 ordini di lavoro
+MODEL: mrp.workorder
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'mrp.workorder', 'method': 'search_read', 'params': {'domain': [], 'limit': 15, 'order': 'date_planned_start DESC'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.workorder
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.workorder/fields_view_get
+MODELLO: mrp.workorder
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.workorder
+VIEW ID: 678
+VIEW STRING: Work Orders
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.workorder
+FIELDS: 93
+
+===== DYNAMIC RELATION FIELDS =====
+ - create_uid | Created by | relation: res.users
+ - department_id | Reparto | relation: hr.department
+ - final_lot_id | Lot/Serial Number | relation: stock.production.lot
+ - next_work_order_id | Next Work Order | relation: mrp.workorder
+ - operation_id | Operation | relation: mrp.routing.workcenter
+ - partner_id | Cliente | relation: res.partner
+ - product_id | Product | relation: product.product
+ - product_uom_id | Unit of Measure | relation: product.uom
+ - production_id | Manufacturing Order | relation: mrp.production
+ - recipe | Ricetta | relation: mrp.recipe
+ - workcenter_id | Work Center | relation: mrp.workcenter
+ - workcenter_pool_id | Work Center Pool | relation: mrp.workcenter.pool
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: mrp.workorder
+FIELDS: 93
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: mrp.workorder
+FIELDS: 93
+
+===== SEMANTIC CONCEPT KEPT AS ENTITY CONTEXT =====
+CONCEPT: work order
+ENTITY ALIAS: work order
+MODEL: mrp.workorder
+MODEL IDENTITY: mrp.workorder Work Order    
+ENTITY COVERAGE: 1.0
+REASON: concept strongly matches model identity; it is an entity/model concept, not a field
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'ordine di lavoro', 'ordini di lavoro', 'job order', 'job orders']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {}
+
+===== TREE VIEW FIELD SKIPPED =====
+FIELD: coil_qty_produced
+REASON: field not present in discovered Odoo metadata
+
+===== TREE VIEW FIELD SKIPPED =====
+FIELD: coil_qty
+REASON: field not present in discovered Odoo metadata
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 678
+TREE VIEW STRING: Work Orders
+TREE VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+GROUPBY: []
+ORDERBY: None
+ORDER: date_planned_start DESC
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.workorder', 'method': 'search_read', 'params': {'domain': [], 'limit': 15, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.workorder
+METHOD: search_read
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mrp.workorder/search_read
+BODY: {'domain': [], 'limit': 15, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mrp.workorder/search_read
+METHOD: POST
+BODY: {'domain': [], 'limit': 15, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 354
+TOTAL RECORDS: 354
+RETURNED RECORDS: 15
+LIMIT: 15
+OFFSET: 0
+PAGES: 24
+HAS MORE: True
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: mostrami gli ultimi 15 ordini di lavoro
+MODEL: mrp.workorder
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 2
+
+===== WORKFLOW ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+L'utente ha precedentemente richiesto gli ultimi 25 ordini di produzione, ricevendo un elenco di 367 ordini totali. La richiesta corrente è per gli ultimi 15 ordini di lavoro, che corrispondono a una subset degli ordini già recuperati.
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 15
+RECORDS SENT TO RESPONSE LLM: 15
+
+===== RESPONSE RESULT =====
+Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+RECORD LINKS: [{'id': 2866, 'model': 'mrp.workorder', 'label': 'OPR-26002978', 'url': 'http://10.100.12.131:6969/web#id=2866&model=mrp.workorder&view_type=form'}, {'id': 2859, 'model': 'mrp.workorder', 'label': 'OPR-26000144', 'url': 'http://10.100.12.131:6969/web#id=2859&model=mrp.workorder&view_type=form'}, {'id': 2858, 'model': 'mrp.workorder', 'label': 'OPR-26000142', 'url': 'http://10.100.12.131:6969/web#id=2858&model=mrp.workorder&view_type=form'}, {'id': 2863, 'model': 'mrp.workorder', 'label': 'OPR-26002707', 'url': 'http://10.100.12.131:6969/web#id=2863&model=mrp.workorder&view_type=form'}, {'id': 2865, 'model': 'mrp.workorder', 'label': 'OPR-26002837', 'url': 'http://10.100.12.131:6969/web#id=2865&model=mrp.workorder&view_type=form'}, {'id': 2864, 'model': 'mrp.workorder', 'label': 'OPR-26002835', 'url': 'http://10.100.12.131:6969/web#id=2864&model=mrp.workorder&view_type=form'}, {'id': 2862, 'model': 'mrp.workorder', 'label': 'OPR-26002691', 'url': 'http://10.100.12.131:6969/web#id=2862&model=mrp.workorder&view_type=form'}, {'id': 2861, 'model': 'mrp.workorder', 'label': 'OPR-26000364', 'url': 'http://10.100.12.131:6969/web#id=2861&model=mrp.workorder&view_type=form'}, {'id': 2855, 'model': 'mrp.workorder', 'label': 'OPR-25016759', 'url': 'http://10.100.12.131:6969/web#id=2855&model=mrp.workorder&view_type=form'}, {'id': 2860, 'model': 'mrp.workorder', 'label': 'OPR-26000314', 'url': 'http://10.100.12.131:6969/web#id=2860&model=mrp.workorder&view_type=form'}, {'id': 2857, 'model': 'mrp.workorder', 'label': 'OPR-25017534', 'url': 'http://10.100.12.131:6969/web#id=2857&model=mrp.workorder&view_type=form'}, {'id': 2856, 'model': 'mrp.workorder', 'label': 'OPR-25017532', 'url': 'http://10.100.12.131:6969/web#id=2856&model=mrp.workorder&view_type=form'}, {'id': 2846, 'model': 'mrp.workorder', 'label': 'OPR-25016986', 'url': 'http://10.100.12.131:6969/web#id=2846&model=mrp.workorder&view_type=form'}, {'id': 2843, 'model': 'mrp.workorder', 'label': 'OPR-25016509', 'url': 'http://10.100.12.131:6969/web#id=2843&model=mrp.workorder&view_type=form'}, {'id': 2842, 'model': 'mrp.workorder', 'label': 'OPR-25016508', 'url': 'http://10.100.12.131:6969/web#id=2842&model=mrp.workorder&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: mostrami gli ultimi 15 ordini di lavoro
+ASSISTANT MESSAGE: Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami gli ultimi 25 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+ - user : mostrami gli ultimi 15 ordini di lavoro
+ - assistant : Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: mostrami gli ultimi 15 ordini di lavoro
+SUB_REQUESTS: ['mostrami gli ultimi 15 ordini di lavoro']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.workorder
+METHOD: search_read
+DOMAIN: []
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+ORDER: date_planned_start DESC
+LIMIT: 15
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.workorder
+METHOD: search_read
+DOMAIN: []
+RESULT TYPE: records
+TOTAL: 354
+RETURNED: 15
+LIMIT: 15
+PAGES: 24
+HAS MORE: True
+FIRST RECORD: {'id': 2866, 'name': 'OPR-26002978', 'date_planned_start': '2026-03-29 16:18:05', 'date_planned_finished': '2026-03-29 21:03:46', 'date_start': '2026-08-10 14:28:42', 'date_finished': False, 'workcenter_id': [8, 'M2'], 'product_id': [216493, "[S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'"], 'state': 'pending'}
+SECOND RECORD: {'id': 2859, 'name': 'OPR-26000144', 'date_planned_start': '2026-03-29 03:32:51', 'date_planned_finished': '2026-03-29 12:46:27', 'date_start': '2026-06-16 09:45:53', 'date_finished': '2026-08-10 14:28:42', 'workcenter_id': [8, 'M2'], 'product_id': [216491, '[S165005577] PF 584 CP/80 S "ULF BLACK"'], 'state': 'done'}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 3534
+PREVIEW: Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:  | **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 |...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: True
+TYPE: pie
+ORIENTATION: vertical
+TITLE: Stati degli ultimi 15 ordini di lavoro
+SOURCE INDEX: 1
+GROUPING: state
+VALUE: None
+PALETTE: professional
+ANIMATION: dramatic
+
+===== CHART PAYLOAD =====
+TYPE: pie
+TITLE: Stati degli ultimi 15 ordini di lavoro
+SOURCE: 1
+SOURCE TYPE: records
+GROUPING: state
+VALUE: None
+POINTS: 3
+DATA: [{'label': 'pending', 'value': 1.0}, {'label': 'done', 'value': 8.0}, {'label': 'ready', 'value': 6.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: mostrami gli ultimi ordini di lavoro pronti
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+MESSAGES LOADED: 4
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 25 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:\n\n| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |\n|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|\n| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK \'VERO CUOIO\'                     | In sospeso |\n| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |\n| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |\n| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |\n| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S \'ULF\'                                    | Pronto     |\n| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S \'ULF\'                                    | Pronto     |\n| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 \'LARSON INTERNATIONAL III\'              | Pronto     |\n| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP \'LASER\' COMBI                              | Pronto     |\n| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP \'LASER\' COMBI                              | Pronto     |\n| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP \'VOESTALPINE IV\' COMBI                     | Completato  |\n| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |\n| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |\n| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |\n| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |\n| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |'}
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 4
+
+===== CONVERSATION CONTEXT =====
+Gli ultimi ordini di lavoro pronti includono i seguenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+
+Questi ordini hanno lo stato **Pronto** e sono i più recenti tra gli ordini di lavoro recuperati.
+
+===== REQUEST SPLITTER NODE =====
+INPUT: mostrami gli ultimi ordini di lavoro pronti
+
+===== REQUEST SPLITTER =====
+INPUT: mostrami gli ultimi ordini di lavoro pronti
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 1.0
+CONTINUATION: True
+INTENT FAMILY: recupero dati filtrati
+CONCEPTS: ['ordini di lavoro', 'stato']
+REASON: La richiesta continua il thread precedente su ordini di lavoro e applica un filtro sullo stato ('pronti'), entrambi concetti pertinenti a Portant.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['ordini di lavoro', 'stato']
+REQUEST COUNT: 1
+REQUEST 1: mostrami gli ultimi ordini di lavoro pronti
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 1.0
+CONTINUATION: True
+INTENT FAMILY: recupero dati filtrati
+INTERACTION MODE: OPERATIONAL
+CONCEPTS: ['ordini di lavoro', 'stato']
+REQUEST COUNT: 1
+REASON: La richiesta continua il thread precedente su ordini di lavoro e applica un filtro sullo stato ('pronti'), entrambi concetti pertinenti a Portant.
+EVIDENCE: ["Riferimento a 'ordini di lavoro' già discusso nel contesto", "Filtro 'pronti' interpretabile come stato specifico (es. 'Pronto') in Portant", 'Continuità con richieste precedenti su ordini di produzione/lavoro']
+REQUEST 1: mostrami gli ultimi ordini di lavoro pronti
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+
+===== PLANNER CONVERSATION CONTEXT FROM STATE =====
+Gli ultimi ordini di lavoro pronti includono i seguenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+
+Questi ordini hanno lo stato **Pronto** e sono i più recenti tra gli ordini di lavoro recuperati.
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-22T17:51:35+02:00
+CURRENT DATE: 2026-09-22
+CURRENT TIME: 17:51:35
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== PLANNER CONVERSATION CONTEXT =====
+Gli ultimi ordini di lavoro pronti includono i seguenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+
+Questi ordini hanno lo stato **Pronto** e sono i più recenti tra gli ordini di lavoro recuperati.
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: mostrami gli ultimi ordini di lavoro pronti
+MODELS LOADED: 475
+MATCHED MODELS: 10
+
+===== DIRECT MODEL DISCOVERY SEED =====
+QUERY: mostrami gli ultimi ordini di lavoro pronti
+DIRECT CANDIDATES: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: mostrami gli ultimi ordini di lavoro pronti
+SUPPLIED CONCEPTS: []
+EXPANDED QUERIES: ['work order', 'work orders', 'job order', 'job orders', 'status', 'state', 'phase', 'ready', 'latest', 'recent', 'newest', 'ready work order', 'latest work orders', 'work order ready', 'prepared', 'completed preparation']
+COMBINED CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}, {'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: work order
+MODELS LOADED: 475
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: work orders
+MODELS LOADED: 475
+MATCHED MODELS: 29
+
+===== MODEL SEARCH INDEX =====
+QUERY: job order
+MODELS LOADED: 475
+MATCHED MODELS: 14
+
+===== MODEL SEARCH INDEX =====
+QUERY: job orders
+MODELS LOADED: 475
+MATCHED MODELS: 4
+
+===== MODEL SEARCH INDEX =====
+QUERY: status
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: state
+MODELS LOADED: 475
+MATCHED MODELS: 7
+
+===== MODEL SEARCH INDEX =====
+QUERY: phase
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: ready
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: latest
+MODELS LOADED: 475
+MATCHED MODELS: 13
+
+===== MODEL SEARCH INDEX =====
+QUERY: recent
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: newest
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: ready work order
+MODELS LOADED: 475
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: latest work orders
+MODELS LOADED: 475
+MATCHED MODELS: 42
+
+===== MODEL SEARCH INDEX =====
+QUERY: work order ready
+MODELS LOADED: 475
+MATCHED MODELS: 31
+
+===== MODEL SEARCH INDEX =====
+QUERY: prepared
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: completed preparation
+MODELS LOADED: 475
+MATCHED MODELS: 1
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: []
+COMBINED SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}, {'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+MODEL: res.country.state
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder
+SEMANTIC QUERIES: ['work order', 'work orders', 'job order', 'job orders', 'ready work order', 'latest work orders', 'work order ready']
+SEMANTIC CONCEPTS: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}]
+REQUEST CONCEPTS: []
+MODEL: account.bank.statement.cashbox
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: account.bank.statement.closebalance
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: account.bank.statement
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: account.bank.statement.line
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: base_import.tests.models.char.states
+SEMANTIC QUERIES: ['state']
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: ['mostrami gli ultimi ordini di lavoro pronti']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: mostrami gli ultimi ordini di lavoro pronti
+ - res.country.state | Country state | score: 24.0
+ - mrp.workorder | Work Order | score: 18.0
+ - account.bank.statement.cashbox | Account Bank Statement Cashbox Details | score: 17.5
+ - account.bank.statement.closebalance | Account Bank Statement closing balance | score: 17.5
+ - account.bank.statement | Bank Statement | score: 17.5
+ - account.bank.statement.line | Bank Statement Line | score: 17.5
+ - base_import.tests.models.char.states | base_import.tests.models.char.states | score: 17.5
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: mostrami gli ultimi ordini di lavoro pronti
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - res.country.state | Country state | score: 24.0
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - mrp.workorder | Work Order | score: 18.0
+   semantic concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}]
+   request concepts: []
+ - account.bank.statement.cashbox | Account Bank Statement Cashbox Details | score: 17.5
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - account.bank.statement.closebalance | Account Bank Statement closing balance | score: 17.5
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - account.bank.statement | Bank Statement | score: 17.5
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - account.bank.statement.line | Bank Statement Line | score: 17.5
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - base_import.tests.models.char.states | base_import.tests.models.char.states | score: 17.5
+   semantic concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}]
+   request concepts: []
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0
+   semantic concepts: []
+   request concepts: []
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - res.country.state | Country state | score: 24.0 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - mrp.workorder | Work Order | score: 18.0 | concepts: [{'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}] | request concepts: []
+ - account.bank.statement.cashbox | Account Bank Statement Cashbox Details | score: 17.5 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - account.bank.statement.closebalance | Account Bank Statement closing balance | score: 17.5 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - account.bank.statement | Bank Statement | score: 17.5 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - account.bank.statement.line | Bank Statement Line | score: 17.5 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - base_import.tests.models.char.states | base_import.tests.models.char.states | score: 17.5 | concepts: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}] | request concepts: []
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 15.0 | concepts: [] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: mostrami gli ultimi ordini di lavoro pronti
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.workorder
+METHOD: search_read
+EXPLICIT LIMIT: None
+FINAL DOMAIN: [['state', '=', 'ready']]
+FINAL PARAMS: {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.workorder/fields_view_get
+MODELLO: mrp.workorder
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.workorder
+VIEW ID: 678
+VIEW STRING: Work Orders
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== WORKFLOW ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'mrp.workorder', 'method': 'search_read', 'params': {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: mostrami gli ultimi ordini di lavoro pronti
+MODEL: mrp.workorder
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}, {'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [['state', '=', 'ready']], 'parameters': {'model': 'mrp.workorder', 'method': 'search_read', 'params': {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.workorder
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.workorder/fields_view_get
+MODELLO: mrp.workorder
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.workorder
+VIEW ID: 678
+VIEW STRING: Work Orders
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'coil_qty_produced', 'coil_qty', 'state']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.workorder
+FIELDS: 93
+
+===== DYNAMIC RELATION FIELDS =====
+ - create_uid | Created by | relation: res.users
+ - department_id | Reparto | relation: hr.department
+ - final_lot_id | Lot/Serial Number | relation: stock.production.lot
+ - next_work_order_id | Next Work Order | relation: mrp.workorder
+ - operation_id | Operation | relation: mrp.routing.workcenter
+ - partner_id | Cliente | relation: res.partner
+ - product_id | Product | relation: product.product
+ - product_uom_id | Unit of Measure | relation: product.uom
+ - production_id | Manufacturing Order | relation: mrp.production
+ - recipe | Ricetta | relation: mrp.recipe
+ - workcenter_id | Work Center | relation: mrp.workcenter
+ - workcenter_pool_id | Work Center Pool | relation: mrp.workcenter.pool
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: mrp.workorder
+FIELDS: 93
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: mrp.workorder
+FIELDS: 93
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: status
+SELECTED FIELD: state
+SELECTED TYPE: selection
+SELECTED RELATION: None
+SELECTED LABEL: Status
+DIRECT SOURCE TOKENS: 1
+SOURCE COVERAGE: 1.0
+SCORE: 405.0
+
+===== SEMANTIC FIELD SEARCH =====
+SOURCE FIELD: state
+EXACT TECHNICAL MATCH: state
+MATCH TYPE: selection
+MATCH RELATION: None
+MATCH LABEL: Status
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: phase
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC CONCEPT KEPT AS ENTITY CONTEXT =====
+CONCEPT: work order
+ENTITY ALIAS: work order
+MODEL: mrp.workorder
+MODEL IDENTITY: mrp.workorder Work Order    
+ENTITY COVERAGE: 1.0
+REASON: concept strongly matches model identity; it is an entity/model concept, not a field
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'status', 'queries': ['status', 'state', 'phase']}, {'concept': 'work order', 'queries': ['work order', 'work orders', 'job order', 'job orders']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'status': 'state'}
+
+===== TREE VIEW FIELD SKIPPED =====
+FIELD: coil_qty_produced
+REASON: field not present in discovered Odoo metadata
+
+===== TREE VIEW FIELD SKIPPED =====
+FIELD: coil_qty
+REASON: field not present in discovered Odoo metadata
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 678
+TREE VIEW STRING: Work Orders
+TREE VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+GROUPBY: []
+ORDERBY: None
+ORDER: date_planned_start desc
+DOMAIN: [['state', '=', 'ready']]
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.workorder', 'method': 'search_read', 'params': {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10, 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.workorder
+METHOD: search_read
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: [['state', '=', 'ready']]
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mrp.workorder/search_read
+BODY: {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10, 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mrp.workorder/search_read
+METHOD: POST
+BODY: {'domain': [['state', '=', 'ready']], 'order': 'date_planned_start desc', 'limit': 10, 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 16
+TOTAL RECORDS: 16
+RETURNED RECORDS: 10
+LIMIT: 10
+OFFSET: 0
+PAGES: 2
+HAS MORE: True
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: mostrami gli ultimi ordini di lavoro pronti
+MODEL: mrp.workorder
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== WORKFLOW ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+Gli ultimi ordini di lavoro pronti includono i seguenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+
+Questi ordini hanno lo stato **Pronto** e sono i più recenti tra gli ordini di lavoro recuperati.
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 10
+RECORDS SENT TO RESPONSE LLM: 10
+
+===== RESPONSE RESULT =====
+Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |
+| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |
+| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |
+| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+RECORD LINKS: [{'id': 2863, 'model': 'mrp.workorder', 'label': 'OPR-26002707', 'url': 'http://10.100.12.131:6969/web#id=2863&model=mrp.workorder&view_type=form'}, {'id': 2865, 'model': 'mrp.workorder', 'label': 'OPR-26002837', 'url': 'http://10.100.12.131:6969/web#id=2865&model=mrp.workorder&view_type=form'}, {'id': 2864, 'model': 'mrp.workorder', 'label': 'OPR-26002835', 'url': 'http://10.100.12.131:6969/web#id=2864&model=mrp.workorder&view_type=form'}, {'id': 2862, 'model': 'mrp.workorder', 'label': 'OPR-26002691', 'url': 'http://10.100.12.131:6969/web#id=2862&model=mrp.workorder&view_type=form'}, {'id': 2861, 'model': 'mrp.workorder', 'label': 'OPR-26000364', 'url': 'http://10.100.12.131:6969/web#id=2861&model=mrp.workorder&view_type=form'}, {'id': 2855, 'model': 'mrp.workorder', 'label': 'OPR-25016759', 'url': 'http://10.100.12.131:6969/web#id=2855&model=mrp.workorder&view_type=form'}, {'id': 2803, 'model': 'mrp.workorder', 'label': 'OPR-26000969', 'url': 'http://10.100.12.131:6969/web#id=2803&model=mrp.workorder&view_type=form'}, {'id': 2807, 'model': 'mrp.workorder', 'label': 'OPR-26002829', 'url': 'http://10.100.12.131:6969/web#id=2807&model=mrp.workorder&view_type=form'}, {'id': 2806, 'model': 'mrp.workorder', 'label': 'OPR-26002827', 'url': 'http://10.100.12.131:6969/web#id=2806&model=mrp.workorder&view_type=form'}, {'id': 2799, 'model': 'mrp.workorder', 'label': 'OPR-26000672', 'url': 'http://10.100.12.131:6969/web#id=2799&model=mrp.workorder&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: mostrami gli ultimi ordini di lavoro pronti
+ASSISTANT MESSAGE: Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |
+| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |
+| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |
+| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 6
+ - user : Mostrami gli ultimi 25 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+ - user : mostrami gli ultimi 15 ordini di lavoro
+ - assistant : Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+ - user : mostrami gli ultimi ordini di lavoro pronti
+ - assistant : Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |
+| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |
+| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |
+| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: mostrami gli ultimi ordini di lavoro pronti
+SUB_REQUESTS: ['mostrami gli ultimi ordini di lavoro pronti']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.workorder
+METHOD: search_read
+DOMAIN: [['state', '=', 'ready']]
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'date_start', 'date_finished', 'workcenter_id', 'product_id', 'state']
+ORDER: date_planned_start desc
+LIMIT: 10
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.workorder
+METHOD: search_read
+DOMAIN: [['state', '=', 'ready']]
+RESULT TYPE: records
+TOTAL: 16
+RETURNED: 10
+LIMIT: 10
+PAGES: 2
+HAS MORE: True
+FIRST RECORD: {'id': 2863, 'name': 'OPR-26002707', 'date_planned_start': '2026-03-28 16:27:42', 'date_planned_finished': '2026-03-28 16:36:47', 'date_start': False, 'date_finished': False, 'workcenter_id': [8, 'M2'], 'product_id': [216492, '[TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023'], 'state': 'ready'}
+SECOND RECORD: {'id': 2865, 'name': 'OPR-26002837', 'date_planned_start': '2026-03-28 12:14:23', 'date_planned_finished': '2026-03-28 15:14:17', 'date_start': False, 'date_finished': False, 'workcenter_id': [8, 'M2'], 'product_id': [216353, "[S131005224] PF 581 CP S 'ULF'"], 'state': 'ready'}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 1539
+PREVIEW: Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:  | **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         | |------------------------|-------------------------------------------...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: False
+
+===== CHAT REQUEST =====
+MESSAGE: cosa ti ho chiesto prima negli ultimi messaggi?
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+MESSAGES LOADED: 6
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 25 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': "Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:\n\n| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |\n|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|\n| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |\n| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |\n| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |\n| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |\n| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |\n| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |\n| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |\n| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |\n| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |\n| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |"}
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 6
+
+===== CONVERSATION CONTEXT =====
+Negli ultimi messaggi, mi hai chiesto di:
+
+1. Mostrare gli ultimi 25 ordini di produzione
+2. Mostrare gli ultimi 15 ordini di lavoro
+3. Mostrare gli ultimi ordini di lavoro pronti
+
+===== REQUEST SPLITTER NODE =====
+INPUT: cosa ti ho chiesto prima negli ultimi messaggi?
+
+===== REQUEST SPLITTER =====
+INPUT: cosa ti ho chiesto prima negli ultimi messaggi?
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 1.0
+CONTINUATION: True
+INTENT FAMILY: richiesta di contesto conversazionale
+CONCEPTS: ['messaggi precedenti', 'cronologia richieste', 'riferimento anaforico']
+REASON: L'utente chiede esplicitamente di ricordare le sue richieste precedenti nella conversazione, che riguardavano dati Portant (ordini di produzione/lavoro).
+
+===== ERRORE SEMANTIC SCOPE =====
+OutputParserException Invalid json output: La tua richiesta corrente è: "cosa ti ho chiesto prima negli ultimi messaggi?".
+
+Prima di questa, le tue richieste sono state:
+
+1. "Mostrami gli ultimi 25 ordini di produzione"
+2. "Mostrami gli ultimi 15 ordini di lavoro"
+3. "Mostrami gli ultimi ordini di lavoro pronti"
+For troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE 
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: AMBIGUOUS
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+Negli ultimi messaggi, mi hai chiesto di:
+
+1. Mostrare gli ultimi 25 ordini di produzione
+2. Mostrare gli ultimi 15 ordini di lavoro
+3. Mostrare gli ultimi ordini di lavoro pronti
+
+===== AMBIGUOUS REQUEST =====
+MESSAGE: Non riesco a interpretare la richiesta in questo momento. Riprova.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: cosa ti ho chiesto prima negli ultimi messaggi?
+ASSISTANT MESSAGE: Non riesco a interpretare la richiesta in questo momento. Riprova.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 8
+ - user : Mostrami gli ultimi 25 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+ - user : mostrami gli ultimi 15 ordini di lavoro
+ - assistant : Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+ - user : mostrami gli ultimi ordini di lavoro pronti
+ - assistant : Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |
+| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |
+| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |
+| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |
+ - user : cosa ti ho chiesto prima negli ultimi messaggi?
+ - assistant : Non riesco a interpretare la richiesta in questo momento. Riprova.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: cosa ti ho chiesto prima negli ultimi messaggi?
+SUB_REQUESTS: []
+SCOPE ALLOWED: False
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 66
+PREVIEW: Non riesco a interpretare la richiesta in questo momento. Riprova.
+
+===== CHAT REQUEST =====
+MESSAGE: cosa ti ho chiesto prima negli ultimi messaggi?
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+MESSAGES LOADED: 8
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 25 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Non riesco a interpretare la richiesta in questo momento. Riprova.'}
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 8
+
+===== CONVERSATION CONTEXT =====
+Prima hai chiesto:
+1. "Mostrami gli ultimi 25 ordini di produzione"
+2. "Mostrami gli ultimi 15 ordini di lavoro"
+3. "Mostrami gli ultimi ordini di lavoro pronti"
+
+===== REQUEST SPLITTER NODE =====
+INPUT: cosa ti ho chiesto prima negli ultimi messaggi?
+
+===== REQUEST SPLITTER =====
+INPUT: cosa ti ho chiesto prima negli ultimi messaggi?
+
+===== SEMANTIC SCOPE =====
+SCOPE: OUT_OF_SCOPE
+CONFIDENCE: 1.0
+CONTINUATION: False
+INTENT FAMILY: richiesta_metaconversazione
+CONCEPTS: ['messaggi precedenti', 'cronologia conversazione', 'richieste passate']
+REASON: La richiesta riguarda la memoria della conversazione stessa, non i dati aziendali gestiti da Portant. Non esiste mappatura con concetti del dominio Portant.
+
+===== SCOPE REJECTION =====
+Portant AI può rispondere solo a domande relative a Portant.
+
+===== SCOPE DECISION =====
+SCOPE: OUT_OF_SCOPE
+IN SCOPE: False
+CONFIDENCE: 1.0
+CONTINUATION: False
+INTENT FAMILY: richiesta_metaconversazione
+INTERACTION MODE: CONVERSATIONAL
+CONCEPTS: ['messaggi precedenti', 'cronologia conversazione', 'richieste passate']
+REQUEST COUNT: 0
+REASON: La richiesta riguarda la memoria della conversazione stessa, non i dati aziendali gestiti da Portant. Non esiste mappatura con concetti del dominio Portant.
+EVIDENCE: ["Testo corrente: 'cosa ti ho chiesto prima negli ultimi messaggi?'", 'Assenza di riferimenti a entità o processi aziendali', 'Non continua richieste precedenti su dati Portant ma chiede informazioni metacognitive']
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: OUT_OF_SCOPE
+
+===== SCOPE REJECTION NODE =====
+SCOPE: OUT_OF_SCOPE
+MESSAGE: Portant AI può rispondere solo a domande relative a Portant.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 033fb48c-feda-46a5-9fa6-4107cab6768e
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: cosa ti ho chiesto prima negli ultimi messaggi?
+ASSISTANT MESSAGE: Portant AI può rispondere solo a domande relative a Portant.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+MESSAGES CURRENTLY IN DB: 10
+ - user : Mostrami gli ultimi 25 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione. Ecco gli ultimi 25:
+
+| **ID** | **Nome** | **Data Inizio Pianificata** | **Data Fine Pianificata** | **Prodotto** | **Quantità** | **Stato** |
+|---|---|---|---|---|---|---|
+| 1 | MO/2602599 | 27 marzo 2026 | 27 marzo 2026 | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI | 42.400,00 MQ | In pausa |
+| 2 | MO/2602598 | 29 marzo 2026 | 29 marzo 2026 | [S165005577] PF 584 CP/80 S "ULF BLACK" | 59.400,00 MQ | In pausa |
+| 3 | MO/2602603 | 28 marzo 2026 | 28 marzo 2026 | [S157005225] PF 581 CP S 'ULF' | 28.260,00 MQ | Pianificato |
+| 4 | MO/2602602 | 28 marzo 2026 | 28 marzo 2026 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 1.570,00 MQ | Pianificato |
+| 5 | MO/2602604 | 28 marzo 2026 | 28 marzo 2026 | [S131005224] PF 581 CP S 'ULF' | 23.580,00 MQ | Pianificato |
+| 6 | MO/2602595 | 26 marzo 2026 | 26 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 7 | MO/2602605 | 29 marzo 2026 | 29 marzo 2026 | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO' | 19.200,00 MQ | In pausa |
+| 8 | MO/2602594 | 27 marzo 2026 | 27 marzo 2026 | [S135005464] PF 564 CP 'LASER' COMBI | 32.400,00 MQ | Pianificato |
+| 9 | MO/2602600 | 27 marzo 2026 | 28 marzo 2026 | [S131005294] PF 564 CP 'LASER' COMBI | 5.240,00 MQ | Pianificato |
+| 10 | MO/2602597 | 28 marzo 2026 | 29 marzo 2026 | [S135005576] PF 584 CP/80 S "ULF BLACK" | 48.600,00 MQ | In pausa |
+| 11 | MO/2602596 | 26 marzo 2026 | 27 marzo 2026 | [S131003884] PF 584 CP S "ULF" | 55.020,00 MQ | In pausa |
+| 12 | MO/2602601 | 28 marzo 2026 | 28 marzo 2026 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III' | 35.640,00 MQ | Pianificato |
+| 13 | MO/2602581 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 14 | MO/2602585 | 26 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 19.080,00 MQ | In pausa |
+| 15 | MO/2602582 | 25 marzo 2026 | 26 marzo 2026 | [S106002126] PF 584 CP S "ULF" | 12.720,00 MQ | In pausa |
+| 16 | MO/2602583 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 25.440,00 MQ | In pausa |
+| 17 | MO/2602580 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 6.360,00 MQ | In pausa |
+| 18 | MO/2602589 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 3.180,00 MQ | In pausa |
+| 19 | MO/2602587 | 25 marzo 2026 | 25 marzo 2026 | [S106002499] PF 584 CP S "ULF" | 16.960,00 MQ | In pausa |
+| 20 | MO/2602592 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 56.520,00 MQ | In pausa |
+| 21 | MO/2602576 | 23 marzo 2026 | 24 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 23.580,00 MQ | In pausa |
+| 22 | MO/2602577 | 25 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 28.260,00 MQ | In pausa |
+| 23 | MO/2602574 | 24 marzo 2026 | 25 marzo 2026 | [S157002123] PF 584 CP S "ULF" | 103.620,00 MQ | In pausa |
+| 24 | MO/2602559 | 21 marzo 2026 | 21 marzo 2026 | [S157002534] PF 584 CP S "ULF" | 18.840,00 MQ | In pausa |
+| 25 | MO/2602558 | 23 marzo 2026 | 23 marzo 2026 | [S131002124] PF 584 CP S "ULF" | 78.600,00 MQ | In pausa |
+ - user : mostrami gli ultimi 15 ordini di lavoro
+ - assistant : Ho trovato 354 ordini di lavoro. Ecco gli ultimi 15:
+
+| **Nome**               | **Inizio Pianificato**       | **Fine Pianificata**         | **Inizio Effettivo**       | **Fine Effettiva**       | **Centro di Lavoro** | **Prodotto**                                                                 | **Stato**  |
+|------------------------|------------------------------|------------------------------|----------------------------|--------------------------|----------------------|-----------------------------------------------------------------------------|-----------|
+| OPR-26002978       | 29 marzo 2026 16:18 | 29 marzo 2026 21:03 | 10 agosto 2026 14:28 | Non terminato | M2   | [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'                     | In sospeso |
+| OPR-26000144       | 29 marzo 2026 03:32 | 29 marzo 2026 12:46 | 16 giugno 2026 09:45 | 10 agosto 2026 14:28 | M2   | [S165005577] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26000142       | 28 marzo 2026 16:47 | 29 marzo 2026 02:01 | 27 marzo 2026 13:27 | 16 giugno 2026 09:45 | M2   | [S135005576] PF 584 CP/80 S "ULF BLACK"                          | Completato  |
+| OPR-26002707       | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 | Non iniziato         | Non terminato | M2   | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023              | Pronto     |
+| OPR-26002837       | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 | Non iniziato         | Non terminato | M2   | [S131005224] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002835       | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 | Non iniziato         | Non terminato | M2   | [S157005225] PF 581 CP S 'ULF'                                    | Pronto     |
+| OPR-26002691       | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 | Non iniziato         | Non terminato | M2   | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'              | Pronto     |
+| OPR-26000364       | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 | Non iniziato         | Non terminato | M2   | [S131005294] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-25016759       | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 | Non iniziato         | Non terminato | M2   | [S135005464] PF 564 CP 'LASER' COMBI                              | Pronto     |
+| OPR-26000314       | 27 marzo 2026 02:24 | 27 marzo 2026 12:39 | 27 marzo 2026 08:43 | 27 marzo 2026 13:27 | M2   | [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI                     | Completato  |
+| OPR-25017534       | 26 marzo 2026 15:00 | 26 marzo 2026 23:15 | 26 marzo 2026 19:17 | 27 marzo 2026 08:47 | M2   | [S131003884] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25017532       | 26 marzo 2026 09:08 | 26 marzo 2026 13:20 | 26 marzo 2026 13:27 | 26 marzo 2026 19:20 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016986       | 26 marzo 2026 02:41 | 26 marzo 2026 07:18 | 26 marzo 2026 07:25 | 26 marzo 2026 13:27 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016509       | 25 marzo 2026 22:22 | 26 marzo 2026 01:26 | 26 marzo 2026 03:35 | 26 marzo 2026 07:25 | M2   | [S106002126] PF 584 CP S "ULF"                                     | Completato  |
+| OPR-25016508       | 25 marzo 2026 17:55 | 25 marzo 2026 21:05 | 25 marzo 2026 17:05 | 25 marzo 2026 21:23 | M2   | [S106002499] PF 584 CP S "ULF"                                     | Completato  |
+ - user : mostrami gli ultimi ordini di lavoro pronti
+ - assistant : Ho trovato 16 ordini di lavoro pronti. Ecco i 10 più recenti:
+
+| **Nome**               | **Prodotto**                                                                 | **Inizio Pianificato**       | **Fine Pianificata**         |
+|------------------------|-----------------------------------------------------------------------------|------------------------------|------------------------------|
+| OPR-26002707 | [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023 | 28 marzo 2026 16:27 | 28 marzo 2026 16:36 |
+| OPR-26002837 | [S131005224] PF 581 CP S 'ULF'                              | 28 marzo 2026 12:14 | 28 marzo 2026 15:14 |
+| OPR-26002835 | [S157005225] PF 581 CP S 'ULF'                              | 28 marzo 2026 08:00 | 28 marzo 2026 11:00 |
+| OPR-26002691 | [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III'        | 28 marzo 2026 00:19 | 28 marzo 2026 05:51 |
+| OPR-26000364 | [S131005294] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 23:07 | 27 marzo 2026 23:54 |
+| OPR-25016759 | [S135005464] PF 564 CP 'LASER' COMBI                        | 27 marzo 2026 16:34 | 27 marzo 2026 21:16 |
+| OPR-26000969 | [S257005057] PF 12/4 WP PV3 MP TRANSPARENT | 20 marzo 2026 12:44 | 20 marzo 2026 15:14 |
+| OPR-26002829 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 12:08 | 20 marzo 2026 12:33 |
+| OPR-26002827 | [S257002304] PF 32/3/70 WP PV2 TRANSP | 20 marzo 2026 11:31 | 20 marzo 2026 11:56 |
+| OPR-26000672 | [S257005507] PF 32/3/70 WP PV2 MP TRANSP | 20 marzo 2026 10:47 | 20 marzo 2026 11:18 |
+ - user : cosa ti ho chiesto prima negli ultimi messaggi?
+ - assistant : Non riesco a interpretare la richiesta in questo momento. Riprova.
+ - user : cosa ti ho chiesto prima negli ultimi messaggi?
+ - assistant : Portant AI può rispondere solo a domande relative a Portant.
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: cosa ti ho chiesto prima negli ultimi messaggi?
+SUB_REQUESTS: []
+SCOPE ALLOWED: False
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 60
+PREVIEW: Portant AI può rispondere solo a domande relative a Portant.
