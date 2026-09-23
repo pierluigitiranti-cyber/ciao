@@ -1,0 +1,1667 @@
+
+============================================================
+===== BACKEND CONSOLE LOG =====
+START: 2026-09-23T11:15:53
+============================================================
+
+===== LOGIN REQUEST =====
+STATUS: START
+
+===== AUTENTICAZIONE PORTANT =====
+URL: http://10.100.12.131:6969/web/session/authenticate
+DATABASE: DM-PLF001-TIPREGO
+LOGIN: info@digimarksrl.com
+HTTP STATUS: 200
+
+===== RISPOSTA AUTENTICAZIONE =====
+TYPE: dict
+
+===== LOGIN PORTANT =====
+UID: 1
+USERNAME: info@digimarksrl.com
+NAME: Administrator
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== SESSIONE CREATA =====
+ODOO UID: 1
+DATABASE: DM-PLF001-TIPREGO
+SESSIONE: OK
+
+===== LOGIN RESULT =====
+STATUS: SUCCESS
+ODOO UID: 1
+USERNAME: <redacted>
+SESSION: CREATED
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami gli ultimi 30 ordini di produzione
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+MESSAGES LOADED: 0
+MEMORY LOAD: nessun messaggio
+
+===== PREVIOUS RESULT CONTEXT =====
+AVAILABLE: False
+PREVIOUS RESULT CONTEXT: EMPTY
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 0
+CONVERSATION CONTEXT: EMPTY
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami gli ultimi 30 ordini di produzione
+PREVIOUS RESULT AVAILABLE: False
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami gli ultimi 30 ordini di produzione
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 1.0
+CONTINUATION: False
+INTENT FAMILY: recupero dati ordini di produzione
+CONCEPTS: ['ordini di produzione', 'ultimi 30']
+REASON: La richiesta riguarda l'accesso a dati aziendali specifici (ordini di produzione) gestiti in Odoo. 'Ordini di produzione' è un alias esplicito del concetto 'produzione' nella knowledge base.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['ordini di produzione', 'ultimi 30']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami gli ultimi 30 ordini di produzione
+
+===== PREVIOUS RESULT OPERATION =====
+AVAILABLE: False
+OPERATION: False
+TYPE: 
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 1.0
+CONTINUATION: False
+INTENT FAMILY: recupero dati ordini di produzione
+INTERACTION MODE: OPERATIONAL
+CONCEPTS: ['ordini di produzione', 'ultimi 30']
+REQUEST COUNT: 1
+REASON: La richiesta riguarda l'accesso a dati aziendali specifici (ordini di produzione) gestiti in Odoo. 'Ordini di produzione' è un alias esplicito del concetto 'produzione' nella knowledge base.
+EVIDENCE: ["Corrispondenza esatta di 'ordini di produzione' con un alias del concetto 'produzione'", "Richiesta quantitativa ('ultimi 30') su dati operativi aziendali"]
+REQUEST 1: Mostrami gli ultimi 30 ordini di produzione
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+INTERACTION MODE: OPERATIONAL
+PREVIOUS RESULT OPERATION: False
+PREVIOUS RESULT OPERATION TYPE: 
+ROUTE: planner
+
+===== PLANNER CONVERSATION CONTEXT FROM STATE =====
+NESSUN CONTESTO RILEVANTE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-23T11:16:41+02:00
+CURRENT DATE: 2026-09-23
+CURRENT TIME: 11:16:41
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== PLANNER CONVERSATION CONTEXT =====
+NESSUN CONTESTO RILEVANTE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Mostrami gli ultimi 30 ordini di produzione
+MODELS LOADED: 475
+MATCHED MODELS: 11
+
+===== DIRECT MODEL DISCOVERY SEED =====
+QUERY: Mostrami gli ultimi 30 ordini di produzione
+DIRECT CANDIDATES: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Mostrami gli ultimi 30 ordini di produzione
+SUPPLIED CONCEPTS: []
+EXPANDED QUERIES: []
+COMBINED CONCEPTS: []
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: []
+COMBINED SEMANTIC CONCEPTS: []
+MODEL: mrp.workcenter.alarm
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.oee.history
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: res.portant.kill.switch
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: res.bc.down
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.config.setting.wizard
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.employee.journal
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.setup.employee.journal
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+MODEL: mrp.workorder.less.production
+SEMANTIC QUERIES: ['Mostrami gli ultimi 30 ordini di produzione']
+SEMANTIC CONCEPTS: []
+REQUEST CONCEPTS: []
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Mostrami gli ultimi 30 ordini di produzione
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0
+ - mrp.workorder.less.production | Termina produzione | score: 5.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Mostrami gli ultimi 30 ordini di produzione
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5
+   semantic concepts: []
+   request concepts: []
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0
+   semantic concepts: []
+   request concepts: []
+ - mrp.workorder.less.production | Termina produzione | score: 5.0
+   semantic concepts: []
+   request concepts: []
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - mrp.workcenter.alarm | Modello che gestisce gli allarmi del centro di lavoro | score: 10.0 | concepts: [] | request concepts: []
+ - mrp.oee.history | Storico dell'OEE di un ordine di lavoro / centro di lavoro | score: 8.5 | concepts: [] | request concepts: []
+ - res.portant.kill.switch | Flag di selezione per ignorare le chiamate di una linea con Portant | score: 5.0 | concepts: [] | request concepts: []
+ - res.bc.down | Flag di selezione per indicare che BC non è collegato | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.config.setting.wizard | Impostazioni di configurazione linee | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 5.0 | concepts: [] | request concepts: []
+ - mrp.workorder.less.production | Termina produzione | score: 5.0 | concepts: [] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Mostrami gli ultimi 30 ordini di produzione
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: False
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: mrp.production
+METHOD: search_read
+EXPLICIT LIMIT: 30
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': [], 'limit': 30, 'order': 'date_start desc'}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== WORKFLOW ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 30, 'order': 'date_start desc'}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Mostrami gli ultimi 30 ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: []
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 30, 'order': 'date_start desc'}}}
+
+===== MODEL DISCOVERY =====
+MODEL: mrp.production
+MODEL FOUND IN STATIC CATALOG
+STATIC CATALOG USED ONLY AS MODEL POLICY
+LOADING REAL ODOO FIELD METADATA...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/mrp.production/fields_view_get
+MODELLO: mrp.production
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: mrp.production
+VIEW ID: 706
+VIEW STRING: Manufacturing Orders
+DEFAULT ORDER: date_planned_start desc
+VIEW FIELDS: ['message_needaction', 'name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'origin', 'state']
+VISIBLE FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: mrp.production
+FIELDS: 119
+
+===== DYNAMIC RELATION FIELDS =====
+ - activity_type_id | Next Activity Type | relation: mail.activity.type
+ - activity_user_id | Responsible | relation: res.users
+ - bom_id | Bill of Material | relation: mrp.bom
+ - bom_version_id | Bom Version | relation: mrp.bom.versioning
+ - company_id | Company | relation: res.company
+ - create_uid | Created by | relation: res.users
+ - final_lot_id | Lotto/Numero Seriale | relation: stock.production.lot
+ - location_dest_id | Finished Products Location | relation: stock.location
+ - location_src_id | Raw Materials Location | relation: stock.location
+ - material_used | Material Used | relation: stock.move
+ - order_line_id | Order Line | relation: sale.order.line
+ - parent_production_id | Production that has generated the demand | relation: mrp.production
+ - picking_type_id | Operation Type | relation: stock.picking.type
+ - procurement_group_id | Procurement Group | relation: procurement.group
+ - product_id | Product | relation: product.product
+ - product_tmpl_id | Product Template | relation: product.template
+ - product_uom_id | Product Unit of Measure | relation: product.uom
+ - production_location_id | Production Location | relation: stock.location
+ - routing_id | Routing | relation: mrp.routing
+ - routing_tmpl_id | Template | relation: mrp.routing.template
+ - sale_order_id | Order Reference | relation: sale.order
+ - user_id | Responsible | relation: res.users
+ - workcenter_id | Workcenter | relation: mrp.workcenter
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REASON: no semantic requirements or technical hints to verify
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 706
+TREE VIEW STRING: Manufacturing Orders
+TREE VIEW FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO TREE VIEW PRESENTATION PRIORITY =====
+PRESENTATION SOURCE: ODOO TREE VIEW
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+
+===== ODOO TREE VIEW DEFAULT ORDER PRIORITY =====
+TREE VIEW: 706
+TREE VIEW STRING: Manufacturing Orders
+USER REQUEST: Mostrami gli ultimi 30 ordini di produzione
+LLM ORDER: date_start desc
+LLM ORDERBY: None
+ODOO DEFAULT ORDER: date_planned_start desc
+FINAL ORDER SOURCE: ODOO TREE VIEW DEFAULT ORDER
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+ORDER: date_planned_start desc
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'mrp.production', 'method': 'search_read', 'params': {'domain': [], 'limit': 30, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: mrp.production
+METHOD: search_read
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+BODY: {'domain': [], 'limit': 30, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/mrp.production/search_read
+METHOD: POST
+BODY: {'domain': [], 'limit': 30, 'order': 'date_planned_start desc', 'fields': ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state'], 'groupby': []}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: records
+COUNT: 367
+TOTAL RECORDS: 367
+RETURNED RECORDS: 30
+LIMIT: 30
+OFFSET: 0
+PAGES: 12
+HAS MORE: True
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Mostrami gli ultimi 30 ordini di produzione
+MODEL: mrp.production
+METHOD: search_read
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== WORKFLOW ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+NESSUN CONTESTO RILEVANTE
+
+===== RESPONSE INTERACTION MODE =====
+MODE: OPERATIONAL
+CONVERSATIONAL: False
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 30
+RECORDS SENT TO RESPONSE LLM: 30
+
+===== RESPONSE RESULT =====
+Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+PREVIOUS RESULT SOURCE: NEW ODOO RESULT
+
+===== PREVIOUS RESULT CONTEXT SAVE =====
+AVAILABLE: True
+MODEL: mrp.production
+METHOD: search_read
+RESULT TYPE: records
+RETURNED COUNT: 30
+TOTAL COUNT: 367
+RECORDS STORED IN CONTEXT: 30
+RECORD LINKS: [{'id': 2917, 'model': 'mrp.production', 'label': 'MO/2602605', 'url': 'http://10.100.12.131:6969/web#id=2917&model=mrp.production&view_type=form'}, {'id': 2910, 'model': 'mrp.production', 'label': 'MO/2602598', 'url': 'http://10.100.12.131:6969/web#id=2910&model=mrp.production&view_type=form'}, {'id': 2909, 'model': 'mrp.production', 'label': 'MO/2602597', 'url': 'http://10.100.12.131:6969/web#id=2909&model=mrp.production&view_type=form'}, {'id': 2914, 'model': 'mrp.production', 'label': 'MO/2602602', 'url': 'http://10.100.12.131:6969/web#id=2914&model=mrp.production&view_type=form'}, {'id': 2916, 'model': 'mrp.production', 'label': 'MO/2602604', 'url': 'http://10.100.12.131:6969/web#id=2916&model=mrp.production&view_type=form'}, {'id': 2915, 'model': 'mrp.production', 'label': 'MO/2602603', 'url': 'http://10.100.12.131:6969/web#id=2915&model=mrp.production&view_type=form'}, {'id': 2913, 'model': 'mrp.production', 'label': 'MO/2602601', 'url': 'http://10.100.12.131:6969/web#id=2913&model=mrp.production&view_type=form'}, {'id': 2912, 'model': 'mrp.production', 'label': 'MO/2602600', 'url': 'http://10.100.12.131:6969/web#id=2912&model=mrp.production&view_type=form'}, {'id': 2906, 'model': 'mrp.production', 'label': 'MO/2602594', 'url': 'http://10.100.12.131:6969/web#id=2906&model=mrp.production&view_type=form'}, {'id': 2911, 'model': 'mrp.production', 'label': 'MO/2602599', 'url': 'http://10.100.12.131:6969/web#id=2911&model=mrp.production&view_type=form'}, {'id': 2908, 'model': 'mrp.production', 'label': 'MO/2602596', 'url': 'http://10.100.12.131:6969/web#id=2908&model=mrp.production&view_type=form'}, {'id': 2907, 'model': 'mrp.production', 'label': 'MO/2602595', 'url': 'http://10.100.12.131:6969/web#id=2907&model=mrp.production&view_type=form'}, {'id': 2897, 'model': 'mrp.production', 'label': 'MO/2602585', 'url': 'http://10.100.12.131:6969/web#id=2897&model=mrp.production&view_type=form'}, {'id': 2894, 'model': 'mrp.production', 'label': 'MO/2602582', 'url': 'http://10.100.12.131:6969/web#id=2894&model=mrp.production&view_type=form'}, {'id': 2893, 'model': 'mrp.production', 'label': 'MO/2602581', 'url': 'http://10.100.12.131:6969/web#id=2893&model=mrp.production&view_type=form'}, {'id': 2895, 'model': 'mrp.production', 'label': 'MO/2602583', 'url': 'http://10.100.12.131:6969/web#id=2895&model=mrp.production&view_type=form'}, {'id': 2892, 'model': 'mrp.production', 'label': 'MO/2602580', 'url': 'http://10.100.12.131:6969/web#id=2892&model=mrp.production&view_type=form'}, {'id': 2901, 'model': 'mrp.production', 'label': 'MO/2602589', 'url': 'http://10.100.12.131:6969/web#id=2901&model=mrp.production&view_type=form'}, {'id': 2899, 'model': 'mrp.production', 'label': 'MO/2602587', 'url': 'http://10.100.12.131:6969/web#id=2899&model=mrp.production&view_type=form'}, {'id': 2889, 'model': 'mrp.production', 'label': 'MO/2602577', 'url': 'http://10.100.12.131:6969/web#id=2889&model=mrp.production&view_type=form'}, {'id': 2904, 'model': 'mrp.production', 'label': 'MO/2602592', 'url': 'http://10.100.12.131:6969/web#id=2904&model=mrp.production&view_type=form'}, {'id': 2886, 'model': 'mrp.production', 'label': 'MO/2602574', 'url': 'http://10.100.12.131:6969/web#id=2886&model=mrp.production&view_type=form'}, {'id': 2888, 'model': 'mrp.production', 'label': 'MO/2602576', 'url': 'http://10.100.12.131:6969/web#id=2888&model=mrp.production&view_type=form'}, {'id': 2870, 'model': 'mrp.production', 'label': 'MO/2602558', 'url': 'http://10.100.12.131:6969/web#id=2870&model=mrp.production&view_type=form'}, {'id': 2869, 'model': 'mrp.production', 'label': 'MO/2602557', 'url': 'http://10.100.12.131:6969/web#id=2869&model=mrp.production&view_type=form'}, {'id': 2868, 'model': 'mrp.production', 'label': 'MO/2602556', 'url': 'http://10.100.12.131:6969/web#id=2868&model=mrp.production&view_type=form'}, {'id': 2878, 'model': 'mrp.production', 'label': 'MO/2602566', 'url': 'http://10.100.12.131:6969/web#id=2878&model=mrp.production&view_type=form'}, {'id': 2877, 'model': 'mrp.production', 'label': 'MO/2602565', 'url': 'http://10.100.12.131:6969/web#id=2877&model=mrp.production&view_type=form'}, {'id': 2873, 'model': 'mrp.production', 'label': 'MO/2602561', 'url': 'http://10.100.12.131:6969/web#id=2873&model=mrp.production&view_type=form'}, {'id': 2867, 'model': 'mrp.production', 'label': 'MO/2602555', 'url': 'http://10.100.12.131:6969/web#id=2867&model=mrp.production&view_type=form'}]
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami gli ultimi 30 ordini di produzione
+ASSISTANT MESSAGE: Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+PREVIOUS RESULT CONTEXT SAVED
+CONVERSATION TITLE UPDATED: Mostrami gli ultimi 30 ordini di produzione
+MESSAGES CURRENTLY IN DB: 2
+ - user : Mostrami gli ultimi 30 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+   PREVIOUS RESULT MODEL: mrp.production
+   PREVIOUS RESULT RECORDS: 30
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami gli ultimi 30 ordini di produzione
+SUB_REQUESTS: ['Mostrami gli ultimi 30 ordini di produzione']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+FIELDS: ['name', 'date_planned_start', 'date_planned_finished', 'product_id', 'product_qty', 'product_uom_id', 'availability', 'routing_id', 'state']
+ORDER: date_planned_start desc
+LIMIT: 30
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: mrp.production
+METHOD: search_read
+DOMAIN: []
+RESULT TYPE: records
+TOTAL: 367
+RETURNED: 30
+LIMIT: 30
+PAGES: 12
+HAS MORE: True
+FIRST RECORD: {'id': 2917, 'name': 'MO/2602605', 'date_planned_start': '2026-03-29 16:18:05', 'date_planned_finished': '2026-03-29 22:56:18', 'product_id': [216493, "[S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO'"], 'product_qty': 19200.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'paused'}
+SECOND RECORD: {'id': 2910, 'name': 'MO/2602598', 'date_planned_start': '2026-03-29 03:32:51', 'date_planned_finished': '2026-03-29 16:18:05', 'product_id': [216491, '[S165005577] PF 584 CP/80 S "ULF BLACK"'], 'product_qty': 59400.0, 'product_uom_id': [20, 'MQ'], 'availability': 'none', 'routing_id': False, 'state': 'paused'}
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 4305
+PREVIEW: Ho trovato 367 ordini di produzione. Ecco gli ultimi 30, in ordine di data di avvio prevista:  - **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa - **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 20...
+
+===== CHART ANALYZER =====
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: vertical
+TITLE: Stato degli ultimi 30 ordini di produzione
+SOURCE INDEX: 1
+GROUPING: state
+VALUE: None
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Stato degli ultimi 30 ordini di produzione
+SOURCE: 1
+SOURCE TYPE: records
+GROUPING: state
+VALUE: None
+POINTS: 2
+DATA: [{'label': 'paused', 'value': 24.0}, {'label': 'planned', 'value': 6.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: Quanti dipendenti abbiamo?
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+MESSAGES LOADED: 2
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 30 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Ho trovato 367 ordini di produzione.\nEcco gli ultimi 30, in ordine di data di avvio prevista:\n\n- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK \'VERO CUOIO\', quantità 19.200 MQ, stato in pausa\n- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa\n- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa\n- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato\n- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S \'ULF\', quantità 23.580 MQ, stato pianificato\n- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S \'ULF\', quantità 28.260 MQ, stato pianificato\n- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 \'LARSON INTERNATIONAL III\', quantità 35.640 MQ, stato pianificato\n- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP \'LASER\' COMBI, quantità 5.240 MQ, stato pianificato\n- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP \'LASER\' COMBI, quantità 32.400 MQ, stato pianificato\n- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP \'VOESTALPINE IV\' COMBI, quantità 42.400 MQ, stato in pausa\n- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa\n- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa\n- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa\n- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa\n- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa\n- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa\n- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa\n- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa\n- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa\n- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa\n- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa\n- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa\n- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa\n- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa\n- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa\n- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa\n- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa\n- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa\n- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa\n- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa\n\nIn totale, ci sono 12 pagine di risultati.'}
+
+===== PREVIOUS RESULT CONTEXT =====
+AVAILABLE: True
+MODEL: mrp.production
+METHOD: search_read
+RESULT TYPE: records
+RETURNED COUNT: 30
+TOTAL COUNT: 367
+RECORDS: 30
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 2
+
+===== CONVERSATION CONTEXT =====
+NESSUN CONTESTO RILEVANTE
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Quanti dipendenti abbiamo?
+PREVIOUS RESULT AVAILABLE: True
+
+===== REQUEST SPLITTER =====
+INPUT: Quanti dipendenti abbiamo?
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.9
+CONTINUATION: False
+INTENT FAMILY: conteggio dipendenti
+CONCEPTS: ['dipendenti', 'numero di dipendenti']
+REASON: La richiesta riguarda un dato aziendale fondamentale (numero di dipendenti) plausibilmente gestito in Odoo, nonostante l'assenza del termine nella knowledge base. Segue la regola di non bloccare concetti sconosciuti se pertinenti a dati aziendali.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: False
+CONCEPTS: ['dipendenti', 'numero di dipendenti']
+REQUEST COUNT: 1
+REQUEST 1: Quanti dipendenti abbiamo?
+
+===== PREVIOUS RESULT OPERATION =====
+AVAILABLE: True
+OPERATION: False
+TYPE: 
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.9
+CONTINUATION: False
+INTENT FAMILY: conteggio dipendenti
+INTERACTION MODE: OPERATIONAL
+CONCEPTS: ['dipendenti', 'numero di dipendenti']
+REQUEST COUNT: 1
+REASON: La richiesta riguarda un dato aziendale fondamentale (numero di dipendenti) plausibilmente gestito in Odoo, nonostante l'assenza del termine nella knowledge base. Segue la regola di non bloccare concetti sconosciuti se pertinenti a dati aziendali.
+EVIDENCE: ["La domanda 'Quanti dipendenti abbiamo?' è una richiesta diretta di un dato organizzativo standard.", 'Odoo include moduli HR che tipicamente gestiscono informazioni sui dipendenti (non verificato tecnicamente qui, ma plausibile).', 'Nessun indicatore di estraneità al dominio aziendale o continuità irrilevante.']
+REQUEST 1: Quanti dipendenti abbiamo?
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+INTERACTION MODE: OPERATIONAL
+PREVIOUS RESULT OPERATION: False
+PREVIOUS RESULT OPERATION TYPE: 
+ROUTE: planner
+
+===== PLANNER CONVERSATION CONTEXT FROM STATE =====
+NESSUN CONTESTO RILEVANTE
+
+===== PLANNER SEMANTIC CONTEXT =====
+CONCEPTS: []
+
+===== PLANNER GLOBAL ATTEMPT STATE =====
+ATTEMPTS ALREADY CONSUMED: 0
+EXECUTION FEEDBACK: []
+
+===== PLANNER PREVIOUS RETRY CONTEXT =====
+RETRY HISTORY: []
+
+===== PLANNER TEMPORAL CONTEXT =====
+CURRENT DATETIME: 2026-09-23T11:19:30+02:00
+CURRENT DATE: 2026-09-23
+CURRENT TIME: 11:19:30
+TIMEZONE: Europe/Rome
+UTC OFFSET: +0200
+
+===== PLANNER CONVERSATION CONTEXT =====
+NESSUN CONTESTO RILEVANTE
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/ir.model/search_read
+MODELLO: ir.model
+METHOD: search_read
+ARGS: [[]]
+KWARGS: {'fields': ['id', 'model', 'name', 'state'], 'limit': 0, 'order': 'model asc'}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== MODEL SEARCH INDEX =====
+QUERY: Quanti dipendenti abbiamo?
+MODELS LOADED: 475
+MATCHED MODELS: 13
+
+===== DIRECT MODEL DISCOVERY SEED =====
+QUERY: Quanti dipendenti abbiamo?
+DIRECT CANDIDATES: 8
+
+===== SEMANTIC QUERY EXPANSION =====
+INPUT: Quanti dipendenti abbiamo?
+SUPPLIED CONCEPTS: []
+EXPANDED QUERIES: ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori', 'count employees', 'numero dipendenti']
+COMBINED CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+
+===== MODEL SEARCH INDEX =====
+QUERY: employee
+MODELS LOADED: 475
+MATCHED MODELS: 4
+
+===== MODEL SEARCH INDEX =====
+QUERY: employees
+MODELS LOADED: 475
+MATCHED MODELS: 4
+
+===== MODEL SEARCH INDEX =====
+QUERY: dipendente
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: dipendenti
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== MODEL SEARCH INDEX =====
+QUERY: personale
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: staff
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: lavoratori
+MODELS LOADED: 475
+MATCHED MODELS: 0
+
+===== MODEL SEARCH INDEX =====
+QUERY: count employees
+MODELS LOADED: 475
+MATCHED MODELS: 81
+
+===== MODEL SEARCH INDEX =====
+QUERY: numero dipendenti
+MODELS LOADED: 475
+MATCHED MODELS: 2
+
+===== SEMANTIC MODEL CONTEXT =====
+REQUEST SEMANTIC CONCEPTS: []
+COMBINED SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+MODEL: hr.employee
+SEMANTIC QUERIES: ['employee', 'employees']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: hr.employee.category
+SEMANTIC QUERIES: ['employee', 'employees']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.employee.journal
+SEMANTIC QUERIES: ['employee', 'employees', 'dipendente', 'dipendenti', 'numero dipendenti']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: mrp.workcenter.setup.employee.journal
+SEMANTIC QUERIES: ['employee', 'employees', 'dipendente', 'dipendenti', 'numero dipendenti']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: dmstock.quant.move.lines
+SEMANTIC QUERIES: ['Quanti dipendenti abbiamo?']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: stock.quant.archive
+SEMANTIC QUERIES: ['Quanti dipendenti abbiamo?']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: stock.quant.archive.filter
+SEMANTIC QUERIES: ['Quanti dipendenti abbiamo?']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+MODEL: stock.quant.package.type
+SEMANTIC QUERIES: ['Quanti dipendenti abbiamo?']
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUEST CONCEPTS: []
+
+===== SEMANTIC MODEL RESULTS =====
+INPUT: Quanti dipendenti abbiamo?
+ - hr.employee | Employee | score: 24.0
+ - hr.employee.category | Employee Category | score: 24.0
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 16.0
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 16.0
+ - dmstock.quant.move.lines | dmstock.quant.move.lines | score: 5.0
+ - stock.quant.archive | stock.quant.archive | score: 5.0
+ - stock.quant.archive.filter | stock.quant.archive.filter | score: 5.0
+ - stock.quant.package.type | stock.quant.package.type | score: 5.0
+
+===== DYNAMIC MODEL DISCOVERY =====
+QUERY: Quanti dipendenti abbiamo?
+REQUEST SEMANTIC CONCEPTS: []
+CANDIDATES:
+ - hr.employee | Employee | score: 24.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - hr.employee.category | Employee Category | score: 24.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 16.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 16.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - dmstock.quant.move.lines | dmstock.quant.move.lines | score: 5.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - stock.quant.archive | stock.quant.archive | score: 5.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - stock.quant.archive.filter | stock.quant.archive.filter | score: 5.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+ - stock.quant.package.type | stock.quant.package.type | score: 5.0
+   semantic concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+   request concepts: []
+
+===== PLANNER ATTEMPT =====
+ATTEMPT: 1 / 4
+
+===== DYNAMIC MODEL CANDIDATES AVAILABLE =====
+ - hr.employee | Employee | score: 24.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - hr.employee.category | Employee Category | score: 24.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - mrp.workcenter.employee.journal | Modello che gestisce lo storico ore di un dipendente in un determinato centro di lavoro | score: 16.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - mrp.workcenter.setup.employee.journal | Modello che gestisce lo storico ore di un dipendente per un setup | score: 16.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - dmstock.quant.move.lines | dmstock.quant.move.lines | score: 5.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - stock.quant.archive | stock.quant.archive | score: 5.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - stock.quant.archive.filter | stock.quant.archive.filter | score: 5.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+ - stock.quant.package.type | stock.quant.package.type | score: 5.0 | concepts: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}] | request concepts: []
+
+===== QUERY NORMALIZATION =====
+CURRENT REQUEST: Quanti dipendenti abbiamo?
+AGGREGATION: {'is_aggregation': False, 'grouping_field': None, 'has_explicit_grouping': False, 'has_ranking': False, 'aggregation_hits': 0, 'detail_hits': 0}
+TOTAL COUNT REQUEST: True
+USE READ_GROUP: False
+EXPLICIT MODEL: None
+MODEL: hr.employee
+METHOD: search_count
+EXPLICIT LIMIT: None
+FINAL DOMAIN: []
+FINAL PARAMS: {'domain': []}
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/hr.employee/fields_view_get
+MODELLO: hr.employee
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: hr.employee
+VIEW ID: 370
+VIEW STRING: Employees
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'work_phone', 'work_email', 'company_id', 'department_id', 'job_id', 'parent_id', 'coach_id', 'message_needaction']
+VISIBLE FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+
+===== PLANNER PROPOSAL ACCEPTED =====
+ATTEMPT: 1
+
+===== WORKFLOW ROUTE PLANNER =====
+SINGLE PLAN FOUND
+PLAN: {'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': None, 'parameters': {'model': 'hr.employee', 'method': 'search_count', 'params': {'domain': []}}}
+ROUTE: odoo
+
+===== MULTI ODOO PLAN FALLBACK =====
+Nessun 'plans' disponibile.
+Uso state['plan'] come singola query.
+
+===== PLANNER EXECUTION ATTEMPT =====
+CURRENT ATTEMPT: 1
+
+===== MULTI Portant EXECUTION =====
+TOTAL PLANS: 1
+
+============================================
+===== Portant QUERY 1 =====
+REQUEST: Quanti dipendenti abbiamo?
+MODEL: hr.employee
+METHOD: search_count
+Portant DYNAMIC AGENT ESEGUITO
+
+===== ODOO AGENT SEMANTIC CONTEXT =====
+DYNAMIC MODEL CANDIDATES: 8
+SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+
+===== Portant PLAN =====
+{'agent': 'odoo', 'action': 'odoo_api_tool', 'domain': [], 'parameters': {'model': 'hr.employee', 'method': 'search_count', 'params': {'domain': []}}}
+
+===== MODEL DISCOVERY =====
+MODEL: hr.employee
+MODEL NOT IN STATIC CATALOG
+STARTING DYNAMIC DISCOVERY...
+
+===== CHIAMATA PORTANT (call_kw) =====
+URL: http://10.100.12.131:6969/web/dataset/call_kw/hr.employee/fields_view_get
+MODELLO: hr.employee
+METHOD: fields_view_get
+ARGS: []
+KWARGS: {'view_type': 'tree', 'toolbar': False, 'submenu': False}
+
+===== RISPOSTA PORTANT (call_kw) =====
+HTTP STATUS: 200
+
+===== ODOO TREE VIEW DISCOVERED =====
+MODEL: hr.employee
+VIEW ID: 370
+VIEW STRING: Employees
+DEFAULT ORDER: 
+VIEW FIELDS: ['name', 'work_phone', 'work_email', 'company_id', 'department_id', 'job_id', 'parent_id', 'coach_id', 'message_needaction']
+VISIBLE FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+
+===== ODOO FIELD METADATA LOADED =====
+MODEL: hr.employee
+FIELDS: 61
+
+===== DYNAMIC RELATION FIELDS =====
+ - address_home_id | Private Address | relation: res.partner
+ - address_id | Work Address | relation: res.partner
+ - bank_account_id | Bank Account Number | relation: res.partner.bank
+ - coach_id | Coach | relation: hr.employee
+ - company_id | Company | relation: res.company
+ - country_id | Nationality (Country) | relation: res.country
+ - create_uid | Created by | relation: res.users
+ - department_id | Department | relation: hr.department
+ - job_id | Job Position | relation: hr.job
+ - last_attendance_id | Last Attendance | relation: hr.attendance
+ - parent_id | Manager | relation: hr.employee
+ - resource_calendar_id | Working Hours | relation: resource.calendar
+ - resource_id | Resource | relation: resource.resource
+ - user_id | User | relation: res.users
+ - write_uid | Last Updated by | relation: res.users
+
+===== DYNAMIC MODEL REGISTERED =====
+MODEL: hr.employee
+FIELDS: 61
+BLACKLIST: []
+
+===== DYNAMIC FIELDS REGISTERED =====
+MODEL: hr.employee
+FIELDS: 61
+
+===== SEMANTIC FIELD ACCEPTED =====
+SOURCE FIELD: employee
+SELECTED FIELD: is_address_home_a_company
+SELECTED TYPE: boolean
+SELECTED RELATION: None
+SELECTED LABEL: The employee adress has a company linked
+DIRECT SOURCE TOKENS: 1
+SOURCE COVERAGE: 1.0
+SCORE: 265.0
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: employees
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dipendente
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: dipendenti
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: personale
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: staff
+REASON: no field contains sufficient direct metadata evidence
+
+===== SEMANTIC FIELD REJECTED =====
+SOURCE FIELD: lavoratori
+REASON: no field contains sufficient direct metadata evidence
+
+===== DYNAMIC MODEL COMPATIBILITY PASSED =====
+REQUIRED SEMANTIC CONCEPTS: [{'concept': 'employee', 'queries': ['employee', 'employees', 'dipendente', 'dipendenti', 'personale', 'staff', 'lavoratori']}]
+REQUIRED FIELD HINTS: []
+RESOLVED FIELDS: {'employee': 'is_address_home_a_company'}
+
+===== DYNAMIC HUMAN FIELDS FROM ODOO TREE VIEW =====
+TREE VIEW: 370
+TREE VIEW STRING: Employees
+TREE VIEW FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+
+===== DYNAMIC HUMAN FIELD RESOLUTION =====
+AUTO HUMAN FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+USER MESSAGE: Quanti dipendenti abbiamo?
+GROUPBY: []
+ORDERBY: None
+
+===== FINAL GROUPBY =====
+GROUPBY: []
+
+===== ODOO PARAMETERS RESOLVED =====
+FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+GROUPBY: []
+ORDERBY: None
+ORDER: None
+DOMAIN: []
+
+===== VALIDATING Portant PARAMETERS =====
+
+===== VALIDATED PARAMETERS =====
+{'model': 'hr.employee', 'method': 'search_count', 'params': {'domain': [], 'groupby': []}}
+
+===== FINAL ODOO PARAMETERS =====
+MODEL: hr.employee
+METHOD: search_count
+FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+GROUPBY: []
+ORDERBY: None
+DOMAIN: []
+
+===== Portant REQUEST =====
+URL: http://10.100.12.131:6969/api/hr.employee/search_count
+BODY: {'domain': [], 'groupby': [], 'fields': ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']}
+
+===== RICHIESTA PORTANT =====
+URL: http://10.100.12.131:6969/api/hr.employee/search_count
+METHOD: POST
+BODY: {'domain': [], 'groupby': [], 'fields': ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']}
+
+===== RISPOSTA PORTANT =====
+HTTP STATUS: 200
+
+===== Portant NORMALIZED RESULT =====
+TYPE: count
+COUNT: 90
+TOTAL RECORDS: 90
+RETURNED RECORDS: 0
+LIMIT: 0
+OFFSET: 0
+PAGES: 1
+HAS MORE: False
+
+===== EXPERIENCE MEMORY =====
+STATUS: SUCCESS
+REQUEST: Quanti dipendenti abbiamo?
+MODEL: hr.employee
+METHOD: search_count
+
+===== MULTI Portant COMPLETE =====
+RESULTS: 1
+SUCCESS: 1
+FAILED: 0
+
+===== ODOO EXECUTION SUCCESS =====
+PLANNER ATTEMPT: 1
+
+===== WORKFLOW ROUTE ODOO =====
+EXECUTION FAILED: False
+ROUTE: response
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+NESSUN CONTESTO RILEVANTE
+
+===== RESPONSE INTERACTION MODE =====
+MODE: OPERATIONAL
+CONVERSATIONAL: False
+
+===== MULTI QUERY RESPONSE DATA =====
+TOTAL REQUESTS: 1
+SUCCESS: 1
+FAILED: 0
+RECORDS AVAILABLE FROM ODOO: 0
+RECORDS SENT TO RESPONSE LLM: 0
+
+===== RESPONSE RESULT =====
+Attualmente ci sono 90 dipendenti registrati nel sistema.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+PREVIOUS RESULT SOURCE: NEW ODOO RESULT
+
+===== PREVIOUS RESULT CONTEXT SAVE =====
+AVAILABLE: True
+MODEL: hr.employee
+METHOD: search_count
+RESULT TYPE: count
+RETURNED COUNT: 0
+TOTAL COUNT: 90
+RECORDS STORED IN CONTEXT: 0
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: Quanti dipendenti abbiamo?
+ASSISTANT MESSAGE: Attualmente ci sono 90 dipendenti registrati nel sistema.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+PREVIOUS RESULT CONTEXT SAVED
+MESSAGES CURRENTLY IN DB: 4
+ - user : Mostrami gli ultimi 30 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+   PREVIOUS RESULT MODEL: mrp.production
+   PREVIOUS RESULT RECORDS: 30
+ - user : Quanti dipendenti abbiamo?
+ - assistant : Attualmente ci sono 90 dipendenti registrati nel sistema.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Quanti dipendenti abbiamo?
+SUB_REQUESTS: ['Quanti dipendenti abbiamo?']
+SCOPE ALLOWED: True
+
+===== PLAN =====
+MODEL: hr.employee
+METHOD: search_count
+DOMAIN: []
+FIELDS: ['name', 'work_phone', 'work_email', 'department_id', 'job_id', 'parent_id']
+ORDER: None
+LIMIT: None
+
+===== ODOO RESULTS SUMMARY =====
+QUERIES: 1
+--------------------------------------------
+INDEX: 1
+SUCCESS: True
+MODEL: hr.employee
+METHOD: search_count
+DOMAIN: []
+RESULT TYPE: count
+TOTAL: 90
+RETURNED: 0
+LIMIT: 0
+PAGES: 1
+HAS MORE: False
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 57
+PREVIEW: Attualmente ci sono 90 dipendenti registrati nel sistema.
+
+===== CHART ANALYZER =====
+COUNT RESULT DETECTED
+COUNT: 90
+CHART DATA: [{'label': 'Totale hr.employee', 'value': 90}]
+SHOULD RENDER: True
+TYPE: bar
+ORIENTATION: vertical
+TITLE: Totale hr.employee
+SOURCE INDEX: 1
+GROUPING: None
+VALUE: None
+CHART DATA: [{'label': 'Totale hr.employee', 'value': 90}]
+PALETTE: professional
+ANIMATION: dynamic
+
+===== CHART PAYLOAD =====
+TYPE: bar
+TITLE: Totale hr.employee
+SOURCE: 1
+SOURCE TYPE: analysis
+GROUPING: None
+VALUE: None
+POINTS: 1
+DATA: [{'label': 'Totale hr.employee', 'value': 90.0}]
+MEMORY UPDATED: True
+
+===== CHAT REQUEST =====
+MESSAGE: Mostrami tutti i 90 dipendenti
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+MESSAGES LOADED: 4
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 30 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': 'Attualmente ci sono 90 dipendenti registrati nel sistema.'}
+
+===== PREVIOUS RESULT CONTEXT =====
+AVAILABLE: True
+MODEL: hr.employee
+METHOD: search_count
+RESULT TYPE: count
+RETURNED COUNT: 0
+TOTAL COUNT: 90
+RECORDS: 0
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 4
+
+===== CONVERSATION CONTEXT =====
+L'utente ha precedentemente chiesto il numero di dipendenti, ricevendo conferma che ce ne sono 90 registrati. Ora richiede di visualizzare l'elenco completo.
+
+===== REQUEST SPLITTER NODE =====
+INPUT: Mostrami tutti i 90 dipendenti
+PREVIOUS RESULT AVAILABLE: True
+
+===== REQUEST SPLITTER =====
+INPUT: Mostrami tutti i 90 dipendenti
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: elenco completo entità aziendali
+CONCEPTS: ['dipendenti', 'elenco completo']
+REASON: Richiesta di visualizzare l'elenco completo dei dipendenti, direttamente collegata alla domanda precedente sul conteggio dei dipendenti. Il concetto di 'dipendenti' è plausibilmente gestibile come dato aziendale in Odoo, nonostante non sia esplicitamente nella knowledge base.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['dipendenti', 'elenco completo']
+REQUEST COUNT: 1
+REQUEST 1: Mostrami tutti i 90 dipendenti
+
+===== PREVIOUS RESULT OPERATION =====
+AVAILABLE: True
+OPERATION: True
+TYPE: show
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: elenco completo entità aziendali
+INTERACTION MODE: OPERATIONAL_FOLLOWUP
+CONCEPTS: ['dipendenti', 'elenco completo']
+REQUEST COUNT: 1
+REASON: Richiesta di visualizzare l'elenco completo dei dipendenti, direttamente collegata alla domanda precedente sul conteggio dei dipendenti. Il concetto di 'dipendenti' è plausibilmente gestibile come dato aziendale in Odoo, nonostante non sia esplicitamente nella knowledge base.
+EVIDENCE: ["Richiesta esplicita: 'Mostrami tutti i 90 dipendenti'", 'Continuità conversazionale: segue direttamente la risposta sul conteggio dipendenti', 'Nessuna indicazione di ambito estraneo ai dati aziendali']
+REQUEST 1: Mostrami tutti i 90 dipendenti
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+INTERACTION MODE: OPERATIONAL_FOLLOWUP
+PREVIOUS RESULT OPERATION: True
+PREVIOUS RESULT OPERATION TYPE: show
+ROUTE: previous_result_operation
+
+===== PREVIOUS RESULT OPERATION =====
+SOURCE MODEL: hr.employee
+SOURCE METHOD: search_count
+SOURCE RETURNED COUNT: 0
+SOURCE TOTAL COUNT: 90
+RECORDS AVAILABLE: 0
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+L'utente ha precedentemente chiesto il numero di dipendenti, ricevendo conferma che ce ne sono 90 registrati. Ora richiede di visualizzare l'elenco completo.
+
+===== RESPONSE INTERACTION MODE =====
+MODE: OPERATIONAL_FOLLOWUP
+CONVERSATIONAL: False
+
+===== PREVIOUS RESULT RESPONSE DATA =====
+SUCCESS: False
+OPERATION: show
+REQUESTED OPERATION: None
+MATCHED COUNT: None
+SOURCE MODEL: 
+
+===== PREVIOUS RESULT RESPONSE =====
+NESSUNA NUOVA QUERY ODOO
+RESULT SOURCE: previous_result
+
+===== RESPONSE RESULT =====
+Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+PREVIOUS RESULT SOURCE: EXISTING STATE CONTEXT
+
+===== PREVIOUS RESULT CONTEXT SAVE =====
+AVAILABLE: True
+MODEL: hr.employee
+METHOD: search_count
+RESULT TYPE: count
+RETURNED COUNT: 0
+TOTAL COUNT: 90
+RECORDS STORED IN CONTEXT: 0
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: Mostrami tutti i 90 dipendenti
+ASSISTANT MESSAGE: Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+PREVIOUS RESULT CONTEXT SAVED
+MESSAGES CURRENTLY IN DB: 6
+ - user : Mostrami gli ultimi 30 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+   PREVIOUS RESULT MODEL: mrp.production
+   PREVIOUS RESULT RECORDS: 30
+ - user : Quanti dipendenti abbiamo?
+ - assistant : Attualmente ci sono 90 dipendenti registrati nel sistema.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+ - user : Mostrami tutti i 90 dipendenti
+ - assistant : Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: Mostrami tutti i 90 dipendenti
+SUB_REQUESTS: ['Mostrami tutti i 90 dipendenti']
+SCOPE ALLOWED: True
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 248
+PREVIEW: Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste.
+
+===== CHAT REQUEST =====
+MESSAGE: mostrami 20 dipendenti
+CONVERSATION: <redacted>
+
+===== ODOO SESSION =====
+STATUS: ACTIVE
+
+===== CARICAMENTO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+MESSAGES LOADED: 6
+FIRST MESSAGE: {'role': 'user', 'content': 'Mostrami gli ultimi 30 ordini di produzione'}
+LAST MESSAGE: {'role': 'assistant', 'content': "Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste."}
+
+===== PREVIOUS RESULT CONTEXT =====
+AVAILABLE: True
+MODEL: hr.employee
+METHOD: search_count
+RESULT TYPE: count
+RETURNED COUNT: 0
+TOTAL COUNT: 90
+RECORDS: 0
+
+===== CONVERSATION MEMORY NODE =====
+MEMORY ITEMS: 6
+
+===== CONVERSATION CONTEXT =====
+Ci sono 90 dipendenti registrati nel sistema. In precedenza, non è stato possibile recuperare l'elenco completo a causa di un problema tecnico.
+
+===== REQUEST SPLITTER NODE =====
+INPUT: mostrami 20 dipendenti
+PREVIOUS RESULT AVAILABLE: True
+
+===== REQUEST SPLITTER =====
+INPUT: mostrami 20 dipendenti
+
+===== SEMANTIC SCOPE =====
+SCOPE: IN_SCOPE
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: recupero dati aziendali
+CONCEPTS: ['dipendenti', '20']
+REASON: Richiesta di visualizzare un sottoinsieme di dipendenti, continuazione di una conversazione precedente su dati HR plausibilmente gestiti in Odoo.
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONTINUATION: True
+CONCEPTS: ['dipendenti', '20']
+REQUEST COUNT: 1
+REQUEST 1: mostrami 20 dipendenti
+
+===== PREVIOUS RESULT OPERATION =====
+AVAILABLE: True
+OPERATION: True
+TYPE: show
+
+===== SCOPE DECISION =====
+SCOPE: IN_SCOPE
+IN SCOPE: True
+CONFIDENCE: 0.95
+CONTINUATION: True
+INTENT FAMILY: recupero dati aziendali
+INTERACTION MODE: OPERATIONAL_FOLLOWUP
+CONCEPTS: ['dipendenti', '20']
+REQUEST COUNT: 1
+REASON: Richiesta di visualizzare un sottoinsieme di dipendenti, continuazione di una conversazione precedente su dati HR plausibilmente gestiti in Odoo.
+EVIDENCE: ["Riferimento diretto a 'dipendenti' (concetto HR aziendale)", "Quantitativo specifico ('20') come filtro", 'Continuità con precedente richiesta IN_SCOPE su dipendenti', 'Nessun indicatore di ambito esterno o analisi complementare']
+REQUEST 1: mostrami 20 dipendenti
+
+===== WORKFLOW ROUTE SCOPE =====
+SCOPE: IN_SCOPE
+INTERACTION MODE: OPERATIONAL_FOLLOWUP
+PREVIOUS RESULT OPERATION: True
+PREVIOUS RESULT OPERATION TYPE: show
+ROUTE: previous_result_operation
+
+===== PREVIOUS RESULT OPERATION =====
+SOURCE MODEL: hr.employee
+SOURCE METHOD: search_count
+SOURCE RETURNED COUNT: 0
+SOURCE TOTAL COUNT: 90
+RECORDS AVAILABLE: 0
+
+===== RESPONSE AGENT =====
+
+===== CONVERSATION CONTEXT FOR RESPONSE =====
+Ci sono 90 dipendenti registrati nel sistema. In precedenza, non è stato possibile recuperare l'elenco completo a causa di un problema tecnico.
+
+===== RESPONSE INTERACTION MODE =====
+MODE: OPERATIONAL_FOLLOWUP
+CONVERSATIONAL: False
+
+===== PREVIOUS RESULT RESPONSE DATA =====
+SUCCESS: False
+OPERATION: show
+REQUESTED OPERATION: None
+MATCHED COUNT: None
+SOURCE MODEL: 
+
+===== PREVIOUS RESULT RESPONSE =====
+NESSUNA NUOVA QUERY ODOO
+RESULT SOURCE: previous_result
+
+===== RESPONSE RESULT =====
+Purtroppo, a causa di un problema tecnico persistente, non sono riuscito a recuperare l'elenco dei 20 dipendenti richiesti. Il sistema segnala 90 dipendenti registrati, ma non è attualmente in grado di fornire i dettagli specifici. 
+
+Posso riprovare in un secondo momento o assisterti con un'altra richiesta se lo desideri.
+
+===== SALVATAGGIO MEMORIA PORTANT =====
+USER ID: 1
+DATABASE: DM-PLF001-TIPREGO
+CONVERSATION ID: 387d8fd3-cfd3-4208-8a1f-2e67e1c482a1
+PREVIOUS RESULT SOURCE: EXISTING STATE CONTEXT
+
+===== PREVIOUS RESULT CONTEXT SAVE =====
+AVAILABLE: True
+MODEL: hr.employee
+METHOD: search_count
+RESULT TYPE: count
+RETURNED COUNT: 0
+TOTAL COUNT: 90
+RECORDS STORED IN CONTEXT: 0
+RECORD LINKS: []
+CHART PAYLOAD: None
+USER MESSAGE: mostrami 20 dipendenti
+ASSISTANT MESSAGE: Purtroppo, a causa di un problema tecnico persistente, non sono riuscito a recuperare l'elenco dei 20 dipendenti richiesti. Il sistema segnala 90 dipendenti registrati, ma non è attualmente in grado di fornire i dettagli specifici. 
+
+Posso riprovare in un secondo momento o assisterti con un'altra richiesta se lo desideri.
+USER MESSAGE SAVED
+ASSISTANT MESSAGE SAVED
+PREVIOUS RESULT CONTEXT SAVED
+MESSAGES CURRENTLY IN DB: 8
+ - user : Mostrami gli ultimi 30 ordini di produzione
+ - assistant : Ho trovato 367 ordini di produzione.
+Ecco gli ultimi 30, in ordine di data di avvio prevista:
+
+- **MO/2602605**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S096005653] PF 13 CP/60 PV2 PLK 'VERO CUOIO', quantità 19.200 MQ, stato in pausa
+- **MO/2602598**: avvio 29 marzo 2026, fine 29 marzo 2026, prodotto [S165005577] PF 584 CP/80 S "ULF BLACK", quantità 59.400 MQ, stato in pausa
+- **MO/2602597**: avvio 28 marzo 2026, fine 29 marzo 2026, prodotto [S135005576] PF 584 CP/80 S "ULF BLACK", quantità 48.600 MQ, stato in pausa
+- **MO/2602602**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [TS15700070] FRT0048.087.133P.443-CBD - R&D 15/2023, quantità 1.570 MQ, stato pianificato
+- **MO/2602604**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S131005224] PF 581 CP S 'ULF', quantità 23.580 MQ, stato pianificato
+- **MO/2602603**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S157005225] PF 581 CP S 'ULF', quantità 28.260 MQ, stato pianificato
+- **MO/2602601**: avvio 28 marzo 2026, fine 28 marzo 2026, prodotto [S165005412] PF 564 CP/80 'LARSON INTERNATIONAL III', quantità 35.640 MQ, stato pianificato
+- **MO/2602600**: avvio 27 marzo 2026, fine 28 marzo 2026, prodotto [S131005294] PF 564 CP 'LASER' COMBI, quantità 5.240 MQ, stato pianificato
+- **MO/2602594**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S135005464] PF 564 CP 'LASER' COMBI, quantità 32.400 MQ, stato pianificato
+- **MO/2602599**: avvio 27 marzo 2026, fine 27 marzo 2026, prodotto [S106005581] PF 564 CP 'VOESTALPINE IV' COMBI, quantità 42.400 MQ, stato in pausa
+- **MO/2602596**: avvio 26 marzo 2026, fine 27 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602595**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602585**: avvio 26 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602582**: avvio 25 marzo 2026, fine 26 marzo 2026, prodotto [S106002126] PF 584 CP S "ULF", quantità 12.720 MQ, stato in pausa
+- **MO/2602581**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 19.080 MQ, stato in pausa
+- **MO/2602583**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 25.440 MQ, stato in pausa
+- **MO/2602580**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 6.360 MQ, stato in pausa
+- **MO/2602589**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 3.180 MQ, stato in pausa
+- **MO/2602587**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S106002499] PF 584 CP S "ULF", quantità 16.960 MQ, stato in pausa
+- **MO/2602577**: avvio 25 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 28.260 MQ, stato in pausa
+- **MO/2602592**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 56.520 MQ, stato in pausa
+- **MO/2602574**: avvio 24 marzo 2026, fine 25 marzo 2026, prodotto [S157002123] PF 584 CP S "ULF", quantità 103.620 MQ, stato in pausa
+- **MO/2602576**: avvio 23 marzo 2026, fine 24 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602558**: avvio 23 marzo 2026, fine 23 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 78.600 MQ, stato in pausa
+- **MO/2602557**: avvio 22 marzo 2026, fine 23 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602556**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 23.580 MQ, stato in pausa
+- **MO/2602566**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 7.860 MQ, stato in pausa
+- **MO/2602565**: avvio 22 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 52.400 MQ, stato in pausa
+- **MO/2602561**: avvio 21 marzo 2026, fine 22 marzo 2026, prodotto [S131003884] PF 584 CP S "ULF", quantità 55.020 MQ, stato in pausa
+- **MO/2602555**: avvio 21 marzo 2026, fine 21 marzo 2026, prodotto [S131002124] PF 584 CP S "ULF", quantità 26.200 MQ, stato in pausa
+
+In totale, ci sono 12 pagine di risultati.
+   PREVIOUS RESULT MODEL: mrp.production
+   PREVIOUS RESULT RECORDS: 30
+ - user : Quanti dipendenti abbiamo?
+ - assistant : Attualmente ci sono 90 dipendenti registrati nel sistema.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+ - user : Mostrami tutti i 90 dipendenti
+ - assistant : Mi dispiace, ma al momento non riesco a recuperare l'elenco completo dei 90 dipendenti registrati a causa di un problema tecnico nei dati disponibili. Ti suggerisco di riprovare più tardi o di contattare il supporto tecnico se il problema persiste.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+ - user : mostrami 20 dipendenti
+ - assistant : Purtroppo, a causa di un problema tecnico persistente, non sono riuscito a recuperare l'elenco dei 20 dipendenti richiesti. Il sistema segnala 90 dipendenti registrati, ma non è attualmente in grado di fornire i dettagli specifici. 
+
+Posso riprovare in un secondo momento o assisterti con un'altra richiesta se lo desideri.
+   PREVIOUS RESULT MODEL: hr.employee
+   PREVIOUS RESULT RECORDS: 0
+
+===== GRAPH RESULT =====
+MESSAGES: 1
+CURRENT REQUEST: mostrami 20 dipendenti
+SUB_REQUESTS: ['mostrami 20 dipendenti']
+SCOPE ALLOWED: True
+
+===== RESPONSE =====
+STATUS: GENERATED
+LENGTH: 323
+PREVIEW: Purtroppo, a causa di un problema tecnico persistente, non sono riuscito a recuperare l'elenco dei 20 dipendenti richiesti. Il sistema segnala 90 dipendenti registrati, ma non è attualmente in grado di fornire i dettagli specifici.   Posso riprovare in un secondo momento o assisterti con un'altra ri...
